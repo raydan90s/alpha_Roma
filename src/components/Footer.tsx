@@ -13,45 +13,45 @@ function Navbar() {
     setHoveredMenu(index);
   };
 
-  const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      setHoveredMenu(null);
-    }, 250);
-  };
-
-  const menuItems = [
-    {
-      title: "Seguridad para el hogar",
-      options: ["Sistema de seguridad para casa", "Sensores de seguridad", "Alarmas de seguridad"],
-    },
-    {
-      title: "Cámaras de seguridad",
-      options: ["Cámaras IP", "CCTV", "Grabación en la nube"],
-    },
-    {
-      title: "Casa inteligente",
-      options: ["Automatización", "Control por voz", "Integración de dispositivos"],
-    },
-    {
-      title: "Servicios",
-      options: ["Instalación", "Mantenimiento", "Asesoría"],
-    },
-    {
-      title: "Paquetes y precios",
-      options: ["Plan Básico", "Plan Empresarial", "Plan Premium"],
-    },
-  ];
-
-  const shouldShowSearch = showSearch || searchFocused;
-
-  return (
-    <nav className="bg-black text-white shadow-md fixed w-full z-50 border-b border-gray-700">
-      <div className="max-w-screen-2xl mx-auto px-4">
-        <div className="flex items-center justify-between h-20 w-full">
-          {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-6 h-6 rounded-full bg-yellow-400 flex items-center justify-center text-black font-bold text-xs">
-              
+    return (
+        <footer className="bg-secondary text-gray-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <div className="flex items-center mb-4">
+          
+                <span className="ml-2 text-xl font-bold text-white">SecureHome</span>
+              </div>
+              <p className="text-sm">Protecting homes and families since 2025</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4 text-white">Products</h3>
+              <ul className="space-y-2">
+          
+                <li><a href="#" className="hover:text-white">Security Systems</a></li>
+     
+                <li><a href="#" className="hover:text-white">Cameras</a></li>
+                <li><a href="#" className="hover:text-white">Smart Locks</a></li>
+                <li><a href="#" className="hover:text-white">Doorbell Cameras</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4 text-white">Company</h3>
+              <ul className="space-y-2">
+                <li><a href="#" className="hover:text-white">About Us</a></li>
+                <li><a href="#" className="hover:text-white">Careers</a></li>
+                <li><a href="#" className="hover:text-white">Contact</a></li>
+                <li><a href="#" className="hover:text-white">Blog</a></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-4 text-white">Support</h3>
+              <ul className="space-y-2">
+                <li><a href="#" className="hover:text-white textoC">Help Center</a></li>
+                <li><a href="#" className="hover:text-white">FAQs</a></li>
+                <li><a href="#" className="hover:text-white">Installation</a></li>
+                <li><a href="#" className="hover:text-white">Contact Support</a></li>
+              </ul>
             </div>
             <span className="text-white font-bold text-lg">NovaFenixMar</span>
           </div>

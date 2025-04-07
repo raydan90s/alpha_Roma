@@ -3,44 +3,22 @@ import { Bell, Video, Phone, ChevronRight } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer'
 import Call_to_action from '../components/Call_to_action';
+import Hero from '../components/hero';
 
 
-function Home(){
-    return (
-<div className="min-h-screen bg-white">
+function Home() {
+  return (
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <Navbar />
+     
       {/* Hero Section */}
-      <div className="relative pt-16">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" 
-            className="w-full h-[600px] object-cover"
-            alt="Modern home security"
-          />
-          <div className="absolute inset-0 bg-gray-900 opacity-50"></div>
-        </div>
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-48">
-          <div className="max-w-2xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Protect What Matters Most
-            </h1>
-            <p className="text-xl text-gray-200 mb-8">
-              Advanced home security systems that keep your family safe 24/7. Professional monitoring, smart automation, and peace of mind.
-            </p>
-            <div className="flex space-x-4">
-              <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 flex items-center">
-                Get Quote <ChevronRight className="ml-2 h-5 w-5" />
-              </button>
-              <button className="bg-white text-gray-900 px-8 py-3 rounded-lg hover:bg-gray-100">
-                Learn More
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <Hero
+        title='NovaFenix security lo mejor para ti'
+        span='En novafenix nos preocupamos por tu seguridad'
+        link_image='https://www.segurilatam.com/wp-content/uploads/sites/5/2024/01/instalacion-camara-de-seguridad-wifi.jpg'
+        span_btn1='Comprar ahora'
+        span_btn2='Consultar'
+      />
       {/* Features Section */}
       <div className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,7 +26,7 @@ function Home(){
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Complete Home Protection</h2>
             <p className="text-xl text-gray-600">Everything you need to keep your home secure</p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-12">
             <div className="text-center">
               <div className="bg-blue-100 rounded-full p-4 w-16 h-16 mx-auto mb-6 flex items-center justify-center">
@@ -56,7 +34,7 @@ function Home(){
               <h3 className="text-xl font-semibold mb-4">CASITA HIPER SEGURA</h3>
               <p className="text-gray-600">Control your entire security system from anywhere with our mobile app.</p>
             </div>
-            
+
             <div className="text-center">
               <div className="bg-blue-100 rounded-full p-4 w-16 h-16 mx-auto mb-6 flex items-center justify-center">
                 <Video className="h-8 w-8 text-blue-600" />
@@ -64,7 +42,7 @@ function Home(){
               <h3 className="text-xl font-semibold mb-4">24/7 Video Monitoring</h3>
               <p className="text-gray-600">HD cameras with night vision keep watch over your property day and night.</p>
             </div>
-            
+
             <div className="text-center">
               <div className="bg-blue-100 rounded-full p-4 w-16 h-16 mx-auto mb-6 flex items-center justify-center">
                 <Bell className="h-8 w-8 text-blue-600" />
@@ -75,11 +53,8 @@ function Home(){
           </div>
         </div>
       </div>
-      <Call_to_action title='Ready to protect your home?' subtitle='Get a free quote and consultation today.' spanBtn='Call Now' link={''}/>  
-
-      {/* Footer */}
-      <Footer />
+      <Call_to_action title="¿Listo para proteger tu casa?" subtitle='Con NovaFenix despreocupate de cuidar tu casa' spanBtn='Contactános ahora' link={''} />
     </div>
-    );
-    }
-    export default Home
+  );
+}
+export default Home
