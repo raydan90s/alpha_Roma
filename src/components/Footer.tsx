@@ -21,7 +21,7 @@ function Navbar() {
 
   const menuItems = [
     {
-      title: "weuiohsdhusdui",
+      title: "Seguridad para el hogar",
       options: ["Sistema de seguridad para casa", "Sensores de seguridad", "Alarmas de seguridad"],
     },
     {
@@ -53,7 +53,7 @@ function Navbar() {
             <div className="w-6 h-6 rounded-full bg-yellow-400 flex items-center justify-center text-black font-bold text-xs">
               
             </div>
-            <span className="text-white font-bold text-lg">NovaFenixMarholaajhhdiudui</span>
+            <span className="text-white font-bold text-lg">NovaFenixMar</span>
           </div>
 
           {/* Menú */}
