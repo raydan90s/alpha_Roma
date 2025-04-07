@@ -45,7 +45,7 @@ function Navbar() {
   const shouldShowSearch = showSearch || searchFocused;
 
   return (
-    <nav className="bg-black text-white shadow-md fixed w-full z-50 border-b border-gray-700"> {/* Cambios aquí */}
+    <nav className="bg-black text-white shadow-md fixed w-full z-50 border-b border-gray-700">
       <div className="max-w-screen-2xl mx-auto px-4">
         <div className="flex items-center justify-between h-20 w-full">
           {/* Logo */}
@@ -53,7 +53,7 @@ function Navbar() {
             <div className="w-6 h-6 rounded-full bg-yellow-400 flex items-center justify-center text-black font-bold text-xs">
               
             </div>
-            <span className="text-white font-bold text-lg">NovaFenix</span>
+            <span className="text-white font-bold text-lg">NovaFenixMar</span>
           </div>
 
           {/* Menú */}
