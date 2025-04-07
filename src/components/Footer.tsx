@@ -11,28 +11,28 @@ function Footer(){
             <div>
               <div className="flex items-center mb-4">
           
-                <span className="ml-2 text-xl font-bold text-white">SecureHome</span>
+                <span className="ml-2 text-xl font-bold text-white">MAFR</span>
               </div>
               <p className="text-sm">Protecting homes and families since 2025</p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-4 text-white">Products</h3>
+              <h3 className="text-lg font-semibold mb-4 text-white">MAR</h3>
               <ul className="space-y-2">
           
-                <li><a href="#" className="hover:text-white">Security Systems</a></li>
+                <li><a href="#" className="hover:text-white">mAER</a></li>
      
-                <li><a href="#" className="hover:text-white">Cameras</a></li>
-                <li><a href="#" className="hover:text-white">Smart Locks</a></li>
-                <li><a href="#" className="hover:text-white">Doorbell Cameras</a></li>
+                <li><a href="#" className="hover:text-white">Cs</a></li>
+                <li><a href="#" className="hover:text-white">Sm</a></li>
+                <li><a href="#" className="hover:text-white">D</a></li>
               </ul>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-4 text-white">Company</h3>
+              <h3 className="text-lg font-semibold mb-4 text-white">Comp</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="hover:text-white">About Us</a></li>
-                <li><a href="#" className="hover:text-white">Careers</a></li>
-                <li><a href="#" className="hover:text-white">Contact</a></li>
-                <li><a href="#" className="hover:text-white">Blog</a></li>
+                <li><a href="#" className="hover:text-white">Abo</a></li>
+                <li><a href="#" className="hover:text-white">Carrs</a></li>
+                <li><a href="#" className="hover:text-white">Cont</a></li>
+                <li><a href="#" className="hover:text-white">Bg</a></li>
               </ul>
             </div>
             <div>

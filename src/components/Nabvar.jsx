@@ -7,12 +7,12 @@ function Nabvar(){
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Shield className="h-8 w-8 text-blue-600" />
-            <span className="ml-2 text-xl font-bold text-gray-900">SecureHome</span>
+            <span className="ml-2 text-xl font-bold text-gray-900">SecurWSDSF</span>
           </div>
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-gray-700 hover:text-blue-600">Products</a>
-            <a href="#" className="text-gray-700 hover:text-blue-600">Services</a>
-            <a href="#" className="text-gray-700 hover:text-blue-600">Support</a>
+            <a href="#" className="text-gray-700 hover:text-blue-600">ProSFFSSFFSFts</a>
+            <a href="#" className="text-gray-700 hover:text-blue-600">SerFSSFFSSFFSs</a>
+            <a href="#" className="text-gray-700 hover:text-blue-600">SSFFFSFSFS</a>
             <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
               Get Started
             </button>
