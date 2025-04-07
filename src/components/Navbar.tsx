@@ -6,7 +6,6 @@ function Navbar() {
   const [hoveredOption, setHoveredOption] = useState(null);
   const [showSearch, setShowSearch] = useState(false);
   const [searchFocused, setSearchFocused] = useState(false);
-
   const timeoutRef = useRef(null);
 
   const handleMouseEnter = (index) => {
@@ -17,40 +16,48 @@ function Navbar() {
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setHoveredMenu(null);
-    }, 200);
+    }, 250);
   };
 
   const menuItems = [
     {
-      title: "Seguridad para el Hogar",
-      options: ["Alarmas", "Sensores de movimiento", "Control de accesos"]
+      title: "Seguridad para el hogar",
+      options: ["Sistema de seguridad para casa", "Sensores de seguridad", "Alarmas de seguridad"],
     },
     {
-      title: "Seguridad empresarial",
-      options: ["Monitoreo 24/7", "Sistemas de control", "Soporte técnico"]
+      title: "Cámaras de seguridad",
+      options: ["Cámaras IP", "CCTV", "Grabación en la nube"],
     },
     {
-      title: "Cámaras de Seguridad",
-      options: ["Cámaras IP", "CCTV", "Grabación en la nube"]
+      title: "Casa inteligente",
+      options: ["Automatización", "Control por voz", "Integración de dispositivos"],
     },
     {
       title: "Servicios",
-      options: ["Instalación", "Mantenimiento", "Asesoría"]
+      options: ["Instalación", "Mantenimiento", "Asesoría"],
     },
     {
-      title: "Paquetes y Precios",
-      options: ["Plan Básico", "Plan Empresarial", "Plan Premium"]
-    }
+      title: "Paquetes y precios",
+      options: ["Plan Básico", "Plan Empresarial", "Plan Premium"],
+    },
   ];
 
   const shouldShowSearch = showSearch || searchFocused;
 
   return (
-    <nav className="bg-white shadow-sm fixed w-full z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center h-14 w-full justify-between">
-          {/* 🧭 Menú izquierdo */}
-          <div className="hidden md:flex items-center space-x-4">
+    <nav className="bg-white shadow-md fixed w-full z-50 border-b border-gray-200">
+      <div className="px-4 md:px-8 xl:px-16 mx-auto w-full">
+        <div className="flex items-center justify-between h-20 w-full">
+          {/* Logo */}
+          <div className="flex items-center space-x-2">
+            <div className="w-6 h-6 rounded-full bg-gradient-to-br from-yellow-400 to-orange-400 flex items-center justify-center text-white font-bold text-xs">
+              🏠
+            </div>
+            <span className="text-black font-bold text-lg">NovaFenix</span>
+          </div>
+
+          {/* Menú */}
+          <div className="hidden md:flex items-center space-x-8">
             {menuItems.map((item, index) => (
               <div
                 key={index}
@@ -59,23 +66,19 @@ function Navbar() {
                 onMouseLeave={handleMouseLeave}
               >
                 <button
-                  className={`flex items-center text-sm focus:outline-none transition-all duration-300 ease-in-out px-3 py-1 rounded ${
-                    hoveredMenu === index
-                      ? "bg-blue-600 text-white"
-                      : "bg-transparent text-gray-700 hover:text-blue-600"
+                  className={`flex items-center text-sm font-medium px-2 py-1.5 border-b-2 transition-all duration-300 ${
+                    hoveredMenu === index ? "border-black text-black" : "border-transparent text-gray-700 hover:text-black"
                   }`}
                 >
                   {item.title}
-                  {/* Flecha que cambia de dirección al pasar el mouse */}
                   {hoveredMenu === index ? (
-                    <ChevronUp className="ml-1 h-3 w-3 transition-transform duration-200" />
+                    <ChevronUp className="ml-1 h-4 w-4" />
                   ) : (
-                    <ChevronDown className="ml-1 h-3 w-3 transition-transform duration-200" />
+                    <ChevronDown className="ml-1 h-4 w-4" />
                   )}
                 </button>
-
                 <div
-                  className={`absolute top-8 left-0 mt-1 min-w-max bg-white border border-gray-200 rounded shadow-lg z-50 transition-all duration-200 transform origin-top ${
+                  className={`absolute top-full left-0 w-72 bg-white rounded shadow-xl z-50 mt-2 transition-all duration-200 overflow-hidden ${
                     hoveredMenu === index
                       ? "scale-100 opacity-100 pointer-events-auto"
                       : "scale-95 opacity-0 pointer-events-none"
@@ -87,13 +90,7 @@ function Navbar() {
                     <a
                       key={i}
                       href="#"
-                      className={`block px-4 py-1.5 text-sm whitespace-nowrap transition-colors duration-150 ${
-                        hoveredOption === `${index}-${i}` 
-                          ? "bg-blue-600 text-white" 
-                          : "text-gray-700 hover:bg-blue-50 hover:text-blue-600"
-                      }`}
-                      onMouseEnter={() => setHoveredOption(`${index}-${i}`)}
-                      onMouseLeave={() => setHoveredOption(null)}
+                      className="block px-5 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-black transition-all"
                     >
                       {option}
                     </a>
@@ -103,42 +100,37 @@ function Navbar() {
             ))}
           </div>
 
-          {/* 🔍 + 📞 TOTAL DERECHA */}
-          <div className="hidden md:flex items-center gap-4 relative ml-auto">
-            {/* 🔍 Búsqueda */}
-            <div className="relative flex items-center">
+          {/* Buscador + Teléfono */}
+          <div className="flex items-center space-x-6">
+            {/* Buscador */}
+            <div className="relative">
               <input
                 type="text"
                 placeholder="Buscar..."
                 onFocus={() => setSearchFocused(true)}
                 onBlur={() => setSearchFocused(false)}
-                className={`absolute right-10 pr-3 pl-3 py-1 border border-gray-300 rounded-md bg-white shadow-sm text-sm transition-all duration-300 ease-in-out ${
+                className={`absolute right-10 pr-10 pl-4 py-2 rounded-full bg-gray-100 border border-gray-300 text-gray-800 text-sm transition-all duration-300 ease-in-out focus:ring-2 focus:ring-yellow-400 focus:border-transparent ${
                   shouldShowSearch
-                    ? "w-48 opacity-100"
+                    ? "w-56 opacity-100"
                     : "w-0 opacity-0 pointer-events-none"
                 }`}
-                style={{ right: '2.5rem' }}
+                style={{ outline: "none" }}
               />
               <button
                 onClick={() => setShowSearch(!showSearch)}
-                className="text-gray-700 hover:text-blue-600 transition-colors relative z-10"
+                className="text-black hover:text-yellow-500 transition-colors relative z-10 p-2 rounded-full"
               >
-                <Search className="h-4 w-4" />
+                <Search className="h-5 w-5" />
               </button>
             </div>
 
-            {/* 📞 Teléfono */}
+            {/* Botón teléfono */}
             <a
-              href="tel:+593987654321"
-              className="text-xs bg-blue-100 text-blue-700 px-3 py-1.5 rounded hover:bg-blue-200 transition-colors whitespace-nowrap"
+              href="tel:8445917193"
+              className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold px-6 py-2 rounded-full shadow-md transition-all duration-300"
             >
-              📞 +593 987 654 321
+              📞 844.591.7193
             </a>
-          </div>
-
-          {/* 📱 Menú móvil */}
-          <div className="md:hidden flex items-center ml-auto">
-            <Menu className="h-5 w-5 text-gray-700" />
           </div>
         </div>
       </div>
