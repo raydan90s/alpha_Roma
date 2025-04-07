@@ -53,7 +53,7 @@ function Navbar() {
               <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-black font-bold text-xs">
                 {/* Aquí podría ir el icono o la imagen del logo */}
               </div>
-              <span className="text-white font-bold text-lg">NovaFenixMar</span>
+              <span className="text-white font-bold text-lg">NovaFenix</span>
             </div>
 
             {/* Menú */}
