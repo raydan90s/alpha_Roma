@@ -1,8 +1,8 @@
 import { Bell, Video, Phone, ChevronRight } from 'lucide-react';
 import Call_to_action from '../components/Call_to_action';
 import Hero from '../components/Hero';
-import VideoComponent from '../components/video/videoComponent';
-import videoUrls from '../components/video/videoComponent';
+import VideoGallery from '../components/video/VideoGalery';
+import { videoData } from '../components/data/videoData';
 
 
 function Home() {
@@ -55,11 +55,11 @@ function Home() {
       </div>
 
       <div className="py-12 bg-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Our Security Camera Demos</h2>
-          <VideoComponent videos={videoUrls} />
-        </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-2xl font-bold text-gray-900 mb-8">Our Security Camera Demos</h2>
+        <VideoGallery videos={videoData} />
       </div>
+    </div>
 
       <Call_to_action
         title="¿Listo para proteger tu casa?"
