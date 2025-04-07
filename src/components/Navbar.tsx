@@ -50,8 +50,8 @@ function Navbar() {
         <div className="flex items-center justify-between h-20 w-full">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <div className="w-6 h-6 rounded-full bg-yellow-400 flex items-center justify-center text-black font-bold text-xs">
-              
+            <div className="w-6 h-6 rounded-full bg-blue-400 flex items-center justify-center text-black font-bold text-xs">
+              {/* Aquí podría ir el icono o la imagen del logo */}
             </div>
             <span className="text-white font-bold text-lg">NovaFenixMar</span>
           </div>
@@ -66,7 +66,7 @@ function Navbar() {
                 onMouseLeave={handleMouseLeave}
               >
                 <button
-                  className={`flex items-center text-sm font-medium px-2 py-1.5 border-b-2 transition-all duration-300 whitespace-nowrap ${
+                  className={`flex items-center text-white text-sm font-medium px-2 py-1.5 border-b-2 transition-all duration-300 whitespace-nowrap ${
                     hoveredMenu === index
                       ? "border-white text-white"
                       : "border-transparent text-gray-400 hover:text-white"
@@ -74,9 +74,9 @@ function Navbar() {
                 >
                   {item.title}
                   {hoveredMenu === index ? (
-                    <ChevronUp className="ml-1 h-4 w-4" />
+                    <ChevronUp className="ml-1 h-4 w-4 text-white" />
                   ) : (
-                    <ChevronDown className="ml-1 h-4 w-4" />
+                    <ChevronDown className="ml-1 h-4 w-4 text-white" />
                   )}
                 </button>
                 <div
@@ -111,7 +111,7 @@ function Navbar() {
                 placeholder="Buscar..."
                 onFocus={() => setSearchFocused(true)}
                 onBlur={() => setSearchFocused(false)}
-                className={`absolute right-10 pr-10 pl-4 py-2 rounded-full bg-gray-900 border border-gray-700 text-white text-sm transition-all duration-300 ease-in-out focus:ring-2 focus:ring-yellow-400 focus:border-transparent ${
+                className={`absolute right-10 pr-10 pl-4 py-2 rounded-full bg-gray-900 border border-gray-700 text-white text-sm transition-all duration-300 ease-in-out focus:ring-2 focus:ring-blue-400 focus:border-transparent ${
                   shouldShowSearch
                     ? "w-56 opacity-100"
                     : "w-0 opacity-0 pointer-events-none"
@@ -119,7 +119,7 @@ function Navbar() {
               />
               <button
                 onClick={() => setShowSearch(!showSearch)}
-                className="text-white hover:text-yellow-500 transition-colors relative z-10 p-2 rounded-full"
+                className="text-white hover:text-blue-500 transition-colors relative z-10 p-2 rounded-full"
               >
                 <Search className="h-5 w-5" />
               </button>
@@ -128,9 +128,9 @@ function Navbar() {
             {/* Botón Teléfono */}
             <a
               href="tel:8445917193"
-              className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold px-6 py-2 rounded-full shadow-md transition-all duration-300"
+              className="bg-blue-400 hover:bg-blue-500 text-black font-bold px-6 py-2 rounded-full shadow-md transition-all duration-300"
             >
-               844.591.7193
+              844.591.7193
             </a>
           </div>
         </div>
