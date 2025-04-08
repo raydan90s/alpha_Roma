@@ -20,7 +20,7 @@ const ServicesPage = () => {
     emailButtonText: "Solicitar cotización",
     onEmailButtonClick: handleQuoteButtonClick,
   };
-
+ 
   return (
     <div className="pt-20 bg-gray-100">
       {/* Hero Section */}

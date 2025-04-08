@@ -42,11 +42,11 @@ export const menuItems = [
     {
       title: "Paquetes y precios",
       description: "Encuentra el plan que mejor se adapte a tus necesidades y presupuesto.",
-      linkTo: "/servicios#paquetes-precios",
+      linkTo: "/paquetes#paquetes-precios",
       options: [
-        { label: "Plan Básico", href: "/servicios#plan-basico", description: "Soluciones de seguridad esenciales para hogares pequeños." },
-        { label: "Plan Empresarial", href: "/servicios#plan-empresarial", description: "Seguridad robusta y escalable para negocios de todos los tamaños." },
-        { label: "Plan Premium", href: "/servicios#plan-premium", description: "La máxima protección con funcionalidades avanzadas y personalización." },
+        { label: "Plan Básico", href: "/paquetes#plan-basico", description: "Soluciones de seguridad esenciales para hogares pequeños." },
+        { label: "Plan Empresarial", href: "/paquetes#plan-empresarial", description: "Seguridad robusta y escalable para negocios de todos los tamaños." },
+        { label: "Plan Premium", href: "/paquetes#plan-premium", description: "La máxima protección con funcionalidades avanzadas y personalización." },
       ],
     },
   ];
