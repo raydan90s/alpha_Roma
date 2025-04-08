@@ -22,6 +22,9 @@ const VideoCard: React.FC<Props> = ({ video, onClick, isPlaying, isMain }) => {
           autoPlay 
           className="w-full h-full object-cover"
           playsInline
+          muted
+          loop
+          preload="none"
         >
           <source src={video.embedUrl} type="video/mp4" />
           Your browser does not support the video tag.

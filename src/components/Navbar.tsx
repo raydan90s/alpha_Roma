@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Menu, ChevronDown, ChevronUp, Search, X } from "lucide-react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
+import { scrollToHash } from '../assets/utils/scrollUtils'; // Import the direct scroll function
 
 function Navbar() {
   const [hoveredMenu, setHoveredMenu] = useState(null);
@@ -10,6 +11,7 @@ function Navbar() {
   const [activeMobileSubmenu, setActiveMobileSubmenu] = useState(null);
   const timeoutRef = useRef(null);
   const navRef = useRef(null);
+  const navigate = useNavigate(); // Get the navigate function
 
   const handleMouseEnter = (index) => {
     if (window.innerWidth >= 768) { // Only on desktop
@@ -62,6 +64,21 @@ function Navbar() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  const handleMenuItemClick = (href: string) => {
+    if (href.startsWith('/servicios#')) {
+      // If it's a hash link on the services page, navigate and then scroll
+      navigate('/servicios');
+      // Wait a short moment for the page to render before scrolling
+      setTimeout(() => {
+        scrollToHash(href.split('#')[1]);
+      }, 100); // Adjust the timeout as needed
+    } else {
+      // For other links, just navigate
+      navigate(href);
+    }
+    setHoveredMenu(null); // Close the mega menu after clicking
+  };
 
   const menuItems = [
     {
@@ -216,7 +233,7 @@ function Navbar() {
                   <p className="text-gray-400 text-sm mb-4">
                     Descubre nuestras soluciones de {menuItems[hoveredMenu].title.toLowerCase()} diseñadas para proteger lo que más importa.
                   </p>
-                  <Link to="/servicios">
+                  <Link to="/servicios" onClick={() => setHoveredMenu(null)}>
                     <a className="text-primary hover:text-white transition-colors duration-300 text-sm font-medium flex items-center">
                       Ver todos los servicios
                       <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -240,7 +257,7 @@ function Navbar() {
                           animation: `fadeIn 0.5s ease-out ${i * 70}ms both`
                         }}
                       >
-                        <Link to={option.href}>
+                        <Link to={option.href} onClick={() => handleMenuItemClick(option.href)}>
                           <a className="block group">
                             <div className="bg-gray-800 rounded-lg p-4 mb-3 group-hover:bg-gray-700 transition-all duration-300 transform group-hover:scale-105">
                               <div className="w-12 h-12 bg-gray-700 rounded-full mb-4 flex items-center justify-center group-hover:bg-primary transition-all duration-300">
