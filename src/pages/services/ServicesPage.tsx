@@ -34,9 +34,9 @@ const ServicesPage = () => {
       </div>
 
       {/* Services Content */}
-      <div className="max-w-screen-xl mx-auto px-4 py-12">
+      <div className="max-w-screen-xl mx-auto px-4 py-12 space-y-16"> {/* Añadido space-y-16 */}
         {/* Installation Section */}
-        <section id="instalacion" className="mb-24 scroll-mt-24">
+        <section id="instalacion" className="scroll-mt-24 bg-white rounded-xl shadow-lg p-12 md:p-16"> {/* Estilos del recuadro */}
           <div className="flex flex-col md:flex-row gap-8">
             <div className="md:w-1/2">
               <h2 className="text-3xl font-bold text-gray-800 mb-6">Instalación</h2>
@@ -86,7 +86,7 @@ const ServicesPage = () => {
         </section>
 
         {/* Maintenance Section */}
-        <section id="mantenimiento" className="mb-24 scroll-mt-24">
+        <section id="mantenimiento" className="scroll-mt-24 bg-white rounded-xl shadow-lg p-12 md:p-16"> {/* Estilos del recuadro */}
           <div className="flex flex-col md:flex-row-reverse gap-8">
             <div className="md:w-1/2">
               <h2 className="text-3xl font-bold text-gray-800 mb-6">Mantenimiento</h2>
@@ -136,7 +136,7 @@ const ServicesPage = () => {
         </section>
 
         {/* Advisory Section */}
-        <section id="asesoria" className="mb-24 scroll-mt-24">
+        <section id="asesoria" className="scroll-mt-24 bg-white rounded-xl shadow-lg p-12 md:p-16"> {/* Estilos del recuadro */}
           <div className="flex flex-col md:flex-row gap-8">
             <div className="md:w-1/2">
               <h2 className="text-3xl font-bold text-gray-800 mb-6">Asesoría</h2>

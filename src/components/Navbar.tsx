@@ -72,8 +72,13 @@ function Navbar() {
       setTimeout(() => {
         scrollToHash(href.split('#')[1]);
       }, 100);
-    } else if (href.startsWith('/servicios#')) {
+    } if (href.startsWith('/servicios#')) {
       navigate('/servicios');
+      setTimeout(() => {
+        scrollToHash(href.split('#')[1]);
+      }, 100);
+    }if (href.startsWith('/camaras#')) {
+      navigate('/camaras');
       setTimeout(() => {
         scrollToHash(href.split('#')[1]);
       }, 100);
@@ -109,9 +114,9 @@ function Navbar() {
       description: "Vigilancia avanzada para mantener tus propiedades seguras y monitoreadas.",
       linkTo: "/servicios#camaras-seguridad",
       options: [
-        { label: "Cámaras IP", href: "/servicios#camaras-ip", description: "Vigilancia remota de alta definición con acceso desde cualquier dispositivo." },
-        { label: "CCTV", href: "/servicios#cctv", description: "Circuitos cerrados de televisión para una supervisión continua y grabación local." },
-        { label: "Grabación en la nube", href: "/servicios#grabacion-nube", description: "Almacenamiento seguro de tus grabaciones de video en la nube." },
+        { label: "Cámaras IP", href: "/camaras#camaras-ip", description: "Vigilancia remota de alta definición con acceso desde cualquier dispositivo." },
+        { label: "CCTV", href: "/camaras#cctv", description: "Circuitos cerrados de televisión para una supervisión continua y grabación local." },
+        { label: "Grabación en la nube", href: "/camaras#grabacion-nube", description: "Almacenamiento seguro de tus grabaciones de video en la nube." },
       ],
     },
     {

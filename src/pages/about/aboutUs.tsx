@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { scrollToHashOnLoad } from "../../assets/utils/scrollUtils.ts";
 import ContactSection from "../../components/Sections/contactSection.tsx"; // Importa el componente
 import { ContactSectionProps } from "../../interface/contactProps"; // Importa la interfaz
-import VideoHero from "../../components/Sections/VideoHero.tsx"; // Import the VideoHero component
+import VideoHero from "../../components/Sections/videoHero.tsx"; // Import the VideoHero component
 import { VideoHeroProps } from "../../interface/HerovideoProps.ts"; // Import its interface
 
 const AboutUsPage = () => {
@@ -34,11 +34,11 @@ const AboutUsPage = () => {
       {/* Video Hero Section */}
       <VideoHero {...videoHeroData} />
 
-      <div className="pt-20"> {/* Ajusta el padding superior según sea necesario */}
+      <div className="pt-20">
         {/* Content Section */}
-        <div className="max-w-screen-xl mx-auto px-4 py-12">
+        <div className="max-w-screen-xl mx-auto px-4 py-12 space-y-16"> {/* Añadimos space-y-16 para separación vertical */}
           {/* Misión Section */}
-          <section id="mision" className="mb-24 scroll-mt-24">
+          <section id="mision" className="scroll-mt-24 bg-white rounded-xl shadow-lg p-12 md:p-16"> {/* Estilos del recuadro */}
             <div className="flex flex-col md:flex-row gap-8">
               <div className="md:w-1/2">
                 <h2 className="text-3xl font-bold text-gray-800 mb-6">Nuestra Misión</h2>
@@ -60,7 +60,7 @@ const AboutUsPage = () => {
           </section>
 
           {/* Visión Section */}
-          <section id="vision" className="mb-24 scroll-mt-24">
+          <section id="vision" className="scroll-mt-24 bg-white rounded-xl shadow-lg p-12 md:p-16"> {/* Estilos del recuadro */}
             <div className="flex flex-col md:flex-row-reverse gap-8">
               <div className="md:w-1/2">
                 <h2 className="text-3xl font-bold text-gray-800 mb-6">Nuestra Visión</h2>
