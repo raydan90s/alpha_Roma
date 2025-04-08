@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Menu, ChevronDown, ChevronUp, Search } from "lucide-react";
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   const [hoveredMenu, setHoveredMenu] = useState(null);
@@ -21,23 +22,43 @@ function Navbar() {
   const menuItems = [
     {
       title: "Seguridad para el hogar",
-      options: ["Sistema de seguridad para casa", "Sensores de seguridad", "Alarmas de seguridad"],
+      options: [
+        { label: "Sistema de seguridad para casa", href: "/servicios#sistema-seguridad" },
+        { label: "Sensores de seguridad", href: "/servicios#sensores-seguridad" },
+        { label: "Alarmas de seguridad", href: "/servicios#alarmas-seguridad" },
+      ],
     },
     {
       title: "Cámaras de seguridad",
-      options: ["Cámaras IP", "CCTV", "Grabación en la nube"],
+      options: [
+        { label: "Cámaras IP", href: "/servicios#camaras-ip" },
+        { label: "CCTV", href: "/servicios#cctv" },
+        { label: "Grabación en la nube", href: "/servicios#grabacion-nube" },
+      ],
     },
     {
       title: "Casa inteligente",
-      options: ["Automatización", "Control por voz", "Integración de dispositivos"],
+      options: [
+        { label: "Automatización", href: "/servicios#automatizacion" },
+        { label: "Control por voz", href: "/servicios#control-voz" },
+        { label: "Integración de dispositivos", href: "/servicios#integracion-dispositivos" },
+      ],
     },
     {
       title: "Servicios",
-      options: ["Instalación", "Mantenimiento", "Asesoría"],
+      options: [
+        { label: "Instalación", href: "/servicios#instalacion" },
+        { label: "Mantenimiento", href: "/servicios#mantenimiento" },
+        { label: "Asesoría", href: "/servicios#asesoria" },
+      ],
     },
     {
       title: "Paquetes y precios",
-      options: ["Plan Básico", "Plan Empresarial", "Plan Premium"],
+      options: [
+        { label: "Plan Básico", href: "/servicios#plan-basico" },
+        { label: "Plan Empresarial", href: "/servicios#plan-empresarial" },
+        { label: "Plan Premium", href: "/servicios#plan-premium" },
+      ],
     },
   ];
 
@@ -139,12 +160,14 @@ function Navbar() {
                   <p className="text-gray-400 text-sm mb-4">
                     Descubre nuestras soluciones de {menuItems[hoveredMenu].title.toLowerCase()} diseñadas para proteger lo que más importa.
                   </p>
-                  <a href="#" className="text-primary hover:text-white transition-colors duration-300 text-sm font-medium flex items-center">
-                    Ver todos los servicios
-                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                  </a>
+                  <Link to="/servicios">
+                    <a className="text-primary hover:text-white transition-colors duration-300 text-sm font-medium flex items-center">
+                      Ver todos los servicios
+                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </a>
+                  </Link>
                 </div>
 
                 {/* Columna derecha - Enlaces */}
@@ -161,17 +184,19 @@ function Navbar() {
                           animation: `fadeIn 0.5s ease-out ${i * 70}ms both`
                         }}
                       >
-                        <a href="#" className="block group">
-                          <div className="bg-gray-800 rounded-lg p-4 mb-3 group-hover:bg-gray-700 transition-all duration-300 transform group-hover:scale-105">
-                            <div className="w-12 h-12 bg-gray-700 rounded-full mb-4 flex items-center justify-center group-hover:bg-primary transition-all duration-300">
-                              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
-                              </svg>
+                        <Link to={option.href}>
+                          <a className="block group">
+                            <div className="bg-gray-800 rounded-lg p-4 mb-3 group-hover:bg-gray-700 transition-all duration-300 transform group-hover:scale-105">
+                              <div className="w-12 h-12 bg-gray-700 rounded-full mb-4 flex items-center justify-center group-hover:bg-primary transition-all duration-300">
+                                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                                </svg>
+                              </div>
+                              <h4 className="text-white font-medium mb-1">{option.label}</h4>
+                              <p className="text-gray-400 text-sm">Soluciones avanzadas para tu seguridad</p>
                             </div>
-                            <h4 className="text-white font-medium mb-1">{option}</h4>
-                            <p className="text-gray-400 text-sm">Soluciones avanzadas para tu seguridad</p>
-                          </div>
-                        </a>
+                          </a>
+                        </Link>
                       </div>
                     ))}
                   </div>
