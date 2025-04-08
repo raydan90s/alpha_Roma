@@ -120,8 +120,8 @@ function Navbar() {
 
       {/* Mega menú desplegable que ocupa todo el ancho */}
       {hoveredMenu !== null && (
-        <div 
-          className="fixed w-full left-0 z-40 mt-20 transition-all duration-300 ease-out" 
+        <div
+          className="fixed w-full left-0 z-40 mt-20 transition-all duration-300 ease-out"
           style={{
             top: 0,
             transform: `translateY(${hoveredMenu !== null ? '0' : '-100%'})`,
@@ -146,18 +146,18 @@ function Navbar() {
                     </svg>
                   </a>
                 </div>
-                
+
                 {/* Columna derecha - Enlaces */}
                 <div className="w-2/3 pl-12">
                   <div className="grid grid-cols-3 gap-8">
                     {menuItems[hoveredMenu].options.map((option, i) => (
-                      <div 
-                        key={i} 
+                      <div
+                        key={i}
                         className="transform transition-all duration-300"
                         style={{
                           transitionDelay: `${i * 70}ms`,
                           opacity: 1,
-                          transform: 'translateY(0)',
+                          transform: "translateY(0)",
                           animation: `fadeIn 0.5s ease-out ${i * 70}ms both`
                         }}
                       >
