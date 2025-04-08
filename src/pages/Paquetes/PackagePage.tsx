@@ -40,7 +40,7 @@ const PackagePage = () => {
         "Cancela cuando quieras"
       ],
       buttonText: "Probar 1 mes por USD 0",
-      buttonColor: "bg-white",
+      buttonColor: "bg-primary",
       footerText: "USD 0 por 1 mes. Después, cuesta USD XX al mes.\nLa oferta solo está disponible si aún no probaste el Plan Básico. Se aplican términos.\n*** + impuestos aplicables."
     },
     {
@@ -60,12 +60,12 @@ const PackagePage = () => {
         "Cancela cuando quieras"
       ],
       buttonText: "Probar 1 mes por USD 0",
-      buttonColor: "bg-white",
+      buttonColor: "bg-secondary",
       footerText: "USD 0 por 1 mes. Después, cuesta USD YY al mes.\nOferta disponible solo para empresas certificadas.\n*** + impuestos aplicables."
     },
     {
       id: "plan-premium",
-      headerColor: "bg-yellow-500",
+      headerColor: "bg-acent",
       tagColor: "",
       tagText: "",
       planName: "Premium",
@@ -80,14 +80,14 @@ const PackagePage = () => {
         "Soporte técnico VIP"
       ],
       buttonText: "Obtener Premium Duo",
-      buttonColor: "bg-yellow-500",
+      buttonColor: "bg-acent",
       footerText: "Para hogares o negocios que necesitan máxima protección. Se aplican términos.\n*** + impuestos aplicables."
     }
   ];
 
   const familiarCard = {
     id: "plan-familiar",
-    headerColor: "bg-blue-500",
+    headerColor: "bg-hover",
     tagColor: "",
     tagText: "",
     planName: "Premium",
@@ -101,14 +101,14 @@ const PackagePage = () => {
       "Posibilidad de comprar 1 o 2 cuentas adicionales"
     ],
     buttonText: "Obtener Premium Familiar",
-    buttonColor: "bg-blue-500",
+    buttonColor: "bg-hover",
     footerText: "Para familias que viven en el mismo domicilio. Se aplican términos.\n*** + impuestos aplicables."
   };
 
   return (
-    <div className="pt-20 bg-white text-white min-h-screen">
+    <div className="pt-20 bg-white min-h-screen">
       {/* Hero Section */}
-      <div className="bg-gradient-to-b from-secondary to-primary py-16">
+      <div className="bg-primary py-16 text-white">
         <div className="max-w-screen-xl mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Paquetes y Precios</h1>
           <p className="text-lg md:text-xl max-w-2xl">
@@ -131,8 +131,12 @@ const PackagePage = () => {
         </div>
       </div>
 
-      {/* Contact Section */}
-      <ContactSection {...packagesContactSectionData} />
+      {/* Contact Section - como una cajita separada */}
+      <div className="max-w-screen-lg mx-auto px-4 pb-16">
+        <div className="bg-white rounded-lg shadow-xl p-8 border border-gray-200">
+          <ContactSection {...packagesContactSectionData} />
+        </div>
+      </div>
     </div>
   );
 };
