@@ -1,5 +1,3 @@
-import React from "react";
-
 import HeroProps from "../interface/HeroProps";
 import { ChevronRight } from "lucide-react";
 

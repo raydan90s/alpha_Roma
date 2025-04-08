@@ -1,25 +1,19 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home"; // Asegúrate de que la ruta esté correcta
+import ServicesPage from "./pages/services/ServicesPage";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer"; // Asegúrate de que la ruta esté correcta
 
 function App() {
   return (
-    
     <Router>
-      <Navbar />
+      <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/servicios" element={<ServicesPage/>} />
       </Routes>
-      {/* Agregar pagintas entre navbar y footer */}
-
-
-      <Footer />
-
+      <Footer/>
     </Router>
-    
   );
 }
 

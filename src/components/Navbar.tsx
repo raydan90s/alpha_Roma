@@ -1,148 +1,350 @@
-import React, { useState, useRef } from "react";
-import { Menu, ChevronDown, ChevronUp, Search } from "lucide-react";
+import React, { useState, useRef, useEffect } from "react";
+import { Menu, ChevronDown, ChevronUp, Search, X } from "lucide-react";
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
+import { scrollToHash } from '../assets/utils/scrollUtils'; // Import the direct scroll function
 
 function Navbar() {
   const [hoveredMenu, setHoveredMenu] = useState(null);
-  const [hoveredOption, setHoveredOption] = useState(null);
   const [showSearch, setShowSearch] = useState(false);
   const [searchFocused, setSearchFocused] = useState(false);
-
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeMobileSubmenu, setActiveMobileSubmenu] = useState(null);
   const timeoutRef = useRef(null);
+  const navRef = useRef(null);
+  const navigate = useNavigate(); // Get the navigate function
 
   const handleMouseEnter = (index) => {
-    clearTimeout(timeoutRef.current);
-    setHoveredMenu(index);
+    if (window.innerWidth >= 768) { // Only on desktop
+      clearTimeout(timeoutRef.current);
+      setHoveredMenu(index);
+    }
   };
 
   const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      setHoveredMenu(null);
-    }, 200);
+    if (window.innerWidth >= 768) { // Only on desktop
+      timeoutRef.current = setTimeout(() => {
+        setHoveredMenu(null);
+      }, 250);
+    }
+  };
+
+  const toggleMobileSubmenu = (index) => {
+    setActiveMobileSubmenu(activeMobileSubmenu === index ? null : index);
+  };
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    if (mobileMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [mobileMenuOpen]);
+
+  // Close mobile menu on resize if screen becomes large
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const handleMenuItemClick = (href: string) => {
+    if (href.startsWith('/servicios#')) {
+      // If it's a hash link on the services page, navigate and then scroll
+      navigate('/servicios');
+      // Wait a short moment for the page to render before scrolling
+      setTimeout(() => {
+        scrollToHash(href.split('#')[1]);
+      }, 100); // Adjust the timeout as needed
+    } else {
+      // For other links, just navigate
+      navigate(href);
+    }
+    setHoveredMenu(null); // Close the mega menu after clicking
   };
 
   const menuItems = [
     {
-      title: "Seguridad para el Hogar",
-      options: ["Alarmas", "Sensores de movimiento", "Control de accesos"]
+      title: "Seguridad para el hogar",
+      options: [
+        { label: "Sistema de seguridad para casa", href: "/servicios#sistema-seguridad" },
+        { label: "Sensores de seguridad", href: "/servicios#sensores-seguridad" },
+        { label: "Alarmas de seguridad", href: "/servicios#alarmas-seguridad" },
+      ],
     },
     {
-      title: "Seguridad empresarial",
-      options: ["Monitoreo 24/7", "Sistemas de control", "Soporte técnico"]
+      title: "Cámaras de seguridad",
+      options: [
+        { label: "Cámaras IP", href: "/servicios#camaras-ip" },
+        { label: "CCTV", href: "/servicios#cctv" },
+        { label: "Grabación en la nube", href: "/servicios#grabacion-nube" },
+      ],
     },
     {
-      title: "Cámaras de Seguridad",
-      options: ["Cámaras IP", "CCTV", "Grabación en la nube"]
+      title: "Casa inteligente",
+      options: [
+        { label: "Automatización", href: "/servicios#automatizacion" },
+        { label: "Control por voz", href: "/servicios#control-voz" },
+        { label: "Integración de dispositivos", href: "/servicios#integracion-dispositivos" },
+      ],
     },
     {
       title: "Servicios",
-      options: ["Instalación", "Mantenimiento", "Asesoría"]
+      options: [
+        { label: "Instalación", href: "/servicios#instalacion" },
+        { label: "Mantenimiento", href: "/servicios#mantenimiento" },
+        { label: "Asesoría", href: "/servicios#asesoria" },
+      ],
     },
     {
-      title: "Paquetes y Precios",
-      options: ["Plan Básico", "Plan Empresarial", "Plan Premium"]
-    }
+      title: "Paquetes y precios",
+      options: [
+        { label: "Plan Básico", href: "/servicios#plan-basico" },
+        { label: "Plan Empresarial", href: "/servicios#plan-empresarial" },
+        { label: "Plan Premium", href: "/servicios#plan-premium" },
+      ],
+    },
   ];
 
   const shouldShowSearch = showSearch || searchFocused;
 
   return (
-    <nav className="bg-secondary shadow-sm fixed w-full z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center h-14 w-full justify-between">
-          {/* 🧭 Menú izquierdo */}
-          <div className="hidden md:flex items-center space-x-4">
-            {menuItems.map((item, index) => (
-              <div
-                key={index}
-                className="relative"
-                onMouseEnter={() => handleMouseEnter(index)}
-                onMouseLeave={handleMouseLeave}
-              >
-                <button
-                  className={`flex items-center text-sm focus:outline-none transition-all duration-300 ease-in-out px-3 py-1 rounded ${
-                    hoveredMenu === index
-                      ? "bg-blue-600 text-white"
-                      : "bg-transparent text-gray-700 hover:text-blue-600"
-                  }`}
-                >
-                  {item.title}
-                  {/* Flecha que cambia de dirección al pasar el mouse */}
-                  {hoveredMenu === index ? (
-                    <ChevronUp className="ml-1 h-3 w-3 transition-transform duration-200" />
-                  ) : (
-                    <ChevronDown className="ml-1 h-3 w-3 transition-transform duration-200" />
-                  )}
-                </button>
+    <div className="relative" ref={navRef}>
+      <nav className="bg-secondary text-white shadow-md fixed w-full z-50 border-b border-gray-700">
+        <div className="max-w-screen-2xl mx-auto px-4">
+          <div className="flex items-center justify-between h-20 w-full">
+            {/* Logo */}
+            <div className="flex items-center space-x-2">
+              <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-black font-bold text-xs">
+                {/* Aquí podría ir el icono o la imagen del logo */}
+              </div>
+              <span className="text-white font-bold text-lg">NovaFenix</span>
+            </div>
 
+            {/* Menú para dispositivos medianos y grandes */}
+            <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
+              {menuItems.map((item, index) => (
                 <div
-                  className={`absolute top-8 left-0 mt-1 min-w-max bg-white border border-gray-200 rounded shadow-lg z-50 transition-all duration-200 transform origin-top ${
-                    hoveredMenu === index
-                      ? "scale-100 opacity-100 pointer-events-auto"
-                      : "scale-95 opacity-0 pointer-events-none"
-                  }`}
+                  key={index}
+                  className="relative"
                   onMouseEnter={() => handleMouseEnter(index)}
                   onMouseLeave={handleMouseLeave}
                 >
-                  {item.options.map((option, i) => (
-                    <a
-                      key={i}
-                      href="#"
-                      className={`block px-4 py-1.5 text-sm whitespace-nowrap transition-colors duration-150 ${
-                        hoveredOption === `${index}-${i}` 
-                          ? "bg-blue-600 text-white" 
-                          : "text-gray-700 hover:bg-blue-50 hover:text-blue-600"
-                      }`}
-                      onMouseEnter={() => setHoveredOption(`${index}-${i}`)}
-                      onMouseLeave={() => setHoveredOption(null)}
-                    >
-                      {option}
-                    </a>
-                  ))}
+                  <button
+                    className={`flex items-center text-white text-sm font-medium px-2 py-1.5 border-b-2 transition-all duration-300 whitespace-nowrap ${
+                      hoveredMenu === index
+                        ? "border-white text-white"
+                        : "border-transparent text-gray-400 hover:text-white"
+                    }`}
+                  >
+                    {item.title}
+                    {hoveredMenu === index ? (
+                      <ChevronUp className="ml-1 h-4 w-4 text-white" />
+                    ) : (
+                      <ChevronDown className="ml-1 h-4 w-4 text-white" />
+                    )}
+                  </button>
                 </div>
-              </div>
-            ))}
-          </div>
-
-          {/* 🔍 + 📞 TOTAL DERECHA */}
-          <div className="hidden md:flex items-center gap-4 relative ml-auto">
-            {/* 🔍 Búsqueda */}
-            <div className="relative flex items-center">
-              <input
-                type="text"
-                placeholder="Buscar..."
-                onFocus={() => setSearchFocused(true)}
-                onBlur={() => setSearchFocused(false)}
-                className={`absolute right-10 pr-3 pl-3 py-1 border border-gray-300 rounded-md bg-white shadow-sm text-sm transition-all duration-300 ease-in-out ${
-                  shouldShowSearch
-                    ? "w-48 opacity-100"
-                    : "w-0 opacity-0 pointer-events-none"
-                }`}
-                style={{ right: '2.5rem' }}
-              />
-              <button
-                onClick={() => setShowSearch(!showSearch)}
-                className="text-gray-700 hover:text-blue-600 transition-colors relative z-10"
-              >
-                <Search className="h-4 w-4" />
-              </button>
+              ))}
             </div>
 
-            {/* 📞 Teléfono */}
-            <a
-              href="tel:+593987654321"
-              className="text-xs bg-blue-100 text-blue-700 px-3 py-1.5 rounded hover:bg-blue-200 transition-colors whitespace-nowrap"
-            >
-              📞 +593 987 654 321
-            </a>
-          </div>
+            {/* Buscador + Teléfono */}
+            <div className="flex items-center">
+              {/* Buscador */}
+              <div className="relative mr-2 sm:mr-6">
+                <input
+                  type="text"
+                  placeholder="Buscar..."
+                  onFocus={() => setSearchFocused(true)}
+                  onBlur={() => setSearchFocused(false)}
+                  className={`absolute right-10 pr-10 pl-4 py-2 rounded-full bg-gray-900 border border-gray-700 text-white text-sm transition-all duration-300 ease-in-out focus:ring-2 focus:ring-primary focus:border-transparent ${
+                    shouldShowSearch
+                      ? "w-32 sm:w-56 opacity-100"
+                      : "w-0 opacity-0 pointer-events-none"
+                  }`}
+                />
+                <button
+                  onClick={() => setShowSearch(!showSearch)}
+                  className="text-white hover:text-primary transition-colors relative z-10 p-2 rounded-full"
+                >
+                  <Search className="h-5 w-5" />
+                </button>
+              </div>
 
-          {/* 📱 Menú móvil */}
-          <div className="md:hidden flex items-center ml-auto">
-            <Menu className="h-5 w-5 text-gray-700" />
+              {/* Botón Teléfono */}
+              <a
+                href="tel:8445917193"
+                className="bg-primary hover:bg-primary text-black font-bold px-3 sm:px-6 py-2 rounded-full shadow-md transition-all duration-300 text-xs sm:text-sm whitespace-nowrap"
+              >
+                844.591.7193
+              </a>
+
+              {/* Botón menú móvil */}
+              <button 
+                className="ml-4 text-white md:hidden" 
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                {mobileMenuOpen ? (
+                  <X className="h-6 w-6" />
+                ) : (
+                  <Menu className="h-6 w-6" />
+                )}
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+
+      {/* Mega menú desplegable que ocupa todo el ancho (solo desktop) */}
+      {hoveredMenu !== null && (
+        <div
+          className="fixed w-full left-0 z-40 mt-20 transition-all duration-300 ease-out hidden md:block"
+          style={{
+            top: 0,
+            transform: `translateY(${hoveredMenu !== null ? '0' : '-100%'})`,
+            opacity: hoveredMenu !== null ? 1 : 0,
+          }}
+          onMouseEnter={() => handleMouseEnter(hoveredMenu)}
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className="w-full bg-gradient-to-b from-gray-900 to-gray-800 shadow-xl border-b border-gray-700 transform transition-all duration-500">
+            <div className="max-w-screen-2xl mx-auto px-4 lg:px-8 py-6 lg:py-8">
+              <div className="flex flex-col md:flex-row items-start">
+                {/* Columna izquierda - Título y descripción */}
+                <div className="w-full md:w-1/3 pr-0 md:pr-8 lg:pr-12 border-b md:border-b-0 md:border-r border-gray-700 pb-4 md:pb-0">
+                  <h3 className="text-xl lg:text-2xl font-bold text-white mb-2 lg:mb-4">{menuItems[hoveredMenu].title}</h3>
+                  <p className="text-gray-400 text-sm mb-4">
+                    Descubre nuestras soluciones de {menuItems[hoveredMenu].title.toLowerCase()} diseñadas para proteger lo que más importa.
+                  </p>
+                  <Link to="/servicios" onClick={() => setHoveredMenu(null)}>
+                    <a className="text-primary hover:text-white transition-colors duration-300 text-sm font-medium flex items-center">
+                      Ver todos los servicios
+                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </a>
+                  </Link>
+                </div>
+
+                {/* Columna derecha - Enlaces */}
+                <div className="w-full md:w-2/3 pl-0 md:pl-8 lg:pl-12 mt-4 md:mt-0">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-8">
+                    {menuItems[hoveredMenu].options.map((option, i) => (
+                      <div
+                        key={i}
+                        className="transform transition-all duration-300"
+                        style={{
+                          transitionDelay: `${i * 70}ms`,
+                          opacity: 1,
+                          transform: "translateY(0)",
+                          animation: `fadeIn 0.5s ease-out ${i * 70}ms both`
+                        }}
+                      >
+                        <Link to={option.href} onClick={() => handleMenuItemClick(option.href)}>
+                          <a className="block group">
+                            <div className="bg-gray-800 rounded-lg p-4 mb-3 group-hover:bg-gray-700 transition-all duration-300 transform group-hover:scale-105">
+                              <div className="w-12 h-12 bg-gray-700 rounded-full mb-4 flex items-center justify-center group-hover:bg-primary transition-all duration-300">
+                                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                                </svg>
+                              </div>
+                              <h4 className="text-white font-medium mb-1">{option.label}</h4>
+                              <p className="text-gray-400 text-sm">Soluciones avanzadas para tu seguridad</p>
+                            </div>
+                          </a>
+                        </Link>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Menú móvil */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 z-40 mt-20 md:hidden">
+          <div className="bg-gradient-to-b from-gray-900 to-gray-800 shadow-xl border-b border-gray-700 h-full overflow-y-auto">
+            <div className="px-4 py-6">
+              {/* Buscador móvil */}
+              <div className="relative mb-6">
+                <input
+                  type="text"
+                  placeholder="Buscar..."
+                  className="w-full pr-10 pl-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white text-sm focus:ring-2 focus:ring-primary focus:border-transparent"
+                />
+                <Search className="absolute right-3 top-3 h-5 w-5 text-gray-400" />
+              </div>
+
+              {/* Menú acordeón móvil */}
+              <div className="divide-y divide-gray-700">
+                {menuItems.map((item, index) => (
+                  <div key={index} className="py-3">
+                    <button
+                      className="flex items-center justify-between w-full text-white font-medium py-2"
+                      onClick={() => toggleMobileSubmenu(index)}
+                    >
+                      <span>{item.title}</span>
+                      {activeMobileSubmenu === index ? (
+                        <ChevronUp className="h-5 w-5 text-gray-400" />
+                      ) : (
+                        <ChevronDown className="h-5 w-5 text-gray-400" />
+                      )}
+                    </button>
+                    
+                    {activeMobileSubmenu === index && (
+                      <div className="mt-2 ml-4 space-y-2">
+                        {item.options.map((option, i) => (
+                          <Link key={i} to={option.href}>
+                            <a className="block py-2 px-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition duration-200">
+                              {option.label}
+                            </a>
+                          </Link>
+                        ))}
+                        <Link to="/servicios">
+                          <a className="block py-2 px-3 text-primary hover:text-white hover:bg-gray-800 rounded-lg transition duration-200 mt-2 font-medium">
+                            Ver todos los servicios →
+                          </a>
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              {/* Botón de teléfono móvil */}
+              <div className="mt-6">
+                <a
+                  href="tel:8445917193"
+                  className="flex items-center justify-center w-full bg-primary hover:bg-primary text-black font-bold py-3 rounded-full shadow-md transition-all duration-300"
+                >
+                  Llamar ahora: 844.591.7193
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
 
