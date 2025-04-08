@@ -1,10 +1,26 @@
 import React, { useEffect } from "react";
-import { scrollToHashOnLoad } from "../../assets/utils/scrollUtils.ts"
+import { scrollToHashOnLoad } from "../../assets/utils/scrollUtils.ts";
+import ContactSection from "../../components/Sections/contactSection.tsx"; // Importa el componente
+import { ContactSectionProps } from "../../interface/contactProps"; // Importa la interfaz
 
 const ServicesPage = () => {
-    useEffect(() => {
-        scrollToHashOnLoad();
-      }, []);
+  useEffect(() => {
+    scrollToHashOnLoad();
+  }, []);
+
+  const handleQuoteButtonClick = () => {
+    console.log("Botón de solicitar cotización clickeado");
+    // Aquí puedes implementar la lógica para solicitar una cotización
+  };
+
+  const servicesContactSectionData: ContactSectionProps = {
+    title: "¿Listo para mejorar tu seguridad?",
+    description: "Nuestro equipo está preparado para ayudarte con cualquier servicio que necesites. Contáctanos hoy mismo.",
+    phone: "8445917193",
+    emailButtonText: "Solicitar cotización",
+    onEmailButtonClick: handleQuoteButtonClick,
+  };
+
   return (
     <div className="pt-20 bg-gray-100">
       {/* Hero Section */}
@@ -59,9 +75,9 @@ const ServicesPage = () => {
             </div>
             <div className="md:w-1/2">
               <div className="bg-gray-200 rounded-xl overflow-hidden shadow-lg h-80">
-                <img 
-                  src="/api/placeholder/600/400" 
-                  alt="Servicio de instalación" 
+                <img
+                  src="/api/placeholder/600/400"
+                  alt="Servicio de instalación"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -109,9 +125,9 @@ const ServicesPage = () => {
             </div>
             <div className="md:w-1/2">
               <div className="bg-gray-200 rounded-xl overflow-hidden shadow-lg h-80">
-                <img 
-                  src="/api/placeholder/600/400" 
-                  alt="Servicio de mantenimiento" 
+                <img
+                  src="/api/placeholder/600/400"
+                  alt="Servicio de mantenimiento"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -159,9 +175,9 @@ const ServicesPage = () => {
             </div>
             <div className="md:w-1/2">
               <div className="bg-gray-200 rounded-xl overflow-hidden shadow-lg h-80">
-                <img 
-                  src="/api/placeholder/600/400" 
-                  alt="Servicio de asesoría" 
+                <img
+                  src="/api/placeholder/600/400"
+                  alt="Servicio de asesoría"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -169,26 +185,8 @@ const ServicesPage = () => {
           </div>
         </section>
 
-        {/* Contact Section */}
-        <section className="bg-gray-900 text-white rounded-xl p-8 md:p-12">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold mb-4">¿Listo para mejorar tu seguridad?</h2>
-            <p className="text-gray-300 max-w-2xl mx-auto">
-              Nuestro equipo está preparado para ayudarte con cualquier servicio que necesites. Contáctanos hoy mismo.
-            </p>
-          </div>
-          <div className="flex flex-col md:flex-row justify-center gap-4 max-w-xl mx-auto">
-            <a 
-              href="tel:8445917193" 
-              className="bg-primary hover:bg-primary text-black font-bold px-6 py-3 rounded-full shadow-md transition-all duration-300 text-center"
-            >
-              Llamar ahora
-            </a>
-            <button className="bg-white hover:bg-gray-100 text-gray-900 font-bold px-6 py-3 rounded-full shadow-md transition-all duration-300">
-              Solicitar cotización
-            </button>
-          </div>
-        </section>
+        {/* Contact Section (Reemplazo de la sección original) */}
+        <ContactSection {...servicesContactSectionData} />
       </div>
     </div>
   );
