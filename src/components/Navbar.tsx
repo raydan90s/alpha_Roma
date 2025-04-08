@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Menu, ChevronDown, ChevronUp, Search, X } from "lucide-react";
 import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 import { scrollToHash } from '../assets/utils/scrollUtils'; // Import the direct scroll function
+import Logo from '../assets/img/logo2.png'; // Import your logo image
 
 function Navbar() {
   const [hoveredMenu, setHoveredMenu] = useState(null);
@@ -132,10 +133,9 @@ function Navbar() {
           <div className="flex items-center justify-between h-20 w-full">
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-black font-bold text-xs">
-                {/* Aquí podría ir el icono o la imagen del logo */}
-              </div>
-              <span className="text-white font-bold text-lg">NovaFenix</span>
+              <Link to="/">
+                <img src={Logo} alt="Logo" className="h-12 ml-6" />
+              </Link>          
             </div>
 
             {/* Menú para dispositivos medianos y grandes */}
