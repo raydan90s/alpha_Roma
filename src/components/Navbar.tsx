@@ -3,7 +3,7 @@ import { Menu, ChevronDown, ChevronUp, Search, X } from "lucide-react";
 import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 import { scrollToHash, handleScrollToTop } from '../assets/utils/scrollUtils'; // Import the direct scroll function
 import Logo from '../assets/img/logo2.png'; // Import your logo image
-import { menuItems } from '../assets/utils/menuItems'; // Import your menu items
+import { menuItems } from "../assets/utils/menuItems";
 
 function Navbar() {
   const [hoveredMenu, setHoveredMenu] = useState(null);
@@ -56,7 +56,7 @@ function Navbar() {
   // Close mobile menu on resize if screen becomes large
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 800) {
+      if (window.innerWidth >= 768) {
         setMobileMenuOpen(false);
       }
     };
@@ -73,8 +73,13 @@ function Navbar() {
       setTimeout(() => {
         scrollToHash(href.split('#')[1]);
       }, 100);
-    } else if (href.startsWith('/servicios#')) {
+    } if (href.startsWith('/servicios#')) {
       navigate('/servicios');
+      setTimeout(() => {
+        scrollToHash(href.split('#')[1]);
+      }, 100);
+    }if (href.startsWith('/paquetes#')) {
+      navigate('/paquetes');
       setTimeout(() => {
         scrollToHash(href.split('#')[1]);
       }, 100);
@@ -93,7 +98,7 @@ function Navbar() {
           <div className="flex items-center justify-between h-20 w-full">
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              <Link to="/" onClick={() => handleScrollToTop()}>
+              <Link to="/" onClick={() => { handleScrollToTop(); setHoveredMenu(null); }}>
                 <img src={Logo} alt="Logo" className="h-12 ml-6" />
               </Link>          
             </div>
@@ -106,7 +111,6 @@ function Navbar() {
                   className="relative"
                   onMouseEnter={() => handleMouseEnter(index)}
                   onMouseLeave={handleMouseLeave}
-                  
                 >
                   <button
                     className={`flex items-center text-white text-sm font-medium px-2 py-1.5 border-b-2 transition-all duration-300 whitespace-nowrap ${
