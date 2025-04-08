@@ -7,64 +7,65 @@ interface VideoGalleryProps {
 }
 
 const VideoGallery: React.FC<VideoGalleryProps> = ({ videos }) => {
-  const [playingVideo, setPlayingVideo] = useState<VideoItem | null>(null);
-  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const handleVideoClick = (video: VideoItem) => {
-    if (playingVideo?.embedUrl === video.embedUrl) {
-      setPlayingVideo(null); // Detener video si ya está reproduciéndose
-    } else {
-      setPlayingVideo(video); // Reproducir el video seleccionado
-    }
+  const handleVideoClick = (index: number) => {
+    setCurrentIndex(index);
   };
 
   const handlePrevClick = () => {
-    setCurrentVideoIndex((prevIndex) => (prevIndex === 0 ? videos.length - 1 : prevIndex - 1));
+    const newIndex = (currentIndex - 1 + videos.length) % videos.length;
+    setCurrentIndex(newIndex);
   };
 
   const handleNextClick = () => {
-    setCurrentVideoIndex((prevIndex) => (prevIndex === videos.length - 1 ? 0 : prevIndex + 1));
+    const newIndex = (currentIndex + 1) % videos.length;
+    setCurrentIndex(newIndex);
   };
 
+  const getIndices = () => {
+    const prevIndex = (currentIndex - 1 + videos.length) % videos.length;
+    const nextIndex = (currentIndex + 1) % videos.length;
+    return [prevIndex, currentIndex, nextIndex];
+  };
+
+  const [prevIndex, mainIndex, nextIndex] = getIndices();
+
   return (
-    <div className="p-4 flex justify-center items-center gap-6">
-      {/* Contenedor de las flechas y videos */}
-      <div className="flex items-center relative w-full">
-        {/* Flecha anterior */}
+    <div className="bg-[#f4f4f4] py-8 min-h-screen flex justify-center items-center">
+      <div className="relative max-w-7xl w-full px-6 flex items-center justify-center">
+        {/* Flecha izquierda */}
         <button
           onClick={handlePrevClick}
-          className="p-4 bg-gray-500 text-white rounded-full hover:bg-gray-700 focus:outline-none absolute left-0 z-20"
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg z-20 hover:bg-gray-200"
         >
-          &lt;
+          &#8592;
         </button>
 
-        {/* Contenedor de los videos */}
-        <div className="flex items-center gap-8 justify-center w-full transition-all duration-500 ease-in-out">
-          {videos.map((video, idx) => (
+        {/* Videos visibles */}
+        <div className="flex gap-6 justify-center items-center w-full max-w-[2100px]">
+          {[prevIndex, mainIndex, nextIndex].map((index, pos) => (
             <div
-              key={idx}
-              className={`flex-shrink-0 transform transition-all duration-300 ease-in-out ${
-                currentVideoIndex === idx
-                  ? "mx-10 scale-110" // Video principal más grande
-                  : "mx-2 scale-95" // Videos no principales más pequeños
-              }`}
+              key={index}
+              className={`transition-transform duration-300 ${index === mainIndex ? "scale-125 z-10" : "scale-90"
+                } w-[900px]`} // Aumenté el tamaño aquí
             >
               <VideoCard
-                video={video}
-                onClick={handleVideoClick}
-                isPlaying={playingVideo?.embedUrl === video.embedUrl}
-                isMain={currentVideoIndex === idx} // Este video será el principal
+                video={videos[index]}
+                onClick={() => handleVideoClick(index)}
+                isPlaying={index === mainIndex}
+                isMain={index === mainIndex}
               />
             </div>
           ))}
         </div>
 
-        {/* Flecha siguiente */}
+        {/* Flecha derecha */}
         <button
           onClick={handleNextClick}
-          className="p-4 bg-gray-500 text-white rounded-full hover:bg-gray-700 focus:outline-none absolute right-0 z-20"
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-lg z-20 hover:bg-gray-200"
         >
-          &gt;
+          &#8594;
         </button>
       </div>
     </div>
