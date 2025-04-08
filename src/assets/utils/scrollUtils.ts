@@ -1,22 +1,17 @@
-// src/utils/scrollUtils.ts
-export const smoothScrollToElement = (elementId: string | null): void => {
-  if (!elementId) return;
-
-  const element = document.getElementById(elementId);
-  if (element) {
-    element.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+export const scrollToHashOnLoad = () => {
+  if (window.location.hash) {
+    const id = window.location.hash.substring(1);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 };
 
-export const scrollToHashOnLoad = (): void => {
-  const { hash } = window.location;
-  if (hash) {
-    const id = hash.replace("#", "");
-    setTimeout(() => {
-      smoothScrollToElement(id);
-    }, 100);
+export const scrollToHash = (hash: string) => {
+  const elementId = hash;
+  const element = document.getElementById(elementId);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 };
