@@ -1,8 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Menu, ChevronDown, ChevronUp, Search, X } from "lucide-react";
 import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
-import { scrollToHash } from '../assets/utils/scrollUtils'; // Import the direct scroll function
+import { scrollToHash, handleScrollToTop } from '../assets/utils/scrollUtils'; // Import the direct scroll function
 import Logo from '../assets/img/logo2.png'; // Import your logo image
+import { menuItems } from '../assets/utils/menuItems'; // Import your menu items
 
 function Navbar() {
   const [hoveredMenu, setHoveredMenu] = useState(null);
@@ -55,7 +56,7 @@ function Navbar() {
   // Close mobile menu on resize if screen becomes large
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768) {
+      if (window.innerWidth >= 800) {
         setMobileMenuOpen(false);
       }
     };
@@ -83,59 +84,6 @@ function Navbar() {
     setHoveredMenu(null); // Close the mega menu after clicking
   };
 
-  const menuItems = [
-    {
-      title: "Quienes somos",
-      description: "Conoce nuestra historia, misión y los valores que nos definen.",
-      linkTo: "/about",
-      options: [
-        { label: "Misión", href: "/about#mision", description: "Entiende nuestro propósito fundamental y lo que nos impulsa." },
-        { label: "Visión", href: "/about#vision", description: "Descubre hacia dónde aspiramos y nuestros objetivos a largo plazo." },
-        { label: "Valores", href: "/about#valores", description: "Conoce los principios que guían cada una de nuestras acciones." },
-      ],
-    },
-    {
-      title: "Seguridad para el hogar",
-      description: "Soluciones integrales para proteger tu espacio personal y familiar.",
-      linkTo: "/servicios#seguridad-hogar",
-      options: [
-        { label: "Sistema de seguridad para casa", href: "/servicios#sistema-seguridad", description: "Protección integral para tu hogar con tecnología avanzada." },
-        { label: "Sensores de seguridad", href: "/servicios#sensores-seguridad", description: "Detecta cualquier amenaza en puertas, ventanas y espacios interiores." },
-        { label: "Alarmas de seguridad", href: "/servicios#alarmas-seguridad", description: "Sistemas de alerta eficientes para disuadir intrusos y notificar emergencias." },
-      ],
-    },
-    {
-      title: "Cámaras de seguridad",
-      description: "Vigilancia avanzada para mantener tus propiedades seguras y monitoreadas.",
-      linkTo: "/servicios#camaras-seguridad",
-      options: [
-        { label: "Cámaras IP", href: "/servicios#camaras-ip", description: "Vigilancia remota de alta definición con acceso desde cualquier dispositivo." },
-        { label: "CCTV", href: "/servicios#cctv", description: "Circuitos cerrados de televisión para una supervisión continua y grabación local." },
-        { label: "Grabación en la nube", href: "/servicios#grabacion-nube", description: "Almacenamiento seguro de tus grabaciones de video en la nube." },
-      ],
-    },
-    {
-      title: "Servicios",
-      description: "Nuestra gama de servicios diseñados para una implementación y soporte sin problemas.",
-      linkTo: "/servicios#nuestros-servicios",
-      options: [
-        { label: "Instalación", href: "/servicios#instalacion", description: "Instalación profesional y configuración de todos nuestros sistemas." },
-        { label: "Mantenimiento", href: "/servicios#mantenimiento", description: "Revisiones periódicas y soporte técnico para asegurar el funcionamiento óptimo." },
-        { label: "Asesoría", href: "/servicios#asesoria", description: "Consultoría experta para encontrar la solución de seguridad perfecta para ti." },
-      ],
-    },
-    {
-      title: "Paquetes y precios",
-      description: "Encuentra el plan que mejor se adapte a tus necesidades y presupuesto.",
-      linkTo: "/servicios#paquetes-precios",
-      options: [
-        { label: "Plan Básico", href: "/servicios#plan-basico", description: "Soluciones de seguridad esenciales para hogares pequeños." },
-        { label: "Plan Empresarial", href: "/servicios#plan-empresarial", description: "Seguridad robusta y escalable para negocios de todos los tamaños." },
-        { label: "Plan Premium", href: "/servicios#plan-premium", description: "La máxima protección con funcionalidades avanzadas y personalización." },
-      ],
-    },
-  ];
-
   const shouldShowSearch = showSearch || searchFocused;
 
   return (
@@ -145,7 +93,7 @@ function Navbar() {
           <div className="flex items-center justify-between h-20 w-full">
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              <Link to="/">
+              <Link to="/" onClick={() => handleScrollToTop()}>
                 <img src={Logo} alt="Logo" className="h-12 ml-6" />
               </Link>          
             </div>
@@ -158,6 +106,7 @@ function Navbar() {
                   className="relative"
                   onMouseEnter={() => handleMouseEnter(index)}
                   onMouseLeave={handleMouseLeave}
+                  
                 >
                   <button
                     className={`flex items-center text-white text-sm font-medium px-2 py-1.5 border-b-2 transition-all duration-300 whitespace-nowrap ${
