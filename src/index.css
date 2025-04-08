@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Personaliza el tamaño de la scrollbar */
+::-webkit-scrollbar {
+    width: 7px; /* Para la barra vertical */
+    height: 7px; /* Para la barra horizontal */
+  }
+  
+  /* Personaliza el fondo de la scrollbar */
+  ::-webkit-scrollbar-track {
+    background: #79f197;
+    border-radius: 10px;
+  }
+  
+  /* Personaliza el pulgar (thumb) de la scrollbar */
+  ::-webkit-scrollbar-thumb {
+    background: #0a1626;
+    border-radius: 10px;
+  }
+  
+  /* Cambiar color del pulgar al pasar el mouse */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
