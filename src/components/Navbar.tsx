@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Menu, ChevronDown, ChevronUp, Search, X } from "lucide-react";
 import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 import { scrollToHash } from '../assets/utils/scrollUtils'; // Import the direct scroll function
+import Logo from '../assets/img/logo2.png'; // Import your logo image
 
 function Navbar() {
   const [hoveredMenu, setHoveredMenu] = useState(null);
@@ -66,15 +67,17 @@ function Navbar() {
   }, []);
 
   const handleMenuItemClick = (href: string) => {
-    if (href.startsWith('/servicios#')) {
-      // If it's a hash link on the services page, navigate and then scroll
-      navigate('/servicios');
-      // Wait a short moment for the page to render before scrolling
+    if (href.startsWith('/about#')) {
+      navigate('/about');
       setTimeout(() => {
         scrollToHash(href.split('#')[1]);
-      }, 100); // Adjust the timeout as needed
+      }, 100);
+    } else if (href.startsWith('/servicios#')) {
+      navigate('/servicios');
+      setTimeout(() => {
+        scrollToHash(href.split('#')[1]);
+      }, 100);
     } else {
-      // For other links, just navigate
       navigate(href);
     }
     setHoveredMenu(null); // Close the mega menu after clicking
@@ -82,43 +85,53 @@ function Navbar() {
 
   const menuItems = [
     {
-      title: "Seguridad para el hogar",
+      title: "Quienes somos",
+      description: "Conoce nuestra historia, misión y los valores que nos definen.",
+      linkTo: "/about",
       options: [
-        { label: "Sistema de seguridad para casa", href: "/servicios#sistema-seguridad" },
-        { label: "Sensores de seguridad", href: "/servicios#sensores-seguridad" },
-        { label: "Alarmas de seguridad", href: "/servicios#alarmas-seguridad" },
+        { label: "Misión", href: "/about#mision", description: "Entiende nuestro propósito fundamental y lo que nos impulsa." },
+        { label: "Visión", href: "/about#vision", description: "Descubre hacia dónde aspiramos y nuestros objetivos a largo plazo." },
+        { label: "Valores", href: "/about#valores", description: "Conoce los principios que guían cada una de nuestras acciones." },
+      ],
+    },
+    {
+      title: "Seguridad para el hogar",
+      description: "Soluciones integrales para proteger tu espacio personal y familiar.",
+      linkTo: "/servicios#seguridad-hogar",
+      options: [
+        { label: "Sistema de seguridad para casa", href: "/servicios#sistema-seguridad", description: "Protección integral para tu hogar con tecnología avanzada." },
+        { label: "Sensores de seguridad", href: "/servicios#sensores-seguridad", description: "Detecta cualquier amenaza en puertas, ventanas y espacios interiores." },
+        { label: "Alarmas de seguridad", href: "/servicios#alarmas-seguridad", description: "Sistemas de alerta eficientes para disuadir intrusos y notificar emergencias." },
       ],
     },
     {
       title: "Cámaras de seguridad",
+      description: "Vigilancia avanzada para mantener tus propiedades seguras y monitoreadas.",
+      linkTo: "/servicios#camaras-seguridad",
       options: [
-        { label: "Cámaras IP", href: "/servicios#camaras-ip" },
-        { label: "CCTV", href: "/servicios#cctv" },
-        { label: "Grabación en la nube", href: "/servicios#grabacion-nube" },
-      ],
-    },
-    {
-      title: "Casa inteligente",
-      options: [
-        { label: "Automatización", href: "/servicios#automatizacion" },
-        { label: "Control por voz", href: "/servicios#control-voz" },
-        { label: "Integración de dispositivos", href: "/servicios#integracion-dispositivos" },
+        { label: "Cámaras IP", href: "/servicios#camaras-ip", description: "Vigilancia remota de alta definición con acceso desde cualquier dispositivo." },
+        { label: "CCTV", href: "/servicios#cctv", description: "Circuitos cerrados de televisión para una supervisión continua y grabación local." },
+        { label: "Grabación en la nube", href: "/servicios#grabacion-nube", description: "Almacenamiento seguro de tus grabaciones de video en la nube." },
       ],
     },
     {
       title: "Servicios",
+      description: "Nuestra gama de servicios diseñados para una implementación y soporte sin problemas.",
+      linkTo: "/servicios#nuestros-servicios",
       options: [
-        { label: "Instalación", href: "/servicios#instalacion" },
-        { label: "Mantenimiento", href: "/servicios#mantenimiento" },
-        { label: "Asesoría", href: "/servicios#asesoria" },
+        { label: "Instalación", href: "/servicios#instalacion", description: "Instalación profesional y configuración de todos nuestros sistemas." },
+        { label: "Mantenimiento", href: "/servicios#mantenimiento", description: "Revisiones periódicas y soporte técnico para asegurar el funcionamiento óptimo." },
+        { label: "Asesoría", href: "/servicios#asesoria", description: "Consultoría experta para encontrar la solución de seguridad perfecta para ti." },
       ],
     },
     {
       title: "Paquetes y precios",
+      description: "Encuentra el plan que mejor se adapte a tus necesidades y presupuesto.",
+      linkTo: "/servicios#paquetes-precios",
       options: [
-        { label: "Plan Básico", href: "/servicios#plan-basico" },
-        { label: "Plan Empresarial", href: "/servicios#plan-empresarial" },
-        { label: "Plan Premium", href: "/servicios#plan-premium" },
+        { label: "Plan Básico", href: "/servicios#plan-basico", description: "Soluciones de seguridad esenciales para hogares pequeños." },
+        { label: "Plan Empresarial", href: "/servicios#plan-empresarial", description: "Seguridad robusta y escalable para negocios de todos los tamaños." },
+        { label: "Plan Premium", href: "/servicios#plan-premium", description: "La máxima protección con funcionalidades avanzadas y personalización." },
       ],
     },
   ];
@@ -132,10 +145,9 @@ function Navbar() {
           <div className="flex items-center justify-between h-20 w-full">
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-black font-bold text-xs">
-                {/* Aquí podría ir el icono o la imagen del logo */}
-              </div>
-              <span className="text-white font-bold text-lg">NovaFenix</span>
+              <Link to="/">
+                <img src={Logo} alt="Logo" className="h-12 ml-6" />
+              </Link>          
             </div>
 
             {/* Menú para dispositivos medianos y grandes */}
@@ -197,8 +209,8 @@ function Navbar() {
               </a>
 
               {/* Botón menú móvil */}
-              <button 
-                className="ml-4 text-white md:hidden" 
+              <button
+                className="ml-4 text-white md:hidden"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
                 {mobileMenuOpen ? (
@@ -231,11 +243,11 @@ function Navbar() {
                 <div className="w-full md:w-1/3 pr-0 md:pr-8 lg:pr-12 border-b md:border-b-0 md:border-r border-gray-700 pb-4 md:pb-0">
                   <h3 className="text-xl lg:text-2xl font-bold text-white mb-2 lg:mb-4">{menuItems[hoveredMenu].title}</h3>
                   <p className="text-gray-400 text-sm mb-4">
-                    Descubre nuestras soluciones de {menuItems[hoveredMenu].title.toLowerCase()} diseñadas para proteger lo que más importa.
+                    {menuItems[hoveredMenu].description}
                   </p>
-                  <Link to="/servicios" onClick={() => setHoveredMenu(null)}>
+                  <Link to={menuItems[hoveredMenu].linkTo} onClick={() => setHoveredMenu(null)}>
                     <a className="text-primary hover:text-white transition-colors duration-300 text-sm font-medium flex items-center">
-                      Ver todos los servicios
+                      Conocer acerca de {menuItems[hoveredMenu].title.toLowerCase()}
                       <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                       </svg>
@@ -262,11 +274,11 @@ function Navbar() {
                             <div className="bg-gray-800 rounded-lg p-4 mb-3 group-hover:bg-gray-700 transition-all duration-300 transform group-hover:scale-105">
                               <div className="w-12 h-12 bg-gray-700 rounded-full mb-4 flex items-center justify-center group-hover:bg-primary transition-all duration-300">
                                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438z"></path>
                                 </svg>
                               </div>
                               <h4 className="text-white font-medium mb-1">{option.label}</h4>
-                              <p className="text-gray-400 text-sm">Soluciones avanzadas para tu seguridad</p>
+                              <p className="text-gray-400 text-sm">{option.description || "Más detalles sobre esta opción."}</p>
                             </div>
                           </a>
                         </Link>
