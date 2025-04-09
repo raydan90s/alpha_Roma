@@ -4,6 +4,7 @@ import ContactSection from "../../components/Sections/contactSection.tsx"; // Im
 import { ContactSectionProps } from "../../interface/contactProps"; // Importa la interfaz
 import VideoHero from "../../components/Sections/VideoHero.tsx"; // Import the VideoHero component
 import { VideoHeroProps } from "../../interface/HerovideoProps.ts"; // Import its interface
+import { Boxes, HeartHandshake, Lightbulb } from "lucide-react";
 
 const AboutUsPage = () => {
   useEffect(() => {
@@ -26,7 +27,7 @@ const AboutUsPage = () => {
   const videoHeroData: VideoHeroProps = {
     title: "Conócenos Mejor",
     subtitle: "Descubre nuestra historia, misión y valores.",
-    videoUrl: "https://res.cloudinary.com/dfbpaq83u/video/upload/v1744142108/bppp8c7yrd6vak2ozqdp.mp4", // Reemplaza con la URL de tu video
+    videoUrl: "https://res.cloudinary.com/dcxqkcmhd/video/upload/v1744208322/ufrawrhtjxkkre6znupj.mp4", // Reemplaza con la URL de tu video
   };
 
   return (
@@ -50,7 +51,7 @@ const AboutUsPage = () => {
               <div className="md:w-1/2">
                 <div className="bg-gray-200 rounded-xl overflow-hidden shadow-lg h-80">
                   <img
-                    src="/api/placeholder/600/400"
+                    src="https://www.videoproteccion.com.mx/wp-content/uploads/2017/06/instalador-cctv.jpg"
                     alt="Nuestra Misión"
                     className="w-full h-full object-cover"
                   />
@@ -72,7 +73,7 @@ const AboutUsPage = () => {
               <div className="md:w-1/2">
                 <div className="bg-gray-200 rounded-xl overflow-hidden shadow-lg h-80">
                   <img
-                    src="/api/placeholder/600/400"
+                    src="https://www.prosegur.com.ar/dam/jcr:c85671f1-f468-4305-8019-ea12f38702ca/camaras%20cctv.jpg"
                     alt="Nuestra Visión"
                     className="w-full h-full object-cover"
                   />
@@ -93,9 +94,7 @@ const AboutUsPage = () => {
               {/* Valor 1 */}
               <div className="bg-white rounded-xl shadow-md p-6">
                 <div className="bg-secondary rounded-full p-3 inline-block mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1m-9-9h1m4-7l-9 9a2 2 0 002 2h10a2 2 0 002-2l-9-9z" />
-                  </svg>
+                <Lightbulb color="white" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">Innovación</h3>
                 <p className="text-gray-600 text-sm">Impulsamos la mejora continua a través de la adopción de nuevas tecnologías y la búsqueda de soluciones creativas.</p>
@@ -103,9 +102,7 @@ const AboutUsPage = () => {
               {/* Valor 2 */}
               <div className="bg-white rounded-xl shadow-md p-6">
                 <div className="bg-secondary rounded-full p-3 inline-block mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-3-3H6a3 3 0 00-3 3v2h5l2 3 2-3zM9 11V3m0 8h10" />
-                  </svg>
+                <Boxes color="white" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">Integridad</h3>
                 <p className="text-gray-600 text-sm">Actuamos con honestidad, transparencia y ética en todas nuestras interacciones y decisiones.</p>
@@ -113,9 +110,7 @@ const AboutUsPage = () => {
               {/* Valor 3 */}
               <div className="bg-white rounded-xl shadow-md p-6">
                 <div className="bg-secondary rounded-full p-3 inline-block mb-4">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2z" />
-                  </svg>
+                <HeartHandshake color="white" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">Compromiso con el Cliente</h3>
                 <p className="text-gray-600 text-sm">Priorizamos las necesidades de nuestros clientes, ofreciendo un servicio atento, personalizado y de alta calidad.</p>
