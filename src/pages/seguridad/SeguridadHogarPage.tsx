@@ -11,8 +11,8 @@ import {
   faLightbulb,
   faWifi,
   faDoorOpen, // Icono para accesos
-  faVideo,    // Icono para vigilancia
-  faHome,     // Icono para automatización
+  faVideo, // Icono para vigilancia
+  faHome, // Icono para automatización
   faFireExtinguisher, // Icono para protección ambiental
 } from '@fortawesome/free-solid-svg-icons';
 import '@fortawesome/fontawesome-svg-core/styles.css';
@@ -120,11 +120,7 @@ const SeguridadHogarPage = () => {
                 <div className="bg-gray-200 rounded-xl overflow-hidden shadow-lg h-80 flex items-center justify-center">
                   <FontAwesomeIcon icon={option.icon} size="5x" className="text-secondary opacity-75" />
                   {/* También podrías usar una imagen representativa aquí */}
-                  {/* <img
-                    src={`/api/placeholder/600/400?text=${encodeURIComponent(option.label)}}`}
-                    alt={option.label}
-                    className="w-full h-full object-cover"
-                  /> */}
+                  {/* <img src={`/api/placeholder/600/400?text=${encodeURIComponent(option.label)}}`} alt={option.label} className="w-full h-full object-cover" /> */}
                 </div>
               </div>
             </div>
