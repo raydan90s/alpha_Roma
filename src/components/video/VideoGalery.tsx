@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { VideoItem } from "../../interface/videoProps";
 import VideoCard from "./VideoCard";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 interface VideoGalleryProps {
   videos: VideoItem[];
@@ -73,7 +74,7 @@ const VideoGallery: React.FC<VideoGalleryProps> = ({ videos }) => {
 
   return (
     <div 
-      className="bg-[#f4f4f4] py-4 md:py-8 flex flex-col justify-center items-center"
+      className="bg-secondary py-4 md:py-8 flex flex-col justify-center items-center"
       ref={galleryRef}
     >
       <div 
@@ -81,16 +82,17 @@ const VideoGallery: React.FC<VideoGalleryProps> = ({ videos }) => {
         onTouchStart={handleTouchStart} 
         onTouchEnd={handleTouchEnd}
       >
-        {/* Navigation arrows - hidden on mobile */}
-        {!isMobile && (
-          <button
-            onClick={handlePrevClick}
-            className="absolute left-2 md:left-4 top-1/2 transform -translate-y-1/2 bg-white p-2 md:p-3 rounded-full shadow-lg z-20 hover:bg-gray-200"
-            aria-label="Previous video"
-          >
-            &#8592;
-          </button>
-        )}
+      {/* Navigation arrows - hidden on mobile */}
+{!isMobile && (
+  <button
+    onClick={handlePrevClick}
+    className="absolute left-2 bg-primary md:left-4 top-1/2 transform -translate-y-1/2 p-2 md:p-3 rounded-full shadow-lg z-20 bg-primary-500 text-white transition-colors duration-200 hover:bg-acent"
+    aria-label="Previous video"
+  >
+    <ArrowLeft color="#0a1626" className="hover:text-bold" />
+  </button>
+)}
+
 
         {/* Videos container */}
         <div className="flex gap-1 md:gap-4 justify-center items-center w-full px-2 md:px-0">
@@ -118,10 +120,10 @@ const VideoGallery: React.FC<VideoGalleryProps> = ({ videos }) => {
         {!isMobile && (
           <button
             onClick={handleNextClick}
-            className="absolute right-2 md:right-4 top-1/2 transform -translate-y-1/2 bg-white p-2 md:p-3 rounded-full shadow-lg z-20 hover:bg-gray-200"
+            className="absolute right-2 bg-primary md:right-4 top-1/2 transform -translate-y-1/2 p-2 md:p-3 rounded-full shadow-lg z-20 hover:bg-acent"
             aria-label="Next video"
           >
-            &#8594;
+            <ArrowRight color="#0a1626"/>
           </button>
         )}
       </div>
@@ -133,7 +135,7 @@ const VideoGallery: React.FC<VideoGalleryProps> = ({ videos }) => {
             key={index}
             onClick={() => setCurrentIndex(index)}
             className={`h-2 rounded-full transition-all ${
-              index === currentIndex ? "w-4 bg-secondary" : "w-2 bg-gray-300"
+              index === currentIndex ? "w-4 bg-primary" : "w-2 bg-gray-300"
             }`}
             aria-label={`Go to video ${index + 1}`}
           />
@@ -143,7 +145,7 @@ const VideoGallery: React.FC<VideoGalleryProps> = ({ videos }) => {
       {/* Mobile instruction text */}
       {isMobile && (
         <p className="text-sm text-gray-500 mt-2 text-center">
-          Swipe to see more videos
+          Desliza para ver más videos
         </p>
       )}
     </div>

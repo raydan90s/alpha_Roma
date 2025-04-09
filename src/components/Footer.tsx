@@ -1,55 +1,103 @@
-function Footer(){
+import React from 'react';
+import Logo from '../assets/img/logo2.png';
+import { Link } from 'react-router-dom';
 
-    return (
-      //Footer 
-        <footer className="bg-secondary text-gray-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center mb-4">
-          
-                <span className="ml-2 text-xl font-bold text-white">SecureHome</span>
-              </div>
-              <p className="text-sm">Protecting homes and families since 2025</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4 text-white">Products</h3>
-              <ul className="space-y-2">
-          
-                <li><a href="#" className="hover:text-white">Security Systems</a></li>
-     
-                <li><a href="#" className="hover:text-white">Cameras</a></li>
-                <li><a href="#" className="hover:text-white">Smart Locks</a></li>
-                <li><a href="#" className="hover:text-white">Doorbell Cameras</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4 text-white">Company</h3>
-              <ul className="space-y-2">
-                <li><a href="#" className="hover:text-white">About Us</a></li>
-                <li><a href="#" className="hover:text-white">Careers</a></li>
-                <li><a href="#" className="hover:text-white">Contact</a></li>
-                <li><a href="#" className="hover:text-white">Blog</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-4 text-white">Support</h3>
-              <ul className="space-y-2">
-                <li><a href="#" className="hover:text-white textoC">Help Center</a></li>
-                <li><a href="#" className="hover:text-white">FAQs</a></li>
-                <li><a href="#" className="hover:text-white">Installation</a></li>
-                <li><a href="#" className="hover:text-white">Contact Support</a></li>
-              </ul>
-            </div>
+function Footer() {
+  return (
+    <footer className="bg-secondary text-white border-t border-gray-700">
+      <div className="max-w-screen-2xl mx-auto px-4 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Logo column */}
+          <div className="flex flex-col space-y-4">
+            <Link to="/">
+              <img src={Logo} alt="Logo" className="h-20" />
+            </Link>
+            <p className="text-gray-400 text-sm">
+              Soluciones de seguridad inteligentes para tu hogar y negocio.
+            </p>
           </div>
-          <div className="border-t border-gray-800 mt-12 pt-8 text-sm text-center">
-            <p>&copy; 2025 SecureHome. All rights reserved.</p>
+          
+          {/* Products column */}
+          <div>
+            <h3 className="text-sm font-medium text-white mb-4 border-b border-gray-700 pb-2">Servicios</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/servicios#instalacion" className="text-gray-400 hover:text-primary transition-colors duration-300 text-sm">
+                  Instalación de Cámaras
+                </Link>
+              </li>
+              <li>
+                <Link to="/servicios#mantenimiento" className="text-gray-400 hover:text-primary transition-colors duration-300 text-sm">
+                  Mantenimiento
+                </Link>
+              </li>
+              <li>
+                <Link to="/servicios#asesoria" className="text-gray-400 hover:text-primary transition-colors duration-300 text-sm">
+                  Asesoría
+                </Link>
+              </li>
+              <li>
+              </li>
+            </ul>
+          </div>
+          
+          {/* Company column */}
+          <div>
+            <h3 className="text-sm font-medium text-white mb-4 border-b border-gray-700 pb-2">Empresa</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/about" className="text-gray-400 hover:text-primary transition-colors duration-300 text-sm">
+                  Quienes sómos
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="text-gray-400 hover:text-primary transition-colors duration-300 text-sm">
+                  Contactanos
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="text-gray-400 hover:text-primary transition-colors duration-300 text-sm">
+                  Blog
+                </Link>
+              </li>
+            </ul>
+          </div>
+          
+          {/* Support column */}
+          <div>
+            <h3 className="text-sm font-medium text-white mb-4 border-b border-gray-700 pb-2">Soporte</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/servicios" className="text-gray-400 hover:text-primary transition-colors duration-300 text-sm">
+                  Centro de ayuda 
+                </Link>
+              </li>
+              <li>
+                <Link to="/servicios" className="text-gray-400 hover:text-primary transition-colors duration-300 text-sm">
+                  Preguntas y respuestas
+                </Link>
+              </li>
+              <li>
+                <Link to="/servicios" className="text-gray-400 hover:text-primary transition-colors duration-300 text-sm">
+                  Instalacion
+                </Link>
+              </li>
+              <li>
+                <a href="tel:8445917193" className="text-primary hover:text-white transition-colors duration-300 text-sm font-medium">
+                  844.591.7193
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-      </footer>
-
-
-    );
-
+        
+        {/* Bottom section with copyright */}
+        <div className="border-t border-gray-700 mt-8 pt-6 text-center">
+          <p className="text-xs text-gray-400">&copy; 2025 NovaFenix. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+  );
 }
+
 export default Footer;

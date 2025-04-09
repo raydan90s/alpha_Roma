@@ -2,17 +2,17 @@ import { VideoItem } from '../../interface/videoProps'; // Importa la interfaz V
 
 export const videoData: VideoItem[] = [
   {
-    thumbnailUrl: 'src/assets/gif/miniatura.gif',  // Asegúrate de usar thumbnailUrl
-    embedUrl: 'https://www.w3schools.com/html/mov_bbb.mp4', // Usa embedUrl
+    thumbnailUrl: 'https://res.cloudinary.com/dcxqkcmhd/image/upload/v1744215107/sjyhjmtxwjt2tjyyayjk.gif',  // Asegúrate de usar thumbnailUrl
+    embedUrl: 'https://res.cloudinary.com/dcxqkcmhd/video/upload/v1744214650/hjmxg7xcp1hywihyhn4v.mp4', // Usa embedUrl
   },
   {
-    thumbnailUrl: 'src/assets/gif/miniatura2.gif',  // Asegúrate de usar thumbnailUrl
-    embedUrl: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4', // Usa embedUrl
+    thumbnailUrl: 'https://res.cloudinary.com/dcxqkcmhd/image/upload/v1744215107/byufj1uayh45zelztopg.gif',  // Asegúrate de usar thumbnailUrl
+    embedUrl: 'https://res.cloudinary.com/dcxqkcmhd/video/upload/v1744214650/axex8nhssrbwv655tmuz.mp4', // Usa embedUrl
   },
 
   {
-    thumbnailUrl: 'src/assets/gif/miniatura3.gif',  // Asegúrate de usar thumbnailUrl
-    embedUrl: 'https://commondatastorage.googleapis.com/gtv-videosbucket/sample/ForBiggerBlazes.mp4', // Usa embedUrl
+    thumbnailUrl: 'https://res.cloudinary.com/dcxqkcmhd/image/upload/v1744215106/slvdehofwu7f7d0oqzj6.gif',  // Asegúrate de usar thumbnailUrl
+    embedUrl: 'https://res.cloudinary.com/dcxqkcmhd/video/upload/v1744214650/kflykvv5cbx6xh955luo.mp4', // Usa embedUrl
   },
 
 ];

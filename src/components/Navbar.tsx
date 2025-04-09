@@ -103,7 +103,7 @@ function Navbar() {
             {/* Logo */}
             <div className="flex items-center space-x-2">
               <Link to="/" onClick={() => { handleScrollToTop(); setHoveredMenu(null); }}>
-                <img src={Logo} alt="Logo" className="h-12 ml-6" />
+                <img src={Logo} alt="Logo" className="h-14 ml-6" />
               </Link>          
             </div>
 
