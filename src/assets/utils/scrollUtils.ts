@@ -15,3 +15,7 @@ export const scrollToHash = (hash: string) => {
     element.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 };
+
+export const handleScrollToTop = () => {
+  window.scrollTo(0, 0); // Esto llevará el scroll a la parte superior de la página
+};

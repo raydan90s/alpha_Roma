@@ -1,22 +1,24 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home"; // Asegúrate de que la ruta esté correcta
+import Home from "./pages/Home";
 import ServicesPage from "./pages/services/ServicesPage";
+import PackagePage from "./pages/Paquetes/PackagePage"; // <-- aquí importas tu nueva página
+import AboutUsPage from "./pages/about/aboutUs"; // <-- aquí importas tu nueva página
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer"; // Asegúrate de que la ruta esté correcta
-import AboutUsPage from "./pages/about/aboutUs";
 import CamerasPage from "./pages/securityCameras/camerasPage";
 
 function App() {
   return (
     <Router>
-      <Navbar/>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/servicios" element={<ServicesPage/>} />
+        <Route path="/servicios" element={<ServicesPage />} />
+        <Route path="/paquetes" element={<PackagePage />} /> {/* <- nueva ruta */}
         <Route path="/about" element={<AboutUsPage/>} />
         <Route path="/camaras" element={<CamerasPage/>} />
       </Routes>
-      <Footer/>
+      <Footer />
     </Router>
   );
 }

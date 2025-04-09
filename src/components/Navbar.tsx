@@ -1,8 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Menu, ChevronDown, ChevronUp, Search, X } from "lucide-react";
 import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
-import { scrollToHash } from '../assets/utils/scrollUtils'; // Import the direct scroll function
+import { scrollToHash, handleScrollToTop } from '../assets/utils/scrollUtils'; // Import the direct scroll function
 import Logo from '../assets/img/logo2.png'; // Import your logo image
+import { menuItems } from "../assets/utils/menuItems";
 
 function Navbar() {
   const [hoveredMenu, setHoveredMenu] = useState(null);
@@ -79,6 +80,8 @@ function Navbar() {
       }, 100);
     }if (href.startsWith('/camaras#')) {
       navigate('/camaras');
+    }if (href.startsWith('/paquetes#')) {
+      navigate('/paquetes');
       setTimeout(() => {
         scrollToHash(href.split('#')[1]);
       }, 100);
@@ -132,11 +135,11 @@ function Navbar() {
     {
       title: "Paquetes y precios",
       description: "Encuentra el plan que mejor se adapte a tus necesidades y presupuesto.",
-      linkTo: "/servicios",
+      linkTo: "/paquetes",
       options: [
-        { label: "Plan Básico", href: "/servicios#plan-basico", description: "Soluciones de seguridad esenciales para hogares pequeños." },
-        { label: "Plan Empresarial", href: "/servicios#plan-empresarial", description: "Seguridad robusta y escalable para negocios de todos los tamaños." },
-        { label: "Plan Premium", href: "/servicios#plan-premium", description: "La máxima protección con funcionalidades avanzadas y personalización." },
+        { label: "Plan Básico", href: "/paquetes#plan-basico", description: "Soluciones de seguridad esenciales para hogares pequeños." },
+        { label: "Plan Empresarial", href: "/paquetes#plan-empresarial", description: "Seguridad robusta y escalable para negocios de todos los tamaños." },
+        { label: "Plan Premium", href: "/paquetes#plan-premium", description: "La máxima protección con funcionalidades avanzadas y personalización." },
       ],
     },
   ];
@@ -150,7 +153,7 @@ function Navbar() {
           <div className="flex items-center justify-between h-20 w-full">
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              <Link to="/">
+              <Link to="/" onClick={() => { handleScrollToTop(); setHoveredMenu(null); }}>
                 <img src={Logo} alt="Logo" className="h-12 ml-6" />
               </Link>          
             </div>
