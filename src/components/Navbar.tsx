@@ -85,7 +85,12 @@ function Navbar() {
       setTimeout(() => {
         scrollToHash(href.split('#')[1]);
       }, 100);
-    } else {
+    } if (href.startsWith('/camaras#')) {
+      navigate('/camaras');
+      setTimeout(() => {
+        scrollToHash(href.split('#')[1]);
+      }, 100);
+    }else {
       navigate(href);
     }
     setHoveredMenu(null); // Close the mega menu after clicking

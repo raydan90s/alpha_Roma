@@ -76,7 +76,7 @@ const PackagePage = () => {
   ];
 
   return (
-    <div className="pt-20 bg-white min-h-screen">
+    <div className="pt-20 bg-gray-100 min-h-screen">
       {/* Hero Section */}
       <div className="bg-secondary py-16 text-white">
         <div className="max-w-screen-xl mx-auto px-4">

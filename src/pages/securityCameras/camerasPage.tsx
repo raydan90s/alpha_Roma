@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { scrollToHashOnLoad } from "../../assets/utils/scrollUtils.ts";
-import ContactSection from "../../components/Sections/contactSection.tsx"; // Importa el componente
-import { ContactSectionProps } from "../../interface/contactProps"; // Importa la interfaz
-import CameraHero from "../securityCameras/cameraHero.tsx"; // Importa el nuevo Hero
-import HeroProps from "../../interface/HeroProps"; // Importa la interfaz de HeroProps
+import ContactSection from "../../components/Sections/contactSection.tsx";
+import { ContactSectionProps } from "../../interface/contactProps";
+import CameraHero from "../securityCameras/cameraHero.tsx";
+import HeroProps from "../../interface/HeroProps";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faEye,
@@ -13,7 +13,8 @@ import {
   faBell,
   faCloud,
 } from '@fortawesome/free-solid-svg-icons';
-import '@fortawesome/fontawesome-svg-core/styles.css'; // Import the CSS
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import SplitSection from "../../components/Sections/SplitSection.tsx";
 
 const CamerasPage = () => {
   useEffect(() => {
@@ -22,7 +23,6 @@ const CamerasPage = () => {
 
   const handleContactButtonClick = () => {
     console.log("Botón de contacto para cámaras clickeado");
-    // Aquí puedes implementar la lógica para contactar sobre cámaras
   };
 
   const camerasContactSectionData: ContactSectionProps = {
@@ -36,7 +36,7 @@ const CamerasPage = () => {
   const cameraHeroData: HeroProps = {
     title: "Vigilancia Inteligente para tu ",
     span: "Tranquilidad",
-    link_image: "src/assets/img/HeroCamera.png", // Reemplaza con la ruta de tu imagen
+    link_image: "src/assets/img/HeroCamera.png",
     span_btn1: "Ver Nuestras Cámaras",
     span_btn2: "Solicitar Asesoría",
   };
@@ -50,66 +50,89 @@ const CamerasPage = () => {
     { name: "Almacenamiento en la nube seguro", icon: faCloud },
   ];
 
-  const cameraOptions = [
-    { label: "Cámaras IP", href: "#camaras-ip", description: "Vigilancia remota de alta definición con acceso desde cualquier dispositivo." },
-    { label: "CCTV", href: "#cctv", description: "Circuitos cerrados de televisión para una supervisión continua y grabación local." },
-    { label: "Grabación en la nube", href: "#grabacion-nube", description: "Almacenamiento seguro de tus grabaciones de video en la nube." },
+  const cameraOptionsData = [
+    {
+      label: "Cámaras IP",
+      href: "#camaras-ip",
+      description: "Descubre la versatilidad de nuestras cámaras IP. Ideales para una vigilancia remota de alta definición, te permiten acceder a la transmisión en vivo y a las grabaciones desde cualquier dispositivo conectado. Su flexibilidad las convierte en la solución perfecta para monitorear tu hogar o negocio en tiempo real.",
+      image: "src/assets/img/cameras/seguridad1.jpg",
+      features: [
+        "Alta resolución de video",
+        "Acceso remoto desde cualquier dispositivo",
+        "Detección inteligente de movimiento",
+        "Alertas personalizables",
+        "Integración con otros dispositivos inteligentes",
+      ],
+      isImageLeft: true,
+    },
+    {
+      label: "CCTV",
+      href: "#cctv",
+      description: "Nuestros sistemas de Circuito Cerrado de Televisión (CCTV) ofrecen una solución de vigilancia robusta y confiable para la seguridad perimetral. Diseñados para una supervisión continua y grabación local, son la opción ideal para proteger grandes propiedades y asegurar una cobertura completa sin depender de la conexión a internet.",
+      image: "src/assets/img/cameras/seguridad2.jpg",
+      features: [
+        "Grabación continua 24/7",
+        "Almacenamiento local seguro",
+        "Múltiples cámaras conectadas a un sistema central",
+        "Ideal para grandes propiedades",
+        "Opciones de visualización en vivo y reproducción",
+      ],
+      isImageLeft: false,
+    },
+    {
+      label: "Grabación en la Nube",
+      href: "#grabacion-nube",
+      description: "Protege tus grabaciones de video de forma segura con nuestro servicio de almacenamiento en la nube. Accede a tus archivos desde cualquier lugar con conexión a internet y ten la tranquilidad de que tus datos están protegidos contra pérdidas o daños físicos a los equipos de grabación.",
+      image: "src/assets/img/cameras/seguridad1.jpg",
+      features: [
+        "Almacenamiento seguro y encriptado",
+        "Acceso desde cualquier dispositivo con internet",
+        "Planes de retención flexibles",
+        "Notificaciones de eventos importantes",
+        "Fácil de escalar según tus necesidades",
+      ],
+      isImageLeft: true,
+    },
   ];
 
   return (
-    <div className="pt-0 bg-gray-100">
-      {/* Hero Section */}
+    <div className="pt-0">
       <CameraHero {...cameraHeroData} />
-
-      {/* Todos los sistemas incluyen Section */}
-      <section className="py-16 bg-white"> {/* Aumentamos el padding vertical de la sección */}
-  <div className="max-w-screen-xl mx-auto px-4">
-    <h2 className="text-4xl font-bold text-gray-800 mb-10 text-center">Todos los sistemas incluyen</h2> {/* Aumentamos el tamaño del título y el margen inferior */}
-    <div className="flex flex-row justify-around items-center"> {/* Cambiamos a flex row para la disposición general */}
-      {includedFeatures.map((feature, index) => (
-        <div key={index} className="flex flex-col items-center"> {/* Mantenemos flex column para icono arriba texto */}
-          <FontAwesomeIcon icon={feature.icon} size="3x" className="text-secondary mb-4" /> {/* Aumentamos el tamaño del icono y el margen inferior */}
-          <div className="text-center">
-            <h3 className="text-lg font-semibold text-gray-700">{feature.name.split(' ')[0]}</h3> {/* Primera palabra arriba */}
-            {feature.name.split(' ').length > 1 && (
-              <h3 className="text-lg font-semibold text-gray-700">{feature.name.split(' ').slice(1).join(' ')}</h3>
-            )}
-          </div>
-          {/* Puedes añadir una descripción breve aquí si lo deseas */}
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
-      {/* Cameras Content */}
-      <div className="max-w-screen-xl mx-auto px-4 py-12 space-y-16">
-        {cameraOptions.map((option) => (
-          <section id={option.href.substring(1)} key={option.label} className="scroll-mt-24 bg-white rounded-xl shadow-lg p-12 md:p-16">
-            <div className="flex flex-col md:flex-row gap-8">
-              <div className="md:w-1/2">
-                <h2 className="text-3xl font-bold text-gray-800 mb-6">{option.label}</h2>
-                <p className="text-lg text-gray-600 mb-8">{option.description}</p>
-                <button className="bg-secondary text-white font-bold px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300">
-                  Ver más sobre {option.label}
-                </button>
-              </div>
-              <div className="md:w-1/2">
-                <div className="bg-gray-200 rounded-xl overflow-hidden shadow-lg h-80">
-                  <img
-                    src={`/api/placeholder/600/400?text=${encodeURIComponent(option.label)}`}
-                    alt={option.label}
-                    className="w-full h-full object-cover"
-                  />
+      <section className="py-16 bg-gray-100">
+        <div className="max-w-screen-xl mx-auto px-4">
+          <h2 className="text-4xl font-bold text-gray-800 mb-10 text-center">Todos los sistemas incluyen</h2>
+          <div className="flex flex-row justify-around items-center">
+            {includedFeatures.map((feature, index) => (
+              <div key={index} className="flex flex-col items-center">
+                <FontAwesomeIcon icon={feature.icon} size="3x" className="text-secondary mb-4" />
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-gray-700">{feature.name.split(' ')[0]}</h3>
+                  {feature.name.split(' ').length > 1 && (
+                    <h3 className="text-lg font-semibold text-gray-700">{feature.name.split(' ').slice(1).join(' ')}</h3>
+                  )}
                 </div>
               </div>
-            </div>
-          </section>
-        ))}
+            ))}
+          </div>
+        </div>
+      </section>
 
-        {/* Contact Section */}
+      <div className="space-y-8">
+        {cameraOptionsData.map((option, index) => (
+          <SplitSection
+            key={option.label}
+            {...option}
+            id={option.href.substring(1)} // Remove the '#' to use as id
+            isImageLeft={index % 2 === 0}
+          />
+        ))}
+      </div>
+
+      <div className="max-w-screen-xl mx-auto px-4 py-12 space-y-16"> {/* Añadido space-y-16 */}
+        {/* Renderiza el ContactSection directamente */}
         <ContactSection {...camerasContactSectionData} />
       </div>
+
     </div>
   );
 };
