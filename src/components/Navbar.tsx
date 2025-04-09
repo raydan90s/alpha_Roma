@@ -164,10 +164,10 @@ function Navbar() {
 
               {/* Botón Teléfono */}
               <a
-                href="tel:8445917193"
+                href="tel:+593991974496"
                 className="bg-primary hover:bg-primary text-black font-bold px-3 sm:px-6 py-2 rounded-full shadow-md transition-all duration-300 text-xs sm:text-sm whitespace-nowrap"
               >
-                844.591.7193
+                099 197 4496
               </a>
 
               {/* Botón menú móvil */}

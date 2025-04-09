@@ -15,7 +15,7 @@ function Home() {
       <VideoHero 
         title="Protege tu hogar con NovaFenix"
         subtitle="La seguridad de tu hogar en la palma de tu mano"
-        videoUrl="https://res.cloudinary.com/dcxqkcmhd/video/upload/v1744210909/sjzr9ir4g3iyefwjvt8i.mp4"
+        videoUrl="https://res.cloudinary.com/dcxqkcmhd/video/upload/v1744230903/wgmiwddovoqinudtewn4.mp4"
         primaryButtonText="Contáctanos"
         primaryButtonLink="/contacto"
         secondaryButtonText="Ver Paquetes"
