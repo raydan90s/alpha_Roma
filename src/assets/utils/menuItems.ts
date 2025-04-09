@@ -13,12 +13,26 @@ export const menuItems = [
     },
     {
       title: "Seguridad para el hogar",
-      description: "Soluciones integrales para proteger tu espacio personal y familiar.",
-      linkTo: "/#",
+      linkTo: "/seguridad-hogar",
       options: [
-        { label: "Sistema de seguridad para casa", href: "/#", description: "Protección integral para tu hogar con tecnología avanzada." , icon: Wrench},
-        { label: "Sensores de seguridad", href: "/#", description: "Detecta cualquier amenaza en puertas, ventanas y espacios interiores." , icon: Siren},
-        { label: "Alarmas de seguridad", href: "/#", description: "Sistemas de alerta eficientes para disuadir intrusos y notificar emergencias.", icon: Siren},
+        {
+          label: "Sistema de seguridad para casa",
+          href: "/seguridad-hogar#sistema-casa",
+          description: "Protección integral para tu hogar con tecnología avanzada.",
+          icon: 'FaHome', // Almacena el nombre del componente como string
+        },
+        {
+          label: "Sensores de seguridad",
+          href: "/seguridad-hogar#sensores",
+          description: "Detecta cualquier amenaza en puertas, ventanas y espacios interiores.",
+          icon: 'FaLock', // Almacena el nombre del componente como string
+        },
+        {
+          label: "Alarmas de seguridad",
+          href: "/seguridad-hogar#alarmas",
+          description: "Sistemas de alerta eficientes para disuadir intrusos y notificar emergencias.",
+          icon: 'FaBell', // Almacena el nombre del componente como string
+        },
       ],
     },
     {

@@ -85,6 +85,11 @@ function Navbar() {
       setTimeout(() => {
         scrollToHash(href.split('#')[1]);
       }, 100);
+    }if (href.startsWith('/seguridad-hogar#')) {
+      navigate('/seguridad-hogar');
+      setTimeout(() => {
+        scrollToHash(href.split('#')[1]);
+      }, 100);
     } else {
       navigate(href);
     }
