@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import { scrollToHashOnLoad } from "../../assets/utils/scrollUtils";
 import ContactSection from "../../components/Sections/contactSection";
-import PriceCard from "../../components/PriceCard"; // Asegúrate de que la ruta sea correcta
+import PlanFeatureCard from "../../components/PlanFeatureCard"; // Importa PlanFeatureCard
 import { ContactSectionProps } from "../../interface/contactProps";
+import { FaShieldAlt, FaBriefcase, FaStar } from "react-icons/fa"; // Importa iconos
 
 const PackagePage = () => {
   useEffect(() => {
@@ -22,93 +23,62 @@ const PackagePage = () => {
     onEmailButtonClick: handleContactButtonClick,
   };
 
-  // Datos para las tarjetas de precios
-  const pricingCards = [
+  const plansData = [
     {
-      id: "plan-basico",
-      headerColor: "bg-primary",
-      tagColor: "bg-pink-200",
-      tagText: "USD 0 por 1 mes",
-      planName: "Básico",
-      planTitle: "Individual",
-      price: "USD 0 por 1 mes",
-      priceAfter: "Después, USD XX/mes",
+      title: "Básico",
+      icon: <FaShieldAlt className="text-primary text-3xl" />,
       features: [
         "Sistema de alarma básico",
         "Monitoreo 24/7 (opcional)",
         "Soporte técnico telefónico",
-        "Cancela cuando quieras"
+        "Cancela cuando quieras",
       ],
+      price: "USD 0 por 1 mes",
+      priceAfter: "Después, USD XX/mes",
       buttonText: "Probar 1 mes por USD 0",
-      buttonColor: "bg-primary",
-      footerText: "USD 0 por 1 mes. Después, cuesta USD XX al mes.\nLa oferta solo está disponible si aún no probaste el Plan Básico. Se aplican términos.\n*** + impuestos aplicables."
+      buttonColor: "primary",
+      footerText: "USD 0 por 1 mes. Después, cuesta USD XX al mes.\nLa oferta solo está disponible si aún no probaste el Plan Básico. Se aplican términos.\n*** + impuestos aplicables.",
+      id: "plan-basico",
     },
     {
-      id: "plan-empresarial",
-      headerColor: "bg-secondary",
-      tagColor: "bg-purple-200",
-      tagText: "USD 0 por 1 mes",
-      planName: "Empresarial",
-      planTitle: "Negocios",
-      price: "USD 0 por 1 mes",
-      priceAfter: "Después, USD YY/mes",
+      title: "Empresarial",
+      icon: <FaBriefcase className="text-secondary text-3xl" />,
       features: [
         "Sistema de alarma avanzado",
         "Cámaras de seguridad (número variable)",
         "Monitoreo profesional 24/7",
         "Aplicación móvil para control remoto",
-        "Cancela cuando quieras"
+        "Cancela cuando quieras",
       ],
+      price: "USD 0 por 1 mes",
+      priceAfter: "Después, USD YY/mes",
       buttonText: "Probar 1 mes por USD 0",
-      buttonColor: "bg-secondary",
-      footerText: "USD 0 por 1 mes. Después, cuesta USD YY al mes.\nOferta disponible solo para empresas certificadas.\n*** + impuestos aplicables."
+      buttonColor: "secondary",
+      footerText: "USD 0 por 1 mes. Después, cuesta USD YY al mes.\nOferta disponible solo para empresas certificadas.\n*** + impuestos aplicables.",
+      id: "plan-empresarial",
     },
     {
-      id: "plan-premium",
-      headerColor: "bg-acent",
-      tagColor: "",
-      tagText: "",
-      planName: "Premium",
-      planTitle: "Duo",
-      price: "USD ZZ.99*** al mes",
-      priceAfter: "",
+      title: "Premium",
+      icon: <FaStar className="text-acent text-3xl" />,
       features: [
         "Sistema de seguridad inteligente personalizado",
         "Cámaras de alta resolución con analíticas",
         "Monitoreo profesional con respuesta prioritaria",
         "Integración con domótica",
-        "Soporte técnico VIP"
+        "Soporte técnico VIP",
       ],
-      buttonText: "Obtener Premium Duo",
-      buttonColor: "bg-acent",
-      footerText: "Para hogares o negocios que necesitan máxima protección. Se aplican términos.\n*** + impuestos aplicables."
-    }
+      price: "USD ZZ.99*** al mes",
+      buttonText: "Obtener Premium",
+      buttonColor: "acent",
+      footerText: "Para hogares o negocios que necesitan máxima protección. Se aplican términos.\n*** + impuestos aplicables.",
+      id: "plan-premium",
+    },
   ];
-
-  const familiarCard = {
-    id: "plan-familiar",
-    headerColor: "bg-hover",
-    tagColor: "",
-    tagText: "",
-    planName: "Premium",
-    planTitle: "Familiar",
-    price: "USD 9.99*** al mes",
-    priceAfter: "",
-    features: [
-      "Hasta 4 cuentas Premium",
-      "Sistema de seguridad integral para toda la casa",
-      "Controla diferentes zonas independientemente",
-      "Posibilidad de comprar 1 o 2 cuentas adicionales"
-    ],
-    buttonText: "Obtener Premium Familiar",
-    buttonColor: "bg-hover",
-    footerText: "Para familias que viven en el mismo domicilio. Se aplican términos.\n*** + impuestos aplicables."
-  };
 
   return (
     <div className="pt-20 bg-white min-h-screen">
       {/* Hero Section */}
-      <div className="bg-primary py-16 text-white">
+      <div className="bg-secondary py-16 text-white">
         <div className="max-w-screen-xl mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Paquetes y Precios</h1>
           <p className="text-lg md:text-xl max-w-2xl">
@@ -117,25 +87,20 @@ const PackagePage = () => {
         </div>
       </div>
 
-      {/* Plans Grid */}
+      {/* Plans Grid using PlanFeatureCard */}
       <div className="max-w-screen-xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-        {pricingCards.map((card, index) => (
-          <PriceCard key={index} {...card} />
+        {plansData.map((plan, index) => (
+          <div key={index} id={plan.id}>
+            <PlanFeatureCard {...plan} />
+          </div>
         ))}
       </div>
 
-      {/* Family Plan Card - 4th Card */}
-      <div className="max-w-screen-xl mx-auto px-4 pb-16">
-        <div className="max-w-md mx-auto">
-          <PriceCard {...familiarCard} />
-        </div>
-      </div>
-
-      {/* Contact Section - como una cajita separada */}
+      {/* Contact Section */}
       <div className="max-w-screen-lg mx-auto px-4 pb-16">
-        <div className="bg-white rounded-lg shadow-xl p-8 border border-gray-200">
+        
           <ContactSection {...packagesContactSectionData} />
-        </div>
+        
       </div>
     </div>
   );
