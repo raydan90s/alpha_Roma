@@ -112,7 +112,7 @@ function Navbar() {
     {
       title: "Cámaras de seguridad",
       description: "Vigilancia avanzada para mantener tus propiedades seguras y monitoreadas.",
-      linkTo: "/servicios#camaras-seguridad",
+      linkTo: "/camaras",
       options: [
         { label: "Cámaras IP", href: "/camaras#camaras-ip", description: "Vigilancia remota de alta definición con acceso desde cualquier dispositivo." },
         { label: "CCTV", href: "/camaras#cctv", description: "Circuitos cerrados de televisión para una supervisión continua y grabación local." },
@@ -132,7 +132,7 @@ function Navbar() {
     {
       title: "Paquetes y precios",
       description: "Encuentra el plan que mejor se adapte a tus necesidades y presupuesto.",
-      linkTo: "/servicios#paquetes-precios",
+      linkTo: "/servicios",
       options: [
         { label: "Plan Básico", href: "/servicios#plan-basico", description: "Soluciones de seguridad esenciales para hogares pequeños." },
         { label: "Plan Empresarial", href: "/servicios#plan-empresarial", description: "Seguridad robusta y escalable para negocios de todos los tamaños." },

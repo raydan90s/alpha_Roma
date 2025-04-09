@@ -4,6 +4,16 @@ import ContactSection from "../../components/Sections/contactSection.tsx"; // Im
 import { ContactSectionProps } from "../../interface/contactProps"; // Importa la interfaz
 import CameraHero from "../securityCameras/cameraHero.tsx"; // Importa el nuevo Hero
 import HeroProps from "../../interface/HeroProps"; // Importa la interfaz de HeroProps
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faEye,
+  faUserCheck,
+  faMoon,
+  faVolumeUp,
+  faBell,
+  faCloud,
+} from '@fortawesome/free-solid-svg-icons';
+import '@fortawesome/fontawesome-svg-core/styles.css'; // Import the CSS
 
 const CamerasPage = () => {
   useEffect(() => {
@@ -31,6 +41,15 @@ const CamerasPage = () => {
     span_btn2: "Solicitar Asesoría",
   };
 
+  const includedFeatures = [
+    { name: "Sensor de movimiento", icon: faEye },
+    { name: "Reconocimiento facial", icon: faUserCheck },
+    { name: "Visión nocturna", icon: faMoon },
+    { name: "Audio bidireccional", icon: faVolumeUp },
+    { name: "Alertas en tiempo real", icon: faBell },
+    { name: "Almacenamiento en la nube seguro", icon: faCloud },
+  ];
+
   const cameraOptions = [
     { label: "Cámaras IP", href: "#camaras-ip", description: "Vigilancia remota de alta definición con acceso desde cualquier dispositivo." },
     { label: "CCTV", href: "#cctv", description: "Circuitos cerrados de televisión para una supervisión continua y grabación local." },
@@ -38,9 +57,30 @@ const CamerasPage = () => {
   ];
 
   return (
-    <div className="pt-0 bg-gray-100"> {/* Ajustamos el pt-0 para el nuevo Hero */}
+    <div className="pt-0 bg-gray-100">
       {/* Hero Section */}
       <CameraHero {...cameraHeroData} />
+
+      {/* Todos los sistemas incluyen Section */}
+      <section className="py-16 bg-white"> {/* Aumentamos el padding vertical de la sección */}
+  <div className="max-w-screen-xl mx-auto px-4">
+    <h2 className="text-4xl font-bold text-gray-800 mb-10 text-center">Todos los sistemas incluyen</h2> {/* Aumentamos el tamaño del título y el margen inferior */}
+    <div className="flex flex-row justify-around items-center"> {/* Cambiamos a flex row para la disposición general */}
+      {includedFeatures.map((feature, index) => (
+        <div key={index} className="flex flex-col items-center"> {/* Mantenemos flex column para icono arriba texto */}
+          <FontAwesomeIcon icon={feature.icon} size="3x" className="text-secondary mb-4" /> {/* Aumentamos el tamaño del icono y el margen inferior */}
+          <div className="text-center">
+            <h3 className="text-lg font-semibold text-gray-700">{feature.name.split(' ')[0]}</h3> {/* Primera palabra arriba */}
+            {feature.name.split(' ').length > 1 && (
+              <h3 className="text-lg font-semibold text-gray-700">{feature.name.split(' ').slice(1).join(' ')}</h3>
+            )}
+          </div>
+          {/* Puedes añadir una descripción breve aquí si lo deseas */}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Cameras Content */}
       <div className="max-w-screen-xl mx-auto px-4 py-12 space-y-16">
