@@ -17,19 +17,19 @@ export const menuItems = [
       options: [
         {
           label: "Sistema de seguridad para casa",
-          href: "/seguridad-hogar#sistema-casa",
+          href: "/seguridad-hogar#vigilancia-video",
           description: "Protección integral para tu hogar con tecnología avanzada.",
           icon: 'FaHome', // Almacena el nombre del componente como string
         },
         {
           label: "Sensores de seguridad",
-          href: "/seguridad-hogar#sensores",
+          href: "/seguridad-hogar#automatizacion-hogar",
           description: "Detecta cualquier amenaza en puertas, ventanas y espacios interiores.",
           icon: 'FaLock', // Almacena el nombre del componente como string
         },
         {
           label: "Alarmas de seguridad",
-          href: "/seguridad-hogar#alarmas",
+          href: "/seguridad-hogar#proteccion-ambiental",
           description: "Sistemas de alerta eficientes para disuadir intrusos y notificar emergencias.",
           icon: 'FaBell', // Almacena el nombre del componente como string
         },
