@@ -23,7 +23,7 @@ const SplitSection: React.FC<SplitSectionProps> = ({
 
   return (
     <section id={id} className="py-4"> {/* Mantenemos el padding vertical */}
-      <div className="mx-auto bg-gray-200 max-w-[95rem] rounded-[20px]">
+      <div className="mx-auto bg-white max-w-[95rem] rounded-[20px]">
         <div className={`grid ${gridTemplateColumns} gap-4 md:gap-8 items-stretch`}>
           {/* Image Section */}
           <div className={`relative ${imageOrder} h-full w-full px-4 md:px-0`}>

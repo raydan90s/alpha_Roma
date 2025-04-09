@@ -14,7 +14,7 @@ import {
   faCloud,
 } from '@fortawesome/free-solid-svg-icons';
 import '@fortawesome/fontawesome-svg-core/styles.css';
-import SplitSection from "./SplitSection";
+import SplitSection from "../../components/Sections/SplitSection.tsx";
 
 const CamerasPage = () => {
   useEffect(() => {
@@ -98,7 +98,7 @@ const CamerasPage = () => {
   return (
     <div className="pt-0">
       <CameraHero {...cameraHeroData} />
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-100">
         <div className="max-w-screen-xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-gray-800 mb-10 text-center">Todos los sistemas incluyen</h2>
           <div className="flex flex-row justify-around items-center">
@@ -119,12 +119,20 @@ const CamerasPage = () => {
 
       <div className="space-y-8">
         {cameraOptionsData.map((option, index) => (
-          <SplitSection key={option.label} {...option} isImageLeft={index % 2 === 0} />
+          <SplitSection
+            key={option.label}
+            {...option}
+            id={option.href.substring(1)} // Remove the '#' to use as id
+            isImageLeft={index % 2 === 0}
+          />
         ))}
       </div>
 
-      {/* Renderiza el ContactSection directamente */}
-      <ContactSection {...camerasContactSectionData} />
+      <div className="max-w-screen-xl mx-auto px-4 py-12 space-y-16"> {/* Añadido space-y-16 */}
+        {/* Renderiza el ContactSection directamente */}
+        <ContactSection {...camerasContactSectionData} />
+      </div>
+
     </div>
   );
 };
