@@ -7,7 +7,6 @@ import HeroProps from "../../interface/HeroProps";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faEye,
-  faUserCheck,
   faMoon,
   faVolumeUp,
   faBell,
@@ -42,12 +41,11 @@ const CamerasPage = () => {
   };
 
   const includedFeatures = [
-    { name: "Sensor de movimiento", icon: faEye },
-    { name: "Reconocimiento facial", icon: faUserCheck },
-    { name: "Visión nocturna", icon: faMoon },
+    { name: "Cruce de línea", icon: faEye },
+    { name: "ColorVu", icon: faMoon },
     { name: "Audio bidireccional", icon: faVolumeUp },
     { name: "Alertas en tiempo real", icon: faBell },
-    { name: "Almacenamiento en la nube seguro", icon: faCloud },
+    { name: "Almacenamiento en disco duro", icon: faCloud },
   ];
 
   const cameraOptionsData = [
@@ -95,6 +93,11 @@ const CamerasPage = () => {
     },
   ];
 
+  const associatedBrands = [
+    { logo: "src/assets/img/brands/hikvision-logo.svg", link: "https://www.hikvision.com/" },
+    { logo: "src/assets/img/brands/tplink-logo.png", link: "https://www.tp-link.com/" },
+  ];
+
   return (
     <div className="pt-0">
       <CameraHero {...cameraHeroData} />
@@ -127,6 +130,34 @@ const CamerasPage = () => {
           />
         ))}
       </div>
+
+      {/* Sección de Marcas Asociadas */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-screen-xl mx-auto px-4">
+          <h2 className="text-3xl font-semibold text-gray-800 mb-8 text-center">Marcas Asociadas</h2>
+          <div className="grid grid-cols-2 gap-8 items-center justify-center">
+            {associatedBrands.map((brand) => (
+              <div
+                key={brand.name}
+                className="col-span-1 flex justify-center items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+              >
+                <a
+                  href={brand.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full h-full flex justify-center items-center"
+                >
+                  <img
+                    src={brand.logo}
+                    alt={brand.name} // Mantén el alt por accesibilidad
+                    className="max-h-20 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  />
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <div className="max-w-screen-xl mx-auto px-4 py-12 space-y-16"> {/* Añadido space-y-16 */}
         {/* Renderiza el ContactSection directamente */}
