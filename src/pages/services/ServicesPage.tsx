@@ -76,7 +76,7 @@ const ServicesPage = () => {
             <div className="md:w-1/2">
               <div className="bg-gray-200 rounded-xl overflow-hidden shadow-lg h-80">
                 <img
-                  src="/api/placeholder/600/400"
+                  src="https://blogger.googleusercontent.com/img/a/AVvXsEh3iSic7evGCCxG-DITfCHW1xKT7Sq6pHnbkPYm9Trr5kBMlqm1nUZgBXcAQvNUDl7XilgcBlvmbKGO_1VEcWoqzoOZDedjGFIYqEGVbpZh4ogg7aHyYTGSg2QiSzi6HKjM04-7hdczUAJ0BfVHleRIOus2is_5Ltz8U4al4yKSiHaj2hxQdnLd7BpdHA"
                   alt="Servicio de instalación"
                   className="w-full h-full object-cover"
                 />
@@ -126,7 +126,7 @@ const ServicesPage = () => {
             <div className="md:w-1/2">
               <div className="bg-gray-200 rounded-xl overflow-hidden shadow-lg h-80">
                 <img
-                  src="/api/placeholder/600/400"
+                  src="https://www.microtec.com.ni/wp-content/uploads/2023/04/instalacion-cctv-jovenes-tecnicos-asiaticos-instalacion-como-concepto-camara-ip-wifi-camara-ip-inalambrica-1-1024x767.jpg"
                   alt="Servicio de mantenimiento"
                   className="w-full h-full object-cover"
                 />
@@ -176,7 +176,7 @@ const ServicesPage = () => {
             <div className="md:w-1/2">
               <div className="bg-gray-200 rounded-xl overflow-hidden shadow-lg h-80">
                 <img
-                  src="/api/placeholder/600/400"
+                  src="https://res.cloudinary.com/dcxqkcmhd/image/upload/v1744207826/zuxpdisz3h0o3x1btfyv.jpg"
                   alt="Servicio de asesoría"
                   className="w-full h-full object-cover"
                 />
