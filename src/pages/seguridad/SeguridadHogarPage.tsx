@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { scrollToHashOnLoad } from "../../assets/utils/scrollUtils.ts";
 import ContactSection from "../../components/Sections/contactSection.tsx";
 import { ContactSectionProps } from "../../interface/contactProps";
-import CameraHero from "../securityCameras/cameraHero.tsx";
 import HeroProps from "../../interface/HeroProps";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -12,6 +11,7 @@ import {
   faFireExtinguisher,
 } from '@fortawesome/free-solid-svg-icons';
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import HeroSegmar from "../securityCameras/HeroSegmar.tsx";
 
 const SeguridadHogarPage = () => {
   useEffect(() => {
@@ -31,14 +31,13 @@ const SeguridadHogarPage = () => {
   };
 
   const seguridadHogarHeroData: HeroProps = {
-    title: "Evite delitos",
-    span: "antes de que ocurran",
-    link_image: "https://images.unsplash.com/photo-1586791940833-dcfb7ca3293b?auto=format&fit=crop&w=1470&q=80",
-    span_btn1: "Ver Soluciones",
-    span_btn2: "Asesoría Gratuita",
-    description: "Nuestras cámaras no solo graban crímenes, ¡los previenen! Con funciones avanzadas de disuasión, mantenga su hogar seguro y en tranquilidad.",
-    cta_text: "LLAME AHORA PARA PERSONALIZAR SU SISTEMA",
-    background_color: "bg-gradient-to-r from-green-400 via-blue-500 to-purple-600",
+    title: "Tu Hogar,",
+    span: "Tu Santuario Seguro",
+    link_image: "src/assets/img/HeroCamera.png", // URL de una cámara de seguridad enfocando un hogar
+    span_btn1: "Ver Sistemas",
+    span_btn2: "Demo en Vivo", // Enlace que simula una cámara
+    description: "Protege cada rincón de tu hogar con nuestra vigilancia inteligente. Monitoreo en tiempo real y la tranquilidad que mereces.",
+    cta_text: "Explora la Protección",
   };
 
   const solucionesSeguridadHogar = [
@@ -79,7 +78,10 @@ const SeguridadHogarPage = () => {
   return (
     <div className="pt-0 bg-gray-100">
       {/* Hero Section */}
-      <CameraHero {...seguridadHogarHeroData} />
+      <HeroSegmar
+        {...seguridadHogarHeroData}
+        
+      />
 
       {/* Soluciones */}
       <div className="max-w-screen-xl mx-auto px-4 py-12 space-y-16">
