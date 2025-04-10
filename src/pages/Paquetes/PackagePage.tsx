@@ -87,10 +87,9 @@ const PackagePage = () => {
         </div>
       </div>
 
-      {/* Plans Grid using PlanFeatureCard */}
       <div className="max-w-screen-xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-3 gap-8">
         {plansData.map((plan, index) => (
-          <div key={index} id={plan.id}>
+          <div key={index} id={plan.id} className="scroll-mt-48 md:scroll-mt-48 lg:scroll-mt-32"> {/* Ejemplo con valores aumentados */}
             <PlanFeatureCard {...plan} />
           </div>
         ))}
@@ -98,9 +97,9 @@ const PackagePage = () => {
 
       {/* Contact Section */}
       <div className="max-w-screen-lg mx-auto px-4 pb-16">
-        
-          <ContactSection {...packagesContactSectionData} />
-        
+
+        <ContactSection {...packagesContactSectionData} />
+
       </div>
     </div>
   );
