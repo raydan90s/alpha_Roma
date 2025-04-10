@@ -3,9 +3,9 @@ import React from "react";
 
 function Cards() {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-8 px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-8 px-4 sm:px-6 lg:px-8 mt-6">
     {/* Tarjeta 1 */}
-    <div className="bg-white rounded-xl shadow-md p-6">
+    <div className="bg-white rounded-xl shadow-md p-6 ">
         <div className="bg-secondary rounded-full p-3 inline-block mb-4">
             <Home color="white" />
         </div>
