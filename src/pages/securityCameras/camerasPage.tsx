@@ -39,7 +39,7 @@ const CamerasPage = () => {
     const cameraHeroData: HeroProps = {
         title: "Vigilancia Inteligente para tu ",
         span: "Tranquilidad",
-        link_image: "src/assets/img/HeroCamera.png",
+        link_image: "https://res.cloudinary.com/dcxqkcmhd/image/upload/v1744299925/uvhurgciahxtkyyhnjht.png",
         span_btn1: "Ver Nuestras Cámaras",
         span_btn2: "Solicitar Asesoría",
     };
@@ -69,7 +69,7 @@ const CamerasPage = () => {
             label: "Cámaras IP",
             href: "#camaras-ip",
             description: "Descubre la versatilidad de nuestras cámaras IP. Ideales para una vigilancia remota de alta definición, te permiten acceder a la transmisión en vivo y a las grabaciones desde cualquier dispositivo conectado. Su flexibilidad las convierte en la solución perfecta para monitorear tu hogar o negocio en tiempo real.",
-            image: "src/assets/img/cameras/seguridad1.jpg",
+            image: "https://res.cloudinary.com/dcxqkcmhd/image/upload/v1744300683/eftnbb7ntmz49jomtywc.png",
             features: [
                 "Alta resolución de video",
                 "Acceso remoto desde cualquier dispositivo",
@@ -83,7 +83,7 @@ const CamerasPage = () => {
             label: "CCTV",
             href: "#cctv",
             description: "Nuestros sistemas de Circuito Cerrado de Televisión (CCTV) ofrecen una solución de vigilancia robusta y confiable para la seguridad perimetral. Diseñados para una supervisión continua y grabación local, son la opción ideal para proteger grandes propiedades y asegurar una cobertura completa sin depender de la conexión a internet.",
-            image: "src/assets/img/cameras/seguridad2.jpg",
+            image: "https://res.cloudinary.com/dcxqkcmhd/image/upload/v1744303024/y8ora1lirlj0gaesd2su.png",
             features: [
                 "Grabación continua 24/7",
                 "Almacenamiento local seguro",
@@ -97,7 +97,7 @@ const CamerasPage = () => {
             label: "Grabación en la Nube",
             href: "#grabacion-nube",
             description: "Protege tus grabaciones de video de forma segura con nuestro servicio de almacenamiento en la nube. Accede a tus archivos desde cualquier lugar con conexión a internet y ten la tranquilidad de que tus datos están protegidos contra pérdidas o daños físicos a los equipos de grabación.",
-            image: "src/assets/img/cameras/seguridad1.jpg",
+            image: "https://res.cloudinary.com/dcxqkcmhd/image/upload/v1744299437/fugpjrnxjc3yq78rz8bg.png",
             features: [
                 "Almacenamiento seguro y encriptado",
                 "Acceso desde cualquier dispositivo con internet",
