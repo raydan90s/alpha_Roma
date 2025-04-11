@@ -19,20 +19,20 @@ function Footer() {
           
           {/* Products column */}
           <div>
-            <h3 className="text-sm font-medium text-white mb-4 border-b border-gray-700 pb-2">Servicios</h3>
+            <h3 className="text-2xl font-medium text-white mb-4 border-b border-gray-700 pb-2">Servicios</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/servicios#instalacion" className="text-gray-400 hover:text-primary transition-colors duration-300 text-sm">
+                <Link to="/servicios#instalacion" className="text-gray-400 hover:text-primary transition-colors duration-300 text-lg">
                   Instalación de Cámaras
                 </Link>
               </li>
               <li>
-                <Link to="/servicios#mantenimiento" className="text-gray-400 hover:text-primary transition-colors duration-300 text-sm">
+                <Link to="/servicios#mantenimiento" className="text-gray-400 hover:text-primary transition-colors duration-300 text-lg">
                   Mantenimiento
                 </Link>
               </li>
               <li>
-                <Link to="/servicios#asesoria" className="text-gray-400 hover:text-primary transition-colors duration-300 text-sm">
+                <Link to="/servicios#asesoria" className="text-gray-400 hover:text-primary transition-colors duration-300 text-lg">
                   Asesoría
                 </Link>
               </li>
@@ -43,20 +43,20 @@ function Footer() {
           
           {/* Company column */}
           <div>
-            <h3 className="text-sm font-medium text-white mb-4 border-b border-gray-700 pb-2">Empresa</h3>
+            <h3 className="text-2xl font-medium text-white mb-4 border-b border-gray-700 pb-2">Empresa</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/about" className="text-gray-400 hover:text-primary transition-colors duration-300 text-sm">
-                  Quienes sómos
+                <Link to="/about" className="text-gray-400 hover:text-primary transition-colors duration-300 text-lg">
+                  Quienes somos
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-400 hover:text-primary transition-colors duration-300 text-sm">
-                  Contactanos
+                <Link to="/about" className="text-gray-400 hover:text-primary transition-colors duration-300 text-lg">
+                  Contáctanos
                 </Link>
               </li>
               <li>
-                <Link to="/blog" className="text-gray-400 hover:text-primary transition-colors duration-300 text-sm">
+                <Link to="/blog" className="text-gray-400 hover:text-primary transition-colors duration-300 text-lg">
                   Blog
                 </Link>
               </li>
@@ -65,27 +65,31 @@ function Footer() {
           
           {/* Support column */}
           <div>
-            <h3 className="text-sm font-medium text-white mb-4 border-b border-gray-700 pb-2">Soporte</h3>
+            <h3 className="text-2xl font-medium text-white mb-4 border-b border-gray-700 pb-2">Soporte</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/servicios" className="text-gray-400 hover:text-primary transition-colors duration-300 text-sm">
+                <Link to="/servicios" className="text-gray-400 hover:text-primary transition-colors duration-300 text-lg">
                   Centro de ayuda 
                 </Link>
               </li>
               <li>
-                <Link to="/servicios" className="text-gray-400 hover:text-primary transition-colors duration-300 text-sm">
+                <Link to="/servicios" className="text-gray-400 hover:text-primary transition-colors duration-300 text-lg">
                   Preguntas y respuestas
                 </Link>
               </li>
               <li>
-                <Link to="/servicios" className="text-gray-400 hover:text-primary transition-colors duration-300 text-sm">
-                  Instalacion
+                <Link to="/servicios" className="text-gray-400 hover:text-primary transition-colors duration-300 text-lg">
+                  Instalacion y mantenimiento
                 </Link>
               </li>
               <li>
-                <a href="tel:+593991974496" className="text-primary hover:text-white transition-colors duration-300 text-sm font-medium">
+                <span className="text-gray-400 text-lg">
+                  <img src="https://res.cloudinary.com/dfbpaq83u/image/upload/v1744403721/ithlnsn8gw8h6up7rn9s.png" alt="WhatsApp" className="inline-block  w-autto h-8" /> 
+                <a href="tel:+593991974496" className="text-primary hover:text-white transition-colors duration-300 text-lg font-medium">
+
                 099 197 4496
                 </a>
+                </span>
               </li>
             </ul>
           </div>
@@ -93,7 +97,7 @@ function Footer() {
         
         {/* Bottom section with copyright */}
         <div className="border-t border-gray-700 mt-8 pt-6 text-center">
-          <p className="text-xs text-gray-400">&copy; 2025 NovaFenix. Todos los derechos reservados.</p>
+          <p className="text-sm text-gray-400">&copy; 2025 NovaFenix. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

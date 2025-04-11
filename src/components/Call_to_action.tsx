@@ -13,10 +13,10 @@ function Call_to_action({title, subtitle, spanBtn, link}: CTAProps){
       <div className="flex flex-col md:flex-row items-center justify-between">
         <div className="mb-8 md:mb-0">
           <h2 className="text-3xl font-bold text-white mb-4">{title}</h2>
-          <p className="text-xl text-blue-100">{subtitle}</p>
+          <p className="text-2xl text-blue-100">{subtitle}</p>
         </div>
         <div className="flex space-x-4">
-          <button className="bg-white text-secondary px-8 py-3 rounded-lg hover:bg-hover flex items-center ">
+          <button className="bg-white text-secondary px-8 py-3 rounded-lg hover:bg-hover flex items-center text-lg font-bold transition duration-300">
             
             <Phone className="mr-2 h-5 w-5" />
             {spanBtn}
