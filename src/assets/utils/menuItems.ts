@@ -13,8 +13,8 @@ export const menuItems = [
         ],
     },
     {
-        title: "Seguridad para el hogar",
-        description: "Protege cada rincón de tu hogar con nuestra vigilancia inteligente. Monitoreo en tiempo real y la tranquilidad que mereces.",
+        title: "Seguridad",
+        description: "Protege cada rincón de tu hogar o empresa con nuestra vigilancia inteligente. Monitoreo en tiempo real y la tranquilidad que mereces.",
         linkTo: "/seguridad-hogar",
         options: [
             {
@@ -52,7 +52,7 @@ export const menuItems = [
         description: "Nuestra gama de servicios diseñados para una implementación y soporte sin problemas.",
         linkTo: "/servicios",
         options: [
-            { label: "Instalación", href: "/servicios#instalacion", description: "Instalación profesional y configuración de todos nuestros sistemas.", icon: Hammer},
+            { label: "Instalación y mantenimiento", href: "/servicios#instalacion", description: "Instalación profesional y configuración de todos nuestros sistemas.", icon: Hammer},
             { label: "Mantenimiento", href: "/servicios#mantenimiento", description: "Revisiones periódicas y soporte técnico para asegurar el funcionamiento óptimo.", icon: Wrench},
             { label: "Asesoría", href: "/servicios#asesoria", description: "Consultoría experta para encontrar la solución de seguridad perfecta para ti.", icon: Headset},
         ],

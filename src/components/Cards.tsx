@@ -9,8 +9,8 @@ function Cards() {
         <div className="bg-secondary rounded-full p-3 inline-block mb-4">
             <Home color="white" />
         </div>
-        <h3 className="text-xl font-semibold text-gray-800 mb-2">Casa Segura</h3>
-        <p className="text-gray-600 text-sm">
+        <h3 className="text-2xl font-semibold text-gray-800 mb-2">Casa Segura</h3>
+        <p className="text-gray-600 text-lg">
             Ofrecemos soluciones tecnológicas avanzadas para proteger tu hogar, asegurando su seguridad con sistemas de última generación.
         </p>
     </div>
@@ -20,8 +20,8 @@ function Cards() {
         <div className="bg-secondary rounded-full p-3 inline-block mb-4">
             <Video color="white" />
         </div>
-        <h3 className="text-xl font-semibold text-gray-800 mb-2">Monitoreo de Video 24/7</h3>
-        <p className="text-gray-600 text-sm">
+        <h3 className="text-2xl font-semibold text-gray-800 mb-2">Monitoreo de Video 24/7</h3>
+        <p className="text-gray-600 text-lg">
             Garantizamos la vigilancia continua de tu propiedad con cámaras de alta definición, disponibles para ver en tiempo real las 24 horas del día.
         </p>
     </div>
@@ -31,8 +31,8 @@ function Cards() {
         <div className="bg-secondary rounded-full p-3 inline-block mb-4">
             <Bell color="white" />
         </div>
-        <h3 className="text-xl font-semibold text-gray-800 mb-2">Alertas Instantáneas</h3>
-        <p className="text-gray-600 text-sm">
+        <h3 className="text-2xl font-semibold text-gray-800 mb-2">Alertas Instantáneas</h3>
+        <p className=" text-lg text-gray-600 ">
             Recibe notificaciones inmediatas en tu dispositivo móvil sobre cualquier actividad sospechosa en tu hogar, manteniéndote siempre informado.
         </p>
     </div>

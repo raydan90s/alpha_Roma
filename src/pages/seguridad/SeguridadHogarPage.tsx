@@ -50,7 +50,7 @@ const SeguridadHogarPage = () => {
     {
       id: "seguridad-accesos",
       label: "Cruce de Línea y Detección de Intrusos",
-      description: "Protege cada acceso a tu hogar con tecnología avanzada. Define perímetros virtuales y recibe alertas inmediatas cuando se cruzan, ideal para proteger áreas específicas.",
+      description: "Protege cada acceso a tu hogar y empresa con tecnología avanzada. Define perímetros virtuales y recibe alertas inmediatas cuando se cruzan, ideal para proteger áreas específicas.",
       image: "https://res.cloudinary.com/dfbpaq83u/image/upload/v1744400288/vvqch3ek9qmmzxi6o0zs.png",
       features: [
         "Sensores de movimiento de alta sensibilidad",

@@ -78,14 +78,14 @@ function Navbar() {
       setTimeout(() => {
         scrollToHash(href.split('#')[1]);
       }, 100);
-    }if (href.startsWith('/camaras#')) {
+    } if (href.startsWith('/camaras#')) {
       navigate('/camaras');
-    }if (href.startsWith('/paquetes#')) {
+    } if (href.startsWith('/paquetes#')) {
       navigate('/paquetes');
       setTimeout(() => {
         scrollToHash(href.split('#')[1]);
       }, 100);
-    }if (href.startsWith('/seguridad-hogar#')) {
+    } if (href.startsWith('/seguridad-hogar#')) {
       navigate('/seguridad-hogar');
       setTimeout(() => {
         scrollToHash(href.split('#')[1]);
@@ -109,7 +109,7 @@ function Navbar() {
             <div className="flex items-center space-x-2">
               <Link to="/" onClick={() => { handleScrollToTop(); setHoveredMenu(null); }}>
                 <img src={Logo} alt="Logo" className="h-14 ml-6" />
-              </Link>          
+              </Link>
             </div>
 
             {/* Menú para dispositivos medianos y grandes */}
@@ -122,11 +122,10 @@ function Navbar() {
                   onMouseLeave={handleMouseLeave}
                 >
                   <button
-                    className={`flex items-center text-white text-sm font-medium px-2 py-1.5 border-b-2 transition-all duration-300 whitespace-nowrap ${
-                      hoveredMenu === index
+                    className={`flex items-center text-white text-lg font-medium px-2 py-1.5 border-b-2 transition-all duration-300 whitespace-nowrap ${hoveredMenu === index
                         ? "border-white text-white"
                         : "border-transparent text-gray-400 hover:text-white"
-                    }`}
+                      }`}
                   >
                     {item.title}
                     {hoveredMenu === index ? (
@@ -135,37 +134,38 @@ function Navbar() {
                       <ChevronDown className="ml-1 h-4 w-4 text-white" />
                     )}
                   </button>
+
                 </div>
               ))}
             </div>
 
             {/* Buscador + Teléfono */}
             <div className="flex items-center">
-  {/* Botón Teléfono */}
-  <a
-    href="tel:+593991974496"
-    className="bg-primary hover:bg-primary text-black font-bold px-3 sm:px-6 py-2 rounded-full shadow-md transition-all duration-300 text-xs sm:text-sm whitespace-nowrap flex items-center gap-2"
-  >
-    <img
-      src="https://brandlogos.net/wp-content/uploads/2013/04/whatsapp-logo-symbol-vector.png"
-      alt="Logo"
-      className="h-6 w-auto"
-    />
-    099 197 4496
-  </a>
+              {/* Botón Teléfono */}
+              <a
+                href="tel:+593991974496"
+                className="bg-primary hover:bg-primary text-black font-bold px-3 sm:px-6 py-2 rounded-full shadow-md transition-all duration-300 text-xs sm:text-sm whitespace-nowrap flex items-center gap-2"
+              >
+                <img
+                  src="https://brandlogos.net/wp-content/uploads/2013/04/whatsapp-logo-symbol-vector.png"
+                  alt="Logo"
+                  className="h-6 w-auto"
+                />
+                099 197 4496
+              </a>
 
-  {/* Botón menú móvil */}
-  <button
-    className="ml-4 text-white md:hidden"
-    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-  >
-    {mobileMenuOpen ? (
-      <X className="h-6 w-6" />
-    ) : (
-      <Menu className="h-6 w-6" />
-    )}
-  </button>
-</div>
+              {/* Botón menú móvil */}
+              <button
+                className="ml-4 text-white md:hidden"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                {mobileMenuOpen ? (
+                  <X className="h-6 w-6" />
+                ) : (
+                  <Menu className="h-6 w-6" />
+                )}
+              </button>
+            </div>
 
           </div>
         </div>
@@ -244,7 +244,7 @@ function Navbar() {
         <div className="fixed inset-0 z-40 mt-20 md:hidden">
           <div className="bg-gradient-to-b from-gray-900 to-gray-800 shadow-xl border-b border-gray-700 h-full overflow-y-auto">
             <div className="px-4 py-6">
-        
+
               {/* Menú acordeón móvil */}
               <div className="divide-y divide-gray-700">
                 {menuItems.map((item, index) => (
@@ -260,7 +260,7 @@ function Navbar() {
                         <ChevronDown className="h-5 w-5 text-gray-400" />
                       )}
                     </button>
-                    
+
                     {activeMobileSubmenu === index && (
                       <div className="mt-2 ml-4 space-y-2">
                         {item.options.map((option, i) => (
@@ -285,10 +285,10 @@ function Navbar() {
               <div className="mt-6">
                 <img src="https://res.cloudinary.com/dfbpaq83u/image/upload/v1744403721/ithlnsn8gw8h6up7rn9s.png" alt="Logo" className="h-3 mx-auto mb-4" />
                 <a
-                  href="tel:8445917193"
+                  href="tel:8+593991974496"
                   className="flex items-center justify-center w-full bg-primary hover:bg-primary text-black font-bold py-3 rounded-full shadow-md transition-all duration-300"
                 >
-                  Llamar ahora: 844.591.7193
+                  Llamar ahora: 099 197 4496
                 </a>
               </div>
             </div>

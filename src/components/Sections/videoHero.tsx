@@ -23,7 +23,7 @@ const VideoHero: React.FC<VideoHeroProps> = ({
         <h1 className="text-white text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
           {title}
         </h1>
-        <p className="mt-4 text-lg leading-6 text-indigo-200">
+        <p className="mt-4 text-2xl font-bold text-indigo-200 mt-4 sm:mt-5 lg:mt-6">
           {subtitle}
         </p>
 

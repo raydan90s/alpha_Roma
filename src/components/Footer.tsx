@@ -83,8 +83,8 @@ function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="tel:8445917193" className="text-primary hover:text-white transition-colors duration-300 text-sm font-medium">
-                  844.591.7193
+                <a href="tel:+593991974496" className="text-primary hover:text-white transition-colors duration-300 text-sm font-medium">
+                099 197 4496
                 </a>
               </li>
             </ul>

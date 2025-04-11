@@ -28,7 +28,7 @@ function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Protección completa en tu hogar</h2>
-            <p className="text-xl text-gray-600">Todo lo que tu hogar necesita para tu completa seguridad y tranquilidad</p>
+            <p className="text-2xl text-gray-600">Todo lo que tu hogar necesita para tu completa seguridad y tranquilidad</p>
             <Cards />
           </div>
 
@@ -37,7 +37,7 @@ function Home() {
 
       <div className="py-6 bg-secondary">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-white mb-4 text-center">Demostración de nuestras cámaras de seguridad</h2>
+          <h2 className="text-2xl font-bold text-white mb-4 text-center">Demo de las cámaras de seguridad</h2>
           <VideoGallery videos={videoData} />
         </div>
       </div>
