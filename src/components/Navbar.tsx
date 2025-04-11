@@ -141,47 +141,32 @@ function Navbar() {
 
             {/* Buscador + Teléfono */}
             <div className="flex items-center">
-              {/* Buscador */}
-              <div className="relative mr-2 sm:mr-6">
-                <input
-                  type="text"
-                  placeholder="Buscar..."
-                  onFocus={() => setSearchFocused(true)}
-                  onBlur={() => setSearchFocused(false)}
-                  className={`absolute right-10 pr-10 pl-4 py-2 rounded-full bg-gray-900 border border-gray-700 text-white text-sm transition-all duration-300 ease-in-out focus:ring-2 focus:ring-primary focus:border-transparent ${
-                    shouldShowSearch
-                      ? "w-32 sm:w-56 opacity-100"
-                      : "w-0 opacity-0 pointer-events-none"
-                  }`}
-                />
-                <button
-                  onClick={() => setShowSearch(!showSearch)}
-                  className="text-white hover:text-primary transition-colors relative z-10 p-2 rounded-full"
-                >
-                  <Search className="h-5 w-5" />
-                </button>
-              </div>
+  {/* Botón Teléfono */}
+  <a
+    href="tel:+593991974496"
+    className="bg-primary hover:bg-primary text-black font-bold px-3 sm:px-6 py-2 rounded-full shadow-md transition-all duration-300 text-xs sm:text-sm whitespace-nowrap flex items-center gap-2"
+  >
+    <img
+      src="https://brandlogos.net/wp-content/uploads/2013/04/whatsapp-logo-symbol-vector.png"
+      alt="Logo"
+      className="h-6 w-auto"
+    />
+    099 197 4496
+  </a>
 
-              {/* Botón Teléfono */}
-              <a
-                href="tel:+593991974496"
-                className="bg-primary hover:bg-primary text-black font-bold px-3 sm:px-6 py-2 rounded-full shadow-md transition-all duration-300 text-xs sm:text-sm whitespace-nowrap"
-              >
-                099 197 4496
-              </a>
+  {/* Botón menú móvil */}
+  <button
+    className="ml-4 text-white md:hidden"
+    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+  >
+    {mobileMenuOpen ? (
+      <X className="h-6 w-6" />
+    ) : (
+      <Menu className="h-6 w-6" />
+    )}
+  </button>
+</div>
 
-              {/* Botón menú móvil */}
-              <button
-                className="ml-4 text-white md:hidden"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              >
-                {mobileMenuOpen ? (
-                  <X className="h-6 w-6" />
-                ) : (
-                  <Menu className="h-6 w-6" />
-                )}
-              </button>
-            </div>
           </div>
         </div>
       </nav>
@@ -259,16 +244,7 @@ function Navbar() {
         <div className="fixed inset-0 z-40 mt-20 md:hidden">
           <div className="bg-gradient-to-b from-gray-900 to-gray-800 shadow-xl border-b border-gray-700 h-full overflow-y-auto">
             <div className="px-4 py-6">
-              {/* Buscador móvil */}
-              <div className="relative mb-6">
-                <input
-                  type="text"
-                  placeholder="Buscar..."
-                  className="w-full pr-10 pl-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white text-sm focus:ring-2 focus:ring-primary focus:border-transparent"
-                />
-                <Search className="absolute right-3 top-3 h-5 w-5 text-gray-400" />
-              </div>
-
+        
               {/* Menú acordeón móvil */}
               <div className="divide-y divide-gray-700">
                 {menuItems.map((item, index) => (
@@ -307,6 +283,7 @@ function Navbar() {
 
               {/* Botón de teléfono móvil */}
               <div className="mt-6">
+                <img src="https://res.cloudinary.com/dfbpaq83u/image/upload/v1744403721/ithlnsn8gw8h6up7rn9s.png" alt="Logo" className="h-3 mx-auto mb-4" />
                 <a
                   href="tel:8445917193"
                   className="flex items-center justify-center w-full bg-primary hover:bg-primary text-black font-bold py-3 rounded-full shadow-md transition-all duration-300"

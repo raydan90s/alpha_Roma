@@ -8,6 +8,7 @@ interface SplitSectionProps {
   image: string;
   features: string[];
   isImageLeft?: boolean;
+  copy?: string; // Propiedad opcional para el texto de la imagen
 }
 
 const SplitSection: React.FC<SplitSectionProps> = ({
@@ -17,6 +18,7 @@ const SplitSection: React.FC<SplitSectionProps> = ({
   image,
   features,
   isImageLeft = false,
+  copy, // Propiedad opcional para el texto de la imagen
 }) => {
   const imageOrder = isImageLeft ? 'md:order-1 order-1' : 'md:order-2 order-1';
   const textOrder = isImageLeft ? 'md:order-2 order-2' : 'md:order-1 order-2';
@@ -33,6 +35,11 @@ const SplitSection: React.FC<SplitSectionProps> = ({
               alt={label}
               className="w-full h-full object-cover"
             />
+            {copy && (
+              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4 text-center">
+                <p>{copy}</p>
+              </div>
+            )}
           </div>
           {/* Text Content Section */}
           <div className={`flex flex-col justify-center ${textOrder} text-left px-4 py-4 md:px-20`}>

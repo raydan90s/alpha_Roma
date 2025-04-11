@@ -3,7 +3,7 @@ import React from "react";
 // Definimos la interfaz HeroProps directamente aquí en lugar de importarla
 interface HeroProps {
   span?: string;
-  link_image?: string;
+  image?: string;
   span_btn1?: string;
   span_btn2?: string;
   title?: string;
@@ -22,7 +22,7 @@ interface HeroSegmarProps extends HeroProps {
 
 const HeroSegmar: React.FC<HeroSegmarProps> = ({
   span,
-  link_image = "/api/placeholder/1200/800",
+  image = "https://res.cloudinary.com/dfbpaq83u/image/upload/v1744388571/cap2fjkw6bzqypxnk4rf.jpg",
   span_btn1 = "Ver Sistemas",
   span_btn2 = "Demo en Vivo",
   title = "Tu Hogar, Tu Santuario Seguro",
@@ -38,7 +38,10 @@ const HeroSegmar: React.FC<HeroSegmarProps> = ({
   return (
     <div
       className="relative h-screen bg-cover bg-center flex items-center"
-      style={{ backgroundImage: `url('${link_image}')` }}
+      style={{
+        backgroundImage: `url('${image}')`,
+        backgroundColor: primaryColor, // Color de fondo por defecto
+      }}
     >
       <div className="absolute inset-0 bg-black bg-opacity-50 z-0"></div> {/* Overlay sutil */}
       <div className="relative z-10 px-4 pl-20 pt-20"> {/* Contenedor del texto con padding izquierda */}

@@ -7,11 +7,11 @@ import HeroProps from "../../interface/HeroProps";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import instalando from "../../assets/img/cameras/instalando.jpg";
 import {
-    faEye,
+    faPersonWalkingDashedLineArrowRight,
     faMoon,
     faVolumeUp,
     faBell,
-    faCloud,
+    faHardDrive,
 } from '@fortawesome/free-solid-svg-icons';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import SplitSection from "../../components/Sections/SplitSection.tsx";
@@ -45,11 +45,11 @@ const CamerasPage = () => {
     };
 
     const includedFeatures = [
-        { name: "Cruce de línea", icon: faEye },
+        { name: "Cruce de línea", icon: faPersonWalkingDashedLineArrowRight },
         { name: "ColorVu", icon: faMoon },
         { name: "Audio bidireccional", icon: faVolumeUp },
         { name: "Alertas en tiempo real", icon: faBell },
-        { name: "Almacenamiento en disco duro", icon: faCloud },
+        { name: "Almacenamiento en disco duro", icon: faHardDrive },
     ];
 
     const installationServiceData = {
@@ -119,7 +119,7 @@ const CamerasPage = () => {
             <CameraHero {...cameraHeroData} />
             <section className="py-16 bg-gray-100">
                 <div className="max-w-screen-xl mx-auto px-4">
-                    <h2 className="text-4xl font-bold text-gray-800 mb-10 text-center">Todos los sistemas incluyen</h2>
+                    <h2 className="text-4xl font-bold text-gray-800 mb-5 text-center">Todos los sistemas incluyen</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
                         {includedFeatures.map((feature, index) => (
                             <div key={index} className="flex flex-col items-center text-center">

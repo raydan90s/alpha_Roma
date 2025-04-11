@@ -1,5 +1,5 @@
-import {Wrench, Siren, Compass, Eye, Telescope, Hammer, Headset, Cctv, Focus, Cloud, Gem, Award, Briefcase} from "lucide-react";
-import { FaHome, FaLock, FaBell } from 'react-icons/fa'; // Importa los iconos de Font Awesome
+import {Wrench, Siren, Compass, Eye, Telescope, Hammer, Headset, Cctv, Focus, Cloud, Gem, Award, Briefcase, Home, SunMoon, HardDrive, Radar} from "lucide-react";
+
 
 export const menuItems = [
     {
@@ -14,25 +14,26 @@ export const menuItems = [
     },
     {
         title: "Seguridad para el hogar",
+        description: "Protege cada rincón de tu hogar con nuestra vigilancia inteligente. Monitoreo en tiempo real y la tranquilidad que mereces.",
         linkTo: "/seguridad-hogar",
         options: [
             {
-                label: "Sistema de seguridad para casa",
+                label: "Alertas de seguridad inmediatas",
                 href: "/seguridad-hogar#vigilancia-video",
-                description: "Protección integral para tu hogar con tecnología avanzada.",
-                icon: FaHome, // Usa el componente FaHome
+                description: "Recibe notificaciones instantáneas ante eventos sospechosos.",
+                icon: Siren, // Usa el componente FaHome
             },
             {
-                label: "Sensores de seguridad",
+                label: "Cruce de línea",
                 href: "/seguridad-hogar#automatizacion-hogar",
-                description: "Detecta cualquier amenaza en puertas, ventanas y espacios interiores.",
-                icon: FaLock, // Usa el componente FaLock
+                description: "Controla cada acceso a tu hogar con tecnología avanzada.",
+                icon: Radar, // Usa el componente FaLock
             },
             {
-                label: "Alarmas de seguridad",
+                label: "Iluminación total de seguridad",
                 href: "/seguridad-hogar#proteccion-ambiental",
-                description: "Sistemas de alerta eficientes para disuadir intrusos y notificar emergencias.",
-                icon: FaBell, // Usa el componente FaBell
+                description: "Sistema con ColorVu para una vigilancia inigualable.",
+                icon: SunMoon, // Usa el componente FaLightbulb
             },
         ],
     },
@@ -43,7 +44,7 @@ export const menuItems = [
         options: [
             { label: "Cámaras IP", href: "/camaras#camaras-ip", description: "Vigilancia remota de alta definición con acceso desde cualquier dispositivo.", icon: Focus },
             { label: "CCTV", href: "/camaras#cctv", description: "Circuitos cerrados de televisión para una supervisión continua y grabación local.", icon: Cctv},
-            { label: "Grabación en la nube", href: "/camaras#grabacion-nube", description: "Almacenamiento seguro de tus grabaciones de video en la nube.", icon: Cloud },
+            { label: "Grabación en el disco duro", href: "/camaras#grabacion-nube", description: "Almacenamiento seguro de tus grabaciones de video en la nube.", icon: HardDrive},
         ],
     },
     {
