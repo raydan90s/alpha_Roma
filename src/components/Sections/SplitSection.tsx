@@ -1,3 +1,4 @@
+// ruta del archivo: src/components/Sections/SplitSection.tsx
 import React from 'react';
 
 interface SplitSectionProps {
@@ -22,7 +23,7 @@ const SplitSection: React.FC<SplitSectionProps> = ({
   const gridTemplateColumns = 'grid-cols-1 md:grid-cols-2'; // Usamos grid-cols-2 fijo en pantallas medianas y grandes
 
   return (
-    <section id={id} className="pb-6 bg-gray-100"> {/* Mantenemos el padding vertical */}
+    <section id={id} className="py-4"> {/* Mantenemos el padding vertical */}
       <div className="mx-auto bg-white max-w-[95rem] rounded-[20px]">
         <div className={`grid ${gridTemplateColumns} gap-4 md:gap-8 items-stretch`}>
           {/* Image Section */}
@@ -30,7 +31,7 @@ const SplitSection: React.FC<SplitSectionProps> = ({
             <img
               src={image}
               alt={label}
-              className="w-full h-full rounded-lg object-cover"
+              className="w-full h-full object-cover"
             />
           </div>
           {/* Text Content Section */}

@@ -120,15 +120,12 @@ const CamerasPage = () => {
             <section className="py-16 bg-gray-100">
                 <div className="max-w-screen-xl mx-auto px-4">
                     <h2 className="text-4xl font-bold text-gray-800 mb-10 text-center">Todos los sistemas incluyen</h2>
-                    <div className="flex flex-row justify-around items-center">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
                         {includedFeatures.map((feature, index) => (
-                            <div key={index} className="flex flex-col items-center">
+                            <div key={index} className="flex flex-col items-center text-center">
                                 <FontAwesomeIcon icon={feature.icon} size="3x" className="text-secondary mb-4" />
-                                <div className="text-center">
-                                    <h3 className="text-lg font-semibold text-gray-700">{feature.name.split(' ')[0]}</h3>
-                                    {feature.name.split(' ').length > 1 && (
-                                        <h3 className="text-lg font-semibold text-gray-700">{feature.name.split(' ').slice(1).join(' ')}</h3>
-                                    )}
+                                <div>
+                                    <h3 className="text-lg font-semibold text-gray-700">{feature.name}</h3>
                                 </div>
                             </div>
                         ))}
@@ -151,11 +148,11 @@ const CamerasPage = () => {
             <section className="py-16 bg-gray-100">
                 <div className="max-w-screen-xl mx-auto px-4">
                     <h2 className="text-3xl font-semibold text-gray-800 mb-8 text-center">Marcas Asociadas</h2>
-                    <div className="grid grid-cols-2 gap-8 items-center justify-center">
-                        {associatedBrands.map((brand) => (
+                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-center">
+                        {associatedBrands.map((brand, index) => (
                             <div
-                                key={brand.name}
-                                className="col-span-1 flex justify-center items-center p-4 bg-gray-100 rounded-lg transition-shadow duration-300"
+                                key={index}
+                                className="col-span-1 flex justify-center items-center p-4 bg-white rounded-lg shadow-md transition-shadow duration-300 hover:shadow-lg"
                             >
                                 <a
                                     href={brand.link}
@@ -166,7 +163,7 @@ const CamerasPage = () => {
                                     <img
                                         src={brand.logo}
                                         alt={brand.name} // Mantén el alt por accesibilidad
-                                        className="max-h-20 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                                        className="max-h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300"
                                     />
                                 </a>
                             </div>

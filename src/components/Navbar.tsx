@@ -85,12 +85,12 @@ function Navbar() {
       setTimeout(() => {
         scrollToHash(href.split('#')[1]);
       }, 100);
-    } if (href.startsWith('/camaras#')) {
-      navigate('/camaras');
+    }if (href.startsWith('/seguridad-hogar#')) {
+      navigate('/seguridad-hogar');
       setTimeout(() => {
         scrollToHash(href.split('#')[1]);
       }, 100);
-    }else {
+    } else {
       navigate(href);
     }
     setHoveredMenu(null); // Close the mega menu after clicking
