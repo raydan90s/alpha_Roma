@@ -145,15 +145,15 @@ const CamerasPage = () => {
             </div>
 
             {/* Sección de Marcas Asociadas */}
-            <section className="py-16 bg-gray-100">
-                <div className="max-w-screen-xl mx-auto px-4">
+            <section className="py-16 ">
+                <div className="max-w-screen-xl mx-auto px-4 justify-center items-center">
                     <h2 className="text-3xl font-semibold text-gray-800 mb-8 text-center">Marcas Asociadas</h2>
-                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-center">
+                    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 items-center justify-center"> {/* Añadido justify-center aquí */}
                         {associatedBrands.map((brand, index) => (
                             <div
                                 key={index}
-                                className="col-span-1 flex justify-center items-center p-4 bg-white rounded-lg shadow-md transition-shadow duration-300 hover:shadow-lg"
-                            >
+                                className="col-span-1 flex justify-center items-center p-4 bg-white rounded-lg transition-all duration-300"
+                                >
                                 <a
                                     href={brand.link}
                                     target="_blank"
@@ -164,6 +164,7 @@ const CamerasPage = () => {
                                         src={brand.logo}
                                         alt={brand.name} // Mantén el alt por accesibilidad
                                         className="max-h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                                        style={{ boxShadow: 'none' }} // Elimina cualquier sombra inline
                                     />
                                 </a>
                             </div>
