@@ -3,7 +3,7 @@ import { scrollToHashOnLoad } from "../../assets/utils/scrollUtils";
 import ContactSection from "../../components/Sections/contactSection";
 import PlanFeatureCard from "../../components/PlanFeatureCard"; // Importa PlanFeatureCard
 import { ContactSectionProps } from "../../interface/contactProps";
-import { FaShieldAlt, FaBriefcase, FaStar } from "react-icons/fa"; // Importa iconos
+import { FaShieldAlt, FaGem, FaStar } from "react-icons/fa"; // Importa iconos
 
 const PackagePage = () => {
   useEffect(() => {
@@ -41,8 +41,8 @@ const PackagePage = () => {
       id: "plan-bronce",
     },
     {
-      title: "BÁSICO PLATA",
-      icon: <FaBriefcase className="text-secondary text-3xl" />,
+      title: "BÁSICA PLATA",
+      icon: <FaStar className="text-secondary text-3xl" />,
       features: [
         "2 Cámaras tipo Domo 1080p",
         "4 Cámaras tipo tubo 1080p",
@@ -58,7 +58,7 @@ const PackagePage = () => {
     },
     {
       title: "BÁSICO ORO",
-      icon: <FaStar className="text-acent text-3xl" />,
+      icon: <FaGem className="text-acent text-3xl" />,
       features: [
         "4 Cámaras tipo Domo 1080p",
         "4 Cámaras tipo tubo 1080p",
@@ -82,6 +82,15 @@ const PackagePage = () => {
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Paquetes y Precios</h1>
           <p className="text-lg md:text-xl max-w-2xl">
             Explora nuestros diferentes planes de seguridad diseñados para adaptarse a tus necesidades.
+          </p>
+        </div>
+      </div>
+      <div className="bg-[f3f4f6] pt-8 text-center">
+        <div className="max-w-screen-xl mx-auto px-4">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Precios</h1>
+          <p className="text-lg md:text-xl max-w-2xl mb-8 mx-auto text-center">
+          <strong>Monitoreo 24/7 desde $15 mensuales</strong>
+
           </p>
         </div>
       </div>
