@@ -63,82 +63,69 @@ function Footer() {
           </div>
 
           {/* Support column */}
-<div>
+          <div>
   <h3 className="text-2xl font-medium text-white mb-4 border-b border-gray-700 pb-2">Soporte</h3>
-  <ul className="space-y-2">
 
-    <li>
-      <Link to="/servicios#mantenimiento" className="text-gray-400 hover:text-primary transition-colors duration-300 text-lg">
-        Instalación y mantenimiento
-      </Link>
-    </li>
-
+  <ul className="flex justify-start gap-6 mt-4">
     <li>
       <a
         href={generarEnlaceWhatsApp(mensajesWhatsApp.general)}
-        className="flex items-center text-primary hover:text-white transition-colors duration-300 text-lg font-medium"
         target="_blank"
         rel="noopener noreferrer"
+        className="hover:scale-110 transition-transform duration-300"
       >
         <img
           src="https://res.cloudinary.com/dfbpaq83u/image/upload/v1744403721/ithlnsn8gw8h6up7rn9s.png"
           alt="WhatsApp"
-          className="inline-block w-auto h-8 mr-2"
+          className="h-10 w-auto"
         />
-        <span>099 197 4496</span>
       </a>
     </li>
-
     <li>
       <a
         href="https://facebook.com/novafenix"
-        className="flex items-center text-gray-400 hover:text-primary transition-colors duration-300 text-lg"
         target="_blank"
         rel="noopener noreferrer"
+        className="hover:scale-110 transition-transform duration-300"
       >
         <img
-          src="https://res.cloudinary.com/dfbpaq83u/image/upload/v1743455662/jx1d9odyq8fqf0is4wdr.png" // reemplaza con tu imagen personalizada
+          src="https://res.cloudinary.com/dfbpaq83u/image/upload/v1743455662/jx1d9odyq8fqf0is4wdr.png"
           alt="Facebook"
-          className="inline-block w-auto h-8 mr-2"
+          className="h-10 w-auto"
         />
-        <span>novafenix</span>
       </a>
     </li>
-
     <li>
       <a
         href="https://instagram.com/novafenix"
-        className="flex items-center text-gray-400 hover:text-primary transition-colors duration-300 text-lg"
         target="_blank"
         rel="noopener noreferrer"
+        className="hover:scale-110 transition-transform duration-300"
       >
         <img
-          src="https://res.cloudinary.com/dfbpaq83u/image/upload/v1743455663/nblvjeaujdoo8ndazdz7.png" // reemplaza con tu imagen personalizada
+          src="https://res.cloudinary.com/dfbpaq83u/image/upload/v1743455663/nblvjeaujdoo8ndazdz7.png"
           alt="Instagram"
-          className="inline-block w-auto h-8 mr-2"
+          className="h-10 w-auto"
         />
-        <span>@novafenix</span>
       </a>
     </li>
-
     <li>
       <a
         href="https://tiktok.com/@novafenix"
-        className="flex items-center text-gray-400 hover:text-primary transition-colors duration-300 text-lg"
         target="_blank"
         rel="noopener noreferrer"
+        className="hover:scale-110 transition-transform duration-300"
       >
         <img
-          src="https://res.cloudinary.com/dfbpaq83u/image/upload/v1743455663/nblvjeaujdoo8ndazdz7.png" // reemplaza con tu imagen personalizada
+          src="https://res.cloudinary.com/dfbpaq83u/image/upload/v1743455663/nblvjeaujdoo8ndazdz7.png"
           alt="TikTok"
-          className="inline-block w-auto h-8 mr-2"
+          className="h-10 w-auto"
         />
-        <span>@novafenix</span>
       </a>
     </li>
-
   </ul>
 </div>
+
 
         </div>
 
