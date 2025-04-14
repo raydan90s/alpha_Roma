@@ -5,12 +5,19 @@ import { ContactSectionProps } from "../../interface/contactProps";
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import HeroSegmar from "./HeroSegmar.tsx";
 import SplitSection from "../../components/Sections/SplitSection.tsx"; // Importa SplitSection
+import { TELEFONO_CONTACTO } from "../../config/config.ts";
 
 const SeguridadHogarPage = () => {
   const alertasInmediatasRef = useRef<HTMLDivElement>(null);
+  const cruceLineaRef = useRef<HTMLDivElement>(null);
+  const colorVuRef = useRef<HTMLDivElement>(null);
 
   const scrollToRef = (ref: React.RefObject<HTMLElement>) => {
-    ref.current?.scrollIntoView({ behavior: 'smooth' });
+    ref.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
+    });
   };
 
   useEffect(() => {
@@ -24,7 +31,7 @@ const SeguridadHogarPage = () => {
   const seguridadHogarContactSectionData: ContactSectionProps = {
     title: "¿Interesado en proteger tu hogar?",
     description: "Contáctanos para asegurar tu tranquilidad y la de tu familia.",
-    phone: "8445917193",
+    phone: {TELEFONO_CONTACTO},
     emailButtonText: "Contactar",
     onEmailButtonClick: handleContactButtonClick,
   };
@@ -32,9 +39,9 @@ const SeguridadHogarPage = () => {
   const seguridadHogarHeroData: HeroProps = {
     title: "Tu Hogar,",
     span: "Tu Santuario Seguro",
-    link_image: "src/assets/img/HeroCamera.png", // URL de una cámara de seguridad enfocando un hogar
+    link_image: "src/assets/img/HeroCamera.png",
     span_btn1: "Ver Sistemas",
-    span_btn2: "Solicitar Asesoría", // Enlace que simula una cámara
+    span_btn2: "Solicitar Asesoría",
     description: "Protege cada rincón de tu hogar con nuestra vigilancia inteligente. Monitoreo en tiempo real y la tranquilidad que mereces.",
     cta_text: "Explora la Protección",
   };
@@ -62,7 +69,6 @@ const SeguridadHogarPage = () => {
         "Alta precisión con analítica de video inteligente",
       ],
     },
-
     {
       id: "colorVu",
       label: "ColorVu",
@@ -79,12 +85,13 @@ const SeguridadHogarPage = () => {
   ];
 
   return (
-    <div className="pt-0 bg-gray-100">
+
+    <div className="pt-0 bg-gray-100 scroll-pt-24 md:scroll-pt-32 lg:scroll-pt-40"> {/* Adjusted scroll-pt-* values */}
       {/* Hero Section */}
       <HeroSegmar
         {...seguridadHogarHeroData}
-        scrollToRef={scrollToRef} // Pass the scrollToRef function
-        targetRef={alertasInmediatasRef} // Pass the ref to the "AlertasInmediatas" section
+        scrollToRef={scrollToRef}
+        targetRef={alertasInmediatasRef}
       />
 
       {/* Soluciones usando SplitSection */}
@@ -93,6 +100,7 @@ const SeguridadHogarPage = () => {
           Soluciones de Seguridad para tu Hogar
         </h2>
         {solucionesSeguridadHogar.map((option, index) => (
+          
           <SplitSection
             key={option.id}
             id={option.id}
@@ -102,7 +110,15 @@ const SeguridadHogarPage = () => {
             features={option.features}
             isImageLeft={index % 2 === 0}
             copy={option.copy}
-            ref={option.id === "AlertasInmediatas" ? alertasInmediatasRef : null} // Attach the ref to the "AlertasInmediatas" section
+            ref={
+              option.id === "AlertasInmediatas"
+                ? alertasInmediatasRef
+                : option.id === "cruceLinea"
+                ? cruceLineaRef
+                : option.id === "colorVu"
+                ? colorVuRef
+                : null
+            }
           />
         ))}
       </div>

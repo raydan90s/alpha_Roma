@@ -24,7 +24,9 @@ const SplitSection = forwardRef<HTMLDivElement, SplitSectionProps>(({
   const gridTemplateColumns = 'grid-cols-1 md:grid-cols-2'; // Usamos grid-cols-2 fijo en pantallas medianas y grandes
 
   return (
-    <section id={id} className="py-4" ref={ref}> {/* Attach the ref here */}
+    <div className="bg-gray-100 py-12" id={id}>
+
+    <section  className="py-4" ref={ref}> {/* Attach the ref here */}
       <div className="mx-auto bg-white max-w-[95rem] rounded-[20px]">
         <div className={`grid ${gridTemplateColumns} gap-4 md:gap-8 items-stretch`}>
           {/* Image Section */}
@@ -45,6 +47,7 @@ const SplitSection = forwardRef<HTMLDivElement, SplitSectionProps>(({
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6 tracking-tight">
               {label}
             </h2>
+            
             <p className="text-base md:text-lg text-gray-700 mb-6 md:mb-8 leading-relaxed" style={{ textAlign: 'justify' }}>
               {description}
             </p>
@@ -55,7 +58,7 @@ const SplitSection = forwardRef<HTMLDivElement, SplitSectionProps>(({
                 </li>
               ))}
             </ul>
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-start">
+            <div  className="flex flex-col sm:flex-row sm:items-center sm:justify-start">
               <a
                 href="tel:8445917193"
                 className="bg-primary hover:bg-acent text-white font-semibold px-4 py-3 rounded-md shadow-md transition duration-200 ease-in-out text-sm whitespace-nowrap max-w-[180px] mr-4 mb-2 sm:mb-0"
@@ -68,6 +71,7 @@ const SplitSection = forwardRef<HTMLDivElement, SplitSectionProps>(({
         </div>
       </div>
     </section>
+    </div>
   );
 });
 

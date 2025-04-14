@@ -18,8 +18,6 @@ function Home() {
         primaryButtonText="Contáctanos"
         secondaryButtonText="Ver Paquetes"
         secondaryButtonLink="/paquetes"
-
-
       />
       {/* Features Section */}
       <div className="bg-gray-100 py-12">
