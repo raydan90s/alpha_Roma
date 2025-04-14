@@ -9,7 +9,7 @@ function Footer() {
       <div className="max-w-screen-2xl mx-auto px-4 py-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo column */}
-          <div className="flex flex-col space-y-4">
+          <div className="flex flex-col items-center text-center space-y-4">
             <Link to="/">
               <img src={Logo} alt="Logo" className="h-20" />
             </Link>
@@ -17,7 +17,6 @@ function Footer() {
               Soluciones de seguridad inteligentes para tu hogar y negocio.
             </p>
           </div>
-
           {/* Products column */}
           <div>
             <h3 className="text-2xl font-medium text-white mb-4 border-b border-gray-700 pb-2">Servicios</h3>
@@ -28,8 +27,8 @@ function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/servicios#mantenimiento" className="text-gray-400 hover:text-primary transition-colors duration-300 text-lg">
-                  Mantenimiento
+                <Link to="/servicios#monitoreo" className="text-gray-400 hover:text-primary transition-colors duration-300 text-lg">
+                  Monitoreo de camaras
                 </Link>
               </li>
               <li>
@@ -56,11 +55,6 @@ function Footer() {
                   Contáctanos
                 </Link>
               </li>
-              <li>
-                <Link to="/blog" className="text-gray-400 hover:text-primary transition-colors duration-300 text-lg">
-                  Blog
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -68,18 +62,9 @@ function Footer() {
           <div>
             <h3 className="text-2xl font-medium text-white mb-4 border-b border-gray-700 pb-2">Soporte</h3>
             <ul className="space-y-2">
+
               <li>
-                <Link to="/servicios" className="text-gray-400 hover:text-primary transition-colors duration-300 text-lg">
-                  Centro de ayuda
-                </Link>
-              </li>
-              <li>
-                <Link to="/servicios" className="text-gray-400 hover:text-primary transition-colors duration-300 text-lg">
-                  Preguntas y respuestas
-                </Link>
-              </li>
-              <li>
-                <Link to="/servicios" className="text-gray-400 hover:text-primary transition-colors duration-300 text-lg">
+                <Link to="/servicios#mantenimiento" className="text-gray-400 hover:text-primary transition-colors duration-300 text-lg">
                   Instalacion y mantenimiento
                 </Link>
               </li>

@@ -20,7 +20,7 @@ const ServicesPage = () => {
     emailButtonText: "Solicitar cotización",
     onEmailButtonClick: handleQuoteButtonClick,
   };
- 
+
   return (
     <div className="pt-20 bg-gray-100">
       {/* Hero Section */}
@@ -34,7 +34,7 @@ const ServicesPage = () => {
       </div>
 
       {/* Services Content */}
-      <div className="max-w-screen-xl mx-auto px-4 py-12 space-y-16"> {/* Añadido space-y-16 */}
+      <div className="max-w-screen-xl mx-auto px-4 py-12 space-y-16" style={{textAlign: "justify"}}> {/* Añadido space-y-16 */}
         {/* Installation Section */}
         <section id="instalacion" className="scroll-mt-24 bg-white rounded-xl shadow-lg p-12 md:p-16"> {/* Estilos del recuadro */}
           <div className="flex flex-col md:flex-row gap-8">
@@ -86,12 +86,12 @@ const ServicesPage = () => {
         </section>
 
         {/* Maintenance Section */}
-        <section id="mantenimiento" className="scroll-mt-24 bg-white rounded-xl shadow-lg p-12 md:p-16"> {/* Estilos del recuadro */}
+        <section id="monitoreo" className="scroll-mt-24 bg-white rounded-xl shadow-lg p-12 md:p-16" > {/* Estilos del recuadro */}
           <div className="flex flex-col md:flex-row-reverse gap-8">
             <div className="md:w-1/2">
-              <h2 className="text-3xl font-bold text-gray-800 mb-6">Mantenimiento</h2>
+              <h2 className="text-3xl font-bold text-gray-800 mb-6">Monitoreo de Cámaras</h2>
               <p className="text-lg text-gray-600 mb-8">
-                Mantenemos tus sistemas de seguridad en perfecto estado con revisiones periódicas, actualizaciones de software y reparaciones para asegurar que tu protección nunca falle.
+                Supervisamos tus espacios en tiempo real, las 24 horas del día, con sistemas inteligentes que detectan movimientos, alertas y eventos sospechosos para una respuesta inmediata y efectiva.
               </p>
               <ul className="space-y-4">
                 <li className="flex items-start">
@@ -100,7 +100,7 @@ const ServicesPage = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                     </svg>
                   </div>
-                  <span className="text-gray-700">Revisión y limpieza de cámaras y sensores</span>
+                  <span className="text-gray-700">Monitoreo 24/7 en tiempo real</span>
                 </li>
                 <li className="flex items-start">
                   <div className="bg-secondary rounded-full p-1 mr-3 mt-1">
@@ -108,7 +108,7 @@ const ServicesPage = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                     </svg>
                   </div>
-                  <span className="text-gray-700">Actualización de firmware y software</span>
+                  <span className="text-gray-700">Alertas inmediatas ante eventos sospechosos</span>
                 </li>
                 <li className="flex items-start">
                   <div className="bg-secondary rounded-full p-1 mr-3 mt-1">
@@ -116,17 +116,18 @@ const ServicesPage = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                     </svg>
                   </div>
-                  <span className="text-gray-700">Diagnóstico y reparación de equipos</span>
+                  <span className="text-gray-700">Visualización y control desde dispositivos móviles</span>
                 </li>
               </ul>
               <button className="mt-8 bg-primary text-black font-bold px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300">
-                Programar mantenimiento
+                Solicitar monitoreo
               </button>
             </div>
+
             <div className="md:w-1/2">
               <div className="bg-gray-200 rounded-xl overflow-hidden shadow-lg h-80">
                 <img
-                  src="https://www.microtec.com.ni/wp-content/uploads/2023/04/instalacion-cctv-jovenes-tecnicos-asiaticos-instalacion-como-concepto-camara-ip-wifi-camara-ip-inalambrica-1-1024x767.jpg"
+                  src="https://img.freepik.com/foto-gratis/retrato-macho-guardia-seguridad-uniforme_23-2150368726.jpg?t=st=1744642712~exp=1744646312~hmac=03eceded360d177107302d216bf531089ef02e721d9616e3d5cc83b69345c090&w=996"
                   alt="Servicio de mantenimiento"
                   className="w-full h-full object-cover"
                 />

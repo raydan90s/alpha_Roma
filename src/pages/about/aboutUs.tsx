@@ -37,7 +37,7 @@ const AboutUsPage = () => {
 
       <div className="pt-20">
         {/* Content Section */}
-        <div className="max-w-screen-xl mx-auto px-4 py-12 space-y-16"> {/* Añadimos space-y-16 para separación vertical */}
+        <div className="max-w-screen-xl mx-auto px-4 py-12 space-y-16" style={{textAlign: "justify"}}> {/* Añadimos space-y-16 para separación vertical */}
           {/* Misión Section */}
           <section id="mision" className="scroll-mt-24 bg-white rounded-xl shadow-lg p-12 md:p-16"> {/* Estilos del recuadro */}
             <div className="flex flex-col md:flex-row gap-8">
