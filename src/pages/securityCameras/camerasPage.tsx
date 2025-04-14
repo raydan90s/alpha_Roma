@@ -82,7 +82,7 @@ const CamerasPage = () => {
             label: "CCTV",
             href: "#cctv",
             description: "Nuestros sistemas de Circuito Cerrado de Televisión (CCTV) ofrecen una solución de vigilancia robusta y confiable para la seguridad perimetral. Diseñados para una supervisión continua y grabación local, son la opción ideal para proteger grandes propiedades y asegurar una cobertura completa sin depender de la conexión a internet.",
-            image: "https://res.cloudinary.com/dcxqkcmhd/image/upload/v1744303024/y8ora1lirlj0gaesd2su.png",
+            image: "https://res.cloudinary.com/dfbpaq83u/image/upload/v1744662143/baduae7ho7romthbgleu.png",
             features: [
                 "Grabación continua 24/7",
                 "Almacenamiento local seguro",
@@ -98,7 +98,7 @@ const CamerasPage = () => {
             description:
                 "Descubre la tecnología avanzada de nuestras cámaras digitales. Accede en tiempo real a tus cámaras desde tu móvil u ordenador, gestiona grabaciones de manera remota y mantén el control total de la seguridad de tu espacio desde cualquier parte del mundo.",
             image:
-                "https://res.cloudinary.com/dcxqkcmhd/image/upload/v1744299437/fugpjrnxjc3yq78rz8bg.png",
+                "https://res.cloudinary.com/dfbpaq83u/image/upload/v1744663146/saqwfm5qvpdndxkrqclp.png",
             features: [
                 "Visualización remota en tiempo real",
                 "Compatibilidad con múltiples dispositivos",
@@ -111,10 +111,9 @@ const CamerasPage = () => {
     ];
 
     const associatedBrands = [
-        { logo: "src/assets/img/brands/hikvision-logo.svg", link: "https://www.hikvision.com/" },
-        { logo: "src/assets/img/brands/tplink-logo.png", link: "https://www.tp-link.com/" },
+        { logo: "https://res.cloudinary.com/dfbpaq83u/image/upload/v1744661104/mddhgpqzt9d2kf7uotdk.svg", link: "https://www.hikvision.com/" },
+        { logo: "https://res.cloudinary.com/dfbpaq83u/image/upload/v1744661104/gowgaot8mye47bwovwpq.png", link: "https://www.tp-link.com/" },
     ];
-
     return (
         <div className="pt-0">
             <CameraHero
