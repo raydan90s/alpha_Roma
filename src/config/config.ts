@@ -1,0 +1,1 @@
+export const TELEFONO_CONTACTO = "593991974496";

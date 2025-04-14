@@ -1,15 +1,14 @@
 import React from 'react';
 import { ContactSectionProps } from '../../interface/contactProps'; // Ajusta la ruta si es necesario
 import { generarEnlaceWhatsApp, mensajesWhatsApp } from '../../messages/messages'; // Asegúrate de la ruta correcta
+import { TELEFONO_CONTACTO } from '../../config/config';
 
 const ContactSection: React.FC<ContactSectionProps> = ({
   title,
   description,
-  context = 'general', // Valor por defecto si no se proporciona contexto
+  context = 'general', 
 }) => {
-  const telefonoContacto = "+593991974496"; // Número para la llamada (formato internacional)
 
-  // Determina el mensaje de WhatsApp basado en el contexto
   let whatsappMessage;
   switch (context) {
     case 'servicios':
@@ -34,7 +33,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
       </div>
       <div className="flex flex-col md:flex-row justify-center gap-4 max-w-xl mx-auto">
         <a
-          href={`tel:${telefonoContacto}`}
+          href={`tel:${TELEFONO_CONTACTO}`}
           className="bg-primary hover:bg-primary text-black font-bold px-6 py-3 rounded-full shadow-md transition-all duration-300 text-center"
         >
           Llamar ahora

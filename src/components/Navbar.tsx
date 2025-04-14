@@ -4,12 +4,14 @@ import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 import { scrollToHash, handleScrollToTop } from '../assets/utils/scrollUtils'; // Import the direct scroll function
 import Logo from '../assets/img/logo2.png'; // Import your logo image
 import { menuItems } from "../assets/utils/menuItems";
-import { generarEnlaceWhatsApp, mensajesWhatsApp } from "../messages/messages"; 
+import { generarEnlaceWhatsApp, mensajesWhatsApp } from "../messages/messages";
+import { TELEFONO_CONTACTO } from "../config/config";
+
 
 function Navbar() {
   const [hoveredMenu, setHoveredMenu] = useState(null);
-  const [showSearch, setShowSearch] = useState(false);
-  const [searchFocused, setSearchFocused] = useState(false);
+  const [showSearch] = useState(false);
+  const [searchFocused] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeMobileSubmenu, setActiveMobileSubmenu] = useState(null);
   const timeoutRef = useRef(null);
@@ -96,10 +98,6 @@ function Navbar() {
     }
     setHoveredMenu(null); // Close the mega menu after clicking
   };
-
-
-
-  const shouldShowSearch = showSearch || searchFocused;
 
   return (
     <div className="relative" ref={navRef}>
@@ -286,7 +284,7 @@ function Navbar() {
               <div className="mt-6">
                 <img src="https://res.cloudinary.com/dfbpaq83u/image/upload/v1744403721/ithlnsn8gw8h6up7rn9s.png" alt="Logo" className="h-3 mx-auto mb-4" />
                 <a
-                  href="tel:8+593991974496"
+                  href={`tel:${TELEFONO_CONTACTO}`}
                   className="flex items-center justify-center w-full bg-primary hover:bg-primary text-black font-bold py-3 rounded-full shadow-md transition-all duration-300"
                 >
                   Llamar ahora: 099 197 4496

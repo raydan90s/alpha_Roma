@@ -1,4 +1,5 @@
-const numeroTelefono = "593962573618"; // Reemplaza con tu número de teléfono internacional
+import { TELEFONO_CONTACTO } from '../config/config';
+const numeroTelefono = TELEFONO_CONTACTO // Reemplaza con tu número de teléfono internacional
 
 export const mensajesWhatsApp = {
   general: `Hola, estoy interesado en sus productos y servicios de cámaras de seguridad y monitoreo.`,
