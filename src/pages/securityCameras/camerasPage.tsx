@@ -137,7 +137,7 @@ const CamerasPage = () => {
                 </div>
             </section>
 
-            <div className="space-y-8">
+            <div >
                 {cameraOptionsData.map((option, index) => (
                     <SplitSection
                         key={option.label}
