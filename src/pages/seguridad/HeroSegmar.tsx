@@ -25,7 +25,7 @@ interface HeroSegmarProps extends HeroProps {
 
 const HeroSegmar: React.FC<HeroSegmarProps> = ({
   span,
-  image = "https://res.cloudinary.com/dfbpaq83u/image/upload/v1744388571/cap2fjkw6bzqypxnk4rf.jpg",
+  image = "https://res.cloudinary.com/dfbpaq83u/image/upload/v1744664185/jeezm98lw3iipm1k1zjp.png",
   span_btn1 = "Ver Sistemas",
   span_btn2 = "Demo en Vivo",
   title = "Tu Hogar, Tu Santuario Seguro",

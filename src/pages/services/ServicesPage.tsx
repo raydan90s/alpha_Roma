@@ -122,7 +122,7 @@ const ServicesPage = () => {
             <div className="md:w-1/2">
               <div className="bg-gray-200 rounded-xl overflow-hidden shadow-lg h-80">
                 <img
-                  src="https://img.freepik.com/foto-gratis/retrato-macho-guardia-seguridad-uniforme_23-2150368726.jpg?t=st=1744642712~exp=1744646312~hmac=03eceded360d177107302d216bf531089ef02e721d9616e3d5cc83b69345c090&w=996"
+                  src="https://res.cloudinary.com/dfbpaq83u/image/upload/v1744663789/dkqfonfibrukgu7ojtd2.png"
                   alt="Servicio de mantenimiento"
                   className="w-full h-full object-cover"
                 />

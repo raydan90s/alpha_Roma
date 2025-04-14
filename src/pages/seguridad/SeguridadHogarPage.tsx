@@ -44,7 +44,7 @@ const SeguridadHogarPage = () => {
       id: "AlertasInmediatas",
       label: "Alertas Inmediatas",
       description: "La función de alerta inmediata permite que el sistema de videovigilancia reaccione en tiempo real ante eventos sospechosos, enviando notificaciones instantáneas a los dispositivos del usuario o al centro de monitoreo. Esto mejora drásticamente el tiempo de respuesta ante cualquier intento de intrusión, emergencia o actividad no autorizada.",
-      image: "https://res.cloudinary.com/dcxqkcmhd/image/upload/v1744299437/fugpjrnxjc3yq78rz8bg.png",
+      image: "https://res.cloudinary.com/dfbpaq83u/image/upload/v1744663146/saqwfm5qvpdndxkrqclp.png",
       features: [
         "Notificaciones en tiempo real",
         "Activación automática de disuasivos",
