@@ -19,8 +19,8 @@ const AboutUsPage = () => {
   const contactSectionData: ContactSectionProps = {
     title: "¿Te gustaría saber más?",
     description: "Contáctanos para conocer más sobre nuestra misión, visión y cómo nuestros valores se traducen en un servicio excepcional.",
-    phone: "8445917193",
-    emailButtonText: "Contactar por correo",
+    context:"general",
+    emailButtonText: "Contactar",
     onEmailButtonClick: handleEmailButtonClick,
   };
 

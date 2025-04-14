@@ -2,7 +2,7 @@
 export interface ContactSectionProps {
     title: string;
     description: string;
-    phone: string;
+    context: string;
     emailButtonText: string;
     onEmailButtonClick: () => void;
   }

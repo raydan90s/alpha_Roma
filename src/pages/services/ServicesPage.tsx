@@ -16,7 +16,7 @@ const ServicesPage = () => {
   const servicesContactSectionData: ContactSectionProps = {
     title: "¿Listo para mejorar tu seguridad?",
     description: "Nuestro equipo está preparado para ayudarte con cualquier servicio que necesites. Contáctanos hoy mismo.",
-    phone: "8445917193",
+    context:"servicios",
     emailButtonText: "Solicitar cotización",
     onEmailButtonClick: handleQuoteButtonClick,
   };

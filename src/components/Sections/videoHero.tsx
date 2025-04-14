@@ -1,12 +1,13 @@
 import React from 'react';
 import { VideoHeroProps } from '../../interface/HerovideoProps';
+import { generarEnlaceWhatsApp, mensajesWhatsApp } from '../../messages/messages'; // Asegúrate de que la ruta sea correcta
 
 const VideoHero: React.FC<VideoHeroProps> = ({
   title,
   subtitle,
   videoUrl,
   primaryButtonText,
-  primaryButtonLink,
+  // primaryButtonLink, // Ya no lo usaremos para la navegación directa a la página de contacto
   secondaryButtonText,
   secondaryButtonLink,
 }) => {
@@ -27,16 +28,16 @@ const VideoHero: React.FC<VideoHeroProps> = ({
           {subtitle}
         </p>
 
-        {(primaryButtonText && primaryButtonLink) || (secondaryButtonText && secondaryButtonLink) ? (
+        {(primaryButtonText && mensajesWhatsApp?.general) || (secondaryButtonText && secondaryButtonLink) ? (
           <div className="mt-8 flex gap-4">
-            {primaryButtonText && primaryButtonLink && (
+            {primaryButtonText && mensajesWhatsApp?.general && (
               <a
-                href={primaryButtonLink}
+                href={generarEnlaceWhatsApp(mensajesWhatsApp.general)}
                 className="inline-block px-6 py-3 text-secondary text-lg font-bold bg-primary hover:bg-acent rounded-lg shadow-md transition duration-300"
+                target="_blank" // Para abrir en una nueva pestaña
+                rel="noopener noreferrer" // Recomendado por seguridad
               >
-                {primaryButtonText
-                
-                }
+                {primaryButtonText}
               </a>
             )}
             {secondaryButtonText && secondaryButtonLink && (

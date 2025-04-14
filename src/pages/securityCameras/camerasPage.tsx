@@ -31,7 +31,7 @@ const CamerasPage = () => {
     const camerasContactSectionData: ContactSectionProps = {
         title: "¿Interesado en nuestras soluciones de cámaras?",
         description: "Contáctanos para discutir tus necesidades de vigilancia y obtener una cotización personalizada.",
-        phone: "8445917193",
+        context:"camaras",
         emailButtonText: "Contactar",
         onEmailButtonClick: handleContactButtonClick,
     };

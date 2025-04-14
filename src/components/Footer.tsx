@@ -1,4 +1,3 @@
-import React from 'react';
 import Logo from '../assets/img/logo2.png';
 import { Link } from 'react-router-dom';
 import { generarEnlaceWhatsApp, mensajesWhatsApp } from '../messages/messages';
@@ -52,9 +51,14 @@ function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-400 hover:text-primary transition-colors duration-300 text-lg">
+                <a
+                  href={generarEnlaceWhatsApp(mensajesWhatsApp.general)}
+                  className="text-gray-400 hover:text-primary transition-colors duration-300 text-lg"
+                  target="_blank" // Para abrir en una nueva pestaña (opcional)
+                  rel="noopener noreferrer" // Recomendado por seguridad con target="_blank"
+                >
                   Contáctanos
-                </Link>
+                </a>
               </li>
               <li>
                 <Link to="/blog" className="text-gray-400 hover:text-primary transition-colors duration-300 text-lg">

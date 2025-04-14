@@ -18,7 +18,7 @@ const PackagePage = () => {
   const packagesContactSectionData: ContactSectionProps = {
     title: "¿Interesado en nuestros paquetes y precios?",
     description: "Contáctanos para obtener más detalles o para personalizar un plan para ti.",
-    phone: "8445917193",
+    context:"planes",
     emailButtonText: "Contactar",
     onEmailButtonClick: handleContactButtonClick,
   };

@@ -1,5 +1,4 @@
 // Home.tsx
-import { Bell, Video, Phone, ChevronRight } from 'lucide-react';
 import Call_to_action from '../components/Call_to_action';
 import VideoHero from "../components/Sections/videoHero.tsx";
 import VideoGallery from '../components/video/VideoGalery';
@@ -17,7 +16,6 @@ function Home() {
         subtitle="La seguridad de tu hogar en la palma de tu mano"
         videoUrl="https://res.cloudinary.com/dcxqkcmhd/video/upload/v1744230903/wgmiwddovoqinudtewn4.mp4"
         primaryButtonText="Contáctanos"
-        primaryButtonLink="/contacto"
         secondaryButtonText="Ver Paquetes"
         secondaryButtonLink="/paquetes"
 

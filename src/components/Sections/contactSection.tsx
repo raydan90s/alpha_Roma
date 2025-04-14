@@ -1,13 +1,31 @@
 import React from 'react';
 import { ContactSectionProps } from '../../interface/contactProps'; // Ajusta la ruta si es necesario
+import { generarEnlaceWhatsApp, mensajesWhatsApp } from '../../messages/messages'; // Asegúrate de la ruta correcta
 
 const ContactSection: React.FC<ContactSectionProps> = ({
   title,
   description,
-  phone,
-  emailButtonText,
-  onEmailButtonClick,
+  context = 'general', // Valor por defecto si no se proporciona contexto
 }) => {
+  const telefonoContacto = "+593991974496"; // Número para la llamada (formato internacional)
+
+  // Determina el mensaje de WhatsApp basado en el contexto
+  let whatsappMessage;
+  switch (context) {
+    case 'servicios':
+      whatsappMessage = mensajesWhatsApp.servicios || mensajesWhatsApp.general;
+      break;
+    case 'planes':
+      whatsappMessage = mensajesWhatsApp.planesYPrecios || mensajesWhatsApp.general;
+      break;
+    case 'camaras':
+      whatsappMessage = mensajesWhatsApp.tiposDeCamaras || mensajesWhatsApp.general; // Reemplaza 'otroMensaje'
+      break;
+    default:
+      whatsappMessage = mensajesWhatsApp.general;
+      break;
+  }
+
   return (
     <section className="bg-gray-900 text-white rounded-xl p-8 md:p-12">
       <div className="text-center mb-8">
@@ -16,17 +34,19 @@ const ContactSection: React.FC<ContactSectionProps> = ({
       </div>
       <div className="flex flex-col md:flex-row justify-center gap-4 max-w-xl mx-auto">
         <a
-          href={`tel:${phone}`}
+          href={`tel:${telefonoContacto}`}
           className="bg-primary hover:bg-primary text-black font-bold px-6 py-3 rounded-full shadow-md transition-all duration-300 text-center"
         >
           Llamar ahora
         </a>
-        <button
-          className="bg-white hover:bg-gray-100 text-gray-900 font-bold px-6 py-3 rounded-full shadow-md transition-all duration-300"
-          onClick={onEmailButtonClick}
+        <a
+          href={generarEnlaceWhatsApp(whatsappMessage)} // Usa el mensaje dinámico
+          className="bg-white hover:bg-green-600 text-black font-bold px-6 py-3 rounded-full shadow-md transition-all duration-300 text-center"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          {emailButtonText}
-        </button>
+          Contactar
+        </a>
       </div>
     </section>
   );
