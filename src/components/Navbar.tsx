@@ -230,11 +230,11 @@ function Navbar() {
               {/* Botón WhatsApp */}
               <a
                 href={generarEnlaceWhatsApp(mensajesWhatsApp.general)}
-                className="bg-primary hover:bg-primary text-black font-bold px-3 sm:px-6 py-2 rounded-full shadow-md transition-all duration-300 text-xs sm:text-sm whitespace-nowrap flex items-center gap-2"
+                className={`bg-primary hover:bg-primary text-black font-bold px-3 sm:px-6 py-2 rounded-full shadow-md transition-all duration-300 text-xs sm:text-sm whitespace-nowrap flex items-center gap-2 ${mobileMenuOpen ? 'hidden md:flex' : 'md:flex'}`}
                 onClick={() => setMobileMenuOpen(false)} // Close menu on WhatsApp click
               >
                 <img
-                  src="https://brandlogos.net/wp-content/uploads/2013/04/whatsapp-logo-symbol-vector.png"
+                  src="https://res.cloudinary.com/dfbpaq83u/image/upload/v1744669038/shrx1oeqzvtkzbvtfp81.png"
                   alt="WhatsApp Logo"
                   className="h-6 w-auto"
                 />
@@ -311,13 +311,17 @@ function Navbar() {
 
               {/* Botón de teléfono móvil */}
               <div className="mt-6">
-                <img src="https://res.cloudinary.com/dfbpaq83u/image/upload/v1744403721/ithlnsn8gw8h6up7rn9s.png" alt="Logo" className="h-3 mx-auto mb-4" />
                 <a
                   href={`tel:${TELEFONO_CONTACTO}`}
                   className="flex items-center justify-center w-full bg-primary hover:bg-primary text-black font-bold py-3 rounded-full shadow-md transition-all duration-300"
                   onClick={() => setMobileMenuOpen(false)} // Close menu on call click
                 >
-                  Llamar ahora: {TELEFONO_CONTACTO}
+                  <img
+                    src="https://res.cloudinary.com/dfbpaq83u/image/upload/v1744669038/shrx1oeqzvtkzbvtfp81.png" // Reemplaza con la URL de tu icono de WhatsApp
+                    alt="WhatsApp"
+                    className="h-10r w-auto mr-2" // Ajusta el tamaño y el margen según necesites
+                  />
+                  {formatearTelefono(TELEFONO_CONTACTO)}
                 </a>
               </div>
             </div>
