@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 import { scrollToHash, handleScrollToTop } from '../assets/utils/scrollUtils'; // Import the direct scroll function
 import Logo from '../assets/img/logo2.png'; // Import your logo image
 import { menuItems } from "../assets/utils/menuItems";
+import { generarEnlaceWhatsApp, mensajesWhatsApp } from "../messages/messages"; 
 
 function Navbar() {
   const [hoveredMenu, setHoveredMenu] = useState(null);
@@ -123,8 +124,8 @@ function Navbar() {
                 >
                   <button
                     className={`flex items-center text-white text-lg font-medium px-2 py-1.5 border-b-2 transition-all duration-300 whitespace-nowrap ${hoveredMenu === index
-                        ? "border-white text-white"
-                        : "border-transparent text-gray-400 hover:text-white"
+                      ? "border-white text-white"
+                      : "border-transparent text-gray-400 hover:text-white"
                       }`}
                   >
                     {item.title}
@@ -143,11 +144,11 @@ function Navbar() {
             <div className="flex items-center">
               {/* Botón Teléfono */}
               <a
-                href="tel:+593991974496"
+                href={generarEnlaceWhatsApp(mensajesWhatsApp.general)}
                 className="bg-primary hover:bg-primary text-black font-bold px-3 sm:px-6 py-2 rounded-full shadow-md transition-all duration-300 text-xs sm:text-sm whitespace-nowrap flex items-center gap-2"
               >
                 <img
-                  src="https://brandlogos.net/wp-content/uploads/2013/04/whatsapp-logo-symbol-vector.png"
+                  src="https://brandlogos.net/wp-content/uploads/2013/04/whatsapp-logo-symbol-vector.png" 
                   alt="Logo"
                   className="h-6 w-auto"
                 />
@@ -290,6 +291,7 @@ function Navbar() {
                 >
                   Llamar ahora: 099 197 4496
                 </a>
+
               </div>
             </div>
           </div>

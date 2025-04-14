@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo from '../assets/img/logo2.png';
 import { Link } from 'react-router-dom';
+import { generarEnlaceWhatsApp, mensajesWhatsApp } from '../messages/messages';
 
 function Footer() {
   return (
@@ -16,7 +17,7 @@ function Footer() {
               Soluciones de seguridad inteligentes para tu hogar y negocio.
             </p>
           </div>
-          
+
           {/* Products column */}
           <div>
             <h3 className="text-2xl font-medium text-white mb-4 border-b border-gray-700 pb-2">Servicios</h3>
@@ -40,7 +41,7 @@ function Footer() {
               </li>
             </ul>
           </div>
-          
+
           {/* Company column */}
           <div>
             <h3 className="text-2xl font-medium text-white mb-4 border-b border-gray-700 pb-2">Empresa</h3>
@@ -62,14 +63,14 @@ function Footer() {
               </li>
             </ul>
           </div>
-          
+
           {/* Support column */}
           <div>
             <h3 className="text-2xl font-medium text-white mb-4 border-b border-gray-700 pb-2">Soporte</h3>
             <ul className="space-y-2">
               <li>
                 <Link to="/servicios" className="text-gray-400 hover:text-primary transition-colors duration-300 text-lg">
-                  Centro de ayuda 
+                  Centro de ayuda
                 </Link>
               </li>
               <li>
@@ -83,18 +84,24 @@ function Footer() {
                 </Link>
               </li>
               <li>
-                <span className="text-gray-400 text-lg">
-                  <img src="https://res.cloudinary.com/dfbpaq83u/image/upload/v1744403721/ithlnsn8gw8h6up7rn9s.png" alt="WhatsApp" className="inline-block  w-autto h-8" /> 
-                <a href="tel:+593991974496" className="text-primary hover:text-white transition-colors duration-300 text-lg font-medium">
-
-                099 197 4496
+                <a
+                  href={generarEnlaceWhatsApp(mensajesWhatsApp.general)}
+                  className="flex items-center text-primary hover:text-white transition-colors duration-300 text-lg font-medium"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="https://res.cloudinary.com/dfbpaq83u/image/upload/v1744403721/ithlnsn8gw8h6up7rn9s.png"
+                    alt="WhatsApp"
+                    className="inline-block w-auto h-8 mr-2" // Agregué mr-2 para separar la imagen del texto
+                  />
+                  <span>099 197 4496</span> {/* O puedes usar directamente el texto dentro del <a> */}
                 </a>
-                </span>
               </li>
             </ul>
           </div>
         </div>
-        
+
         {/* Bottom section with copyright */}
         <div className="border-t border-gray-700 mt-8 pt-6 text-center">
           <p className="text-sm text-gray-400">&copy; 2025 NovaFenix. Todos los derechos reservados.</p>
