@@ -64,7 +64,7 @@ function Footer() {
 
           {/* Support column */}
           <div>
-  <h3 className="text-2xl font-medium text-white mb-4 border-b border-gray-700 pb-2">Soporte</h3>
+  <h3 className="text-2xl font-medium text-white mb-4 border-b border-gray-700 pb-2">Soporte y Contacto</h3>
 
   <ul className="flex justify-start gap-6 mt-4">
     <li>
@@ -72,12 +72,12 @@ function Footer() {
         href={generarEnlaceWhatsApp(mensajesWhatsApp.general)}
         target="_blank"
         rel="noopener noreferrer"
-        className="hover:scale-110 transition-transform duration-300"
+         className="relative inline-block hover:scale-110 transition-transform duration-300 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
       >
         <img
-          src="https://res.cloudinary.com/dfbpaq83u/image/upload/v1744403721/ithlnsn8gw8h6up7rn9s.png"
+          src="https://res.cloudinary.com/dfbpaq83u/image/upload/v1744656460/kp2kejpsgioled7msdwl.png"
           alt="WhatsApp"
-          className="h-10 w-auto"
+          className="h-9 w-auto"
         />
       </a>
     </li>
@@ -86,12 +86,12 @@ function Footer() {
         href="https://facebook.com/novafenix"
         target="_blank"
         rel="noopener noreferrer"
-        className="hover:scale-110 transition-transform duration-300"
+         className="relative inline-block hover:scale-110 transition-transform duration-300 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
       >
         <img
-          src="https://res.cloudinary.com/dfbpaq83u/image/upload/v1743455662/jx1d9odyq8fqf0is4wdr.png"
+          src="https://res.cloudinary.com/dfbpaq83u/image/upload/v1744656460/fxgwyseejbckecbbsqfw.png"
           alt="Facebook"
-          className="h-10 w-auto"
+          className="h-8 w-auto"
         />
       </a>
     </li>
@@ -100,12 +100,12 @@ function Footer() {
         href="https://instagram.com/novafenix"
         target="_blank"
         rel="noopener noreferrer"
-        className="hover:scale-110 transition-transform duration-300"
+         className="relative inline-block hover:scale-110 transition-transform duration-300 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
       >
         <img
-          src="https://res.cloudinary.com/dfbpaq83u/image/upload/v1743455663/nblvjeaujdoo8ndazdz7.png"
+          src="https://res.cloudinary.com/dfbpaq83u/image/upload/v1744656460/wmynznwwap8h3j7rqbmt.png"
           alt="Instagram"
-          className="h-10 w-auto"
+          className="h-8 w-auto"
         />
       </a>
     </li>
@@ -114,12 +114,12 @@ function Footer() {
         href="https://tiktok.com/@novafenix"
         target="_blank"
         rel="noopener noreferrer"
-        className="hover:scale-110 transition-transform duration-300"
+         className="relative inline-block hover:scale-110 transition-transform duration-300 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
       >
         <img
-          src="https://res.cloudinary.com/dfbpaq83u/image/upload/v1743455663/nblvjeaujdoo8ndazdz7.png"
+          src="https://res.cloudinary.com/dfbpaq83u/image/upload/v1744656460/jitj2ib8hcytbva0fky1.png"
           alt="TikTok"
-          className="h-10 w-auto"
+          className="h-8 w-auto"
         />
       </a>
     </li>
