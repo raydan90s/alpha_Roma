@@ -12,6 +12,7 @@ import {
     faVolumeUp,
     faBell,
     faHardDrive,
+    faSwatchbook,
 } from '@fortawesome/free-solid-svg-icons';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import SplitSection from "../../components/Sections/SplitSection.tsx";
@@ -46,7 +47,7 @@ const CamerasPage = () => {
 
     const includedFeatures = [
         { name: "Cruce de línea", icon: faPersonWalkingDashedLineArrowRight },
-        { name: "ColorVu", icon: faMoon },
+        { name: "ColorVu", icon: faSwatchbook },
         { name: "Audio bidireccional", icon: faVolumeUp },
         { name: "Alertas en tiempo real", icon: faBell },
         { name: "Almacenamiento en disco duro", icon: faHardDrive },
@@ -122,7 +123,7 @@ const CamerasPage = () => {
                     <h2 className="text-4xl font-bold text-gray-800 mb-5 text-center">Todos los sistemas incluyen</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
                         {includedFeatures.map((feature, index) => (
-                            <div key={index} className="flex flex-col items-center text-center">
+                            <div key={index} className="flex flex-col items-center text-center mt-6">
                                 <FontAwesomeIcon icon={feature.icon} size="3x" className="text-secondary mb-4" />
                                 <div>
                                     <h3 className="text-lg font-semibold text-gray-700">{feature.name}</h3>

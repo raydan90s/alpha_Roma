@@ -1,4 +1,4 @@
-import {Wrench, Siren, Compass, Eye, Telescope, Hammer, Headset, Cctv, Focus, Cloud, Gem, Award, Briefcase, Home, SunMoon, HardDrive, Radar} from "lucide-react";
+import {Wrench, Siren, Compass, Eye, Telescope, Hammer, Headset, Cctv, Focus, Cloud, Gem, Award, Briefcase, Home, SunMoon, HardDrive, Radar, Monitor, MonitorDot} from "lucide-react";
 
 
 export const menuItems = [
@@ -53,7 +53,7 @@ export const menuItems = [
         linkTo: "/servicios",
         options: [
             { label: "Instalación y mantenimiento", href: "/servicios#instalacion", description: "Instalación profesional y configuración de todos nuestros sistemas.", icon: Hammer},
-            { label: "Mantenimiento", href: "/servicios#mantenimiento", description: "Revisiones periódicas y soporte técnico para asegurar el funcionamiento óptimo.", icon: Wrench},
+            { label: "Monitoreo", href: "/servicios#monitoreo", description: "Supervisión en tiempo real de tus espacios las 24 horas.", icon: MonitorDot},
             { label: "Asesoría", href: "/servicios#asesoria", description: "Consultoría experta para encontrar la solución de seguridad perfecta para ti.", icon: Headset},
         ],
     },
