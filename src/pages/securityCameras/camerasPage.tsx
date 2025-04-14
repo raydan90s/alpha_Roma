@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { scrollToHashOnLoad } from "../../assets/utils/scrollUtils.ts";
 import ContactSection from "../../components/Sections/contactSection.tsx";
 import { ContactSectionProps } from "../../interface/contactProps";
@@ -8,7 +8,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import instalando from "../../assets/img/cameras/instalando.jpg";
 import {
     faPersonWalkingDashedLineArrowRight,
-    faMoon,
     faVolumeUp,
     faBell,
     faHardDrive,
@@ -19,22 +18,23 @@ import SplitSection from "../../components/Sections/SplitSection.tsx";
 import InstallationService from "./InstallationService.tsx";
 
 const CamerasPage = () => {
+    const camarasIpRef = useRef<HTMLDivElement>(null);
+
+    const scrollToRef = (ref: React.RefObject<HTMLElement>) => {
+        ref.current?.scrollIntoView({ behavior: 'smooth' });
+    };
+
     useEffect(() => {
         scrollToHashOnLoad();
     }, []);
 
-    const [showInstallationService] = useState(true); // <----- MOVED STATE HERE
-
-    const handleContactButtonClick = () => {
-        console.log("Botón de contacto para cámaras clickeado");
-    };
+    const [showInstallationService] = useState(true);
 
     const camerasContactSectionData: ContactSectionProps = {
         title: "¿Interesado en nuestras soluciones de cámaras?",
         description: "Contáctanos para discutir tus necesidades de vigilancia y obtener una cotización personalizada.",
         context: "camaras",
         emailButtonText: "Contactar",
-        onEmailButtonClick: handleContactButtonClick,
     };
 
     const cameraHeroData: HeroProps = {
@@ -54,16 +54,14 @@ const CamerasPage = () => {
     ];
 
     const installationServiceData = {
-        eyebrow: "POR QUÉ ELEGIR VIVINT",
+        eyebrow: "POR QUÉ ELEGIR NOVAFENIX",
         headline: "Nos hacemos cargo de todo por usted",
         body: "Nuestros profesionales del hogar inteligente instalan su sistema de seguridad para el hogar, lo activan y le muestran cómo usarlo.",
         buttonText: "¿Cómo comenzar?",
         buttonLink: "/es/how-to-buy",
-        imageUrl: instalando, // <----- CORRECTED: Passing the imported image directly
+        imageUrl: instalando,
         altText: "Profesional de hogar inteligente en escalera instalando la cámara exterior profesional Vivint Gen 2 con vista de árboles y montañas en el fondo",
     };
-
-    console.log("installationServiceData en CamerasPage:", installationServiceData);
 
     const cameraOptionsData = [
         {
@@ -95,7 +93,6 @@ const CamerasPage = () => {
             isImageLeft: false,
         },
         {
-
             label: "Cámaras Digitales",
             href: "#camaras-digitales",
             description:
@@ -110,8 +107,6 @@ const CamerasPage = () => {
                 "Fácil integración con otros sistemas de seguridad",
             ],
             isImageLeft: false,
-
-
         },
     ];
 
@@ -122,7 +117,11 @@ const CamerasPage = () => {
 
     return (
         <div className="pt-0">
-            <CameraHero {...cameraHeroData} />
+            <CameraHero
+                {...cameraHeroData}
+                scrollToRef={scrollToRef}
+                targetRef={camarasIpRef} // Pasa la ref de la sección "Cámaras IP"
+            />
             <section className="py-16 bg-gray-100">
                 <div className="max-w-screen-xl mx-auto px-4">
                     <h2 className="text-4xl font-bold text-gray-800 mb-5 text-center">Todos los sistemas incluyen</h2>
@@ -144,17 +143,17 @@ const CamerasPage = () => {
                     <SplitSection
                         key={option.label}
                         {...option}
-                        id={option.href.substring(1)} // Remove the '#' to use as id
+                        id={option.href.substring(1)}
                         isImageLeft={index % 2 === 0}
+                        ref={option.label === "Cámaras IP" ? camarasIpRef : null} // Adjunta la ref a la sección "Cámaras IP"
                     />
                 ))}
             </div>
 
-            {/* Sección de Marcas Asociadas */}
             <section className="py-16 ">
                 <div className="max-w-screen-xl mx-auto px-4 justify-center items-center">
                     <h2 className="text-3xl font-semibold text-gray-800 mb-8 text-center">Marcas Asociadas</h2>
-                    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 items-center justify-center"> {/* Añadido justify-center aquí */}
+                    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 items-center justify-center">
                         {associatedBrands.map((brand, index) => (
                             <div
                                 key={index}
@@ -168,9 +167,8 @@ const CamerasPage = () => {
                                 >
                                     <img
                                         src={brand.logo}
-                                        alt={brand.name} // Mantén el alt por accesibilidad
                                         className="max-h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                                        style={{ boxShadow: 'none' }} // Elimina cualquier sombra inline
+                                        style={{ boxShadow: 'none' }}
                                     />
                                 </a>
                             </div>
@@ -179,12 +177,9 @@ const CamerasPage = () => {
                 </div>
             </section>
 
-            {showInstallationService && (
-                <InstallationService {...installationServiceData} /> // <----- USING THE DEFINED DATA
-            )}
+            {<InstallationService {...installationServiceData} />}
 
             <div className="max-w-screen-xl mx-auto px-4 py-12 space-y-16">
-                {/* Renderiza el ContactSection directamente */}
                 <ContactSection {...camerasContactSectionData} />
             </div>
         </div>

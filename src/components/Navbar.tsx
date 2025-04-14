@@ -83,6 +83,9 @@ function Navbar() {
       }, 100);
     } if (href.startsWith('/camaras#')) {
       navigate('/camaras');
+      setTimeout(() => {
+        scrollToHash(href.split('#')[1]);
+      }, 100);
     } if (href.startsWith('/paquetes#')) {
       navigate('/paquetes');
       setTimeout(() => {

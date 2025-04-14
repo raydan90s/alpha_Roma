@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+import { generarEnlaceWhatsApp, mensajesWhatsApp } from "../../messages/messages";
 
 // Definimos la interfaz HeroProps directamente aquí en lugar de importarla
 interface HeroProps {
@@ -18,6 +19,8 @@ interface HeroSegmarProps extends HeroProps {
   buttonTextColor?: string;
   secondaryButtonTextColor?: string;
   showCallToAction?: boolean;
+  scrollToRef?: (ref: React.RefObject<HTMLElement>) => void;
+  targetRef?: React.RefObject<HTMLElement>;
 }
 
 const HeroSegmar: React.FC<HeroSegmarProps> = ({
@@ -29,11 +32,12 @@ const HeroSegmar: React.FC<HeroSegmarProps> = ({
   description = "Protege cada rincón de tu hogar con nuestra vigilancia inteligente. Monitoreo en tiempo real y la tranquilidad que mereces.",
   cta_text = "Explora la Protección",
   primaryColor = "#60c079", // Color de acento verde por defecto
-  secondaryColor = "#ffffff", // Blanco por defecto
   accentColor = "#60c079", // Verde vibrante (color primary de tu config)
   buttonTextColor = "#000000", // Texto del botón principal negro
   secondaryButtonTextColor = "#ffffff", // Texto del botón secundario blanco
   showCallToAction = true,
+  scrollToRef,
+  targetRef,
 }) => {
   return (
     <div
@@ -85,12 +89,13 @@ const HeroSegmar: React.FC<HeroSegmarProps> = ({
             <button
               className="font-bold px-6 py-3 rounded-md shadow-md hover:shadow-lg transition-all duration-300 text-lg"
               style={{ backgroundColor: accentColor, color: buttonTextColor }}
+              onClick={() => scrollToRef?.(targetRef)} // Llamada condicional a scrollToRef
             >
               {span_btn1}
             </button>
 
             <a
-              href="#"
+              href={generarEnlaceWhatsApp(mensajesWhatsApp.servicios)}
               className="bg-transparent hover:underline flex items-center font-bold"
               style={{ color: secondaryButtonTextColor }}
             >

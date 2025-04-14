@@ -1,5 +1,4 @@
-// ruta del archivo: src/components/Sections/SplitSection.tsx
-import React from 'react';
+import {forwardRef } from 'react';
 
 interface SplitSectionProps {
   id?: string;
@@ -11,21 +10,21 @@ interface SplitSectionProps {
   copy?: string; // Propiedad opcional para el texto de la imagen
 }
 
-const SplitSection: React.FC<SplitSectionProps> = ({
+const SplitSection = forwardRef<HTMLDivElement, SplitSectionProps>(({
   id,
   label,
   description,
   image,
   features,
   isImageLeft = false,
-  copy, // Propiedad opcional para el texto de la imagen
-}) => {
+  copy,
+}, ref) => {
   const imageOrder = isImageLeft ? 'md:order-1 order-1' : 'md:order-2 order-1';
   const textOrder = isImageLeft ? 'md:order-2 order-2' : 'md:order-1 order-2';
   const gridTemplateColumns = 'grid-cols-1 md:grid-cols-2'; // Usamos grid-cols-2 fijo en pantallas medianas y grandes
 
   return (
-    <section id={id} className="py-4"> {/* Mantenemos el padding vertical */}
+    <section id={id} className="py-4" ref={ref}> {/* Attach the ref here */}
       <div className="mx-auto bg-white max-w-[95rem] rounded-[20px]">
         <div className={`grid ${gridTemplateColumns} gap-4 md:gap-8 items-stretch`}>
           {/* Image Section */}
@@ -70,6 +69,8 @@ const SplitSection: React.FC<SplitSectionProps> = ({
       </div>
     </section>
   );
-};
+});
+
+SplitSection.displayName = 'SplitSection'; // Optional: for better debugging
 
 export default SplitSection;

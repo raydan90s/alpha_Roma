@@ -1,7 +1,6 @@
-import React from "react";
 import { generarEnlaceWhatsApp } from "../messages/messages"; // Importa la función
 
-function PlanFeatureCard({ icon, title, features, price, priceAfter, buttonText, buttonColor, footerText, id }) {
+function PlanFeatureCard({ icon, title, features, price, priceAfter, buttonText, buttonColor, footerText}) {
   // Genera el mensaje predeterminado para WhatsApp basado en el plan
   const generarMensajePlan = (planTitle: string, features: string[]): string => {
     const listaCaracteristicas = features.map(feature => `- ${feature}`).join('\n');

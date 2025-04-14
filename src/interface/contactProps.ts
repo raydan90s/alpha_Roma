@@ -3,6 +3,5 @@ export interface ContactSectionProps {
     title: string;
     description: string;
     context: string;
-    emailButtonText: string;
-    onEmailButtonClick: () => void;
+    emailButtonText: string;   
   }

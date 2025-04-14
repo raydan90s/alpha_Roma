@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { scrollToHashOnLoad } from "../../assets/utils/scrollUtils.ts";
 import ContactSection from "../../components/Sections/contactSection.tsx"; // Importa el componente
 import { ContactSectionProps } from "../../interface/contactProps"; // Importa la interfaz
@@ -8,17 +8,12 @@ const ServicesPage = () => {
     scrollToHashOnLoad();
   }, []);
 
-  const handleQuoteButtonClick = () => {
-    console.log("Botón de solicitar cotización clickeado");
-    // Aquí puedes implementar la lógica para solicitar una cotización
-  };
 
   const servicesContactSectionData: ContactSectionProps = {
     title: "¿Listo para mejorar tu seguridad?",
     description: "Nuestro equipo está preparado para ayudarte con cualquier servicio que necesites. Contáctanos hoy mismo.",
     context:"servicios",
     emailButtonText: "Solicitar cotización",
-    onEmailButtonClick: handleQuoteButtonClick,
   };
 
   return (

@@ -1,7 +1,20 @@
 import React from "react";
-import HeroProps from "../../interface/HeroProps"; // Asegúrate de que la ruta sea correcta
+import HeroProps from "../../interface/HeroProps";
+import { generarEnlaceWhatsApp, mensajesWhatsApp } from "../../messages/messages";
 
-const CameraHero: React.FC<HeroProps> = ({span, link_image, span_btn1, span_btn2 }) => {
+interface CameraHeroProps extends HeroProps {
+  scrollToRef: (ref: React.RefObject<HTMLElement>) => void;
+  targetRef: React.RefObject<HTMLElement>;
+}
+
+const CameraHero: React.FC<CameraHeroProps> = ({
+  span,
+  link_image,
+  span_btn1,
+  span_btn2,
+  scrollToRef,
+  targetRef,
+}) => {
   return (
     <div
       className="relative bg-primary text-black h-screen min-h-[500px] bg-cover bg-center flex items-center"
@@ -27,11 +40,17 @@ const CameraHero: React.FC<HeroProps> = ({span, link_image, span_btn1, span_btn2
           </p>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-3">
-            <button className="bg-acent text-black font-bold px-5 py-2 md:px-6 md:py-3 rounded-md shadow-md hover:shadow-lg transition-all duration-300 text-sm md:text-lg">
+            <button
+              className="bg-acent text-black font-bold px-5 py-2 md:px-6 md:py-3 rounded-md shadow-md hover:shadow-lg transition-all duration-300 text-sm md:text-lg"
+              onClick={() => scrollToRef(targetRef)}
+            >
               {span_btn1}
             </button>
 
-            <a href="#" className="text-white hover:underline flex items-center font-bold text-sm md:text-base">
+            <a
+              href={generarEnlaceWhatsApp(mensajesWhatsApp.tiposDeCamaras)}
+              className="text-white hover:underline flex items-center font-bold text-sm md:text-base"
+            >
               {span_btn2}
             </a>
           </div>

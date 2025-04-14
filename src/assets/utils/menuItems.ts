@@ -1,4 +1,4 @@
-import { Siren, Compass, Eye, Telescope, Hammer, Headset, Cctv, Focus, Gem, Award, Briefcase, SunMoon, HardDrive, Radar, MonitorDot, ShieldHalf, Star, Video } from "lucide-react";
+import { Siren, Compass, Eye, Telescope, Hammer, Headset, Cctv, Focus, Gem,  SunMoon, Radar, MonitorDot, ShieldHalf, Star, Video } from "lucide-react";
 
 
 export const menuItems = [
@@ -19,21 +19,21 @@ export const menuItems = [
         options: [
             {
                 label: "Alertas de seguridad inmediatas",
-                href: "/seguridad-hogar#vigilancia-video",
+                href: "/seguridad-hogar#AlertasInmediatas",
                 description: "Recibe notificaciones instantáneas ante eventos sospechosos.",
                 icon: Siren, // Usa el componente FaHome
             },
             {
                 label: "Cruce de línea",
-                href: "/seguridad-hogar#automatizacion-hogar",
+                href: "/seguridad-hogar#cruceLinea",
                 description: "Controla cada acceso a tu hogar con tecnología avanzada.",
                 icon: Radar, // Usa el componente FaLock
             },
             {
                 label: "Iluminación total de seguridad",
-                href: "/seguridad-hogar#proteccion-ambiental",
+                href: "/seguridad-hogar#colorVu",
                 description: "Sistema con ColorVu para una vigilancia inigualable.",
-                icon: SunMoon, // Usa el componente FaLightbulb
+                icon: SunMoon, 
             },
         ],
     },

@@ -18,7 +18,7 @@ function App() {
         <Route path="/paquetes" element={<PackagePage />} />
         <Route path="/about" element={<AboutUsPage/>} />
         <Route path="/camaras" element={<CamerasPage/>} />
-        <Route path="/seguridad-hogar" element={<SeguridadHogarPage />} /> {/* <-- Nueva ruta */}
+        <Route path="/seguridad-hogar" element={<SeguridadHogarPage />} /> 
       </Routes>
       <Footer />
     </Router>
