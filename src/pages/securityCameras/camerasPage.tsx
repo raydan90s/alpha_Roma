@@ -32,7 +32,7 @@ const CamerasPage = () => {
     const camerasContactSectionData: ContactSectionProps = {
         title: "¿Interesado en nuestras soluciones de cámaras?",
         description: "Contáctanos para discutir tus necesidades de vigilancia y obtener una cotización personalizada.",
-        context:"camaras",
+        context: "camaras",
         emailButtonText: "Contactar",
         onEmailButtonClick: handleContactButtonClick,
     };
@@ -95,18 +95,23 @@ const CamerasPage = () => {
             isImageLeft: false,
         },
         {
-            label: "Grabación en la Nube",
-            href: "#grabacion-nube",
-            description: "Protege tus grabaciones de video de forma segura con nuestro servicio de almacenamiento en la nube. Accede a tus archivos desde cualquier lugar con conexión a internet y ten la tranquilidad de que tus datos están protegidos contra pérdidas o daños físicos a los equipos de grabación.",
-            image: "https://res.cloudinary.com/dcxqkcmhd/image/upload/v1744299437/fugpjrnxjc3yq78rz8bg.png",
+
+            label: "Cámaras Digitales",
+            href: "#camaras-digitales",
+            description:
+                "Descubre la tecnología avanzada de nuestras cámaras digitales. Accede en tiempo real a tus cámaras desde tu móvil u ordenador, gestiona grabaciones de manera remota y mantén el control total de la seguridad de tu espacio desde cualquier parte del mundo.",
+            image:
+                "https://res.cloudinary.com/dcxqkcmhd/image/upload/v1744299437/fugpjrnxjc3yq78rz8bg.png",
             features: [
-                "Almacenamiento seguro y encriptado",
-                "Acceso desde cualquier dispositivo con internet",
-                "Planes de retención flexibles",
-                "Notificaciones de eventos importantes",
-                "Fácil de escalar según tus necesidades",
+                "Visualización remota en tiempo real",
+                "Compatibilidad con múltiples dispositivos",
+                "Notificaciones instantáneas de movimiento",
+                "Grabación de alta definición día y noche",
+                "Fácil integración con otros sistemas de seguridad",
             ],
-            isImageLeft: true,
+            isImageLeft: false,
+
+
         },
     ];
 
@@ -154,7 +159,7 @@ const CamerasPage = () => {
                             <div
                                 key={index}
                                 className="col-span-1 flex justify-center items-center p-4 bg-white rounded-lg transition-all duration-300"
-                                >
+                            >
                                 <a
                                     href={brand.link}
                                     target="_blank"

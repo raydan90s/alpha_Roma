@@ -1,4 +1,4 @@
-import {Siren, Compass, Eye, Telescope, Hammer, Headset, Cctv, Focus, Gem, Award, Briefcase,  SunMoon, HardDrive, Radar, MonitorDot, ShieldHalf, Star} from "lucide-react";
+import { Siren, Compass, Eye, Telescope, Hammer, Headset, Cctv, Focus, Gem, Award, Briefcase, SunMoon, HardDrive, Radar, MonitorDot, ShieldHalf, Star, Video } from "lucide-react";
 
 
 export const menuItems = [
@@ -7,9 +7,9 @@ export const menuItems = [
         description: "Conoce nuestra historia, misión y los valores que nos definen.",
         linkTo: "/about",
         options: [
-            { label: "Misión", href: "/about#mision", description: "Entiende nuestro propósito fundamental y lo que nos impulsa.", icon: Compass},
-            { label: "Visión", href: "/about#vision", description: "Descubre hacia dónde aspiramos y nuestros objetivos a largo plazo.", icon: Eye},
-            { label: "Valores", href: "/about#valores", description: "Conoce los principios que guían cada una de nuestras acciones.", icon: Telescope},
+            { label: "Misión", href: "/about#mision", description: "Entiende nuestro propósito fundamental y lo que nos impulsa.", icon: Compass },
+            { label: "Visión", href: "/about#vision", description: "Descubre hacia dónde aspiramos y nuestros objetivos a largo plazo.", icon: Eye },
+            { label: "Valores", href: "/about#valores", description: "Conoce los principios que guían cada una de nuestras acciones.", icon: Telescope },
         ],
     },
     {
@@ -43,8 +43,14 @@ export const menuItems = [
         linkTo: "/camaras",
         options: [
             { label: "Cámaras IP", href: "/camaras#camaras-ip", description: "Vigilancia remota de alta definición con acceso desde cualquier dispositivo.", icon: Focus },
-            { label: "CCTV", href: "/camaras#cctv", description: "Circuitos cerrados de televisión para una supervisión continua y grabación local.", icon: Cctv},
-            { label: "Grabación en el disco duro", href: "/camaras#grabacion-nube", description: "Almacenamiento seguro de tus grabaciones de video en la nube.", icon: HardDrive},
+            { label: "CCTV", href: "/camaras#cctv", description: "Circuitos cerrados de televisión para una supervisión continua y grabación local.", icon: Cctv },
+            {
+                label: "Cámaras Digitales Inteligentes",
+                href: "/camaras#camaras-digitales",
+                description:
+                    "Monitorea en tiempo real con nuestras cámaras digitales inteligentes.",
+                icon: Video
+            },
         ],
     },
     {
@@ -52,9 +58,9 @@ export const menuItems = [
         description: "Nuestra gama de servicios diseñados para una implementación y soporte sin problemas.",
         linkTo: "/servicios",
         options: [
-            { label: "Instalación y mantenimiento", href: "/servicios#instalacion", description: "Instalación profesional y configuración de todos nuestros sistemas.", icon: Hammer},
-            { label: "Monitoreo", href: "/servicios#monitoreo", description: "Supervisión en tiempo real de tus espacios las 24 horas.", icon: MonitorDot},
-            { label: "Asesoría", href: "/servicios#asesoria", description: "Consultoría experta para encontrar la solución de seguridad perfecta para ti.", icon: Headset},
+            { label: "Instalación y mantenimiento", href: "/servicios#instalacion", description: "Instalación profesional y configuración de todos nuestros sistemas.", icon: Hammer },
+            { label: "Monitoreo", href: "/servicios#monitoreo", description: "Supervisión en tiempo real de tus espacios las 24 horas.", icon: MonitorDot },
+            { label: "Asesoría", href: "/servicios#asesoria", description: "Consultoría experta para encontrar la solución de seguridad perfecta para ti.", icon: Headset },
         ],
     },
     {
@@ -62,9 +68,9 @@ export const menuItems = [
         description: "Encuentra el plan que mejor se adapte a tus necesidades y presupuesto.",
         linkTo: "/paquetes",
         options: [
-            { label: "Plan Básico Bronce", href: "/paquetes#plan-bronce", description: "Soluciones de seguridad esenciales para hogares pequeños.", icon: ShieldHalf},
+            { label: "Plan Básico Bronce", href: "/paquetes#plan-bronce", description: "Soluciones de seguridad esenciales para hogares pequeños.", icon: ShieldHalf },
             { label: "Plan Básico Plata", href: "/paquetes#plan-plata", description: "Seguridad robusta y escalable para pequeños negocios y hogares.", icon: Star },
-            { label: "Plan Básico Oro", href: "/paquetes#plan-oro", description: "La máxima protección con funcionalidades avanzadas y personalización.", icon: Gem},
+            { label: "Plan Básico Oro", href: "/paquetes#plan-oro", description: "La máxima protección con funcionalidades avanzadas y personalización.", icon: Gem },
         ],
     },
 ];
