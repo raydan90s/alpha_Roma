@@ -1,4 +1,4 @@
-import {Wrench, Siren, Compass, Eye, Telescope, Hammer, Headset, Cctv, Focus, Cloud, Gem, Award, Briefcase, Home, SunMoon, HardDrive, Radar, Monitor, MonitorDot} from "lucide-react";
+import {Siren, Compass, Eye, Telescope, Hammer, Headset, Cctv, Focus, Gem, Award, Briefcase,  SunMoon, HardDrive, Radar, MonitorDot} from "lucide-react";
 
 
 export const menuItems = [
@@ -62,9 +62,9 @@ export const menuItems = [
         description: "Encuentra el plan que mejor se adapte a tus necesidades y presupuesto.",
         linkTo: "/paquetes",
         options: [
-            { label: "Plan Básico", href: "/paquetes#plan-basico", description: "Soluciones de seguridad esenciales para hogares pequeños.", icon: Award},
-            { label: "Plan Empresarial", href: "/paquetes#plan-empresarial", description: "Seguridad robusta y escalable para negocios de todos los tamaños.", icon: Briefcase },
-            { label: "Plan Premium", href: "/paquetes#plan-premium", description: "La máxima protección con funcionalidades avanzadas y personalización.", icon: Gem},
+            { label: "Plan Básico Bronce", href: "/paquetes#plan-bronce", description: "Soluciones de seguridad esenciales para hogares pequeños.", icon: Award},
+            { label: "Plan Básico Plata", href: "/paquetes#plan-plata", description: "Seguridad robusta y escalable para pequeños negocios y hogares.", icon: Briefcase },
+            { label: "Plan Básico Oro", href: "/paquetes#plan-oro", description: "La máxima protección con funcionalidades avanzadas y personalización.", icon: Gem},
         ],
     },
 ];
