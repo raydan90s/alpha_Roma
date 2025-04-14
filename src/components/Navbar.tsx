@@ -1,32 +1,29 @@
-import React, { useState, useRef, useEffect } from "react";
-import { Menu, ChevronDown, ChevronUp, Search, X } from "lucide-react";
-import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
-import { scrollToHash, handleScrollToTop } from '../assets/utils/scrollUtils'; // Import the direct scroll function
-import Logo from '../assets/img/logo2.png'; // Import your logo image
+import { useState, useRef, useEffect } from "react";
+import { Menu, ChevronDown, ChevronUp, X } from "lucide-react";
+import { Link, useNavigate } from 'react-router-dom';
+import { scrollToHash, handleScrollToTop } from '../assets/utils/scrollUtils';
+import Logo from '../assets/img/logo2.png';
 import { menuItems } from "../assets/utils/menuItems";
 import { generarEnlaceWhatsApp, mensajesWhatsApp } from "../messages/messages";
 import { TELEFONO_CONTACTO } from "../config/config";
 
-
 function Navbar() {
   const [hoveredMenu, setHoveredMenu] = useState(null);
-  const [showSearch] = useState(false);
-  const [searchFocused] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeMobileSubmenu, setActiveMobileSubmenu] = useState(null);
   const timeoutRef = useRef(null);
   const navRef = useRef(null);
-  const navigate = useNavigate(); // Get the navigate function
+  const navigate = useNavigate();
 
   const handleMouseEnter = (index) => {
-    if (window.innerWidth >= 768) { // Only on desktop
+    if (window.innerWidth >= 768) {
       clearTimeout(timeoutRef.current);
       setHoveredMenu(index);
     }
   };
 
   const handleMouseLeave = () => {
-    if (window.innerWidth >= 768) { // Only on desktop
+    if (window.innerWidth >= 768) {
       timeoutRef.current = setTimeout(() => {
         setHoveredMenu(null);
       }, 250);
@@ -37,11 +34,23 @@ function Navbar() {
     setActiveMobileSubmenu(activeMobileSubmenu === index ? null : index);
   };
 
-  // Close mobile menu when clicking outside
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    return () => {
+      document.body.classList.remove('overflow-hidden');
+    };
+  }, [mobileMenuOpen]);
+
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (navRef.current && !navRef.current.contains(event.target)) {
+      if (mobileMenuOpen && navRef.current && !navRef.current.contains(event.target)) {
         setMobileMenuOpen(false);
+        setActiveMobileSubmenu(null); // Close any open submenus
       }
     };
 
@@ -56,11 +65,11 @@ function Navbar() {
     };
   }, [mobileMenuOpen]);
 
-  // Close mobile menu on resize if screen becomes large
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
         setMobileMenuOpen(false);
+        setActiveMobileSubmenu(null); // Close any open submenus
       }
     };
 
@@ -71,35 +80,31 @@ function Navbar() {
   }, []);
 
   const handleMenuItemClick = (href: string) => {
+    const navigateAndScroll = (path: string, hash?: string) => {
+      navigate(path);
+      if (hash) {
+        setTimeout(() => {
+          scrollToHash(hash);
+        }, 100);
+      }
+    };
+
     if (href.startsWith('/about#')) {
-      navigate('/about');
-      setTimeout(() => {
-        scrollToHash(href.split('#')[1]);
-      }, 100);
-    } if (href.startsWith('/servicios#')) {
-      navigate('/servicios');
-      setTimeout(() => {
-        scrollToHash(href.split('#')[1]);
-      }, 100);
-    } if (href.startsWith('/camaras#')) {
-      navigate('/camaras');
-      setTimeout(() => {
-        scrollToHash(href.split('#')[1]);
-      }, 100);
-    } if (href.startsWith('/paquetes#')) {
-      navigate('/paquetes');
-      setTimeout(() => {
-        scrollToHash(href.split('#')[1]);
-      }, 100);
-    } if (href.startsWith('/seguridad-hogar#')) {
-      navigate('/seguridad-hogar');
-      setTimeout(() => {
-        scrollToHash(href.split('#')[1]);
-      }, 100);
+      navigateAndScroll('/about', href.split('#')[1]);
+    } else if (href.startsWith('/servicios#')) {
+      navigateAndScroll('/servicios', href.split('#')[1]);
+    } else if (href.startsWith('/camaras#')) {
+      navigateAndScroll('/camaras', href.split('#')[1]);
+    } else if (href.startsWith('/paquetes#')) {
+      navigateAndScroll('/paquetes', href.split('#')[1]);
+    } else if (href.startsWith('/seguridad-hogar#')) {
+      navigateAndScroll('/seguridad-hogar', href.split('#')[1]);
     } else {
       navigate(href);
     }
-    setHoveredMenu(null); // Close the mega menu after clicking
+    setHoveredMenu(null);
+    setMobileMenuOpen(false);
+    setActiveMobileSubmenu(null); // Close any open submenus after navigation
   };
 
   return (
@@ -109,7 +114,7 @@ function Navbar() {
           <div className="flex items-center justify-between h-20 w-full">
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              <Link to="/" onClick={() => { handleScrollToTop(); setHoveredMenu(null); }}>
+              <Link to="/" onClick={() => { handleScrollToTop(); setHoveredMenu(null); setMobileMenuOpen(false); setActiveMobileSubmenu(null); }}>
                 <img src={Logo} alt="Logo" className="h-14 ml-6" />
               </Link>
             </div>
@@ -130,30 +135,99 @@ function Navbar() {
                       }`}
                   >
                     {item.title}
-                    {hoveredMenu === index ? (
-                      <ChevronUp className="ml-1 h-4 w-4 text-white" />
-                    ) : (
-                      <ChevronDown className="ml-1 h-4 w-4 text-white" />
+                    {item.options && (
+                      hoveredMenu === index ? (
+                        <ChevronUp className="ml-1 h-4 w-4 text-white" />
+                      ) : (
+                        <ChevronDown className="ml-1 h-4 w-4 text-white" />
+                      )
                     )}
                   </button>
+                  {/* Mega menú desplegable (solo desktop) */}
+                  {item.options && hoveredMenu === index && (
+                    <div
+                      className="fixed w-full left-0 z-40 mt-20 transition-all duration-300 ease-out hidden md:block"
+                      style={{
+                        top: 0,
+                        transform: `translateY(${hoveredMenu !== null ? '0' : '-100%'})`,
+                        opacity: hoveredMenu !== null ? 1 : 0,
+                      }}
+                      onMouseEnter={() => handleMouseEnter(hoveredMenu)}
+                      onMouseLeave={handleMouseLeave}
+                    >
+                      <div className="w-full bg-gradient-to-b from-gray-900 to-gray-800 shadow-xl border-b border-gray-700 transform transition-all duration-500">
+                        <div className="max-w-screen-2xl mx-auto px-4 lg:px-8 py-6 lg:py-8">
+                          <div className="flex flex-col md:flex-row items-start">
+                            {/* Columna izquierda - Título y descripción */}
+                            <div className="w-full md:w-1/3 pr-0 md:pr-8 lg:pr-12 border-b md:border-b-0 md:border-r border-gray-700 pb-4 md:pb-0">
+                              <h3 className="text-xl lg:text-2xl font-bold text-white mb-2 lg:mb-4">{item.title}</h3>
+                              <p className="text-gray-400 text-sm mb-4">
+                                {item.description}
+                              </p>
+                              <Link to={item.linkTo || '#'} onClick={() => setHoveredMenu(null)}>
+                                <a className="text-primary hover:text-white transition-colors duration-300 text-sm font-medium flex items-center">
+                                  Conocer acerca de {item.title.toLowerCase()}
+                                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                                  </svg>
+                                </a>
+                              </Link>
+                            </div>
 
+                            {/* Columna derecha - Enlaces */}
+                            <div className="w-full md:w-2/3 pl-0 md:pl-8 lg:pl-12 mt-4 md:mt-0">
+                              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-8">
+                                {item.options.map((option, i) => (
+                                  <div
+                                    key={i}
+                                    className="transform transition-all duration-300"
+                                    style={{
+                                      transitionDelay: `${i * 70}ms`,
+                                      opacity: 1,
+                                      transform: "translateY(0)",
+                                      animation: `fadeIn 0.5s ease-out ${i * 70}ms both`
+                                    }}
+                                  >
+                                    <Link to={option.href} onClick={() => handleMenuItemClick(option.href)}>
+                                      <a className="block group">
+                                        <div className="bg-gray-800 rounded-lg p-4 mb-3 group-hover:bg-gray-700 transition-all duration-300 transform group-hover:scale-105">
+                                          <div className="w-12 h-12 bg-gray-700 rounded-full mb-4 flex items-center justify-center group-hover:bg-primary transition-all duration-300">
+                                            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                              {option.icon && <option.icon className="w-6 h-6 text-white" />}
+                                            </svg>
+                                          </div>
+                                          <h4 className="text-white font-medium mb-1">{option.label}</h4>
+                                          <p className="text-gray-400 text-sm">{option.description || "Más detalles sobre esta opción."}</p>
+                                        </div>
+                                      </a>
+                                    </Link>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
 
-            {/* Buscador + Teléfono */}
+            {/* Botones de contacto y menú móvil */}
             <div className="flex items-center">
-              {/* Botón Teléfono */}
+              {/* Botón WhatsApp */}
               <a
                 href={generarEnlaceWhatsApp(mensajesWhatsApp.general)}
                 className="bg-primary hover:bg-primary text-black font-bold px-3 sm:px-6 py-2 rounded-full shadow-md transition-all duration-300 text-xs sm:text-sm whitespace-nowrap flex items-center gap-2"
+                onClick={() => setMobileMenuOpen(false)} // Close menu on WhatsApp click
               >
                 <img
-                  src="https://brandlogos.net/wp-content/uploads/2013/04/whatsapp-logo-symbol-vector.png" 
-                  alt="Logo"
+                  src="https://brandlogos.net/wp-content/uploads/2013/04/whatsapp-logo-symbol-vector.png"
+                  alt="WhatsApp Logo"
                   className="h-6 w-auto"
                 />
-                099 197 4496
+                {TELEFONO_CONTACTO}
               </a>
 
               {/* Botón menú móvil */}
@@ -168,78 +242,9 @@ function Navbar() {
                 )}
               </button>
             </div>
-
           </div>
         </div>
       </nav>
-
-      {/* Mega menú desplegable que ocupa todo el ancho (solo desktop) */}
-      {hoveredMenu !== null && (
-        <div
-          className="fixed w-full left-0 z-40 mt-20 transition-all duration-300 ease-out hidden md:block"
-          style={{
-            top: 0,
-            transform: `translateY(${hoveredMenu !== null ? '0' : '-100%'})`,
-            opacity: hoveredMenu !== null ? 1 : 0,
-          }}
-          onMouseEnter={() => handleMouseEnter(hoveredMenu)}
-          onMouseLeave={handleMouseLeave}
-        >
-          <div className="w-full bg-gradient-to-b from-gray-900 to-gray-800 shadow-xl border-b border-gray-700 transform transition-all duration-500">
-            <div className="max-w-screen-2xl mx-auto px-4 lg:px-8 py-6 lg:py-8">
-              <div className="flex flex-col md:flex-row items-start">
-                {/* Columna izquierda - Título y descripción */}
-                <div className="w-full md:w-1/3 pr-0 md:pr-8 lg:pr-12 border-b md:border-b-0 md:border-r border-gray-700 pb-4 md:pb-0">
-                  <h3 className="text-xl lg:text-2xl font-bold text-white mb-2 lg:mb-4">{menuItems[hoveredMenu].title}</h3>
-                  <p className="text-gray-400 text-sm mb-4">
-                    {menuItems[hoveredMenu].description}
-                  </p>
-                  <Link to={menuItems[hoveredMenu].linkTo} onClick={() => setHoveredMenu(null)}>
-                    <a className="text-primary hover:text-white transition-colors duration-300 text-sm font-medium flex items-center">
-                      Conocer acerca de {menuItems[hoveredMenu].title.toLowerCase()}
-                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                      </svg>
-                    </a>
-                  </Link>
-                </div>
-
-                {/* Columna derecha - Enlaces */}
-                <div className="w-full md:w-2/3 pl-0 md:pl-8 lg:pl-12 mt-4 md:mt-0">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-8">
-                    {menuItems[hoveredMenu].options.map((option, i) => (
-                      <div
-                        key={i}
-                        className="transform transition-all duration-300"
-                        style={{
-                          transitionDelay: `${i * 70}ms`,
-                          opacity: 1,
-                          transform: "translateY(0)",
-                          animation: `fadeIn 0.5s ease-out ${i * 70}ms both`
-                        }}
-                      >
-                        <Link to={option.href} onClick={() => handleMenuItemClick(option.href)}>
-                          <a className="block group">
-                            <div className="bg-gray-800 rounded-lg p-4 mb-3 group-hover:bg-gray-700 transition-all duration-300 transform group-hover:scale-105">
-                              <div className="w-12 h-12 bg-gray-700 rounded-full mb-4 flex items-center justify-center group-hover:bg-primary transition-all duration-300">
-                                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                  <option.icon className="w-6 h-6 text-white" />
-                                </svg>
-                              </div>
-                              <h4 className="text-white font-medium mb-1">{option.label}</h4>
-                              <p className="text-gray-400 text-sm">{option.description || "Más detalles sobre esta opción."}</p>
-                            </div>
-                          </a>
-                        </Link>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Menú móvil */}
       {mobileMenuOpen && (
@@ -253,30 +258,40 @@ function Navbar() {
                   <div key={index} className="py-3">
                     <button
                       className="flex items-center justify-between w-full text-white font-medium py-2"
-                      onClick={() => toggleMobileSubmenu(index)}
+                      onClick={() => {
+                        if (item.options) {
+                          toggleMobileSubmenu(index);
+                        } else {
+                          handleMenuItemClick(item.linkTo || '#');
+                        }
+                      }}
                     >
                       <span>{item.title}</span>
-                      {activeMobileSubmenu === index ? (
-                        <ChevronUp className="h-5 w-5 text-gray-400" />
-                      ) : (
-                        <ChevronDown className="h-5 w-5 text-gray-400" />
+                      {item.options && (
+                        activeMobileSubmenu === index ? (
+                          <ChevronUp className="h-5 w-5 text-gray-400" />
+                        ) : (
+                          <ChevronDown className="h-5 w-5 text-gray-400" />
+                        )
                       )}
                     </button>
 
-                    {activeMobileSubmenu === index && (
+                    {item.options && activeMobileSubmenu === index && (
                       <div className="mt-2 ml-4 space-y-2">
                         {item.options.map((option, i) => (
-                          <Link key={i} to={option.href}>
+                          <Link key={i} to={option.href} onClick={() => { handleMenuItemClick(option.href); setMobileMenuOpen(false); }}>
                             <a className="block py-2 px-3 text-gray-300 hover:text-white hover:bg-gray-800 rounded-lg transition duration-200">
                               {option.label}
                             </a>
                           </Link>
                         ))}
-                        <Link to="/servicios">
-                          <a className="block py-2 px-3 text-primary hover:text-white hover:bg-gray-800 rounded-lg transition duration-200 mt-2 font-medium">
-                            Ver todos los servicios →
-                          </a>
-                        </Link>
+                        {item.linkTo && (
+                          <Link to={item.linkTo} onClick={() => { handleMenuItemClick(item.linkTo); setMobileMenuOpen(false); }}>
+                            <a className="block py-2 px-3 text-primary hover:text-white hover:bg-gray-800 rounded-lg transition duration-200 mt-2 font-medium">
+                              Ver {item.title.toLowerCase()} →
+                            </a>
+                          </Link>
+                        )}
                       </div>
                     )}
                   </div>
@@ -289,10 +304,10 @@ function Navbar() {
                 <a
                   href={`tel:${TELEFONO_CONTACTO}`}
                   className="flex items-center justify-center w-full bg-primary hover:bg-primary text-black font-bold py-3 rounded-full shadow-md transition-all duration-300"
+                  onClick={() => setMobileMenuOpen(false)} // Close menu on call click
                 >
-                  Llamar ahora: 099 197 4496
+                  Llamar ahora: {TELEFONO_CONTACTO}
                 </a>
-
               </div>
             </div>
           </div>
