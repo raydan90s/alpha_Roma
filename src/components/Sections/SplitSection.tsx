@@ -63,8 +63,7 @@ const SplitSection = forwardRef<HTMLDivElement, SplitSectionProps>(({
             <div  className="flex flex-col sm:flex-row sm:items-center sm:justify-start">
               <a
                 href={generarEnlaceWhatsApp(mensajesWhatsApp.general)}
-                className="bg-primary hover:bg-acent text-white font-semibold px-4 py-3 rounded-md shadow-md transition duration-200 ease-in-out text-sm whitespace-nowrap max-w-[180px] mr-4 mb-2 sm:mb-0"
-              >
+                className="bg-primary hover:bg-acent text-white font-semibold px-4 py-3 rounded-md shadow-md transition duration-200 ease-in-out text-sm whitespace-nowrap max-w-full sm:max-w-[180px] mr-4 mb-2 sm:mb-0 text-center sm:text-left">
                 Contáctanos
               </a>
               <p className="text-sm text-gray-600 italic">¿Tienes alguna pregunta?</p>
@@ -78,6 +77,5 @@ const SplitSection = forwardRef<HTMLDivElement, SplitSectionProps>(({
   );
 });
 
-SplitSection.displayName = 'SplitSection'; // Optional: for better debugging
 
 export default SplitSection;
