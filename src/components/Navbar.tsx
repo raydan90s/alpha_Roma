@@ -22,6 +22,17 @@ function Navbar() {
     }
   };
 
+  const formatearTelefono = (numero: string) => {
+    // Asume que el número siempre empieza con 593 y luego 9 dígitos
+    if (numero.startsWith("593") && numero.length === 12) {
+      const parte1 = numero.slice(3, 6); // primeros 3 después del código país
+      const parte2 = numero.slice(6, 9);
+      const parte3 = numero.slice(9, 12);
+      return `+593 ${parte1} ${parte2} ${parte3}`;
+    }
+    return numero; // fallback si no tiene el formato esperado
+  };
+
   const handleMouseLeave = () => {
     if (window.innerWidth >= 768) {
       timeoutRef.current = setTimeout(() => {
@@ -227,7 +238,7 @@ function Navbar() {
                   alt="WhatsApp Logo"
                   className="h-6 w-auto"
                 />
-                {TELEFONO_CONTACTO}
+                {formatearTelefono(TELEFONO_CONTACTO)}
               </a>
 
               {/* Botón menú móvil */}

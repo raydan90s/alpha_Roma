@@ -18,7 +18,7 @@ const PackagePage = () => {
   const packagesContactSectionData: ContactSectionProps = {
     title: "¿Interesado en nuestros paquetes y precios?",
     description: "Contáctanos para obtener más detalles o para personalizar un plan para ti.",
-    context:"planes",
+    context: "planes",
     emailButtonText: "Contactar",
     onEmailButtonClick: handleContactButtonClick,
   };
@@ -87,9 +87,19 @@ const PackagePage = () => {
       </div>
       <div className="bg-[f3f4f6] pt-8 text-center">
         <div className="max-w-screen-xl mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Precios</h1>
+          <div className="max-w-screen-xl mx-auto px-4">
+            <h1 className="text-4xl md:text-5xl font-bold mb-2">Precios</h1>
+            <div className="flex justify-center mb-4">
+              <div className="w-24 h-1 bg-primary"></div>
+            </div>
+          </div>
+
+          <p className="text-lg md:text-xl max-w-2xl mb-4 mx-auto text-center">
+            <strong>Monitoreo 24/7 desde</strong>
+
+          </p>
           <p className="text-lg md:text-xl max-w-2xl mb-8 mx-auto text-center">
-          <strong>Monitoreo 24/7 desde $15 mensuales</strong>
+            <strong className="text-5xl">$15 mensuales</strong>
 
           </p>
         </div>

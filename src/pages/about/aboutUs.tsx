@@ -66,7 +66,7 @@ const AboutUsPage = () => {
               <div className="md:w-1/2">
                 <h2 className="text-3xl font-bold text-gray-800 mb-6">Nuestra Visión</h2>
                 <p className="text-lg text-gray-600 mb-8">
-                  Aspiramos a ser líderes reconocidos en la industria de la seguridad y la automatización, marcando la pauta con soluciones innovadoras y un servicio excepcional. Visualizamos un futuro donde la tecnología trabaja sin problemas para crear entornos más seguros, cómodos y eficientes para todos nuestros clientes. Buscamos expandir nuestro alcance y nuestro impacto, fomentando relaciones a largo plazo basadas en la confianza y el valor mutuo.
+                  Ser líderes reconocidos en la industria de la seguridad y la automatización, marcando la pauta con soluciones innovadoras y un servicio excepcional. Visualizamos un futuro donde la tecnología trabaja sin problemas para crear entornos más seguros, cómodos y eficientes para todos nuestros clientes. Buscamos expandir nuestro alcance y nuestro impacto, fomentando relaciones a largo plazo basadas en la confianza y el valor mutuo.
                 </p>
                 {/* You can add an image here if you like */}
               </div>

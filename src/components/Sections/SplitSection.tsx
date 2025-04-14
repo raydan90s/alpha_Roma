@@ -27,8 +27,8 @@ const SplitSection = forwardRef<HTMLDivElement, SplitSectionProps>(({
   return (
     
 
-    <section  className="py-4" ref={ref}> {/* Attach the ref here */}
-    <div className="bg-gray-100 py-12" id={id}>
+    <section  ref={ref}> {/* Attach the ref here */}
+    <div className="bg-gray-100 py-4" id={id}>
       <div className="mx-auto bg-white max-w-[95rem] rounded-[20px]">
         <div className={`grid ${gridTemplateColumns} gap-4 md:gap-8 items-stretch`}>
           {/* Image Section */}

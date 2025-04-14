@@ -50,7 +50,7 @@ const HeroSegmar: React.FC<HeroSegmarProps> = ({
       <div className="absolute inset-0 bg-black bg-opacity-50 z-0"></div> {/* Overlay sutil */}
       <div className="relative z-10 px-4 pl-20 pt-20"> {/* Contenedor del texto con padding izquierda */}
         <div className="text-left max-w-screen-xl mx-auto"> {/* Contenedor interno del texto */}
-          <p className="text-lg uppercase mb-6 text-white">
+          <p className="text-lg uppercase mb-6 text-white font-bold">
             CÁMARAS DE SEGURIDAD PARA EL HOGAR INTELIGENTE
           </p>
 
@@ -80,7 +80,7 @@ const HeroSegmar: React.FC<HeroSegmarProps> = ({
           </p>
 
           {showCallToAction && (
-            <p className="text-sm uppercase mb-4 text-white">
+            <p className="text-sm uppercase mb-4 text-white font-bold">
               {cta_text}
             </p>
           )}
