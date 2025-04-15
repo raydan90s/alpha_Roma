@@ -97,7 +97,7 @@ const AboutUsPage = () => {
                 <Lightbulb color="white" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">Innovación</h3>
-                <p className="text-gray-600 text-sm">Impulsamos la mejora continua a través de la adopción de nuevas tecnologías y la búsqueda de soluciones creativas.</p>
+                <p className="text-gray-600 text-sm">Impulsamos la mejora continua a través de la integración de nuevas tecnologías y la búsqueda de soluciones creativas.</p>
               </div>
               {/* Valor 2 */}
               <div className="bg-white rounded-xl shadow-md p-6">

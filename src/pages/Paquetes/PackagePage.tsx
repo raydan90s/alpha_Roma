@@ -28,8 +28,8 @@ const PackagePage = () => {
       title: "BÁSICO BRONCE",
       icon: <FaShieldAlt className="text-primary text-3xl" />,
       features: [
-        "1 Cámara tipo Domo 2MP",
-        "3 Cámaras tipo tubo 2MP",
+        "1 Cámara tipo Domo FHD",
+        "3 Cámaras tipo tubo FHD",
         "1 NVR 4 puertos POE",
         "1 Disco duro de 2TB",
         "Visualización a través de app móvil",
@@ -44,8 +44,8 @@ const PackagePage = () => {
       title: "BÁSICA PLATA",
       icon: <FaStar className="text-secondary text-3xl" />,
       features: [
-        "2 Cámaras tipo Domo 1080p",
-        "4 Cámaras tipo tubo 1080p",
+        "2 Cámaras tipo Domo FHD",
+        "4 Cámaras tipo tubo FHD",
         "1 NVR 8 puertos POE",
         "1 Disco duro 2TB",
         "Visualización a través de app móvil",
@@ -60,8 +60,8 @@ const PackagePage = () => {
       title: "BÁSICO ORO",
       icon: <FaGem className="text-acent text-3xl" />,
       features: [
-        "4 Cámaras tipo Domo 1080p",
-        "4 Cámaras tipo tubo 1080p",
+        "4 Cámaras tipo Domo FHD",
+        "4 Cámaras tipo tubo FHD",
         "1 NVR 8 puertos POE",
         "1 Disco duro 2TB",
         "Visualización a través de app móvil",
