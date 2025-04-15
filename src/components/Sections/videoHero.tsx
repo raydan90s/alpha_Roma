@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { VideoHeroProps } from '../../interface/HerovideoProps';
 import { generarEnlaceWhatsApp, mensajesWhatsApp } from '../../messages/messages';
@@ -12,6 +12,7 @@ const VideoHero: React.FC<VideoHeroProps> = ({
   secondaryButtonLink,
 }) => {
   const navigate = useNavigate();
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   const handleSecondaryButtonClick = () => {
     if (secondaryButtonLink) {
@@ -19,11 +20,41 @@ const VideoHero: React.FC<VideoHeroProps> = ({
     }
   };
 
+  // Prevent controls from showing on tap
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    // Function to prevent default behavior when clicking on the video
+    const preventDefault = (e: Event) => {
+      e.preventDefault();
+    };
+
+    // Add event listeners to prevent showing controls
+    video.addEventListener('click', preventDefault);
+    video.addEventListener('touchstart', preventDefault);
+    
+    // Cleanup function to remove event listeners
+    return () => {
+      video.removeEventListener('click', preventDefault);
+      video.removeEventListener('touchstart', preventDefault);
+    };
+  }, []);
+
   return (
     <div className="relative bg-black overflow-hidden h-screen">
       <div className="absolute inset-0">
-        <video autoPlay loop muted className="min-w-full min-h-full object-cover">
-          <source src={videoUrl} type="video/mp4" /> {/* Added type attribute */}
+        <video 
+          ref={videoRef}
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          disablePictureInPicture
+          className="min-w-full min-h-full object-cover"
+          style={{ pointerEvents: 'none' }}
+        >
+          <source src={videoUrl} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black opacity-50" aria-hidden="true" />
       </div>
@@ -32,7 +63,7 @@ const VideoHero: React.FC<VideoHeroProps> = ({
         <h1 className="text-white text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
           {title}
         </h1>
-        <p className="mt-4 text-2xl font-bold text-indigo-200 mt-4 sm:mt-5 lg:mt-6">
+        <p className="mt-4 text-2xl font-bold text-indigo-200 sm:mt-5 lg:mt-6">
           {subtitle}
         </p>
 
@@ -51,7 +82,7 @@ const VideoHero: React.FC<VideoHeroProps> = ({
             {secondaryButtonText && secondaryButtonLink && (
               <button
                 onClick={handleSecondaryButtonClick}
-                className="inline-block px-6 py-3 text-primary text-lg font-bold bg-white hover:bg-hover rounded-lg shadow-md transition duration-300 cursor-pointer" // Added cursor-pointer
+                className="inline-block px-6 py-3 text-primary text-lg font-bold bg-white hover:bg-hover rounded-lg shadow-md transition duration-300 cursor-pointer"
               >
                 {secondaryButtonText}
               </button>
