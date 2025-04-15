@@ -124,11 +124,20 @@ function Navbar() {
         <div className="max-w-screen-2xl mx-auto px-4">
           <div className="flex items-center justify-between h-20 w-full">
             {/* Logo */}
-            <div className="flex items-center space-x-2">
-              <Link to="/" onClick={() => { handleScrollToTop(); setHoveredMenu(null); setMobileMenuOpen(false); setActiveMobileSubmenu(null); }}>
-                <img src={Logo} alt="Logo" className="h-14 ml-6" />
+            <div className="flex items-center justify-center md:justify-start space-x-2 w-full">
+              <Link
+                to="/"
+                onClick={() => {
+                  handleScrollToTop();
+                  setHoveredMenu(null);
+                  setMobileMenuOpen(false);
+                  setActiveMobileSubmenu(null);
+                }}
+              >
+                <img src={Logo} alt="Logo" className="h-14 ml-0 md:ml-6" />
               </Link>
             </div>
+
 
             {/* Menú para dispositivos medianos y grandes */}
             <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
@@ -230,13 +239,13 @@ function Navbar() {
               {/* Botón WhatsApp */}
               <a
                 href={generarEnlaceWhatsApp(mensajesWhatsApp.general)}
-                className={`bg-primary hover:bg-primary text-black font-bold px-3 sm:px-6 py-2 rounded-full shadow-md transition-all duration-300 text-xs sm:text-sm whitespace-nowrap flex items-center gap-2 ${mobileMenuOpen ? 'hidden md:flex' : 'md:flex'}`}
+                className={`bg-primary hover:bg-primary text-black font-bold px-3 sm:px-6 py-2 rounded-full shadow-md transition-all duration-300 text-xs sm:text-sm whitespace-nowrap flex items-center gap-2 ${mobileMenuOpen ? 'hidden md:flex' : 'hidden md:flex'}`}
                 onClick={() => setMobileMenuOpen(false)} // Close menu on WhatsApp click
               >
                 <img
                   src="https://res.cloudinary.com/dfbpaq83u/image/upload/v1744669038/shrx1oeqzvtkzbvtfp81.png"
                   alt="WhatsApp Logo"
-                  className="h-6 w-auto"
+                  className={`h-6 w-auto ${mobileMenuOpen ? 'hidden md:flex' : 'hidden md:flex'}`}
                 />
                 {formatearTelefono(TELEFONO_CONTACTO)}
               </a>
@@ -319,7 +328,7 @@ function Navbar() {
                   <img
                     src="https://res.cloudinary.com/dfbpaq83u/image/upload/v1744669038/shrx1oeqzvtkzbvtfp81.png" // Reemplaza con la URL de tu icono de WhatsApp
                     alt="WhatsApp"
-                    className="h-10r w-auto mr-2" // Ajusta el tamaño y el margen según necesites
+                    className="h-8 w-auto mr-2" // Ajusta el tamaño y el margen según necesites
                   />
                   {formatearTelefono(TELEFONO_CONTACTO)}
                 </a>
