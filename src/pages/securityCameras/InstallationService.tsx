@@ -1,12 +1,11 @@
 import React from "react";
-
 interface InstallationServiceProps {
     eyebrow: string;
     headline: string;
     body: string;
     buttonText: string;
     buttonLink: string;
-    imageUrl: string; // Prop para la URL de la imagen única
+    imageUrl: string; 
     altText: string;
 }
 

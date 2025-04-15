@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef} from "react";
 import { scrollToHashOnLoad } from "../../assets/utils/scrollUtils.ts";
 import ContactSection from "../../components/Sections/contactSection.tsx";
 import { ContactSectionProps } from "../../interface/contactProps";
@@ -6,6 +6,7 @@ import CameraHero from "../securityCameras/cameraHero.tsx";
 import HeroProps from "../../interface/HeroProps";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import instalando from "../../assets/img/cameras/instalando.jpg";
+import { generarEnlaceWhatsApp, mensajesWhatsApp } from '../../messages/messages.ts';
 import {
     faPersonWalkingDashedLineArrowRight,
     faVolumeUp,
@@ -27,8 +28,6 @@ const CamerasPage = () => {
     useEffect(() => {
         scrollToHashOnLoad();
     }, []);
-
-    const [showInstallationService] = useState(true);
 
     const camerasContactSectionData: ContactSectionProps = {
         title: "¿Interesado en nuestras soluciones de cámaras?",
@@ -58,7 +57,7 @@ const CamerasPage = () => {
         headline: "Nos hacemos cargo de todo por usted",
         body: "Nuestros profesionales del hogar inteligente instalan su sistema de seguridad para el hogar, lo activan y le muestran cómo usarlo.",
         buttonText: "¿Cómo comenzar?",
-        buttonLink: "/es/how-to-buy",
+        buttonLink: generarEnlaceWhatsApp(mensajesWhatsApp.general),
         imageUrl: instalando,
         altText: "Profesional de hogar inteligente en escalera instalando la cámara exterior profesional Vivint Gen 2 con vista de árboles y montañas en el fondo",
     };
