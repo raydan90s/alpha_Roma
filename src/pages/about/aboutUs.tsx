@@ -97,7 +97,7 @@ const AboutUsPage = () => {
                 <Lightbulb color="white" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">Innovación</h3>
-                <p className="text-gray-600 text-sm">Impulsamos la mejora continua a través de la integración de nuevas tecnologías y la búsqueda de soluciones creativas.</p>
+                <p className="text-gray-600 text-lg">Impulsamos la mejora continua a través de la integración de nuevas tecnologías y la búsqueda de soluciones creativas.</p>
               </div>
               {/* Valor 2 */}
               <div className="bg-white rounded-xl shadow-md p-6">
@@ -105,7 +105,7 @@ const AboutUsPage = () => {
                 <Boxes color="white" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">Integridad</h3>
-                <p className="text-gray-600 text-sm">Actuamos con honestidad, transparencia y ética en todas nuestras interacciones y decisiones.</p>
+                <p className="text-gray-600 text-lg">Actuamos con honestidad, transparencia y ética en todas nuestras interacciones y decisiones.</p>
               </div>
               {/* Valor 3 */}
               <div className="bg-white rounded-xl shadow-md p-6">
@@ -113,7 +113,7 @@ const AboutUsPage = () => {
                 <HeartHandshake color="white" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">Compromiso con el Cliente</h3>
-                <p className="text-gray-600 text-sm">Priorizamos las necesidades de nuestros clientes, ofreciendo un servicio atento, personalizado y de alta calidad.</p>
+                <p className="text-gray-600 text-lg">Priorizamos las necesidades de nuestros clientes, ofreciendo un servicio atento, personalizado y de alta calidad.</p>
               </div>
               {/* Add more values as needed */}
             </div>
