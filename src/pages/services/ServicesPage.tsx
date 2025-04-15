@@ -2,18 +2,68 @@ import { useEffect } from "react";
 import { scrollToHashOnLoad } from "../../assets/utils/scrollUtils.ts";
 import ContactSection from "../../components/Sections/contactSection.tsx"; // Importa el componente
 import { ContactSectionProps } from "../../interface/contactProps"; // Importa la interfaz
+import ServiceItem from "../services/ServicesItem.tsx"; // Importa el nuevo componente
+import { mensajesWhatsApp } from "../../messages/messages";
 
 const ServicesPage = () => {
   useEffect(() => {
     scrollToHashOnLoad();
   }, []);
 
-
   const servicesContactSectionData: ContactSectionProps = {
     title: "¿Listo para mejorar tu seguridad?",
     description: "Nuestro equipo está preparado para ayudarte con cualquier servicio que necesites. Contáctanos hoy mismo.",
-    context:"servicios",
+    context: "servicios",
     emailButtonText: "Solicitar cotización",
+  };
+
+  const installationData = {
+    id: "instalacion",
+    title: "Instalación y mantenimiento",
+    description:
+      "Nuestro equipo de técnicos certificados realizará la instalación profesional de todos tus dispositivos de seguridad y domótica para garantizar su funcionamiento óptimo.",
+    features: [
+      "Instalación de cámaras de seguridad y CCTV",
+      "Configuración de sistemas de alarma",
+      "Instalación de sistemas de casa inteligente",
+    ],
+    image:
+      "https://blogger.googleusercontent.com/img/a/AVvXsEh3iSic7evGCCxG-DITfCHW1xKT7Sq6pHnbkPYm9Trr5kBMlqm1nUZgBXcAQvNUDl7XilgcBlvmbKGO_1VEcWoqzoOZDedjGFIYqEGVbpZh4ogg7aHyYTGSg2QiSzi6HKjM04-7hdczUAJ0BfVHleRIOus2is_5Ltz8U4al4yKSiHaj2hxQdnLd7BpdHA",
+    buttonText: "Solicitar instalación",
+    whatsappMessage: mensajesWhatsApp.serviciosInstalacion, // Nuevo mensaje específico
+  };
+
+  const monitoringData = {
+    id: "monitoreo",
+    title: "Monitoreo de Cámaras",
+    description:
+      "Supervisamos tus espacios en tiempo real, las 24 horas del día, con sistemas inteligentes que detectan movimientos, alertas y eventos sospechosos para una respuesta inmediata y efectiva.",
+    features: [
+      "Monitoreo 24/7 en tiempo real",
+      "Alertas inmediatas ante eventos sospechosos",
+      "Visualización y control desde dispositivos móviles",
+    ],
+    image:
+      "https://res.cloudinary.com/dfbpaq83u/image/upload/v1744663789/dkqfonfibrukgu7ojtd2.png",
+    isImageLeft: true,
+    buttonText: "Solicitar monitoreo",
+    whatsappMessage: mensajesWhatsApp.serviciosMonitoreo, // Nuevo mensaje específico
+  };
+
+  const advisoryData = {
+    id: "asesoria",
+    title: "Asesoría",
+    description:
+      "Nuestros expertos en seguridad te ayudarán a diseñar la solución perfecta para tus necesidades específicas, evaluando tu espacio y recomendando las mejores opciones.",
+    features: [
+      "Evaluación de riesgos y necesidades",
+      "Diseño personalizado de sistemas de seguridad",
+      "Consultoría en normativas y mejores prácticas",
+    ],
+    image:
+      "https://res.cloudinary.com/dcxqkcmhd/image/upload/v1744207826/zuxpdisz3h0o3x1btfyv.jpg",
+    buttonText: "Solicitar asesoría",
+    whatsappMessage: mensajesWhatsApp.serviciosAsesoria, // Nuevo mensaje específico
   };
 
   return (
@@ -29,159 +79,12 @@ const ServicesPage = () => {
       </div>
 
       {/* Services Content */}
-      <div className="max-w-screen-xl mx-auto px-4 py-12 space-y-16" style={{textAlign: "justify"}}> {/* Añadido space-y-16 */}
-        {/* Installation Section */}
-        <section id="instalacion" className="scroll-mt-24 bg-white rounded-xl shadow-lg p-12 md:p-16"> {/* Estilos del recuadro */}
-          <div className="flex flex-col md:flex-row gap-8">
-            <div className="md:w-1/2">
-              <h2 className="text-3xl font-bold text-gray-800 mb-6">Instalación</h2>
-              <p className="text-lg text-gray-600 mb-8">
-                Nuestro equipo de técnicos certificados realizará la instalación profesional de todos tus dispositivos de seguridad y domótica para garantizar su funcionamiento óptimo.
-              </p>
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <div className="bg-secondary rounded-full p-1 mr-3 mt-1">
-                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                  </div>
-                  <span className="text-gray-700">Instalación de cámaras de seguridad y CCTV</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="bg-secondary rounded-full p-1 mr-3 mt-1">
-                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                  </div>
-                  <span className="text-gray-700">Configuración de sistemas de alarma</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="bg-secondary rounded-full p-1 mr-3 mt-1">
-                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                  </div>
-                  <span className="text-gray-700">Instalación de sistemas de casa inteligente</span>
-                </li>
-              </ul>
-              <button className="mt-8 bg-primary text-black font-bold px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300">
-                Solicitar instalación
-              </button>
-            </div>
-            <div className="md:w-1/2">
-              <div className="bg-gray-200 rounded-xl overflow-hidden shadow-lg h-80">
-                <img
-                  src="https://blogger.googleusercontent.com/img/a/AVvXsEh3iSic7evGCCxG-DITfCHW1xKT7Sq6pHnbkPYm9Trr5kBMlqm1nUZgBXcAQvNUDl7XilgcBlvmbKGO_1VEcWoqzoOZDedjGFIYqEGVbpZh4ogg7aHyYTGSg2QiSzi6HKjM04-7hdczUAJ0BfVHleRIOus2is_5Ltz8U4al4yKSiHaj2hxQdnLd7BpdHA"
-                  alt="Servicio de instalación"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+      <div className="max-w-screen-xl mx-auto px-4 py-12 space-y-16" style={{ textAlign: "justify" }}>
+        <ServiceItem {...installationData} />
+        <ServiceItem {...monitoringData} />
+        <ServiceItem {...advisoryData} />
 
-        {/* Maintenance Section */}
-        <section id="monitoreo" className="scroll-mt-24 bg-white rounded-xl shadow-lg p-12 md:p-16" > {/* Estilos del recuadro */}
-          <div className="flex flex-col md:flex-row-reverse gap-8">
-            <div className="md:w-1/2">
-              <h2 className="text-3xl font-bold text-gray-800 mb-6">Monitoreo de Cámaras</h2>
-              <p className="text-lg text-gray-600 mb-8">
-                Supervisamos tus espacios en tiempo real, las 24 horas del día, con sistemas inteligentes que detectan movimientos, alertas y eventos sospechosos para una respuesta inmediata y efectiva.
-              </p>
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <div className="bg-secondary rounded-full p-1 mr-3 mt-1">
-                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                  </div>
-                  <span className="text-gray-700">Monitoreo 24/7 en tiempo real</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="bg-secondary rounded-full p-1 mr-3 mt-1">
-                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                  </div>
-                  <span className="text-gray-700">Alertas inmediatas ante eventos sospechosos</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="bg-secondary rounded-full p-1 mr-3 mt-1">
-                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                  </div>
-                  <span className="text-gray-700">Visualización y control desde dispositivos móviles</span>
-                </li>
-              </ul>
-              <button className="mt-8 bg-primary text-black font-bold px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300">
-                Solicitar monitoreo
-              </button>
-            </div>
-
-            <div className="md:w-1/2">
-              <div className="bg-gray-200 rounded-xl overflow-hidden shadow-lg h-80">
-                <img
-                  src="https://res.cloudinary.com/dfbpaq83u/image/upload/v1744663789/dkqfonfibrukgu7ojtd2.png"
-                  alt="Servicio de mantenimiento"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Advisory Section */}
-        <section id="asesoria" className="scroll-mt-24 bg-white rounded-xl shadow-lg p-12 md:p-16"> {/* Estilos del recuadro */}
-          <div className="flex flex-col md:flex-row gap-8">
-            <div className="md:w-1/2">
-              <h2 className="text-3xl font-bold text-gray-800 mb-6">Asesoría</h2>
-              <p className="text-lg text-gray-600 mb-8">
-                Nuestros expertos en seguridad te ayudarán a diseñar la solución perfecta para tus necesidades específicas, evaluando tu espacio y recomendando las mejores opciones.
-              </p>
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <div className="bg-secondary rounded-full p-1 mr-3 mt-1">
-                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                  </div>
-                  <span className="text-gray-700">Evaluación de riesgos y necesidades</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="bg-secondary rounded-full p-1 mr-3 mt-1">
-                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                  </div>
-                  <span className="text-gray-700">Diseño personalizado de sistemas de seguridad</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="bg-secondary rounded-full p-1 mr-3 mt-1">
-                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                  </div>
-                  <span className="text-gray-700">Consultoría en normativas y mejores prácticas</span>
-                </li>
-              </ul>
-              <button className="mt-8 bg-primary text-black font-bold px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300">
-                Solicitar asesoría
-              </button>
-            </div>
-            <div className="md:w-1/2">
-              <div className="bg-gray-200 rounded-xl overflow-hidden shadow-lg h-80">
-                <img
-                  src="https://res.cloudinary.com/dcxqkcmhd/image/upload/v1744207826/zuxpdisz3h0o3x1btfyv.jpg"
-                  alt="Servicio de asesoría"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Contact Section (Reemplazo de la sección original) */}
+        {/* Contact Section */}
         <ContactSection {...servicesContactSectionData} />
       </div>
     </div>
