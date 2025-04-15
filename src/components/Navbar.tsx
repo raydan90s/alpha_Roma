@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Menu, ChevronDown, ChevronUp, X } from "lucide-react";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { scrollToHash, handleScrollToTop } from '../assets/utils/scrollUtils';
 import Logo from '../assets/img/logo2.png';
 import { menuItems } from "../assets/utils/menuItems";
@@ -14,6 +14,7 @@ function Navbar() {
   const timeoutRef = useRef(null);
   const navRef = useRef(null);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleMouseEnter = (index) => {
     if (window.innerWidth >= 768) {
@@ -93,11 +94,12 @@ function Navbar() {
   const handleMenuItemClick = (href: string) => {
     const navigateAndScroll = (path: string, hash?: string) => {
       navigate(path);
-      if (hash) {
-        setTimeout(() => {
+      setTimeout(() => {
+        handleScrollToTop(); // Scroll to top after navigation
+        if (hash) {
           scrollToHash(hash);
-        }, 100);
-      }
+        }
+      }, 100);
     };
 
     if (href.startsWith('/about#')) {
@@ -112,6 +114,7 @@ function Navbar() {
       navigateAndScroll('/seguridad-hogar', href.split('#')[1]);
     } else {
       navigate(href);
+      setTimeout(handleScrollToTop, 0); // Scroll to top immediately for direct page navigations
     }
     setHoveredMenu(null);
     setMobileMenuOpen(false);
@@ -146,6 +149,11 @@ function Navbar() {
                       ? "border-white text-white"
                       : "border-transparent text-gray-400 hover:text-white"
                       }`}
+                    onClick={() => {
+                      if (item.linkTo) {
+                        handleMenuItemClick(item.linkTo);
+                      }
+                    }}
                   >
                     {item.title}
                     {item.options && (
@@ -177,14 +185,16 @@ function Navbar() {
                               <p className="text-gray-400 text-sm mb-4">
                                 {item.description}
                               </p>
-                              <Link to={item.linkTo || '#'} onClick={() => setHoveredMenu(null)}>
-                                <a className="text-primary hover:text-white transition-colors duration-300 text-sm font-medium flex items-center">
-                                  Conocer acerca de {item.title.toLowerCase()}
-                                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                                  </svg>
-                                </a>
-                              </Link>
+                              {item.linkTo && (
+                                <Link to={item.linkTo} onClick={() => { handleMenuItemClick(item.linkTo); setHoveredMenu(null); }}>
+                                  <a className="text-primary hover:text-white transition-colors duration-300 text-sm font-medium flex items-center">
+                                    Conocer acerca de {item.title.toLowerCase()}
+                                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                  </a>
+                                </Link>
+                              )}
                             </div>
 
                             {/* Columna derecha - Enlaces */}
