@@ -23,8 +23,8 @@ function Home() {
       <div className="bg-gray-100 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Protección completa en tu hogar</h2>
-            <p className="text-2xl text-gray-600">Todo lo que tu hogar necesita para tu completa seguridad y tranquilidad</p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Protección completa</h2>
+            <p className="text-2xl text-gray-600">Todo lo que tu necesitas para tu completa seguridad y tranquilidad</p>
             <Cards />
           </div>
 
@@ -42,7 +42,7 @@ function Home() {
         </div>
 
       <Call_to_action
-        title="¿Listo para proteger tu casa?"
+        title="¿Listo para proteger tu inversión?"
         subtitle="Con NovaFenix despreocupate de cuidar tu casa"
         spanBtn="Contactános ahora"
         link=""

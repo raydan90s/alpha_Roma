@@ -123,21 +123,14 @@ function Navbar() {
       <nav className="bg-secondary text-white shadow-md fixed w-full z-50 border-b border-gray-700">
         <div className="max-w-screen-2xl mx-auto px-4">
           <div className="flex items-center justify-between h-20 w-full">
-            {/* Logo */}
-            <div className="flex items-center justify-center md:justify-start space-x-2 w-full">
-              <Link
-                to="/"
-                onClick={() => {
-                  handleScrollToTop();
-                  setHoveredMenu(null);
-                  setMobileMenuOpen(false);
-                  setActiveMobileSubmenu(null);
-                }}
-              >
-                <img src={Logo} alt="Logo" className="h-14 ml-0 md:ml-6" />
-              </Link>
+            {/* Logo - Ahora con posicionamiento centrado en móvil */}
+            <div className="md:flex-none flex-1 md:w-auto flex items-center">
+              <div className="md:ml-0 w-full md:w-auto flex justify-center md:justify-start">
+                <Link to="/" onClick={() => { handleScrollToTop(); setHoveredMenu(null); setMobileMenuOpen(false); setActiveMobileSubmenu(null); }}>
+                  <img src={Logo} alt="Logo" className="h-14 mx-auto md:mx-0 md:ml-6" />
+                </Link>
+              </div>
             </div>
-
 
             {/* Menú para dispositivos medianos y grandes */}
             <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
@@ -252,7 +245,7 @@ function Navbar() {
 
               {/* Botón menú móvil */}
               <button
-                className="ml-4 text-white md:hidden"
+                className="text-white md:hidden"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
                 {mobileMenuOpen ? (

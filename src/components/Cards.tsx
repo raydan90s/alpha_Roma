@@ -9,9 +9,9 @@ function Cards() {
         <div className="bg-secondary rounded-full p-3 inline-block mb-4">
             <Home color="white" />
         </div>
-        <h3 className="text-2xl font-semibold text-gray-800 mb-2">Casa Segura</h3>
+        <h3 className="text-2xl font-semibold text-gray-800 mb-2">Perímetro Seguro</h3>
         <p className="text-gray-600 text-lg">
-            Ofrecemos soluciones tecnológicas avanzadas para proteger tu hogar, asegurando su seguridad con sistemas de última generación.
+            Ofrecemos soluciones tecnológicas avanzadas para proteger tu hogar y negocio, asegurando su seguridad con sistemas de última generación.
         </p>
     </div>
     
