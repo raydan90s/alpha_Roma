@@ -120,7 +120,7 @@ function Footer() {
               </li>
               <li>
                 <a
-                  href="https://facebook.com/novafenix"
+                  href="https://facebook.com/novafenixec"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="relative inline-block hover:scale-110 transition-transform duration-300 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
@@ -134,7 +134,7 @@ function Footer() {
               </li>
               <li>
                 <a
-                  href="https://instagram.com/novafenix"
+                  href="https://instagram.com/novafenix_ec"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="relative inline-block hover:scale-110 transition-transform duration-300 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
@@ -146,6 +146,7 @@ function Footer() {
                   />
                 </a>
               </li>
+              {/* 
               <li>
                 <a
                   href="https://tiktok.com/@novafenix"
@@ -160,6 +161,7 @@ function Footer() {
                   />
                 </a>
               </li>
+              */}
             </ul>
           </div>
         </div>
