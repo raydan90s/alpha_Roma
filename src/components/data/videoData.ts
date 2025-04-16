@@ -11,8 +11,8 @@ export const videoData: VideoItem[] = [
   },
 
   {
-    thumbnailUrl: 'https://res.cloudinary.com/dcxqkcmhd/image/upload/v1744215106/slvdehofwu7f7d0oqzj6.gif',  // Asegúrate de usar thumbnailUrl
-    embedUrl: 'https://res.cloudinary.com/dcxqkcmhd/video/upload/v1744214650/kflykvv5cbx6xh955luo.mp4', // Usa embedUrl
+    thumbnailUrl: 'https://res.cloudinary.com/dfbpaq83u/image/upload/v1744833012/sefomufxnxfxba0pz0x4.gif',  // Asegúrate de usar thumbnailUrl
+    embedUrl: 'https://res.cloudinary.com/dfbpaq83u/video/upload/v1744832914/gbzubneqfifeyp1woncc.mp4', // Usa embedUrl
   },
 
 ];
