@@ -4,12 +4,21 @@ import ContactSection from "../../components/Sections/contactSection.tsx"; // Im
 import { ContactSectionProps } from "../../interface/contactProps"; // Importa la interfaz
 import ServiceItem from "../services/ServicesItem.tsx"; // Importa el nuevo componente
 import { mensajesWhatsApp } from "../../messages/messages";
+import PreloaderWrapper from "../../components/loader/PreloaderWrapper.tsx";
 
 const ServicesPage = () => {
   useEffect(() => {
     scrollToHashOnLoad();
   }, []);
 
+  // PreloaderWrapper: Aquí puedes agregar las imágenes que se usan en esta página
+  const imageUrls = [
+    "https://blogger.googleusercontent.com/img/a/AVvXsEh3iSic7evGCCxG-DITfCHW1xKT7Sq6pHnbkPYm9Trr5kBMlqm1nUZgBXcAQvNUDl7XilgcBlvmbKGO_1VEcWoqzoOZDedjGFIYqEGVbpZh4ogg7aHyYTGSg2QiSzi6HKjM04-7hdczUAJ0BfVHleRIOus2is_5Ltz8U4al4yKSiHaj2hxQdnLd7BpdHA",
+    "https://res.cloudinary.com/dfbpaq83u/image/upload/v1744663789/dkqfonfibrukgu7ojtd2.png",
+    "https://res.cloudinary.com/dcxqkcmhd/image/upload/v1744207826/zuxpdisz3h0o3x1btfyv.jpg"
+
+
+  ];
   const servicesContactSectionData: ContactSectionProps = {
     title: "¿Listo para mejorar tu seguridad?",
     description: "Nuestro equipo está preparado para ayudarte con cualquier servicio que necesites. Contáctanos hoy mismo.",
@@ -67,6 +76,8 @@ const ServicesPage = () => {
   };
 
   return (
+    <PreloaderWrapper imageUrls={imageUrls}>
+
     <div className="pt-20 bg-gray-100">
       {/* Hero Section */}
       <div className="bg-secondary text-white py-16">
@@ -88,6 +99,7 @@ const ServicesPage = () => {
         <ContactSection {...servicesContactSectionData} />
       </div>
     </div>
+    </PreloaderWrapper>
   );
 };
 

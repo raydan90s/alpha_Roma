@@ -1,4 +1,4 @@
-import { useEffect, useRef} from "react";
+import { useEffect, useRef } from "react";
 import { scrollToHashOnLoad } from "../../assets/utils/scrollUtils.ts";
 import ContactSection from "../../components/Sections/contactSection.tsx";
 import { ContactSectionProps } from "../../interface/contactProps";
@@ -17,6 +17,7 @@ import {
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import SplitSection from "../../components/Sections/SplitSection.tsx";
 import InstallationService from "./InstallationService.tsx";
+import PreloaderWrapper from "../../components/loader/PreloaderWrapper"; // 🆕 
 
 const CamerasPage = () => {
     const camarasIpRef = useRef<HTMLDivElement>(null);
@@ -113,7 +114,18 @@ const CamerasPage = () => {
         { logo: "https://res.cloudinary.com/dfbpaq83u/image/upload/v1744661104/mddhgpqzt9d2kf7uotdk.svg", link: "https://www.hikvision.com/" },
         { logo: "https://res.cloudinary.com/dfbpaq83u/image/upload/v1744661104/gowgaot8mye47bwovwpq.png", link: "https://www.tp-link.com/" },
     ];
+
+    const imageUrls = [
+        "https://res.cloudinary.com/dcxqkcmhd/image/upload/v1744299925/uvhurgciahxtkyyhnjht.png",
+        "https://res.cloudinary.com/dcxqkcmhd/image/upload/v1744300683/eftnbb7ntmz49jomtywc.png",
+        "https://res.cloudinary.com/dfbpaq83u/image/upload/v1744662143/baduae7ho7romthbgleu.png",
+        "https://res.cloudinary.com/dfbpaq83u/image/upload/v1744663146/saqwfm5qvpdndxkrqclp.png",
+        "https://res.cloudinary.com/dfbpaq83u/image/upload/v1744661104/mddhgpqzt9d2kf7uotdk.svg",
+        "https://res.cloudinary.com/dfbpaq83u/image/upload/v1744661104/gowgaot8mye47bwovwpq.png",
+    ];
+
     return (
+        <PreloaderWrapper imageUrls={imageUrls}>
         <div className="pt-0">
             <CameraHero
                 {...cameraHeroData}
@@ -181,6 +193,7 @@ const CamerasPage = () => {
                 <ContactSection {...camerasContactSectionData} />
             </div>
         </div>
+        </PreloaderWrapper>
     );
 };
 

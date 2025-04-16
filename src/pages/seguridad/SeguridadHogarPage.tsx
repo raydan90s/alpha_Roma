@@ -6,6 +6,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import HeroSegmar from "./HeroSegmar.tsx";
 import SplitSection from "../../components/Sections/SplitSection.tsx"; // Importa SplitSection
 import { TELEFONO_CONTACTO } from "../../config/config.ts";
+import PreloaderWrapper from "../../components/loader/PreloaderWrapper.tsx";  // Importa PreloaderWrapper
 
 const SeguridadHogarPage = () => {
   const alertasInmediatasRef = useRef<HTMLDivElement>(null);
@@ -23,6 +24,15 @@ const SeguridadHogarPage = () => {
   useEffect(() => {
     scrollToHashOnLoad();
   }, []);
+
+  // PreloaderWrapper: Aquí puedes agregar las imágenes que se usan en esta página
+  const imageUrls = [
+    "src/assets/img/HeroCamera.png",
+    "https://res.cloudinary.com/dfbpaq83u/image/upload/v1744663146/saqwfm5qvpdndxkrqclp.png",
+    "https://res.cloudinary.com/dfbpaq83u/image/upload/v1744400288/vvqch3ek9qmmzxi6o0zs.png",
+    "https://res.cloudinary.com/dfbpaq83u/image/upload/v1744398090/u0k7sctdsqfuewvyp8wc.png"
+    
+  ];
 
   const handleContactButtonClick = () => {
     console.log("Botón de contacto para seguridad del hogar clickeado");
@@ -85,6 +95,7 @@ const SeguridadHogarPage = () => {
   ];
 
   return (
+    <PreloaderWrapper imageUrls={imageUrls}>
 
     <div className="pt-0 bg-gray-100 scroll-pt-24 md:scroll-pt-32 lg:scroll-pt-40"> {/* Adjusted scroll-pt-* values */}
       {/* Hero Section */}
@@ -128,6 +139,7 @@ const SeguridadHogarPage = () => {
         <ContactSection {...seguridadHogarContactSectionData} />
       </div>
     </div>
+    </PreloaderWrapper>
   );
 };
 

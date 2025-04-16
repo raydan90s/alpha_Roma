@@ -5,11 +5,17 @@ import { ContactSectionProps } from "../../interface/contactProps"; // Importa l
 import VideoHero from "../../components/Sections/videoHero.tsx"; // Import the VideoHero component
 import { VideoHeroProps } from "../../interface/HerovideoProps.ts"; // Import its interface
 import { Boxes, HeartHandshake, Lightbulb } from "lucide-react";
-
+import PreloaderWrapper from "../../components/loader/PreloaderWrapper";
 const AboutUsPage = () => {
   useEffect(() => {
     scrollToHashOnLoad();
   }, []);
+  
+  const imageUrls = [
+    "https://www.videoproteccion.com.mx/wp-content/uploads/2017/06/instalador-cctv.jpg",
+    "https://www.prosegur.com.ar/dam/jcr:c85671f1-f468-4305-8019-ea12f38702ca/camaras%20cctv.jpg",
+    "https://res.cloudinary.com/dcxqkcmhd/video/upload/v1744208322/ufrawrhtjxkkre6znupj.mp4"
+  ];
 
   const handleEmailButtonClick = () => {
     console.log("Botón de contacto por correo clickeado");
@@ -27,10 +33,11 @@ const AboutUsPage = () => {
   const videoHeroData: VideoHeroProps = {
     title: "Conócenos Mejor",
     subtitle: "Descubre nuestra historia, misión y valores.",
-    videoUrl: "https://res.cloudinary.com/dcxqkcmhd/video/upload/v1744208322/ufrawrhtjxkkre6znupj.mp4", // Reemplaza con la URL de tu video
+    videoUrl: imageUrls[2], // Reemplaza con la URL de tu video
   };
 
   return (
+    <PreloaderWrapper imageUrls={imageUrls}>
     <div className="bg-gray-100">
       {/* Video Hero Section */}
       <VideoHero {...videoHeroData} />
@@ -124,6 +131,7 @@ const AboutUsPage = () => {
         </div>
       </div>
     </div>
+    </PreloaderWrapper>
   );
 };
 
