@@ -73,4 +73,10 @@ export const menuItems = [
             { label: "Plan Básico Oro", href: "/paquetes#plan-oro", description: "La máxima protección con funcionalidades avanzadas y personalización.", icon: Gem },
         ],
     },
+
+    {
+        title: "Blog",
+        linkTo: "/blog",
+    },
+    
 ];
