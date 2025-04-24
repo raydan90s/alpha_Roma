@@ -17,8 +17,8 @@ function Home() {
     <PreloaderWrapper imageUrls={imageUrls}>
       <div className="min-h-screen bg-gray-100">
         <VideoHero 
-          title="Protege tu hogar con NovaFenix"
-          subtitle="La seguridad de tu hogar en la palma de tu mano"
+          title="Porque una cámara sin vigilancia es solo una ilusión de seguridad"
+          subtitle="Protege lo que amas con NovaFenix"
           videoUrl="https://res.cloudinary.com/dcxqkcmhd/video/upload/v1744230903/wgmiwddovoqinudtewn4.mp4"
           primaryButtonText="Contáctanos"
           secondaryButtonText="Ver Paquetes"
