@@ -122,6 +122,7 @@ function Navbar() {
   };
 
   return (
+    <header>
     <div className="relative" ref={navRef}>
       <nav className="bg-secondary text-white shadow-md fixed w-full z-50 border-b border-gray-700">
         <div className="max-w-screen-2xl mx-auto px-4">
@@ -341,6 +342,7 @@ function Navbar() {
         </div>
       )}
     </div>
+    </header>
   );
 }
 

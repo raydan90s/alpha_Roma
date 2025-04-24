@@ -23,7 +23,9 @@ function Home() {
     canonical='https://www.novafenix-ec.com/'
     />
     <PreloaderWrapper imageUrls={imageUrls}>
+      
       <div className="min-h-screen bg-gray-100">
+      <section className='Seccion video'>
         <VideoHero 
           title="Porque una cámara sin vigilancia es solo una ilusión de seguridad"
           subtitle="Protege lo que amas con NovaFenix"
@@ -32,6 +34,7 @@ function Home() {
           secondaryButtonText="Ver Paquetes"
           secondaryButtonLink="/paquetes"
         />
+        </section>
 
         <div className="bg-gray-100 py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
