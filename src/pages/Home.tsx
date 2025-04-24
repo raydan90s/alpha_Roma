@@ -5,6 +5,7 @@ import VideoGallery from '../components/video/VideoGalery';
 import { videoData } from '../components/data/videoData';
 import Cards from '../components/Cards.tsx';
 import PreloaderWrapper from "../components/loader/PreloaderWrapper.tsx";
+import SEO from '../components/SEO/SEO.tsx';
 
 function Home() {
   const imageUrls = [
@@ -14,6 +15,13 @@ function Home() {
   ];
 
   return (
+    <>
+    <SEO 
+    title='Servicio de Monitoreo de cámaras | NovaFenix'
+    description='Instalación y monitoreo profesional de cámaras de seguridad en Guayaquil. Protección total para hogares y negocios.'
+    keywords='seguridad, cámaras de seguridad, vigilancia, guayaquil, monitoreo, empresas de seguridad guayaquil, cámaras de seguridad Hikvision'
+    canonical='https://www.novafenix-ec.com/'
+    />
     <PreloaderWrapper imageUrls={imageUrls}>
       <div className="min-h-screen bg-gray-100">
         <VideoHero 
@@ -52,6 +60,8 @@ function Home() {
         />
       </div>
     </PreloaderWrapper>
+    
+    </>
   );
 }
 

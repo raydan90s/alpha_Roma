@@ -6,6 +6,8 @@ import VideoHero from "../../components/Sections/videoHero.tsx"; // Import the V
 import { VideoHeroProps } from "../../interface/HerovideoProps.ts"; // Import its interface
 import { Boxes, HeartHandshake, Lightbulb } from "lucide-react";
 import PreloaderWrapper from "../../components/loader/PreloaderWrapper";
+import { Helmet } from "react-helmet";
+import SEO from "../../components/SEO/SEO.tsx";
 const AboutUsPage = () => {
   useEffect(() => {
     scrollToHashOnLoad();
@@ -37,6 +39,13 @@ const AboutUsPage = () => {
   };
 
   return (
+    <>
+    <SEO 
+    title="¿Quiénes somos? | NovaFenix"
+    description="Conoce más acerca de nosostros y de nuestro servicio de monitoreo de cámaras"
+    keywords="seguridad, novfenix, guayaquil, Guayaquil, monitoreo de cámaras, seguridad de cámaras, empresas"
+    canonical="https://www.novafenix-ec.com/about"
+    />
     <PreloaderWrapper imageUrls={imageUrls}>
     <div className="bg-gray-100">
       {/* Video Hero Section */}
@@ -132,6 +141,7 @@ const AboutUsPage = () => {
       </div>
     </div>
     </PreloaderWrapper>
+    </>
   );
 };
 

@@ -5,6 +5,7 @@ import { ContactSectionProps } from "../../interface/contactProps"; // Importa l
 import ServiceItem from "../services/ServicesItem.tsx"; // Importa el nuevo componente
 import { mensajesWhatsApp } from "../../messages/messages";
 import PreloaderWrapper from "../../components/loader/PreloaderWrapper.tsx";
+import SEO from "../../components/SEO/SEO.tsx";
 
 const ServicesPage = () => {
   useEffect(() => {
@@ -76,6 +77,14 @@ const ServicesPage = () => {
   };
 
   return (
+    <>
+<SEO 
+  title="Servicios de NovaFenix"
+  description="Ofrecemos monitoreo de cámaras de seguridad las 24 horas del día, los 7 días de la semana. Protege tu hogar o negocio con tecnología de punta y respuesta inmediata."
+  keywords="monitoreo 24/7, cámaras de seguridad, vigilancia remota, seguridad para hogares, seguridad para negocios, NovaFenix, guayaquil"
+  canonical="https://novafenix-ec.com/servicios"
+ />
+
     <PreloaderWrapper imageUrls={imageUrls}>
 
     <div className="pt-20 bg-gray-100">
@@ -100,6 +109,7 @@ const ServicesPage = () => {
       </div>
     </div>
     </PreloaderWrapper>
+    </>
   );
 };
 

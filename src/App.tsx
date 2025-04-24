@@ -7,9 +7,11 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import CamerasPage from "./pages/securityCameras/camerasPage";
 import SeguridadHogarPage from "./pages/seguridad/SeguridadHogarPage"; // <-- Importa la nueva página
+import {HelmetProvider} from 'react-helmet-async';
 
 function App() {
   return (
+    <HelmetProvider>
     <Router>
       <Navbar />
       <Routes>
@@ -22,6 +24,7 @@ function App() {
       </Routes>
       <Footer />
     </Router>
+    </HelmetProvider>
   );
 }
 
