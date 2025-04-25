@@ -5,7 +5,6 @@ import axios from 'axios';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; // Importa los estilos Snow (o Bubble)
 
-
 interface BlogPost {
     id: number;
     titulo: string;
@@ -84,17 +83,14 @@ const EditBlogPost = () => {
     };
 
     if (loading) {
-        console.log('Estado: Cargando...');
         return <div className="container mx-auto py-8 text-center">Cargando artículo...</div>;
     }
 
     if (error) {
-        console.log('Estado: Error -', error);
         return <div className="container mx-auto py-8 text-center text-red-500">Error al cargar el artículo: {error}</div>;
     }
 
     if (!post) {
-        console.log('Estado: Artículo no encontrado.');
         return <div className="container mx-auto py-8">Artículo no encontrado.</div>;
     }
 
@@ -119,15 +115,17 @@ const EditBlogPost = () => {
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         modules={{
                             toolbar: [
-                                ['bold', 'italic', 'underline', 'strike'],  // botones activados
+                                ['bold', 'italic', 'underline', 'strike'],
                                 ['link'],
-                                [{ 'list': 'ordered' }, { 'list': 'bullet' }], // Esta línea estaba correcta
+                                [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+                                [{ 'align': [] }], // Añade las opciones de alineación
                             ],
                         }}
                         formats={[
                             'bold', 'italic', 'underline', 'strike',
                             'list', 'bullet', 'ordered',
                             'link',
+                            'align', // Añade el formato 'align'
                         ]}
                     />
                 </div>
