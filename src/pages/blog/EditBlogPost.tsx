@@ -2,6 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css'; // Importa los estilos Snow (o Bubble)
+
 
 interface BlogPost {
     id: number;
@@ -45,11 +48,20 @@ const EditBlogPost = () => {
         }
     }, [postId]);
 
+    const handleContentChange = (value: string) => {
+        console.log('Contenido de ReactQuill:', value);
+        setPost((prevPost) =>
+            prevPost ? { ...prevPost, contenido: value } : null
+        );
+    };
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
-        setPost((prevPost) =>
-            prevPost ? { ...prevPost, [name]: value } : null
-        );
+        if (name !== 'contenido') { // Evita interferir con el manejo de ReactQuill
+            setPost((prevPost) =>
+                prevPost ? { ...prevPost, [name]: value } : null
+            );
+        }
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -100,7 +112,24 @@ const EditBlogPost = () => {
                 </div>
                 <div className="mb-4">
                     <label htmlFor="contenido" className="block text-gray-700 text-sm font-bold mb-2">Contenido:</label>
-                    <textarea id="contenido" name="contenido" value={post.contenido || ''} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                    <ReactQuill
+                        id="contenido"
+                        value={post.contenido || ''}
+                        onChange={handleContentChange}
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        modules={{
+                            toolbar: [
+                                ['bold', 'italic', 'underline', 'strike'],  // botones activados
+                                ['link'],
+                                [{ 'list': 'ordered' }, { 'list': 'bullet' }], // Esta línea estaba correcta
+                            ],
+                        }}
+                        formats={[
+                            'bold', 'italic', 'underline', 'strike',
+                            'list', 'bullet', 'ordered',
+                            'link',
+                        ]}
+                    />
                 </div>
                 <div className="mb-4">
                     <label htmlFor="urlImagen" className="block text-gray-700 text-sm font-bold mb-2">URL de la Imagen:</label>

@@ -55,7 +55,10 @@ const BlogPostDetail = () => {
       {blogPost.urlImagen && (
         <img className="w-full rounded-lg shadow-md mb-6" src={blogPost.urlImagen} alt={blogPost.titulo} />
       )}
-      <p className="text-gray-700 leading-relaxed">{blogPost.contenido}</p>
+      <div
+        className="text-gray-700 leading-relaxed"
+        dangerouslySetInnerHTML={{ __html: blogPost.contenido }}
+      />
       {/* Aquí podrías añadir más elementos como botones de compartir, comentarios, etc. */}
     </div>
   );
