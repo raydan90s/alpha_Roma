@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 interface BlogPost {
@@ -15,6 +15,7 @@ const EditorBlog = () => {
     const [posts, setPosts] = useState<BlogPost[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchBlogPosts = async () => {
@@ -37,48 +38,37 @@ const EditorBlog = () => {
 
     const actualizarOrdenBlogs = async (nuevosPosts: BlogPost[]) => {
         try {
-            // Crear un array con el formato esperado por el servidor: { id, orden }
             const ordenData = nuevosPosts.map((post, index) => ({
                 id: post.id,
-                orden: index + 1,  // Asegurarse de que es un número
+                orden: index + 1,
             }));
-    
-            // Mostrar los datos que vamos a enviar al servidor para verificar
+
             console.log("Datos enviados al servidor:", { orden: ordenData });
-    
-            // Realizar la petición PUT al backend
+
             const apiUrl = `${import.meta.env.VITE_NEXT_PUBLIC_API_BASE_URL}/api/orden`;
-            const response = await axios.put(apiUrl, { orden: ordenData }); // Enviar como 'orden'
-    
-            // Mostrar la respuesta del servidor
+            const response = await axios.put(apiUrl, { orden: ordenData });
+
             console.log('Respuesta del servidor:', response.data);
-    
-            // Actualizar el estado de los posts solo si la respuesta es exitosa
+
             setPosts(nuevosPosts);
-    
         } catch (error: any) {
             console.error('Error al actualizar el orden de los blogs:', error);
             setError('Error al guardar el nuevo orden.');
         }
     };
-    
-    
-    
-    
 
     const handleMoveUp = async (index: number) => {
         if (index > 0) {
             const newPosts = [...posts];
             [newPosts[index - 1], newPosts[index]] = [newPosts[index], newPosts[index - 1]];
 
-            // Actualiza el orden
             const updatedPosts = newPosts.map((post, i) => ({
                 ...post,
                 orden: i + 1,
             }));
 
-            setPosts(updatedPosts); // Actualiza el estado
-            await actualizarOrdenBlogs(updatedPosts); // Envia la actualización al backend
+            setPosts(updatedPosts);
+            await actualizarOrdenBlogs(updatedPosts);
         }
     };
 
@@ -87,18 +77,20 @@ const EditorBlog = () => {
             const newPosts = [...posts];
             [newPosts[index + 1], newPosts[index]] = [newPosts[index], newPosts[index + 1]];
 
-            // Actualiza el orden
             const updatedPosts = newPosts.map((post, i) => ({
                 ...post,
                 orden: i + 1,
             }));
 
-            setPosts(updatedPosts); // Actualiza el estado
-            await actualizarOrdenBlogs(updatedPosts); // Envia la actualización al backend
+            setPosts(updatedPosts);
+            await actualizarOrdenBlogs(updatedPosts);
         }
     };
 
-
+    const handleLogout = () => {
+        localStorage.clear(); // o localStorage.removeItem('token');
+        navigate('/login');
+    };
 
     if (loading) {
         return <div className="container mx-auto py-8 text-center">Cargando blogs...</div>;
@@ -112,9 +104,20 @@ const EditorBlog = () => {
         <div className="container mx-auto py-8">
             <div className="flex justify-between items-center mb-6 mt-20">
                 <h1 className="text-3xl font-bold text-primary">Panel de Edición del Blog</h1>
-                <Link to="/create-user" className="bg-primary hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                    Crear Usuario
-                </Link>
+                <div className="flex gap-4">
+                    <Link
+                        to="/create-user"
+                        className="bg-primary hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    >
+                        Crear Usuario
+                    </Link>
+                    <button
+                        onClick={handleLogout}
+                        className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    >
+                        Cerrar Sesión
+                    </button>
+                </div>
             </div>
             <ul>
                 {posts.map((post, index) => (
