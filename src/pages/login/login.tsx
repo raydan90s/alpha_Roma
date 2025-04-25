@@ -1,25 +1,37 @@
+// SimpleBlogLogin.tsx
 import { useState } from 'react';
+import axios from 'axios';
+import { useAuth } from './AuthContext'; // Asumimos que tienes el contexto de autenticación
 
 const SimpleBlogLogin = ({ onLoginSuccess }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const { login } = useAuth(); // Accedemos a la función login del contexto
 
-  const adminEmail = 'editor@miblog.com'; // Correo predeterminado
-  const adminPassword = 'claveDeAcceso'; // Contraseña predeterminada
-
-  const handleSubmit = (event: { preventDefault: () => void }) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     setError('');
 
-    if (email === adminEmail && password === adminPassword) {
-      // Llamar a la función para indicar que el login fue exitoso
+    try {     
+      const apiUrl = import.meta.env.VITE_NEXT_PUBLIC_API_BASE_URL + '/api/login';
+      const response = await axios.post(apiUrl, {
+        correo: email,
+        password: password,
+      });
+
+      // Si el login es exitoso, almacenamos el token
+      localStorage.setItem('authToken', response.data.token);
+
+      // Usamos el contexto para cambiar el estado de autenticación
+      login();
+
       if (onLoginSuccess) {
         onLoginSuccess();
       } else {
         console.log('Inicio de sesión exitoso (función onLoginSuccess no proporcionada)');
       }
-    } else {
+    } catch (error) {
       setError('Correo electrónico o contraseña incorrectos');
     }
   };

@@ -16,13 +16,19 @@ const verificarCredenciales = async (email, password) => {
     try {
         const usuario = await obtenerUsuarioPorEmail(email);
         if (!usuario) {
+            console.log('Usuario no encontrado o inactivo');
             return null; // Usuario no encontrado o inactivo
         }
 
+        console.log('Usuario encontrado:', usuario.correo);
+
         const passwordMatch = await bcrypt.compare(password, usuario.password);
+        console.log('Contraseña comparada:', passwordMatch); // Ver si la comparación es correcta
+
         if (passwordMatch) {
             return usuario; // Credenciales válidas, devuelve el usuario activo
         } else {
+            console.log('Contraseña incorrecta');
             return null; // Contraseña incorrecta
         }
     } catch (error) {

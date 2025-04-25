@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const blogController = require('./blog');
 const usuarioController = require('./usuario'); // Importa el controlador de usuario
+const jwt = require('jsonwebtoken'); // Asegúrate de importar jsonwebtoken
 
 const app = express();
 app.use(cors());
@@ -35,6 +36,32 @@ app.post('/api/usuarios', async (req, res) => {
         res.status(500).json({ message: 'Error interno del servidor al crear el usuario' });
     }
 });
+
+// Ruta de login
+app.post('/api/login', async (req, res) => {
+    const { correo, password } = req.body;
+    try {
+        const usuario = await usuarioController.verificarCredenciales(correo, password);
+
+        if (!usuario) {
+            return res.status(401).json({ message: 'Credenciales incorrectas' });
+        }
+
+        // Si el login es exitoso, genera un token JWT
+        const token = jwt.sign(
+            { id: usuario.id, correo: usuario.correo }, 
+            'claveSecreta', // Clave secreta para el JWT, guárdala en un archivo .env
+            { expiresIn: '1h' } // El token expirará en 1 hora
+        );
+
+        // Responde con el token JWT
+        res.status(200).json({ message: 'Login exitoso', token });
+    } catch (error) {
+        console.error('Error al verificar las credenciales:', error);
+        res.status(500).json({ message: 'Error interno del servidor' });
+    }
+});
+
 
 // Iniciar el servidor
 const PORT = process.env.PORT || 5000;
