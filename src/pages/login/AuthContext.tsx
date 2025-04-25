@@ -1,28 +1,50 @@
 // AuthContext.tsx
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
+import { jwtDecode } from 'jwt-decode';
 
 interface AuthContextType {
     isAuthenticated: boolean;
-    login: () => void;
+    login: (token: string) => void;
     logout: () => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => {
-        // Comprobar si hay un token en localStorage al cargar la aplicación
-        return localStorage.getItem('authToken') ? true : false;
-    });
+    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
 
-    const login = () => {
+    // Validar el token al cargar la app
+    useEffect(() => {
+        const token = localStorage.getItem('authToken');
+        if (token) {
+            try {
+                const decoded: { exp: number } = jwtDecode(token);
+                const isExpired = decoded.exp * 1000 < Date.now();
+    
+                if (!isExpired) {
+                    setIsAuthenticated(true); // El token es válido
+                } else {
+                    localStorage.removeItem('authToken');
+                    setIsAuthenticated(false); // El token ha expirado
+                }
+            } catch (error) {
+                console.error('Error al decodificar el token:', error);
+                localStorage.removeItem('authToken');
+                setIsAuthenticated(false);
+            }
+        } else {
+            setIsAuthenticated(false); // No hay token, no está autenticado
+        }
+    }, []);
+
+    const login = (token: string) => {
+        localStorage.setItem('authToken', token);
         setIsAuthenticated(true);
-        localStorage.setItem('authToken', 'true'); // Simplemente guardar un indicador
     };
 
     const logout = () => {
-        setIsAuthenticated(false);
         localStorage.removeItem('authToken');
+        setIsAuthenticated(false);
     };
 
     return (

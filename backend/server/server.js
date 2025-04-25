@@ -49,9 +49,9 @@ app.post('/api/login', async (req, res) => {
 
         // Si el login es exitoso, genera un token JWT
         const token = jwt.sign(
-            { id: usuario.id, correo: usuario.correo }, 
-            'claveSecreta', // Clave secreta para el JWT, guárdala en un archivo .env
-            { expiresIn: '1h' } // El token expirará en 1 hora
+            { id: usuario.id, correo: usuario.correo },
+            process.env.JWT_SECRET,
+            { expiresIn: '10s' }
         );
 
         // Responde con el token JWT
