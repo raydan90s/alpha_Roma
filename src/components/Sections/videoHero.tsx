@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { VideoHeroProps } from '../../interface/HerovideoProps';
 import { generarEnlaceWhatsApp, mensajesWhatsApp } from '../../messages/messages';
+import { Container } from 'lucide-react';
 
 const VideoHero: React.FC<VideoHeroProps> = ({
   title,

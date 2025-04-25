@@ -16,54 +16,70 @@ function Home() {
 
   return (
     <>
-    <SEO 
-    title='Servicio de Monitoreo de cámaras | NovaFenix'
-    description='Instalación y monitoreo profesional de cámaras de seguridad en Guayaquil. Protección total para hogares y negocios.'
-    keywords='seguridad, cámaras de seguridad, vigilancia, guayaquil, monitoreo, empresas de seguridad guayaquil, cámaras de seguridad Hikvision'
-    canonical='https://www.novafenix-ec.com/'
-    />
-    <PreloaderWrapper imageUrls={imageUrls}>
-      
-      <div className="min-h-screen bg-gray-100">
-      <section className='Seccion video'>
-        <VideoHero 
-          title="Porque una cámara sin vigilancia es solo una ilusión de seguridad"
-          subtitle="Protege lo que amas con NovaFenix"
-          videoUrl="https://res.cloudinary.com/dcxqkcmhd/video/upload/v1744230903/wgmiwddovoqinudtewn4.mp4"
-          primaryButtonText="Contáctanos"
-          secondaryButtonText="Ver Paquetes"
-          secondaryButtonLink="/paquetes"
-        />
-        </section>
+      <SEO
+        title='Servicio de Monitoreo de cámaras | NovaFenix'
+        description='Instalación y monitoreo profesional de cámaras de seguridad en Guayaquil. Protección total para hogares y negocios.'
+        keywords='seguridad, cámaras de seguridad, vigilancia, guayaquil, monitoreo, empresas de seguridad guayaquil, cámaras de seguridad Hikvision'
+        canonical='https://www.novafenix-ec.com/'
+      />
+      <PreloaderWrapper imageUrls={imageUrls}>
 
-        <div className="bg-gray-100 py-12">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Protección completa</h2>
-              <p className="text-2xl text-gray-600">Todo lo que tu necesitas para tu completa seguridad y tranquilidad</p>
-              <Cards />
+        {/* Página principal Home */}
+
+        <div className="min-h-screen bg-gray-100">
+          {/* Video Hero */}
+          <section className='Seccion video'>
+            <VideoHero
+              title="Porque una cámara sin vigilancia es solo una ilusión de seguridad"
+              subtitle="Protege lo que amas con NovaFenix"
+              videoUrl="https://res.cloudinary.com/dcxqkcmhd/video/upload/v1744230903/wgmiwddovoqinudtewn4.mp4"
+              primaryButtonText="Contáctanos"
+              secondaryButtonText="Ver Paquetes"
+              secondaryButtonLink="/paquetes"
+            />
+          </section>
+
+          {/* Contenedor de información */}
+          <section className='Contenedor Cartas'>
+            <div className="bg-gray-100 py-12">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-16">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-4">Protección completa</h2>
+                  <p className="text-2xl text-gray-600">Todo lo que tu necesitas para tu completa seguridad y tranquilidad</p>
+                  <Cards />
+                </div>
+              </div>
             </div>
+          </section>
+
+          {/* Contenedor de información */}
+          <section className='VideoGallery'>
+            <div className="py-6 bg-secondary">
+              <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 className="text-3xl font-bold text-white my-4 text-center">Demo de las cámaras de seguridad</h2>
+                <VideoGallery videos={videoData} />
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div className="py-6"></div>
+          </section>
+
+          {/* Sección de call to action */}
+          <div>
+            <section>
+              <Call_to_action
+                title="¿Listo para proteger tu inversión?"
+                subtitle="Con NovaFenix despreocupate de cuidar lo que amas"
+                spanBtn="Contactános ahora"
+                link=""
+              />
+            </section>
           </div>
         </div>
+      </PreloaderWrapper>
 
-        <div className="py-6 bg-secondary">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-white my-4 text-center">Demo de las cámaras de seguridad</h2>
-            <VideoGallery videos={videoData} />
-          </div>
-        </div>
-
-        <div className="py-6"></div>
-
-        <Call_to_action
-          title="¿Listo para proteger tu inversión?"
-          subtitle="Con NovaFenix despreocupate de cuidar lo que amas"
-          spanBtn="Contactános ahora"
-          link=""
-        />
-      </div>
-    </PreloaderWrapper>
-    
     </>
   );
 }
