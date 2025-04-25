@@ -7,6 +7,7 @@ import HeroSegmar from "./HeroSegmar.tsx";
 import SplitSection from "../../components/Sections/SplitSection.tsx"; // Importa SplitSection
 import { TELEFONO_CONTACTO } from "../../config/config.ts";
 import PreloaderWrapper from "../../components/loader/PreloaderWrapper.tsx";  // Importa PreloaderWrapper
+import SEO from "../../components/SEO/SEO.tsx";
 
 const SeguridadHogarPage = () => {
   const alertasInmediatasRef = useRef<HTMLDivElement>(null);
@@ -31,7 +32,7 @@ const SeguridadHogarPage = () => {
     "https://res.cloudinary.com/dfbpaq83u/image/upload/v1744663146/saqwfm5qvpdndxkrqclp.png",
     "https://res.cloudinary.com/dfbpaq83u/image/upload/v1744400288/vvqch3ek9qmmzxi6o0zs.png",
     "https://res.cloudinary.com/dfbpaq83u/image/upload/v1744398090/u0k7sctdsqfuewvyp8wc.png"
-    
+
   ];
 
   const handleContactButtonClick = () => {
@@ -41,7 +42,7 @@ const SeguridadHogarPage = () => {
   const seguridadHogarContactSectionData: ContactSectionProps = {
     title: "¿Interesado en proteger tu hogar?",
     description: "Contáctanos para asegurar tu tranquilidad y la de tu familia.",
-    phone: {TELEFONO_CONTACTO},
+    phone: { TELEFONO_CONTACTO },
     emailButtonText: "Contactar",
     onEmailButtonClick: handleContactButtonClick,
   };
@@ -95,51 +96,66 @@ const SeguridadHogarPage = () => {
   ];
 
   return (
-    <PreloaderWrapper imageUrls={imageUrls}>
-
-    <div className="pt-0 bg-gray-100 scroll-pt-24 md:scroll-pt-32 lg:scroll-pt-40"> {/* Adjusted scroll-pt-* values */}
-      {/* Hero Section */}
-      <HeroSegmar
-        {...seguridadHogarHeroData}
-        scrollToRef={scrollToRef}
-        targetRef={alertasInmediatasRef}
+    <>
+      <SEO
+        title="Seguridad para tu hogar | NovaFenix"
+        description="Protege a tu familia con nuestras soluciones de seguridad para el hogar. Instalamos cámaras, sensores y sistemas inteligentes para una vigilancia 24/7."
+        keywords="seguridad para el hogar, cámaras de seguridad, sistemas de alarma, vigilancia residencial, NovaFenix, protección 24/7"
+        canonical="https://novafenix-ec.com/seguridad-hogar"
       />
 
-      {/* Soluciones usando SplitSection */}
-      <div className="max-w-screen-xl mx-auto px-4 py-12 space-y-16">
-        <h2 className="text-4xl font-bold text-gray-800 text-center mb-10">
-          Soluciones de Seguridad para tu Hogar
-        </h2>
-        {solucionesSeguridadHogar.map((option, index) => (
-          
-          <SplitSection
-            key={option.id}
-            id={option.id}
-            label={option.label}
-            description={option.description}
-            image={option.image}
-            features={option.features}
-            isImageLeft={index % 2 === 0}
-            copy={option.copy}
-            ref={
-              option.id === "AlertasInmediatas"
-                ? alertasInmediatasRef
-                : option.id === "cruceLinea"
-                ? cruceLineaRef
-                : option.id === "colorVu"
-                ? colorVuRef
-                : null
-            }
-          />
-        ))}
-      </div>
+      <PreloaderWrapper imageUrls={imageUrls}>
 
-      <div className="max-w-screen-xl mx-auto px-4 py-12 space-y-16">
-        {/* Contacto */}
-        <ContactSection {...seguridadHogarContactSectionData} />
-      </div>
-    </div>
-    </PreloaderWrapper>
+        <div className="pt-0 bg-gray-100 scroll-pt-24 md:scroll-pt-32 lg:scroll-pt-40"> {/* Adjusted scroll-pt-* values */}
+          {/* Hero Section */}
+          <section>
+            <HeroSegmar
+              {...seguridadHogarHeroData}
+              scrollToRef={scrollToRef}
+              targetRef={alertasInmediatasRef}
+            />
+          </section>
+
+          {/* Soluciones usando SplitSection */}
+          <section>
+            <div className="max-w-screen-xl mx-auto px-4 py-12 space-y-16">
+              <h2 className="text-4xl font-bold text-gray-800 text-center mb-10">
+                Soluciones de Seguridad para tu Hogar
+              </h2>
+              {solucionesSeguridadHogar.map((option, index) => (
+
+                <SplitSection
+                  key={option.id}
+                  id={option.id}
+                  label={option.label}
+                  description={option.description}
+                  image={option.image}
+                  features={option.features}
+                  isImageLeft={index % 2 === 0}
+                  copy={option.copy}
+                  ref={
+                    option.id === "AlertasInmediatas"
+                      ? alertasInmediatasRef
+                      : option.id === "cruceLinea"
+                        ? cruceLineaRef
+                        : option.id === "colorVu"
+                          ? colorVuRef
+                          : null
+                  }
+                />
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <div className="max-w-screen-xl mx-auto px-4 py-12 space-y-16">
+              {/* Contacto */}
+              <ContactSection {...seguridadHogarContactSectionData} />
+            </div>
+          </section>
+        </div>
+      </PreloaderWrapper>
+    </>
   );
 };
 

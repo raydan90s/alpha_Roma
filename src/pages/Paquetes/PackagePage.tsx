@@ -4,6 +4,7 @@ import ContactSection from "../../components/Sections/contactSection";
 import PlanFeatureCard from "../../components/PlanFeatureCard"; // Importa PlanFeatureCard
 import { ContactSectionProps } from "../../interface/contactProps";
 import { FaShieldAlt, FaGem, FaStar } from "react-icons/fa"; // Importa iconos
+import SEO from "../../components/SEO/SEO";
 
 const PackagePage = () => {
   useEffect(() => {
@@ -75,51 +76,68 @@ const PackagePage = () => {
   ];
 
   return (
-    <div className="pt-20 bg-gray-100 min-h-screen">
-      {/* Hero Section */}
-      <div className="bg-secondary py-16 text-white">
-        <div className="max-w-screen-xl mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Paquetes y Precios</h1>
-          <p className="text-lg md:text-xl max-w-2xl">
-            Explora nuestros diferentes planes de seguridad diseñados para adaptarse a tus necesidades.
-          </p>
-        </div>
-      </div>
-      <div className="bg-[f3f4f6] pt-8 text-center">
-        <div className="max-w-screen-xl mx-auto px-4">
+    <>
+      <SEO
+        title="Paquetes de servicios | NovaFenix"
+        description="Descubre nuestros paquetes de servicios de seguridad que incluyen instalación, monitoreo 24/7, mantenimiento y soporte técnico. Soluciones adaptadas a tu hogar o negocio."
+        keywords="seguridad, Guayaquil, paquetes de seguridad, servicios de monitoreo, instalación de cámaras, mantenimiento de sistemas, seguridad integral, NovaFenix"
+        canonical="https://novafenix-ec.com/paquetes"
+      />
+      <div className="pt-20 bg-gray-100 min-h-screen">
+        {/* Hero Section */}
+        <section>
+        <div className="bg-secondary py-16 text-white">
           <div className="max-w-screen-xl mx-auto px-4">
-            <h1 className="text-4xl md:text-5xl font-bold mb-2">Precios</h1>
-            <div className="flex justify-center mb-4">
-              <div className="w-24 h-1 bg-primary"></div>
-            </div>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Paquetes y Precios</h1>
+            <p className="text-lg md:text-xl max-w-2xl">
+              Explora nuestros diferentes planes de seguridad diseñados para adaptarse a tus necesidades.
+            </p>
           </div>
-
-          <p className="text-lg md:text-xl max-w-2xl mb-4 mx-auto text-center">
-            <strong>Monitoreo 24/7 desde</strong>
-
-          </p>
-          <p className="text-lg md:text-xl max-w-2xl mb-8 mx-auto text-center">
-            <strong className="text-5xl">$15 mensuales</strong>
-
-          </p>
         </div>
-      </div>
+        </section>
 
-      <div className="max-w-screen-xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-        {plansData.map((plan, index) => (
-          <div key={index} id={plan.id} className="scroll-mt-48 md:scroll-mt-48 lg:scroll-mt-32"> {/* Ejemplo con valores aumentados */}
-            <PlanFeatureCard {...plan} />
+        <section>
+        <div className="bg-[f3f4f6] pt-8 text-center">
+          <div className="max-w-screen-xl mx-auto px-4">
+            <div className="max-w-screen-xl mx-auto px-4">
+              <h1 className="text-4xl md:text-5xl font-bold mb-2">Precios</h1>
+              <div className="flex justify-center mb-4">
+                <div className="w-24 h-1 bg-primary"></div>
+              </div>
+            </div>
+
+            <p className="text-lg md:text-xl max-w-2xl mb-4 mx-auto text-center">
+              <strong>Monitoreo 24/7 desde</strong>
+
+            </p>
+            <p className="text-lg md:text-xl max-w-2xl mb-8 mx-auto text-center">
+              <strong className="text-5xl">$15 mensuales</strong>
+
+            </p>
           </div>
-        ))}
+        </div>
+        </section>
+
+        <section>
+        <div className="max-w-screen-xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+          {plansData.map((plan, index) => (
+            <div key={index} id={plan.id} className="scroll-mt-48 md:scroll-mt-48 lg:scroll-mt-32"> {/* Ejemplo con valores aumentados */}
+              <PlanFeatureCard {...plan} />
+            </div>
+          ))}
+        </div>
+        </section>
+
+        {/* Contact Section */}
+        <section>
+        <div className="max-w-screen-lg mx-auto px-4 pb-16">
+
+          <ContactSection {...packagesContactSectionData} />
+
+        </div>
+        </section>
       </div>
-
-      {/* Contact Section */}
-      <div className="max-w-screen-lg mx-auto px-4 pb-16">
-
-        <ContactSection {...packagesContactSectionData} />
-
-      </div>
-    </div>
+    </>
   );
 };
 

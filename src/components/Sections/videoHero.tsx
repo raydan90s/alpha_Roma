@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { VideoHeroProps } from '../../interface/HerovideoProps';
 import { generarEnlaceWhatsApp, mensajesWhatsApp } from '../../messages/messages';
+import { Container } from 'lucide-react';
 
 const VideoHero: React.FC<VideoHeroProps> = ({
   title,
@@ -60,7 +61,7 @@ const VideoHero: React.FC<VideoHeroProps> = ({
       </div>
 
       <div className="relative z-10 flex flex-col items-center justify-center h-screen px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-white text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+        <h1 className="text-white text-2xl font-extrabold tracking-tight sm:text-6xl lg:text-5xl">
           {title}
         </h1>
         <p className="mt-4 text-2xl font-bold text-indigo-200 sm:mt-5 lg:mt-6">

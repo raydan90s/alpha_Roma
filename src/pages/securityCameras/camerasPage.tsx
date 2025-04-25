@@ -18,6 +18,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import SplitSection from "../../components/Sections/SplitSection.tsx";
 import InstallationService from "./InstallationService.tsx";
 import PreloaderWrapper from "../../components/loader/PreloaderWrapper"; // 🆕 
+import SEO from "../../components/SEO/SEO.tsx";
 
 const CamerasPage = () => {
     const camarasIpRef = useRef<HTMLDivElement>(null);
@@ -125,75 +126,88 @@ const CamerasPage = () => {
     ];
 
     return (
-        <PreloaderWrapper imageUrls={imageUrls}>
-        <div className="pt-0">
-            <CameraHero
-                {...cameraHeroData}
-                scrollToRef={scrollToRef}
-                targetRef={camarasIpRef} // Pasa la ref de la sección "Cámaras IP"
+        <>
+            <SEO
+                title="Cámaras de seguridad | NovaFenix"
+                description="Instalamos cámaras de seguridad con tecnología avanzada para vigilancia en tiempo real. Protege tu hogar o negocio con soluciones personalizadas de NovaFenix."
+                keywords="cámaras de seguridad, instalación de cámaras, vigilancia 24/7, seguridad para el hogar, seguridad empresarial, NovaFenix, guayaquil, seguridad"
+                canonical="https://www.novafenix-ec.com/camaras"
             />
-            <section className="py-16 bg-gray-100">
-                <div className="max-w-screen-xl mx-auto px-4">
-                    <h2 className="text-4xl font-bold text-gray-800 mb-5 text-center">Todos los sistemas incluyen</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-                        {includedFeatures.map((feature, index) => (
-                            <div key={index} className="flex flex-col items-center text-center mt-6">
-                                <FontAwesomeIcon icon={feature.icon} size="3x" className="text-secondary mb-4" />
-                                <div>
-                                    <h3 className="text-lg font-semibold text-gray-700">{feature.name}</h3>
-                                </div>
+
+            <PreloaderWrapper imageUrls={imageUrls}>
+                <div className="pt-0">
+                    <section>
+                        <CameraHero
+                            {...cameraHeroData}
+                            scrollToRef={scrollToRef}
+                            targetRef={camarasIpRef} // Pasa la ref de la sección "Cámaras IP"
+                        />
+                    </section>
+                    <section className="py-16 bg-gray-100">
+                        <div className="max-w-screen-xl mx-auto px-4">
+                            <h2 className="text-4xl font-bold text-gray-800 mb-5 text-center">Todos los sistemas incluyen</h2>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                                {includedFeatures.map((feature, index) => (
+                                    <div key={index} className="flex flex-col items-center text-center mt-6">
+                                        <FontAwesomeIcon icon={feature.icon} size="3x" className="text-secondary mb-4" />
+                                        <div>
+                                            <h3 className="text-lg font-semibold text-gray-700">{feature.name}</h3>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            <div >
-                {cameraOptionsData.map((option, index) => (
-                    <SplitSection
-                        key={option.label}
-                        {...option}
-                        id={option.href.substring(1)}
-                        isImageLeft={index % 2 === 0}
-                        ref={option.label === "Cámaras IP" ? camarasIpRef : null} // Adjunta la ref a la sección "Cámaras IP"
-                    />
-                ))}
-            </div>
-
-            <section className="py-16 ">
-                <div className="max-w-screen-xl mx-auto px-4 justify-center items-center">
-                    <h2 className="text-3xl font-semibold text-gray-800 mb-8 text-center">Marcas Asociadas</h2>
-                    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 items-center justify-center">
-                        {associatedBrands.map((brand, index) => (
-                            <div
-                                key={index}
-                                className="col-span-1 flex justify-center items-center p-4 bg-white rounded-lg transition-all duration-300"
-                            >
-                                <a
-                                    href={brand.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="block w-full h-full flex justify-center items-center"
-                                >
-                                    <img
-                                        src={brand.logo}
-                                        className="max-h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                                        style={{ boxShadow: 'none' }}
-                                    />
-                                </a>
+                        </div>
+                    </section>
+                    <section>
+                        <div >
+                            {cameraOptionsData.map((option, index) => (
+                                <SplitSection
+                                    key={option.label}
+                                    {...option}
+                                    id={option.href.substring(1)}
+                                    isImageLeft={index % 2 === 0}
+                                    ref={option.label === "Cámaras IP" ? camarasIpRef : null} // Adjunta la ref a la sección "Cámaras IP"
+                                />
+                            ))}
+                        </div>
+                    </section>
+                    <section className="py-16 ">
+                        <div className="max-w-screen-xl mx-auto px-4 justify-center items-center">
+                            <h2 className="text-3xl font-semibold text-gray-800 mb-8 text-center">Marcas Asociadas</h2>
+                            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 items-center justify-center">
+                                {associatedBrands.map((brand, index) => (
+                                    <div
+                                        key={index}
+                                        className="col-span-1 flex justify-center items-center p-4 bg-white rounded-lg transition-all duration-300"
+                                    >
+                                        <a
+                                            href={brand.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="block w-full h-full flex justify-center items-center"
+                                        >
+                                            <img
+                                                src={brand.logo}
+                                                className="max-h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                                                style={{ boxShadow: 'none' }}
+                                            />
+                                        </a>
+                                    </div>
+                                ))}
                             </div>
-                        ))}
-                    </div>
+                        </div>
+                    </section>
+                    <section>
+                        {<InstallationService {...installationServiceData} />}
+                    </section>
+                    <section>
+                        <div className="max-w-screen-xl mx-auto px-4 py-12 space-y-16">
+                            <ContactSection {...camerasContactSectionData} />
+                        </div>
+                    </section>
                 </div>
-            </section>
-
-            {<InstallationService {...installationServiceData} />}
-
-            <div className="max-w-screen-xl mx-auto px-4 py-12 space-y-16">
-                <ContactSection {...camerasContactSectionData} />
-            </div>
-        </div>
-        </PreloaderWrapper>
+            </PreloaderWrapper>
+        </>
     );
 };
 

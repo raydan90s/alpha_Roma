@@ -19,7 +19,7 @@ app.get('/api/blogs/:id', blogController.obtenerBlogPorId);
 app.put('/api/blogs/:id', blogController.actualizarBlog);
 app.delete('/api/blogs/:id', blogController.eliminarBlog);
 app.post('/api/blogs', blogController.agregarBlog);
-app.put('/api/blogs/orden', blogController.actualizarOrdenBlogs);
+app.put('/api/orden', blogController.actualizarOrdenBlogs);
 
 // RUTA PARA CREAR UN NUEVO USUARIO
 app.post('/api/usuarios', async (req, res) => {
