@@ -136,11 +136,13 @@ const CamerasPage = () => {
 
             <PreloaderWrapper imageUrls={imageUrls}>
                 <div className="pt-0">
-                    <CameraHero
-                        {...cameraHeroData}
-                        scrollToRef={scrollToRef}
-                        targetRef={camarasIpRef} // Pasa la ref de la sección "Cámaras IP"
-                    />
+                    <section>
+                        <CameraHero
+                            {...cameraHeroData}
+                            scrollToRef={scrollToRef}
+                            targetRef={camarasIpRef} // Pasa la ref de la sección "Cámaras IP"
+                        />
+                    </section>
                     <section className="py-16 bg-gray-100">
                         <div className="max-w-screen-xl mx-auto px-4">
                             <h2 className="text-4xl font-bold text-gray-800 mb-5 text-center">Todos los sistemas incluyen</h2>
@@ -156,19 +158,19 @@ const CamerasPage = () => {
                             </div>
                         </div>
                     </section>
-
-                    <div >
-                        {cameraOptionsData.map((option, index) => (
-                            <SplitSection
-                                key={option.label}
-                                {...option}
-                                id={option.href.substring(1)}
-                                isImageLeft={index % 2 === 0}
-                                ref={option.label === "Cámaras IP" ? camarasIpRef : null} // Adjunta la ref a la sección "Cámaras IP"
-                            />
-                        ))}
-                    </div>
-
+                    <section>
+                        <div >
+                            {cameraOptionsData.map((option, index) => (
+                                <SplitSection
+                                    key={option.label}
+                                    {...option}
+                                    id={option.href.substring(1)}
+                                    isImageLeft={index % 2 === 0}
+                                    ref={option.label === "Cámaras IP" ? camarasIpRef : null} // Adjunta la ref a la sección "Cámaras IP"
+                                />
+                            ))}
+                        </div>
+                    </section>
                     <section className="py-16 ">
                         <div className="max-w-screen-xl mx-auto px-4 justify-center items-center">
                             <h2 className="text-3xl font-semibold text-gray-800 mb-8 text-center">Marcas Asociadas</h2>
@@ -195,12 +197,14 @@ const CamerasPage = () => {
                             </div>
                         </div>
                     </section>
-
-                    {<InstallationService {...installationServiceData} />}
-
-                    <div className="max-w-screen-xl mx-auto px-4 py-12 space-y-16">
-                        <ContactSection {...camerasContactSectionData} />
-                    </div>
+                    <section>
+                        {<InstallationService {...installationServiceData} />}
+                    </section>
+                    <section>
+                        <div className="max-w-screen-xl mx-auto px-4 py-12 space-y-16">
+                            <ContactSection {...camerasContactSectionData} />
+                        </div>
+                    </section>
                 </div>
             </PreloaderWrapper>
         </>

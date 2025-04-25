@@ -78,37 +78,41 @@ const ServicesPage = () => {
 
   return (
     <>
-<SEO 
-  title="Servicios de NovaFenix"
-  description="Ofrecemos monitoreo de cámaras de seguridad las 24 horas del día, los 7 días de la semana. Protege tu hogar o negocio con tecnología de punta y respuesta inmediata."
-  keywords="monitoreo 24/7, cámaras de seguridad, vigilancia remota, seguridad para hogares, seguridad para negocios, NovaFenix, guayaquil"
-  canonical="https://novafenix-ec.com/servicios"
- />
+      <SEO
+        title="Servicios de NovaFenix"
+        description="Ofrecemos monitoreo de cámaras de seguridad las 24 horas del día, los 7 días de la semana. Protege tu hogar o negocio con tecnología de punta y respuesta inmediata."
+        keywords="monitoreo 24/7, cámaras de seguridad, vigilancia remota, seguridad para hogares, seguridad para negocios, NovaFenix, guayaquil"
+        canonical="https://novafenix-ec.com/servicios"
+      />
 
-    <PreloaderWrapper imageUrls={imageUrls}>
+      <PreloaderWrapper imageUrls={imageUrls}>
 
-    <div className="pt-20 bg-gray-100">
-      {/* Hero Section */}
-      <div className="bg-secondary text-white py-16">
-        <div className="max-w-screen-xl mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Nuestros Servicios</h1>
-          <p className="text-lg md:text-xl max-w-2xl">
-            Ofrecemos soluciones completas para proteger tu hogar y negocio con las últimas tecnologías en seguridad y automatización.
-          </p>
+        <div className="pt-20 bg-gray-100">
+          {/* Hero Section */}
+          <section>
+            <div className="bg-secondary text-white py-16">
+              <div className="max-w-screen-xl mx-auto px-4">
+                <h1 className="text-4xl md:text-5xl font-bold mb-4">Nuestros Servicios</h1>
+                <p className="text-lg md:text-xl max-w-2xl">
+                  Ofrecemos soluciones completas para proteger tu hogar y negocio con las últimas tecnologías en seguridad y automatización.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Services Content */}
+          <section>
+            <div className="max-w-screen-xl mx-auto px-4 py-12 space-y-16" style={{ textAlign: "justify" }}>
+              <ServiceItem {...installationData} />
+              <ServiceItem {...monitoringData} />
+              <ServiceItem {...advisoryData} />
+
+              {/* Contact Section */}
+              <ContactSection {...servicesContactSectionData} />
+            </div>
+          </section>
         </div>
-      </div>
-
-      {/* Services Content */}
-      <div className="max-w-screen-xl mx-auto px-4 py-12 space-y-16" style={{ textAlign: "justify" }}>
-        <ServiceItem {...installationData} />
-        <ServiceItem {...monitoringData} />
-        <ServiceItem {...advisoryData} />
-
-        {/* Contact Section */}
-        <ContactSection {...servicesContactSectionData} />
-      </div>
-    </div>
-    </PreloaderWrapper>
+      </PreloaderWrapper>
     </>
   );
 };

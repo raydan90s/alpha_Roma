@@ -85,6 +85,7 @@ const PackagePage = () => {
       />
       <div className="pt-20 bg-gray-100 min-h-screen">
         {/* Hero Section */}
+        <section>
         <div className="bg-secondary py-16 text-white">
           <div className="max-w-screen-xl mx-auto px-4">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Paquetes y Precios</h1>
@@ -93,6 +94,9 @@ const PackagePage = () => {
             </p>
           </div>
         </div>
+        </section>
+
+        <section>
         <div className="bg-[f3f4f6] pt-8 text-center">
           <div className="max-w-screen-xl mx-auto px-4">
             <div className="max-w-screen-xl mx-auto px-4">
@@ -112,7 +116,9 @@ const PackagePage = () => {
             </p>
           </div>
         </div>
+        </section>
 
+        <section>
         <div className="max-w-screen-xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-3 gap-8">
           {plansData.map((plan, index) => (
             <div key={index} id={plan.id} className="scroll-mt-48 md:scroll-mt-48 lg:scroll-mt-32"> {/* Ejemplo con valores aumentados */}
@@ -120,13 +126,16 @@ const PackagePage = () => {
             </div>
           ))}
         </div>
+        </section>
 
         {/* Contact Section */}
+        <section>
         <div className="max-w-screen-lg mx-auto px-4 pb-16">
 
           <ContactSection {...packagesContactSectionData} />
 
         </div>
+        </section>
       </div>
     </>
   );

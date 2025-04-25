@@ -108,45 +108,51 @@ const SeguridadHogarPage = () => {
 
         <div className="pt-0 bg-gray-100 scroll-pt-24 md:scroll-pt-32 lg:scroll-pt-40"> {/* Adjusted scroll-pt-* values */}
           {/* Hero Section */}
-          <HeroSegmar
-            {...seguridadHogarHeroData}
-            scrollToRef={scrollToRef}
-            targetRef={alertasInmediatasRef}
-          />
+          <section>
+            <HeroSegmar
+              {...seguridadHogarHeroData}
+              scrollToRef={scrollToRef}
+              targetRef={alertasInmediatasRef}
+            />
+          </section>
 
           {/* Soluciones usando SplitSection */}
-          <div className="max-w-screen-xl mx-auto px-4 py-12 space-y-16">
-            <h2 className="text-4xl font-bold text-gray-800 text-center mb-10">
-              Soluciones de Seguridad para tu Hogar
-            </h2>
-            {solucionesSeguridadHogar.map((option, index) => (
+          <section>
+            <div className="max-w-screen-xl mx-auto px-4 py-12 space-y-16">
+              <h2 className="text-4xl font-bold text-gray-800 text-center mb-10">
+                Soluciones de Seguridad para tu Hogar
+              </h2>
+              {solucionesSeguridadHogar.map((option, index) => (
 
-              <SplitSection
-                key={option.id}
-                id={option.id}
-                label={option.label}
-                description={option.description}
-                image={option.image}
-                features={option.features}
-                isImageLeft={index % 2 === 0}
-                copy={option.copy}
-                ref={
-                  option.id === "AlertasInmediatas"
-                    ? alertasInmediatasRef
-                    : option.id === "cruceLinea"
-                      ? cruceLineaRef
-                      : option.id === "colorVu"
-                        ? colorVuRef
-                        : null
-                }
-              />
-            ))}
-          </div>
+                <SplitSection
+                  key={option.id}
+                  id={option.id}
+                  label={option.label}
+                  description={option.description}
+                  image={option.image}
+                  features={option.features}
+                  isImageLeft={index % 2 === 0}
+                  copy={option.copy}
+                  ref={
+                    option.id === "AlertasInmediatas"
+                      ? alertasInmediatasRef
+                      : option.id === "cruceLinea"
+                        ? cruceLineaRef
+                        : option.id === "colorVu"
+                          ? colorVuRef
+                          : null
+                  }
+                />
+              ))}
+            </div>
+          </section>
 
-          <div className="max-w-screen-xl mx-auto px-4 py-12 space-y-16">
-            {/* Contacto */}
-            <ContactSection {...seguridadHogarContactSectionData} />
-          </div>
+          <section>
+            <div className="max-w-screen-xl mx-auto px-4 py-12 space-y-16">
+              {/* Contacto */}
+              <ContactSection {...seguridadHogarContactSectionData} />
+            </div>
+          </section>
         </div>
       </PreloaderWrapper>
     </>
