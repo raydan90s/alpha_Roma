@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import DatabasePreloader from '../../components/loader/DatabasePreloader';
 
 interface BlogPost {
   id: string;
@@ -50,6 +51,7 @@ const BlogPostDetail = () => {
   }
 
   return (
+    <DatabasePreloader apiUrl='https://denverback.onrender.com'>
     <div className="container mx-auto py-12">
       <h1 className="text-3xl font-bold text-primary mb-6 mt-20">{blogPost.titulo}</h1>
       {blogPost.urlImagen && (
@@ -58,6 +60,7 @@ const BlogPostDetail = () => {
       <p className="text-gray-700 leading-relaxed">{blogPost.contenido}</p>
       {/* Aquí podrías añadir más elementos como botones de compartir, comentarios, etc. */}
     </div>
+    </DatabasePreloader>
   );
 };
 
