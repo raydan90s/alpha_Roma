@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
@@ -23,7 +23,6 @@ const EditorBlog = () => {
             try {
                 const apiUrl = `${import.meta.env.VITE_NEXT_PUBLIC_API_BASE_URL}/api/blogs`;
                 const response = await axios.get<BlogPost[]>(apiUrl);
-                // Ordena los posts por el campo 'orden' si está presente
                 const sortedPosts = response.data.sort((a, b) => (a.orden || 0) - (b.orden || 0));
                 setPosts(sortedPosts);
                 setLoading(false);
@@ -38,54 +37,68 @@ const EditorBlog = () => {
 
     const actualizarOrdenBlogs = async (nuevosPosts: BlogPost[]) => {
         try {
-            const apiUrl = `${import.meta.env.VITE_NEXT_PUBLIC_API_BASE_URL}/api/blogs/orden`;
-            // Enviar solo los IDs y el nuevo orden
+            // Crear un array con el formato esperado por el servidor: { id, orden }
             const ordenData = nuevosPosts.map((post, index) => ({
                 id: post.id,
-                orden: index + 1, // El orden comienza en 1
+                orden: index + 1,  // Asegurarse de que es un número
             }));
-            await axios.put(apiUrl, { orden: ordenData });
-            console.log('Orden de blogs actualizado en el servidor');
+    
+            // Mostrar los datos que vamos a enviar al servidor para verificar
+            console.log("Datos enviados al servidor:", { orden: ordenData });
+    
+            // Realizar la petición PUT al backend
+            const apiUrl = `${import.meta.env.VITE_NEXT_PUBLIC_API_BASE_URL}/api/orden`;
+            const response = await axios.put(apiUrl, { orden: ordenData }); // Enviar como 'orden'
+    
+            // Mostrar la respuesta del servidor
+            console.log('Respuesta del servidor:', response.data);
+    
+            // Actualizar el estado de los posts solo si la respuesta es exitosa
+            setPosts(nuevosPosts);
+    
         } catch (error: any) {
-            console.error('Error al actualizar el orden de los blogs:', error.message);
+            console.error('Error al actualizar el orden de los blogs:', error);
             setError('Error al guardar el nuevo orden.');
         }
     };
+    
+    
+    
+    
 
-      const handleMoveUp = (index: number) => {
+    const handleMoveUp = async (index: number) => {
         if (index > 0) {
             const newPosts = [...posts];
-            // Intercambia las posiciones en el array
             [newPosts[index - 1], newPosts[index]] = [newPosts[index], newPosts[index - 1]];
 
-            // Actualiza el orden en el array
+            // Actualiza el orden
             const updatedPosts = newPosts.map((post, i) => ({
                 ...post,
-                orden: i + 1, // Actualiza el campo orden basado en el nuevo índice
+                orden: i + 1,
             }));
-            setPosts(updatedPosts); // Actualiza el estado con el nuevo orden
-            actualizarOrdenBlogs(updatedPosts); // Llama a la API para actualizar el orden en el backend
+
+            setPosts(updatedPosts); // Actualiza el estado
+            await actualizarOrdenBlogs(updatedPosts); // Envia la actualización al backend
         }
     };
 
-    const handleMoveDown = (index: number) => {
+    const handleMoveDown = async (index: number) => {
         if (index < posts.length - 1) {
             const newPosts = [...posts];
-             // Intercambia las posiciones en el array
             [newPosts[index + 1], newPosts[index]] = [newPosts[index], newPosts[index + 1]];
-           // Actualiza el orden en el array
+
+            // Actualiza el orden
             const updatedPosts = newPosts.map((post, i) => ({
                 ...post,
-                orden: i + 1, // Actualiza el campo orden basado en el nuevo índice
+                orden: i + 1,
             }));
-            setPosts(updatedPosts);  // Actualiza el estado con el nuevo orden
-            actualizarOrdenBlogs(updatedPosts); // Llama a la API para actualizar el orden en el backend
+
+            setPosts(updatedPosts); // Actualiza el estado
+            await actualizarOrdenBlogs(updatedPosts); // Envia la actualización al backend
         }
     };
 
-    const handleGuardarOrden = () => {
-        actualizarOrdenBlogs(posts);
-    };
+
 
     if (loading) {
         return <div className="container mx-auto py-8 text-center">Cargando blogs...</div>;
@@ -109,7 +122,7 @@ const EditorBlog = () => {
                         <div>
                             <h2 className="text-xl font-semibold text-secondary">{post.titulo}</h2>
                             <p className="text-gray-600 text-sm">{post.resumen}</p>
-                             <p className="text-gray-500 text-xs">Orden: {post.orden}</p> {/* Muestra el orden */}
+                            <p className="text-gray-500 text-xs">Orden: {post.orden}</p>
                         </div>
                         <div className="flex items-center">
                             <button
@@ -134,13 +147,6 @@ const EditorBlog = () => {
                     </li>
                 ))}
             </ul>
-            <button
-                onClick={handleGuardarOrden}
-                className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4"
-            >
-                Guardar Orden
-            </button>
-            {/* Aquí podrías añadir botones para crear nuevos blogs */}
         </div>
     );
 };

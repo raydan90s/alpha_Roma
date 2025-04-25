@@ -36,11 +36,11 @@ const obtenerBlogPorId = async (req, res) => {
 
 const actualizarBlog = async (req, res) => {
     const { id } = req.params;
-    const { titulo, resumen, contenido, urlImagen, orden } = req.body; // Recibe el campo 'orden'
+    const { titulo, resumen, contenido, urlImagen } = req.body; // Excluye el 'orden' de la actualización
     try {
         const [result] = await connection.promise().query(
-            'UPDATE blog SET titulo = ?, resumen = ?, contenido = ?, urlImagen = ?, orden = ?, fechaModificacion = CURRENT_TIMESTAMP WHERE id = ?',
-            [titulo, resumen, contenido, urlImagen, orden, id] // Incluye 'orden' en la actualización
+            'UPDATE blog SET titulo = ?, resumen = ?, contenido = ?, urlImagen = ?, fechaModificacion = CURRENT_TIMESTAMP WHERE id = ?',
+            [titulo, resumen, contenido, urlImagen, id] // No incluye 'orden' aquí
         );
         if (result.affectedRows > 0) {
             res.json({ message: 'Blog actualizado exitosamente' });
@@ -52,6 +52,7 @@ const actualizarBlog = async (req, res) => {
         res.status(500).json({ message: 'Error al actualizar el blog' });
     }
 };
+
 
 const eliminarBlog = async (req, res) => {
     const { id } = req.params;
@@ -83,20 +84,42 @@ const agregarBlog = async (req, res) => {
 };
 
 const actualizarOrdenBlogs = async (req, res) => {
-    const { orden: idsOrdenados } = req.body; // Recibe un array de IDs ordenados
+    console.log("Cuerpo recibido:", req.body);
+
+    const ordenData = req.body.orden;
+
+    if (!ordenData || !Array.isArray(ordenData)) {
+        return res.status(400).json({ error: "Se esperaba un array de objetos con 'id' y 'orden'" });
+    }
+
     try {
-        await Promise.all(
-            idsOrdenados.map(async (id, index) => {
-                await connection.promise().query(
-                    'UPDATE blog SET orden = ? WHERE id = ?',
-                    [index + 1, id] // Asigna el orden basado en la posición en el array (1-based index)
-                );
-            })
-        );
-        res.json({ message: 'Orden de blogs actualizado exitosamente' });
+        for (const item of ordenData) {
+            const { id, orden } = item;
+
+            // Verificar que 'id' y 'orden' sean números válidos
+            if (isNaN(id) || isNaN(orden)) {
+                console.error("Datos inválidos:", item);
+                return res.status(400).json({ error: "Cada objeto debe tener 'id' y 'orden' como números válidos" });
+            }
+
+            // Actualizar solo el campo 'orden', no los demás campos
+            const query = 'UPDATE blog SET `orden` = ? WHERE `id` = ?';
+            const values = [parseInt(orden), parseInt(id)];  // Asegurarse de que sean números enteros
+
+            console.log("Ejecutando consulta:", query, "con valores:", values);
+
+            const [result] = await connection.promise().query(query, values);
+            console.log("Resultado de la actualización:", result);
+
+            if (result.affectedRows === 0) {
+                console.warn(`No se actualizó el registro con id: ${id}`);
+            }
+        }
+
+        res.json({ message: 'Orden actualizado correctamente', ordenData });
     } catch (error) {
-        console.error('Error al actualizar el orden de los blogs:', error);
-        res.status(500).json({ message: 'Error al actualizar el orden de los blogs' });
+        console.error("Error al actualizar el orden:", error);
+        res.status(500).json({ error: error.message });
     }
 };
 
