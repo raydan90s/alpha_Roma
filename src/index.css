@@ -4,24 +4,71 @@
 
 /* Personaliza el tamaño de la scrollbar */
 ::-webkit-scrollbar {
-    width: 7px; /* Para la barra vertical */
-    height: 7px; /* Para la barra horizontal */
-  }
-  
-  /* Personaliza el fondo de la scrollbar */
-  ::-webkit-scrollbar-track {
-    background: #79f197;
-    border-radius: 10px;
-  }
-  
-  /* Personaliza el pulgar (thumb) de la scrollbar */
-  ::-webkit-scrollbar-thumb {
-    background: #0a1626;
-    border-radius: 10px;
-  }
-  
-  /* Cambiar color del pulgar al pasar el mouse */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
-  
+  width: 7px; /* Para la barra vertical */
+  height: 7px; /* Para la barra horizontal */
+}
+
+/* Personaliza el fondo de la scrollbar */
+::-webkit-scrollbar-track {
+  background: #79f197;
+  border-radius: 10px;
+}
+
+/* Personaliza el pulgar (thumb) de la scrollbar */
+::-webkit-scrollbar-thumb {
+  background: #0a1626;
+  border-radius: 10px;
+}
+
+/* Cambiar color del pulgar al pasar el mouse */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Estilos para las listas dentro del contenido del blog */
+.text-gray-700 ol {
+  list-style-type: decimal; /* Para mostrar números */
+  padding-left: 1.5em; /* Para la indentación */
+}
+
+.text-gray-700 ul {
+  list-style-type: disc; /* Para mostrar viñetas */
+  padding-left: 1.5em;
+}
+
+.text-gray-700 li {
+  margin-bottom: 0.5em;
+  line-height: 1.5;
+}
+
+.text-gray-700 li::marker {
+  font-weight: bold;
+}
+
+/* Estilos para la alineación de texto de ReactQuill */
+.ql-align-center {
+  text-align: center;
+}
+
+.ql-align-right {
+  text-align: right;
+}
+
+.ql-align-justify {
+  text-align: justify;
+}
+
+/* Estilos para los diferentes tamaños de fuente de ReactQuill */
+.ql-size-small {
+  font-size: 0.75em; /* Aproximadamente 12px */
+}
+
+.ql-size-large {
+  font-size: 1.5em; /* Aproximadamente 24px */
+}
+
+.ql-size-huge {
+  font-size: 2.5em; /* Aproximadamente 40px */
+}
+
+/* El tamaño normal (sin clase ql-size) se mantendrá con el tamaño de fuente por defecto del navegador */

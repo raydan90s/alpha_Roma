@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css'; // Importa los estilos Snow (o Bubble)
 
 interface BlogPost {
     id: number;
@@ -16,15 +18,13 @@ const EditBlogPost = () => {
     const postId = parseInt(id || '', 10);
     const navigate = useNavigate();
     const [post, setPost] = useState<BlogPost | null>(null);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        console.log('useEffect se está ejecutando, postId:', postId);
         const fetchBlogPost = async () => {
             setLoading(true);
             setError(null);
-            console.log('Iniciando fetchBlogPost con postId:', postId);
             try {
                 const apiUrl = `${import.meta.env.VITE_NEXT_PUBLIC_API_BASE_URL}/api/blogs/${postId}`;
                 const response = await axios.get<BlogPost>(apiUrl);
@@ -39,17 +39,24 @@ const EditBlogPost = () => {
         if (postId) {
             fetchBlogPost();
         } else {
-            console.log('PostId no está definido en useEffect.');
             setLoading(false);
             setError('ID de artículo no válido.');
         }
     }, [postId]);
 
+    const handleContentChange = (value: string) => {
+        setPost((prevPost) =>
+            prevPost ? { ...prevPost, contenido: value } : null
+        );
+    };
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
-        setPost((prevPost) =>
-            prevPost ? { ...prevPost, [name]: value } : null
-        );
+        if (name !== 'contenido') { // Evita interferir con el manejo de ReactQuill
+            setPost((prevPost) =>
+                prevPost ? { ...prevPost, [name]: value } : null
+            );
+        }
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -57,7 +64,6 @@ const EditBlogPost = () => {
         if (post) {
             setLoading(true);
             setError(null);
-            console.log('Iniciando handleSubmit con postId:', postId, 'y datos:', post);
             try {
                 const apiUrl = `${import.meta.env.VITE_NEXT_PUBLIC_API_BASE_URL}/api/blogs/${postId}`;
                 const response = await axios.put(apiUrl, post);
@@ -72,19 +78,34 @@ const EditBlogPost = () => {
     };
 
     if (loading) {
-        console.log('Estado: Cargando...');
         return <div className="container mx-auto py-8 text-center">Cargando artículo...</div>;
     }
 
     if (error) {
-        console.log('Estado: Error -', error);
         return <div className="container mx-auto py-8 text-center text-red-500">Error al cargar el artículo: {error}</div>;
     }
 
     if (!post) {
-        console.log('Estado: Artículo no encontrado.');
         return <div className="container mx-auto py-8">Artículo no encontrado.</div>;
     }
+
+    const modules = {
+        toolbar: [
+            ['bold', 'italic', 'underline', 'strike'],
+            ['link'],
+            [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+            [{ 'align': [] }],
+            [{ 'size': ['small', false, 'large', 'huge'] }], // Añade las opciones de tamaño de fuente
+        ],
+    };
+
+    const formats = [
+        'bold', 'italic', 'underline', 'strike',
+        'list', 'bullet', 'ordered',
+        'link',
+        'align',
+        'size', // Añade el formato 'size'
+    ];
 
     return (
         <div className="container mx-auto py-8">
@@ -100,13 +121,20 @@ const EditBlogPost = () => {
                 </div>
                 <div className="mb-4">
                     <label htmlFor="contenido" className="block text-gray-700 text-sm font-bold mb-2">Contenido:</label>
-                    <textarea id="contenido" name="contenido" value={post.contenido || ''} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                    <ReactQuill
+                        id="contenido"
+                        value={post.contenido || ''}
+                        onChange={handleContentChange}
+                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        modules={modules} // Usa el objeto de módulos configurado
+                        formats={formats} // Usa el array de formatos configurado
+                    />
                 </div>
                 <div className="mb-4">
                     <label htmlFor="urlImagen" className="block text-gray-700 text-sm font-bold mb-2">URL de la Imagen:</label>
                     <input type="text" id="urlImagen" name="urlImagen" value={post.urlImagen || ''} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
                 </div>
-                <button type="submit" className="bg-primary hover:bg-acent text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Guardar Cambios</button>
+                <button type="submit" className="bg-primary hover:bg-acent text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Guardar Cambios</button>
             </form>
         </div>
     );

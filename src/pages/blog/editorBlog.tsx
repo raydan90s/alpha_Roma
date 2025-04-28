@@ -43,7 +43,6 @@ const EditorBlog = () => {
                 orden: index + 1,
             }));
 
-            console.log("Datos enviados al servidor:", { orden: ordenData });
 
             const apiUrl = `${import.meta.env.VITE_NEXT_PUBLIC_API_BASE_URL}/api/orden`;
             const response = await axios.put(apiUrl, { orden: ordenData });
@@ -52,7 +51,6 @@ const EditorBlog = () => {
 
             setPosts(nuevosPosts);
         } catch (error: any) {
-            console.error('Error al actualizar el orden de los blogs:', error);
             setError('Error al guardar el nuevo orden.');
         }
     };
