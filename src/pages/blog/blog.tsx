@@ -49,13 +49,13 @@ const BlogPage = () => {
 
   return (
     <div className="bg-gray-100 py-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-16">
-        <h1 className="text-4xl font-bold text-primary mb-8 text-center">Explora Nuestro Mundo de Ideas</h1>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-12"> {/* Añadido mt-24 para más espacio superior */}
+        <h1 className="text-4xl font-bold text-secondary mb-14 text-center">Explora Nuestro Mundo de Ideas</h1> {/* Añadido mb-12 para más espacio inferior */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post: BlogPost) => (
             <div
               key={post.id}
-              className="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300 hover:scale-105"
+              className="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300 hover:scale-105 mb-10" 
             >
               {post.urlImagen && (
                 <img className="h-48 w-full object-cover" src={post.urlImagen} alt={post.titulo} />

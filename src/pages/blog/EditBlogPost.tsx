@@ -22,11 +22,9 @@ const EditBlogPost = () => {
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        console.log('useEffect se está ejecutando, postId:', postId);
         const fetchBlogPost = async () => {
             setLoading(true);
             setError(null);
-            console.log('Iniciando fetchBlogPost con postId:', postId);
             try {
                 const apiUrl = `${import.meta.env.VITE_NEXT_PUBLIC_API_BASE_URL}/api/blogs/${postId}`;
                 const response = await axios.get<BlogPost>(apiUrl);
@@ -41,14 +39,12 @@ const EditBlogPost = () => {
         if (postId) {
             fetchBlogPost();
         } else {
-            console.log('PostId no está definido en useEffect.');
             setLoading(false);
             setError('ID de artículo no válido.');
         }
     }, [postId]);
 
     const handleContentChange = (value: string) => {
-        console.log('Contenido de ReactQuill:', value);
         setPost((prevPost) =>
             prevPost ? { ...prevPost, contenido: value } : null
         );
@@ -68,7 +64,6 @@ const EditBlogPost = () => {
         if (post) {
             setLoading(true);
             setError(null);
-            console.log('Iniciando handleSubmit con postId:', postId, 'y datos:', post);
             try {
                 const apiUrl = `${import.meta.env.VITE_NEXT_PUBLIC_API_BASE_URL}/api/blogs/${postId}`;
                 const response = await axios.put(apiUrl, post);
