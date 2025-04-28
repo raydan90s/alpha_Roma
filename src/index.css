@@ -57,3 +57,18 @@
 .ql-align-justify {
   text-align: justify;
 }
+
+/* Estilos para los diferentes tamaños de fuente de ReactQuill */
+.ql-size-small {
+  font-size: 0.75em; /* Aproximadamente 12px */
+}
+
+.ql-size-large {
+  font-size: 1.5em; /* Aproximadamente 24px */
+}
+
+.ql-size-huge {
+  font-size: 2.5em; /* Aproximadamente 40px */
+}
+
+/* El tamaño normal (sin clase ql-size) se mantendrá con el tamaño de fuente por defecto del navegador */

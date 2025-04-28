@@ -18,7 +18,7 @@ const EditBlogPost = () => {
     const postId = parseInt(id || '', 10);
     const navigate = useNavigate();
     const [post, setPost] = useState<BlogPost | null>(null);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
@@ -94,6 +94,24 @@ const EditBlogPost = () => {
         return <div className="container mx-auto py-8">Artículo no encontrado.</div>;
     }
 
+    const modules = {
+        toolbar: [
+            ['bold', 'italic', 'underline', 'strike'],
+            ['link'],
+            [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+            [{ 'align': [] }],
+            [{ 'size': ['small', false, 'large', 'huge'] }], // Añade las opciones de tamaño de fuente
+        ],
+    };
+
+    const formats = [
+        'bold', 'italic', 'underline', 'strike',
+        'list', 'bullet', 'ordered',
+        'link',
+        'align',
+        'size', // Añade el formato 'size'
+    ];
+
     return (
         <div className="container mx-auto py-8">
             <h1 className="text-3xl font-bold text-primary mb-6">Editar Artículo</h1>
@@ -113,27 +131,15 @@ const EditBlogPost = () => {
                         value={post.contenido || ''}
                         onChange={handleContentChange}
                         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        modules={{
-                            toolbar: [
-                                ['bold', 'italic', 'underline', 'strike'],
-                                ['link'],
-                                [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-                                [{ 'align': [] }], // Añade las opciones de alineación
-                            ],
-                        }}
-                        formats={[
-                            'bold', 'italic', 'underline', 'strike',
-                            'list', 'bullet', 'ordered',
-                            'link',
-                            'align', // Añade el formato 'align'
-                        ]}
+                        modules={modules} // Usa el objeto de módulos configurado
+                        formats={formats} // Usa el array de formatos configurado
                     />
                 </div>
                 <div className="mb-4">
                     <label htmlFor="urlImagen" className="block text-gray-700 text-sm font-bold mb-2">URL de la Imagen:</label>
                     <input type="text" id="urlImagen" name="urlImagen" value={post.urlImagen || ''} onChange={handleChange} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
                 </div>
-                <button type="submit" className="bg-primary hover:bg-acent text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Guardar Cambios</button>
+                <button type="submit" className="bg-primary hover:bg-acent text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Guardar Cambios</button>
             </form>
         </div>
     );
