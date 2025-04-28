@@ -99,7 +99,7 @@ function Navbar() {
         if (hash) {
           scrollToHash(hash);
         }
-      }, 100);
+      }, 650); // Increase from 100ms to 300msb 
     };
 
     if (href.startsWith('/about#')) {
