@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { ArrowLeftIcon } from '@heroicons/react/24/solid';
 import DatabasePreloader from '../../components/loader/DatabasePreloader';
+import SEO from '../../components/SEO/SEO';
 
 interface BlogPost {
   id: number;
@@ -87,6 +88,11 @@ const BlogPostDetail = () => {
 
   return (
     <>
+      <SEO
+      title={"NovaFenix |"+ blogPost?.titulo || "NovaFenix Blog"}
+      description={blogPost?.contenido}
+      keywords={blogPost?.contenido.split(" ").toString() || "0"}
+      />
       {loading ? (
         <div className="container mx-auto py-8 text-center">
           Cargando artículo...
