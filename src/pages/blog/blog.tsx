@@ -47,7 +47,6 @@ const BlogPage = () => {
     return <div className="container mx-auto py-8 text-center text-red-500">Error al cargar los artículos: {error}</div>;
   }
 
-  console.log('Estado: Datos cargados - Renderizando blogs:', blogPosts);
   return (
     <div className="bg-gray-100 py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-16">
@@ -65,7 +64,7 @@ const BlogPage = () => {
                 <h2 className="text-xl font-semibold text-secondary mb-3">{post.titulo}</h2>
                 <p className="text-gray-600 text-sm mb-4 line-clamp-3">{post.resumen}</p>
                 <div className="flex justify-end">
-                  <Link to={`/blog/${post.id}`} className="bg-primary hover:bg-acent text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline transition duration-300">
+                  <Link to={`/blog/${post.id}`} className="bg-primary hover:bg-acent text-black font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline transition duration-300">
                     Leer más
                   </Link>
                 </div>
