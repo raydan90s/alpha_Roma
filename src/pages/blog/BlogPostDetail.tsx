@@ -88,11 +88,13 @@ const BlogPostDetail = () => {
 
   return (
     <>
-      <SEO
-      title={"NovaFenix |"+ blogPost?.titulo || "NovaFenix Blog"}
-      description={blogPost?.contenido}
-      keywords={blogPost?.contenido.split(" ").toString() || "0"}
-      />
+     <SEO 
+  title={blogPost?.titulo || "NovaFenix"}
+  description={blogPost?.contenido}
+  keywords={blogPost?.contenido?.split(" ").toString() || ""}
+  canonical={`https://novafenix.com/blog`}
+  
+/>
       {loading ? (
         <div className="container mx-auto py-8 text-center">
           Cargando artículo...

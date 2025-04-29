@@ -1,7 +1,10 @@
 export interface SEOProps {
-    title: string;
-    description?: string;
-    keywords?: string;
-    canonical?: string;
-  }
-  
+  title: string;     // Mantenemos esta propiedad como obligatoria
+  description?: string;
+  keywords?: string;
+  canonical?: string;
+  // Nuevas propiedades opcionales
+  ogImage?: string;
+  ogType?: string;
+  twitterCard?: string;
+}
