@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { scrollToHashOnLoad } from "../../assets/utils/scrollUtils.ts";
 import ContactSection from "../../components/Sections/contactSection.tsx"; // Importa el componente
 import { ContactSectionProps } from "../../interface/contactProps"; // Importa la interfaz
@@ -13,8 +13,8 @@ const AboutUsPage = () => {
   }, []);
 
   const imageUrls = [
-    "https://www.videoproteccion.com.mx/wp-content/uploads/2017/06/instalador-cctv.jpg",
-    "https://www.prosegur.com.ar/dam/jcr:c85671f1-f468-4305-8019-ea12f38702ca/camaras%20cctv.jpg",
+    "https://res.cloudinary.com/dfbpaq83u/image/upload/v1746118668/NovaFenix/yldksgsatzgtrb0tjeqy.jpg",
+    "https://res.cloudinary.com/dfbpaq83u/image/upload/v1746118730/NovaFenix/el4v1njcsaqzuw0dgjne.jpg",
     "https://res.cloudinary.com/dcxqkcmhd/video/upload/v1744208322/ufrawrhtjxkkre6znupj.mp4"
   ];
 
