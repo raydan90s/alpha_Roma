@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { scrollToHashOnLoad } from "../../assets/utils/scrollUtils.ts";
 import ContactSection from "../../components/Sections/contactSection.tsx";
 import { ContactSectionProps } from "../../interface/contactProps";
@@ -17,11 +17,14 @@ import {
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import SplitSection from "../../components/Sections/SplitSection.tsx";
 import InstallationService from "./InstallationService.tsx";
-import PreloaderWrapper from "../../components/loader/PreloaderWrapper"; // 🆕 
+import PreloaderWrapper from "../../components/loader/PreloaderWrapper";
 import SEO from "../../components/SEO/SEO.tsx";
+import VideoGallery from "../../components/video/VideoGalery.tsx";
+import { VideoItem } from "../../interface/videoProps";
 
 const CamerasPage = () => {
     const camarasIpRef = useRef<HTMLDivElement>(null);
+    const [galleryVideos, setGalleryVideos] = useState<VideoItem[]>([]); // Estado para almacenar los videos de la API
 
     const scrollToRef = (ref: React.RefObject<HTMLElement>) => {
         ref.current?.scrollIntoView({ behavior: 'smooth' });
@@ -30,6 +33,34 @@ const CamerasPage = () => {
     useEffect(() => {
         scrollToHashOnLoad();
     }, []);
+
+    // Función para obtener los videos desde la API
+    useEffect(() => {
+        const fetchVideos = async () => {
+            try {
+                const apiUrl = `${import.meta.env.VITE_NEXT_PUBLIC_API_BASE_URL}/api/videos`;
+                const response = await fetch(apiUrl);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data: { id: number; url: string; thumbnailUrl?: string }[] = await response.json();
+                console.log("Data from API:", data); // <--- LOG THIS
+
+                const formattedVideos: VideoItem[] = data.map(video => ({
+                    embedUrl: video.url,
+                    thumbnailUrl: video.thumbnailUrl || "URL_DE_LA_MINIATURA_POR_DEFECTO",
+                    alt: `Video de seguridad ${video.id}`,
+                }));
+                setGalleryVideos(formattedVideos);
+            } catch (error) {
+                console.error("Error al obtener los videos:", error);
+                setGalleryVideos([]);
+            }
+        };
+
+        fetchVideos();
+    }, []);
+
 
     const camerasContactSectionData: ContactSectionProps = {
         title: "¿Interesado en nuestras soluciones de cámaras?",
@@ -197,6 +228,17 @@ const CamerasPage = () => {
                             </div>
                         </div>
                     </section>
+
+                    {/* Seccion de videos de camara de seguridad */}
+                    <section className="py-16 bg-gray-100">
+                        <div className="py-6 bg-secondary">
+                            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                                <h2 className="text-3xl font-bold text-white my-4 text-center">Nuestros Cámaras de Seguridad</h2>
+                                <VideoGallery videos={galleryVideos} />
+                            </div>
+                        </div>
+                    </section>
+
                     <section>
                         {<InstallationService {...installationServiceData} />}
                     </section>
