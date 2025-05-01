@@ -6,7 +6,7 @@ import { videoData } from '../components/data/videoData';
 import Cards from '../components/Cards.tsx';
 import PreloaderWrapper from "../components/loader/PreloaderWrapper.tsx";
 import SEO from '../components/SEO/SEO.tsx';
-import { generarEnlaceWhatsApp, mensajesWhatsApp } from '../messages/messages.ts'; // Asegúrate de la ruta correcta
+import { generarEnlaceWhatsApp} from '../messages/messages.ts'; // Asegúrate de la ruta correcta
 import { TELEFONO_CONTACTO } from '../config/config';
 
 function Home() {

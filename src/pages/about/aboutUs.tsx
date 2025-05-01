@@ -18,17 +18,12 @@ const AboutUsPage = () => {
     "https://res.cloudinary.com/dcxqkcmhd/video/upload/v1744208322/ufrawrhtjxkkre6znupj.mp4"
   ];
 
-  const handleEmailButtonClick = () => {
-    console.log("Botón de contacto por correo clickeado");
-    // Aquí puedes implementar la lógica para contactar por correo
-  };
 
   const contactSectionData: ContactSectionProps = {
     title: "¿Te gustaría saber más?",
     description: "Contáctanos para conocer más sobre nuestra misión, visión y cómo nuestros valores se traducen en un servicio excepcional.",
     context: "general",
     emailButtonText: "Contactar",
-    onEmailButtonClick: handleEmailButtonClick,
   };
 
   const videoHeroData: VideoHeroProps = {
@@ -45,7 +40,6 @@ const AboutUsPage = () => {
         keywords="seguridad, novfenix, guayaquil, Guayaquil, monitoreo de cámaras, seguridad de cámaras, empresas"
         canonical="https://www.novafenix-ec.com/about"
       />
-      <PreloaderWrapper imageUrls={imageUrls}>
 
         <div className="bg-gray-100">
           {/* Video Hero Section */}
@@ -147,7 +141,7 @@ const AboutUsPage = () => {
           </div>
 
         </div>
-      </PreloaderWrapper>
+
     </>
   );
 };

@@ -39,29 +39,21 @@ const VideoGallery: React.FC<VideoGalleryProps> = ({ videos }) => {
   };
 
   const getIndices = () => {
-    if (isMobile) {
-      return [currentIndex];
-    }
-
     const numVideos = videos.length;
 
-    if (numVideos === 0) {
-      return [];
-    }
+    if (numVideos === 0) return [];
 
-    if (numVideos === 1) {
-      return [currentIndex];
-    }
+    if (isMobile || numVideos === 1) return [currentIndex];
 
-    if (numVideos === 2) {
-      return [0, 1]; // Muestra ambos videos si solo hay dos
-    }
+    if (numVideos === 2) return [0, 1];
 
     // Para 3 o más videos, muestra el anterior, el actual y el siguiente
     const prevIndex = (currentIndex - 1 + numVideos) % numVideos;
     const nextIndex = (currentIndex + 1) % numVideos;
+
     return [prevIndex, currentIndex, nextIndex];
   };
+
 
   // Touch handlers for swipe functionality
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -103,25 +95,30 @@ const VideoGallery: React.FC<VideoGalleryProps> = ({ videos }) => {
 
         {/* Videos container */}
         <div className="flex gap-1 md:gap-4 justify-center items-center w-full px-2 md:px-0">
-          {visibleIndices.map((index) => (
-            <div
-              key={index}
-              className={`transition-transform duration-300 ${
-                isMobile
+          {visibleIndices.map((index) => {
+            const video = videos[index];
+            if (!video) return null; // previene errores por índices fuera de rango
+
+            return (
+              <div
+                key={index}
+                className={`transition-transform duration-300 ${isMobile
                   ? "w-full"
                   : index === currentIndex
                     ? "w-3/5 md:w-2/5 z-10"
                     : "w-1/5 md:w-1/4 opacity-70"
-              }`}
-            >
-              <VideoCard
-                video={videos[index]}
-                onClick={() => handleVideoClick(index)}
-                isPlaying={index === currentIndex}
-                isMain={index === currentIndex}
-              />
-            </div>
-          ))}
+                  }`}
+              >
+                <VideoCard
+                  video={video}
+                  onClick={() => handleVideoClick(index)}
+                  isPlaying={index === currentIndex}
+                  isMain={index === currentIndex}
+                />
+              </div>
+            );
+          })}
+
         </div>
 
         {/* Navigation arrows - hidden on mobile and when there's only one video */}
@@ -143,9 +140,8 @@ const VideoGallery: React.FC<VideoGalleryProps> = ({ videos }) => {
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`h-2 rounded-full transition-all ${
-                index === currentIndex ? "w-4 bg-primary" : "w-2 bg-gray-300"
-              }`}
+              className={`h-2 rounded-full transition-all ${index === currentIndex ? "w-4 bg-primary" : "w-2 bg-gray-300"
+                }`}
               aria-label={`Go to video ${index + 1}`}
             />
           ))}

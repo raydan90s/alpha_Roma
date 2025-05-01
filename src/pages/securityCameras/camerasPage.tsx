@@ -31,8 +31,10 @@ const CamerasPage = () => {
     };
 
     useEffect(() => {
-        scrollToHashOnLoad();
-    }, []);
+        setTimeout(() => {
+          scrollToHashOnLoad();
+        }, 500);
+      }, []);
 
     // Función para obtener los videos desde la API
     useEffect(() => {
@@ -44,8 +46,6 @@ const CamerasPage = () => {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const data: { id: number; url: string; thumbnailUrl?: string }[] = await response.json();
-                console.log("Data from API:", data); // <--- LOG THIS
-
                 const formattedVideos: VideoItem[] = data.map(video => ({
                     embedUrl: video.url,
                     thumbnailUrl: video.thumbnailUrl || "URL_DE_LA_MINIATURA_POR_DEFECTO",
@@ -53,11 +53,10 @@ const CamerasPage = () => {
                 }));
                 setGalleryVideos(formattedVideos);
             } catch (error) {
-                console.error("Error al obtener los videos:", error);
                 setGalleryVideos([]);
             }
         };
-
+    
         fetchVideos();
     }, []);
 
@@ -165,7 +164,7 @@ const CamerasPage = () => {
                 canonical="https://www.novafenix-ec.com/camaras"
             />
 
-            <PreloaderWrapper imageUrls={imageUrls}>
+
                 <div className="pt-0">
                     <section>
                         <CameraHero
@@ -248,7 +247,7 @@ const CamerasPage = () => {
                         </div>
                     </section>
                 </div>
-            </PreloaderWrapper>
+            
         </>
     );
 };
