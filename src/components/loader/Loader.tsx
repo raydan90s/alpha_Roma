@@ -1,5 +1,4 @@
 import Logo from "../../assets/img/novaFenix.png";
-import React from "react";
 
 const Loader = () => {
     return (

@@ -1,12 +1,10 @@
-// components/PreloaderWrapper.tsx
-import { useEffect, useState } from "react";
-import Logo from "../../assets/img/novaFenix.png";
+import React, { useEffect, useState, useRef } from "react";
 import Loader from "./Loader";
 
 interface PreloaderWrapperProps {
-  imageUrls: string[]; // puede contener también URLs de video
+  imageUrls: string[]; // Puede contener también URLs de video
   children: React.ReactNode;
-  delayMs?: number; // delay opcional
+  delayMs?: number; // Delay opcional
 }
 
 const preloadImages = (imageUrls: string[]): Promise<void> => {
@@ -19,13 +17,28 @@ const preloadImages = (imageUrls: string[]): Promise<void> => {
           const video = document.createElement("video");
           video.src = src;
           video.preload = "auto";
-          video.onloadeddata = () => resolve();
-          video.onerror = () => reject();
+          // Important: Add these attributes for better iOS compatibility
+          video.setAttribute("playsinline", "true"); // Para evitar pantalla completa en iOS
+          video.muted = true; // Algunos navegadores requieren que el video esté silenciado para la precarga automática
+          video.onloadeddata = () => {
+            // console.log(`Video loaded: ${src}`); // Para debug
+            resolve();
+          };
+          video.onerror = (err) => {
+            console.error(`Error loading video: ${src}`, err);
+            reject();
+          };
         } else {
           const img = new Image();
           img.src = src;
-          img.onload = () => resolve();
-          img.onerror = () => reject();
+          img.onload = () => {
+            // console.log(`Image loaded: ${src}`);  // Para debug
+            resolve();
+          };
+          img.onerror = (err) => {
+             console.error(`Error loading image: ${src}`, err);
+            reject();
+          };
         }
       });
     })
@@ -34,15 +47,31 @@ const preloadImages = (imageUrls: string[]): Promise<void> => {
 
 const PreloaderWrapper = ({ imageUrls, children, delayMs = 500 }: PreloaderWrapperProps) => {
   const [loading, setLoading] = useState(true);
+  const isMounted = useRef(true); // Para evitar establecer el estado en un componente desmontado
 
   useEffect(() => {
+    isMounted.current = true;
+
     preloadImages(imageUrls)
       .then(() => {
-        setTimeout(() => setLoading(false), delayMs);
+        if (isMounted.current) {
+          setTimeout(() => {
+            setLoading(false);
+          }, delayMs);
+        }
       })
-      .catch(() => {
-        setTimeout(() => setLoading(false), delayMs);
+      .catch((error) => {
+        console.error("Preload failed", error);
+        if (isMounted.current) {
+          setTimeout(() => {
+            setLoading(false);
+          }, delayMs); // Asegúrate de que la carga finalice incluso en caso de error
+        }
       });
+
+    return () => {
+      isMounted.current = false;
+    };
   }, [imageUrls, delayMs]);
 
   if (loading) return <Loader />;

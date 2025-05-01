@@ -6,7 +6,6 @@ import VideoHero from "../../components/Sections/videoHero.tsx"; // Import the V
 import { VideoHeroProps } from "../../interface/HerovideoProps.ts"; // Import its interface
 import { Boxes, HeartHandshake, Lightbulb } from "lucide-react";
 import PreloaderWrapper from "../../components/loader/PreloaderWrapper";
-import { Helmet } from "react-helmet";
 import SEO from "../../components/SEO/SEO.tsx";
 const AboutUsPage = () => {
   useEffect(() => {
