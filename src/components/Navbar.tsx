@@ -243,7 +243,7 @@ function Navbar() {
                 {/* Botón WhatsApp */}
                 <a
                   href={generarEnlaceWhatsApp(mensajesWhatsApp.general)}
-                  className={`bg-primary hover:bg-primary text-black font-bold px-3 sm:px-6 py-2 rounded-full shadow-md transition-all duration-300 text-xs sm:text-sm whitespace-nowrap flex items-center gap-2 ${mobileMenuOpen ? 'hidden md:flex' : 'hidden md:flex'}`}
+                  className={`bg-white hover:bg-hover text-black font-bold px-3 sm:px-6 py-2 rounded-full shadow-md transition-all duration-300 text-xs sm:text-sm whitespace-nowrap flex items-center gap-2 ${mobileMenuOpen ? 'hidden md:flex' : 'hidden md:flex'}`}
                   onClick={() => setMobileMenuOpen(false)} // Close menu on WhatsApp click
                 >
                   <img

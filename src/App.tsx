@@ -36,7 +36,7 @@ function App() {
                         <Route path="/blog/:id" element={<BlogPostDetail />} />
 
                         {/* Rutas protegidas */}
-                        <Route path="/editor" element={<ProtectedRoute />}>
+                        <Route path="/editor" element={<ProtectedRoute children={undefined} />}>
                             <Route index element={<EditorBlog />} /> {/* El componente index se renderiza en la ruta padre */}
                             <Route path=":id" element={<EditBlogPost />} />
                         </Route>
