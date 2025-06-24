@@ -1,13 +1,13 @@
 // Home.tsx
 import Call_to_action from '../components/Call_to_action';
-import VideoHero from "../components/Sections/videoHero.tsx";
 import VideoGallery from '../components/video/VideoGalery';
 import { videoData } from '../components/data/videoData';
 import Cards from '../components/Cards.tsx';
 import PreloaderWrapper from "../components/loader/PreloaderWrapper.tsx";
 import SEO from '../components/SEO/SEO.tsx';
-import { generarEnlaceWhatsApp} from '../messages/messages.ts'; // Asegúrate de la ruta correcta
+import { generarEnlaceWhatsApp } from '../messages/messages.ts'; // Asegúrate de la ruta correcta
 import { TELEFONO_CONTACTO } from '../config/config';
+import InicioSection from '../components/Hero/InicioSection.tsx';
 
 function Home() {
   const imageUrls = [
@@ -15,6 +15,10 @@ function Home() {
     "https://res.cloudinary.com/demo/image/upload/v1744230903/imagen2.jpg",
     // pon aquí las imágenes importantes que se usan en esta página
   ];
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <>
@@ -29,17 +33,10 @@ function Home() {
         {/* Página principal Home */}
 
         <div className="min-h-screen bg-gray-100">
+
           {/* Video Hero */}
-          <section className='Seccion video'>
-            <VideoHero
-              title="Porque una cámara sin vigilancia es solo una ilusión de seguridad"
-              subtitle="Protege lo que amas con NovaFenix"
-              videoUrl="https://res.cloudinary.com/dcxqkcmhd/video/upload/v1744230903/wgmiwddovoqinudtewn4.mp4"
-              primaryButtonText="Contáctanos"
-              secondaryButtonText="Ver Paquetes"
-              secondaryButtonLink="/paquetes"
-            />
-          </section>
+          <InicioSection scrollToSection={scrollToSection} />
+
 
           {/* Contenedor de información */}
           <section className='Contenedor Cartas'>
