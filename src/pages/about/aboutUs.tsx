@@ -5,8 +5,8 @@ import { ContactSectionProps } from "../../interface/contactProps"; // Importa l
 import VideoHero from "../../components/Sections/videoHero.tsx"; // Import the VideoHero component
 import { VideoHeroProps } from "../../interface/HerovideoProps.ts"; // Import its interface
 import { Boxes, HeartHandshake, Lightbulb } from "lucide-react";
-import PreloaderWrapper from "../../components/loader/PreloaderWrapper";
 import SEO from "../../components/SEO/SEO.tsx";
+import { experts } from "../../interface/NuestrosExpertos.ts";
 const AboutUsPage = () => {
   useEffect(() => {
     scrollToHashOnLoad();
@@ -17,7 +17,6 @@ const AboutUsPage = () => {
     "https://res.cloudinary.com/dfbpaq83u/image/upload/v1746118730/NovaFenix/el4v1njcsaqzuw0dgjne.jpg",
     "https://res.cloudinary.com/dcxqkcmhd/video/upload/v1744208322/ufrawrhtjxkkre6znupj.mp4"
   ];
-
 
   const contactSectionData: ContactSectionProps = {
     title: "¿Te gustaría saber más?",
@@ -46,7 +45,6 @@ const AboutUsPage = () => {
           <section>
             <VideoHero {...videoHeroData} />
           </section>
-
 
           <div className="pt-20">
             {/* Content Section */}
@@ -98,7 +96,7 @@ const AboutUsPage = () => {
                 </section>
 
                 {/* Valores Section */}
-                <section id="valores" className="mb-24 scroll-mt-24">
+                <section id="valores" className="scroll-mt-24 mb-16">
                   <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold text-gray-800">Nuestros Valores</h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
@@ -130,7 +128,33 @@ const AboutUsPage = () => {
                       <h3 className="text-xl font-semibold text-gray-800 mb-2">Compromiso con el Cliente</h3>
                       <p className="text-gray-600 text-lg">Priorizamos las necesidades de nuestros clientes, ofreciendo un servicio atento, personalizado y de alta calidad.</p>
                     </div>
-                    {/* Add more values as needed */}
+                  </div>
+                </section>
+
+                {/* Nuestros Expertos Section */}
+                <section id="expertos" className="scroll-mt-24 mb-16 ">
+                  <div className="text-center mb-12 ">
+                    <h2 className="text-3xl font-bold text-gray-800">Nuestros Expertos</h2>
+                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                      Conoce al equipo de profesionales que hacen posible nuestro compromiso con la excelencia.
+                    </p>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    {experts.map((expert, index) => (
+                      <div key={index} className="bg-accent rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                        <div className="aspect-square bg-gray-200 overflow-hidden">
+                          <img
+                            src={expert.image}
+                            alt={expert.name}
+                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+                        <div className="p-6 text-center">
+                          <h3 className="text-xl font-semibold text-gray-800 mb-2">{expert.name}</h3>
+                          <p className="text-gray-600">{expert.position}</p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </section>
 
