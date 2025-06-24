@@ -16,7 +16,7 @@ app.use((req, res, next) => {
 
 // BLOGS
 app.get('/api/blogs', blogController.obtenerTodosLosBlogs);
-app.get('/api/blogs/:id', blogController.obtenerBlogPorId);
+app.get('/api/blogs/:id', blogController.obtenerBlogPorId);--
 app.put('/api/blogs/:id', blogController.actualizarBlog);
 app.delete('/api/blogs/:id', blogController.eliminarBlog);
 app.post('/api/blogs', blogController.agregarBlog);
