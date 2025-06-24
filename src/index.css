@@ -10,19 +10,19 @@
 
 /* Personaliza el fondo de la scrollbar */
 ::-webkit-scrollbar-track {
-  background: #79f197;
+  background: #34519F;
   border-radius: 10px;
 }
 
 /* Personaliza el pulgar (thumb) de la scrollbar */
 ::-webkit-scrollbar-thumb {
-  background: #0a1626;
+  background: #E7EAED;
   border-radius: 10px;
 }
 
 /* Cambiar color del pulgar al pasar el mouse */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #030304;
 }
 
 /* Estilos para las listas dentro del contenido del blog */
