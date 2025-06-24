@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Menu, ChevronDown, ChevronUp, X } from "lucide-react";
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { scrollToHash, handleScrollToTop } from '../assets/utils/scrollUtils';
-import Logo from '../assets/img/logo2.png';
+import Logo from '../assets/img/logo-nexolegal.png';
 import { menuItems } from "../assets/utils/menuItems";
 import { generarEnlaceWhatsApp, mensajesWhatsApp } from "../messages/messages";
 import { TELEFONO_CONTACTO } from "../config/config";

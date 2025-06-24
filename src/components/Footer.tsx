@@ -1,4 +1,4 @@
-import Logo from '../assets/img/logo2.png';
+import Logo from '../assets/img/logo-nexolegal.png';
 import { Link, useNavigate, useLocation } from 'react-router-dom'; // Import useLocation
 import { generarEnlaceWhatsApp, mensajesWhatsApp } from '../messages/messages';
 import { handleScrollToTop, scrollToHash } from '../assets/utils/scrollUtils'; // Import scrollToHash

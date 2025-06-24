@@ -35,7 +35,11 @@ function Home() {
         <div className="min-h-screen bg-gray-100">
 
           {/* Video Hero */}
-          <InicioSection scrollToSection={scrollToSection} />
+          <section className='Hero'>
+            <div className="pt-12">
+              <InicioSection scrollToSection={scrollToSection} />
+            </div>
+          </section>
 
 
           {/* Contenedor de información */}

@@ -1,20 +1,24 @@
 // src/components/InicioSection.tsx
 
 import { Shield, Phone, Calendar } from 'lucide-react';
+import fondo from "../../assets/img/Hero/fondo.png";
 
 interface Props {
   scrollToSection: (id: string) => void;
 }
-  
+
 const InicioSection: React.FC<Props> = ({ scrollToSection }) => {
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
-      <div className="absolute inset-0 bg-black"></div>
+    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black mb-6">
+      <div
+        className="absolute inset-0 bg-cover bg-[center_0%]"
+        style={{ backgroundImage: `url(${fondo} )` }}
+      ></div>
 
       <div className="absolute top-20 left-10 w-32 h-32 bg-blue-900 rounded-full blur-xl opacity-20"></div>
       <div className="absolute bottom-20 right-10 w-48 h-48 bg-blue-800 rounded-full blur-2xl opacity-10"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center translate-x-56">
         <div className="max-w-4xl mx-auto">
           <div className="inline-flex items-center space-x-2 bg-blue-900 border border-blue-800 text-blue-300 px-6 py-3 rounded-full mb-8 transform hover:scale-105 transition-all duration-300 shadow-lg">
             <Shield className="h-5 w-5" />
