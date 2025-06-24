@@ -24,10 +24,8 @@ function App() {
                     <Navbar />
                     <Routes>
                         <Route path="/" element={<Home />} />
-                        <Route path="/servicios" element={<ServicesPage />} />
                         <Route path="/paquetes" element={<PackagePage />} />
                         <Route path="/about" element={<AboutUsPage/>} />
-                        <Route path="/camaras" element={<CamerasPage/>} />
                         <Route path="/login" element={<LoginPage />}/>
                         <Route path="/create-user" element={<CreateUserPage />} /> {/* Añade esta ruta */}
                         <Route path="/blog" element={<BlogPage />} />
