@@ -2,7 +2,7 @@ import { Phone } from "lucide-react";
 import CTAProps from "../interface/CTAProps";
 import { TELEFONO_CONTACTO } from '../config/config';
 
-
+// comentario 
 function Call_to_action({ title, subtitle, spanBtn }: CTAProps) {
   return (
     <div className="bg-primary">
