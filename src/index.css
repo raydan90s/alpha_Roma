@@ -22,7 +22,7 @@
 
 /* Cambiar color del pulgar al pasar el mouse */
 ::-webkit-scrollbar-thumb:hover {
-  background: #030304;
+  background: #555;
 }
 
 /* Estilos para las listas dentro del contenido del blog */
