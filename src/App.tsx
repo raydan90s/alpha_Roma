@@ -6,7 +6,6 @@ import AboutUsPage from './pages/about/aboutUs';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CamerasPage from './pages/securityCameras/camerasPage';
-import SeguridadHogarPage from './pages/seguridad/SeguridadHogarPage';
 import LoginPage from './pages/login/loginPage';
 import BlogPage from './pages/blog/blog';
 import BlogPostDetail from './pages/blog/BlogPostDetail';
@@ -29,7 +28,6 @@ function App() {
                         <Route path="/paquetes" element={<PackagePage />} />
                         <Route path="/about" element={<AboutUsPage/>} />
                         <Route path="/camaras" element={<CamerasPage/>} />
-                        <Route path="/seguridad-hogar" element={<SeguridadHogarPage />} />
                         <Route path="/login" element={<LoginPage />}/>
                         <Route path="/create-user" element={<CreateUserPage />} /> {/* Añade esta ruta */}
                         <Route path="/blog" element={<BlogPage />} />
