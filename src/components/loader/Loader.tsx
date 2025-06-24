@@ -1,4 +1,4 @@
-import Logo from "../../assets/img/novaFenix.png";
+import Logo from "../../assets/icon/icon.png";
 
 const Loader = () => {
     return (

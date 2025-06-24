@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Menu, ChevronDown, ChevronUp, X } from "lucide-react";
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { scrollToHash, handleScrollToTop } from '../assets/utils/scrollUtils';
 import Logo from '../assets/img/logo-nexolegal.png';
 import { menuItems } from "../assets/utils/menuItems";
@@ -14,7 +14,6 @@ function Navbar() {
   const timeoutRef = useRef(null);
   const navRef = useRef(null);
   const navigate = useNavigate();
-  const location = useLocation();
 
   const handleMouseEnter = (index) => {
     if (window.innerWidth >= 768) {

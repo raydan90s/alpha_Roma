@@ -3,18 +3,12 @@ import Call_to_action from '../components/Call_to_action';
 import VideoGallery from '../components/video/VideoGalery';
 import { videoData } from '../components/data/videoData';
 import Cards from '../components/Cards.tsx';
-import PreloaderWrapper from "../components/loader/PreloaderWrapper.tsx";
 import SEO from '../components/SEO/SEO.tsx';
 import { generarEnlaceWhatsApp } from '../messages/messages.ts'; // Asegúrate de la ruta correcta
 import { TELEFONO_CONTACTO } from '../config/config';
 import InicioSection from '../components/Hero/InicioSection.tsx';
 
 function Home() {
-  const imageUrls = [
-    "https://res.cloudinary.com/demo/image/upload/v1744230903/imagen1.jpg",
-    "https://res.cloudinary.com/demo/image/upload/v1744230903/imagen2.jpg",
-    // pon aquí las imágenes importantes que se usan en esta página
-  ];
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -23,12 +17,11 @@ function Home() {
   return (
     <>
       <SEO
-        title='Servicio de Monitoreo de cámaras | NovaFenix'
+        title='Servicio de Monitoreo de cámaras | NexoLegal'
         description='Instalación y monitoreo profesional de cámaras de seguridad en Guayaquil. Protección total para hogares y negocios.'
         keywords='seguridad, cámaras de seguridad, vigilancia, guayaquil, monitoreo, empresas de seguridad guayaquil, cámaras de seguridad Hikvision'
         canonical='https://www.novafenix-ec.com/'
       />
-      <PreloaderWrapper imageUrls={imageUrls}>
 
         {/* Página principal Home */}
 
@@ -81,7 +74,7 @@ function Home() {
             </section>
           </div>
         </div>
-      </PreloaderWrapper>
+    
 
     </>
   );
