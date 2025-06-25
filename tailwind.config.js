@@ -7,7 +7,8 @@ export default {
         primary: '#34519F',   
         secondary: '#030304',
         accent: '#E7EAED',   
-        hover: '#c2d2f3',     
+        hover: '#c2d2f3',  
+        bu: '#2563eb'
       }
     },
   },
