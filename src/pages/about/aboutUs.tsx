@@ -6,7 +6,7 @@ import VideoHero from "../../components/Sections/videoHero.tsx"; // Import the V
 import { VideoHeroProps } from "../../interface/HerovideoProps.ts"; // Import its interface
 import { Boxes, HeartHandshake, Lightbulb } from "lucide-react";
 import SEO from "../../components/SEO/SEO.tsx";
-import { experts } from "../../interface/NuestrosExpertos.ts";
+import { experts } from "../../components/data/ExpertData.ts";
 const AboutUsPage = () => {
   useEffect(() => {
     scrollToHashOnLoad();

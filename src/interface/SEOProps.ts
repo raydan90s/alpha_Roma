@@ -3,7 +3,6 @@ export interface SEOProps {
   description?: string;
   keywords?: string;
   canonical?: string;
-  // Nuevas propiedades opcionales
   ogImage?: string;
   ogType?: string;
   twitterCard?: string;

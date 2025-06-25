@@ -1,11 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import ServicesPage from './pages/services/ServicesPage';
 import PackagePage from './pages/Paquetes/PackagePage';
 import AboutUsPage from './pages/about/aboutUs';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer';
-import CamerasPage from './pages/securityCameras/camerasPage';
 import LoginPage from './pages/login/loginPage';
 import BlogPage from './pages/blog/blog';
 import BlogPostDetail from './pages/blog/BlogPostDetail';

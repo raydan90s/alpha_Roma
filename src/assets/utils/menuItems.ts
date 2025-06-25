@@ -12,9 +12,6 @@ export const menuItems = [
             { label: "Valores", href: "/about#valores", description: "Conoce los principios que guían cada una de nuestras acciones.", icon: Telescope },
         ],
     },
-
-
-
     {
         title: "Paquetes y precios",
         description: "Encuentra el plan que mejor se adapte a tus necesidades y presupuesto.",
@@ -22,7 +19,7 @@ export const menuItems = [
         options: [
             { label: "Plan Básico Bronce", href: "/paquetes#plan-bronce", description: "Soluciones de seguridad esenciales para hogares pequeños.", icon: ShieldHalf },
             { label: "Plan Básico Plata", href: "/paquetes#plan-plata", description: "Seguridad robusta y escalable para pequeños negocios y hogares.", icon: Star },
-            { label: "Plan Básico Oro", href: "/paquetes#plan-oro", description: "La máxima protección con funcionalidades avanzadas y personalización.", icon: Gem },
+            { label: "Plan Básico Oro", href: "/paquetes#plan-oro", description: "La máxima protección con funcionalidades avanzadas.", icon: Gem },
         ],
     },
 
