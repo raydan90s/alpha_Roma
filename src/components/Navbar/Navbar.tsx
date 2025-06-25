@@ -77,7 +77,7 @@ function Navbar() {
     return (
         <header>
             <div className="relative" ref={navRef}>
-                <nav className={`fixed w-full z-50 border-b border-gray-700 shadow-md transition-all duration-300 transform ${showNavbar ? 'translate-y-0' : '-translate-y-full'} ${hoveredMenu !== null ? 'bg-white text-black' : 'bg-secondary text-white'}`}>
+                <nav className={`fixed w-full z-50 shadow-md transition-all duration-300 transform ${showNavbar ? 'translate-y-0' : '-translate-y-full'} ${hoveredMenu !== null ? 'bg-white text-black' : 'bg-secondary text-white'}`}>
                     <div className="max-w-screen-2xl mx-auto px-4">
                         <div className="flex items-center justify-between h-20 w-full">
                             {/* Logo */}
