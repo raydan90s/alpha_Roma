@@ -7,6 +7,7 @@ import { generarEnlaceWhatsApp } from '../messages/messages.ts';
 import { TELEFONO_CONTACTO } from '../config/config';
 import InicioSection from '../components/Hero/InicioSection.tsx';
 import Testimonials from '../components/Home/Testimonials.tsx';
+import FeaturesSection from '../components/FeaturesSection/FeaturesSection.tsx';
 
 
 function Home() {
@@ -49,6 +50,11 @@ function Home() {
           </div>
         </section>
 
+
+        {/* FeatureSection */}
+        <section>
+          <FeaturesSection/>
+        </section>
 
         {/* Call to Action */}
         <section>

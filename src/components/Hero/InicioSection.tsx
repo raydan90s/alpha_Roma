@@ -9,7 +9,7 @@ interface Props {
 
 const InicioSection: React.FC<Props> = ({ scrollToSection }) => {
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+    <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black mb-20">
       <div
         className="absolute inset-0 bg-cover bg-[center_0%]"
         style={{ backgroundImage: `url(${fondo} )` }}
