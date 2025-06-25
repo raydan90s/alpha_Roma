@@ -12,7 +12,7 @@ const VideoCard: React.FC<Props> = ({ video, onClick, isPlaying, isMain }) => {
   return (
     <div
       className={`relative cursor-pointer aspect-video w-full rounded-lg md:rounded-2xl overflow-hidden transition-all duration-300 shadow-md ${
-        isMain ? "ring-2 md:ring-4 ring-hover z-10" : ""
+        isMain ? "ring-2 md:ring-4 ring-secondary z-10" : ""
       }`}
       onClick={onClick}
     >
