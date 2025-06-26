@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { scrollToHashOnLoad } from "../../assets/utils/scrollUtils.ts";
 import ContactSection from "../../components/Sections/contactSection.tsx"; // Importa el componente
 import { ContactSectionProps } from "../../interface/contactProps"; // Importa la interfaz
-import VideoHero from "../../components/Sections/videoHero.tsx"; // Import the VideoHero component
+import VideoHero from "../../components/Hero/videoHero.tsx"; // Import the VideoHero component
 import { VideoHeroProps } from "../../interface/HerovideoProps.ts"; // Import its interface
 import { Boxes, HeartHandshake, Lightbulb } from "lucide-react";
 import SEO from "../../components/SEO/SEO.tsx";

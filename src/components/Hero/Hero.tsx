@@ -1,4 +1,4 @@
-import HeroProps from "../interface/HeroProps";
+import HeroProps from "../../interface/HeroProps";
 import { ChevronRight } from "lucide-react";
 
 function Hero({title, span, link_image, span_btn1, span_btn2}: HeroProps){

@@ -1,13 +1,16 @@
-// src/components/InicioSection.tsx
-
 import { Shield, Phone, Calendar } from 'lucide-react';
 import fondo from "../../assets/img/Hero/fondo.png";
+import { useNavigate } from 'react-router-dom';
+
 
 interface Props {
   scrollToSection: (id: string) => void;
+  telefono: string;
 }
 
-const InicioSection: React.FC<Props> = ({ scrollToSection }) => {
+const InicioSection: React.FC<Props> = ({ scrollToSection, telefono }) => {
+  const navigate = useNavigate();
+
   return (
     <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black mb-20">
       <div
@@ -39,14 +42,14 @@ const InicioSection: React.FC<Props> = ({ scrollToSection }) => {
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
             <a
-              href="tel:+34900000000"
-              className="group bg-button hover:bg-hoverButton text-white px-10 py-5 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center space-x-3 shadow-2xl transform hover:-translate-y-2 hover:scale-105"
+              href={`tel:${telefono}`}
+              className="group bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center space-x-3 shadow-2xl transform hover:-translate-y-2 hover:scale-105"
             >
               <Phone className="h-6 w-6" />
               <span>Llamar Ahora</span>
             </a>
             <button
-              onClick={() => scrollToSection('contacto')}
+              onClick={()=> navigate("/consultas")}
               className="group bg-gray-800 border-2 border-gray-700 text-white hover:bg-gray-700 hover:border-gray-600 px-10 py-5 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center space-x-3 transform hover:-translate-y-2"
             >
               <Calendar className="h-6 w-6 group-hover:text-blue-400" />

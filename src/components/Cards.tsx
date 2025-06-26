@@ -1,5 +1,4 @@
 import {Video, Bell, Home } from "lucide-react";
-import React from "react";
 
 function Cards() {
     return (

@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { FaBalanceScale, FaShieldAlt, FaUsers, FaBuilding, FaHeart, FaGavel, FaGem, FaStar } from 'react-icons/fa';
+import Call_to_action from '../../components/Sections/Call_to_action';
+import { generarEnlaceWhatsApp } from '../../messages/messages';
+import { TELEFONO_CONTACTO } from '../../config/config';
 
 const CombinedPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -139,7 +142,7 @@ const CombinedPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 to-blue-800 py-20 text-white">
+      <section className="bg-primary py-20 text-white">
         <div className="max-w-screen-xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 pt-12">Servicios y Paquetes</h1>
           <p className="text-lg md:text-xl max-w-3xl mx-auto">
@@ -237,16 +240,13 @@ const CombinedPage = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="bg-white py-16">
-        <div className="max-w-screen-lg mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-800">¿Interesado en nuestros paquetes y precios?</h2>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Contáctanos para obtener más detalles o para personalizar un plan para ti.
-          </p>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:transform hover:scale-105">
-            Contactar
-          </button>
-        </div>
+      <section>
+        <Call_to_action
+            title="¿Necesitas asesoría legal confiable?"
+            subtitle="En NexoLegal defendemos tus derechos con compromiso y experiencia."
+            spanBtn="Contáctanos"
+            link={generarEnlaceWhatsApp(TELEFONO_CONTACTO)}
+          />
       </section>
     </div>
   );

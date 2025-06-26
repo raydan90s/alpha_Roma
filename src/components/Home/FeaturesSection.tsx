@@ -85,7 +85,7 @@ const FeaturesSection: React.FC = () => {
               </div>
               <button
                 onClick={() => window.open(generarEnlaceWhatsApp(TELEFONO_CONTACTO), '_blank')}
-                className="inline-flex items-center px-8 py-4 bg-button hover:bg-hoverButton text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 Comenzar Ahora
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

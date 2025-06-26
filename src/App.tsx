@@ -3,7 +3,7 @@ import Home from './pages/Home';
 import PackagePage from './pages/Paquetes/PackagePage';
 import AboutUsPage from './pages/about/aboutUs';
 import Navbar from './components/Navbar/Navbar';
-import Footer from './components/Footer';
+import Footer from './components/Footer/Footer';
 import LoginPage from './pages/login/loginPage';
 import BlogPage from './pages/blog/blog';
 import BlogPostDetail from './pages/blog/BlogPostDetail';
@@ -12,6 +12,7 @@ import EditBlogPost from './pages/blog/EditBlogPost';
 import { AuthProvider } from './pages/login/AuthContext'; // Importa el AuthProvider
 import ProtectedRoute from './components/ProtectedRoute'; // Importa el ProtectedRoute
 import CreateUserPage from './pages/createUser/CreateUserPage'; // Importa el componente
+import ConsultasPage from "./pages/Consultas/consultasPages"
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
                         <Route path="/login" element={<LoginPage />}/>
                         <Route path="/create-user" element={<CreateUserPage />} /> {/* Añade esta ruta */}
                         <Route path="/blog" element={<BlogPage />} />
+                        <Route path="/consultas" element ={<ConsultasPage/>}/>
                         <Route path="/blog/:id" element={<BlogPostDetail />} />
 
                         {/* Rutas protegidas */}

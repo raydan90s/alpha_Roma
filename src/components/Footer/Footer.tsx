@@ -1,7 +1,7 @@
-import Logo from '../assets/img/logo-nexolegal.png';
+import Logo from '../../assets/img/logo-nexolegal.png';
 import { Link, useNavigate, useLocation } from 'react-router-dom'; // Import useLocation
-import { generarEnlaceWhatsApp, mensajesWhatsApp } from '../messages/messages';
-import { handleScrollToTop, scrollToHash } from '../assets/utils/scrollUtils'; // Import scrollToHash
+import { generarEnlaceWhatsApp, mensajesWhatsApp } from '../../messages/messages';
+import { handleScrollToTop, scrollToHash } from '../../assets/utils/scrollUtils'; // Import scrollToHash
 
 function Footer() {
   const navigate = useNavigate();
@@ -29,7 +29,7 @@ function Footer() {
   };
 
   return (
-    <footer className="bg-secondary text-white border-t border-gray-700">
+    <footer className="bg-secondary text-white">
       <div className="max-w-screen-2xl mx-auto px-4 py-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo column */}

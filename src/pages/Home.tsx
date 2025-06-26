@@ -1,5 +1,5 @@
 // Home.tsx
-import Call_to_action from '../components/Call_to_action';
+import Call_to_action from '../components/Sections/Call_to_action.tsx';
 import VideoGallery from '../components/video/VideoGalery';
 import { videoData } from '../components/data/videoData';
 import SEO from '../components/SEO/SEO.tsx';
@@ -7,7 +7,8 @@ import { generarEnlaceWhatsApp } from '../messages/messages.ts';
 import { TELEFONO_CONTACTO } from '../config/config';
 import InicioSection from '../components/Hero/InicioSection.tsx';
 import Testimonials from '../components/Home/Testimonials.tsx';
-import FeaturesSection from '../components/FeaturesSection/FeaturesSection.tsx';
+import FeaturesSection from '../components/Home/FeaturesSection.tsx';
+import ContactForm from '../components/Home/ContactForm.tsx';
 
 
 function Home() {
@@ -31,7 +32,7 @@ function Home() {
         {/* Hero Section */}
         <section className='Hero'>
           <div className="pt-12">
-            <InicioSection scrollToSection={scrollToSection} />
+            <InicioSection scrollToSection={scrollToSection} telefono={TELEFONO_CONTACTO} />
           </div>
         </section>
 
@@ -53,15 +54,20 @@ function Home() {
 
         {/* FeatureSection */}
         <section>
-          <FeaturesSection/>
+          <FeaturesSection />
+        </section>
+
+        {/* Form */}
+        <section>
+          <ContactForm />
         </section>
 
         {/* Call to Action */}
         <section>
           <Call_to_action
-            title="¿Listo para proteger tu inversión?"
-            subtitle="Con NovaFenix despreocupate de cuidar lo que amas"
-            spanBtn="Contactános ahora"
+            title="¿Necesitas asesoría legal confiable?"
+            subtitle="En NexoLegal defendemos tus derechos con compromiso y experiencia."
+            spanBtn="Contáctanos"
             link={generarEnlaceWhatsApp(TELEFONO_CONTACTO)}
           />
         </section>
