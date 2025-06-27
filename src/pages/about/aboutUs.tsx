@@ -4,7 +4,10 @@ import ContactSection from "../../components/Sections/contactSection.tsx";
 import { ContactSectionProps } from "../../interface/contactProps";
 import VideoHero from "../../components/Hero/videoHero.tsx";
 import { VideoHeroProps } from "../../interface/HerovideoProps.ts";
-import { Boxes, HeartHandshake, Lightbulb } from "lucide-react";
+import MissionSection from "../../components/Sections/MissionSection.tsx";
+import VisionSection from "../../components/Sections/VisionSection.tsx";
+import ValuesSection from "../../components/Sections/ValuesSection.tsx";
+import ExpertsSection from "../../components/Sections/ExpertsSection.tsx";
 import SEO from "../../components/SEO/SEO.tsx";
 import { experts } from "../../components/data/ExpertData.ts";
 
@@ -32,6 +35,14 @@ const AboutUsPage = () => {
     videoUrl: imageUrls[2],
   };
 
+  const missionData = {
+    description: "Transformamos la seguridad con tecnología de vanguardia, protegiendo lo que más valoras con soluciones inteligentes y confiables."
+  };
+
+  const visionData = {
+    description: "Liderar la revolución de la seguridad inteligente, creando un mundo donde la tecnología y la confianza se unen para proteger el futuro."
+  };
+
   return (
     <>
       <SEO
@@ -47,141 +58,16 @@ const AboutUsPage = () => {
         </section>
       </div>
 
-      <section id="mision" className="scroll-mt-24 min-h-screen bg-gradient-to-br from-accent to-white flex items-center">
-        <div className="max-w-7xl mx-auto px-6 py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div className="space-y-10">
-              <div className="space-y-6">
-                <div className="inline-block px-4 py-2 bg-primary text-white text-sm font-semibold rounded-full">
-                  NUESTRA FILOSOFÍA
-                </div>
-                <h2 className="text-7xl font-black text-secondary leading-none tracking-tight">
-                  MISIÓN
-                </h2>
-              </div>
-              <p className="text-xl text-secondary leading-relaxed font-light max-w-xl">
-                Transformamos la seguridad con tecnología de vanguardia, 
-                protegiendo lo que más valoras con soluciones inteligentes 
-                y confiables.
-              </p>
-              <div className="pt-4">
-                <div className="w-20 h-1 bg-primary rounded-full"></div>
-              </div>
-            </div>
-            <div className="relative group">
-              <div className="absolute -inset-4 bg-primary rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                <img
-                  src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                  alt="Tecnología de Seguridad Avanzada"
-                  className="w-full h-[500px] object-cover transform group-hover:scale-105 transition duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <MissionSection {...missionData} />
 
-      <section id="vision" className="scroll-mt-24 min-h-screen bg-secondary flex items-center text-white">
-        <div className="max-w-7xl mx-auto px-6 py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div className="relative group lg:order-1">
-              <div className="absolute -inset-4 bg-primary rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                <img
-                  src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                  alt="Futuro de la Seguridad Digital"
-                  className="w-full h-[500px] object-cover transform group-hover:scale-105 transition duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-              </div>
-            </div>
-            <div className="space-y-10 lg:order-2">
-              <div className="space-y-6">
-                <div className="inline-block px-4 py-2 bg-primary text-white text-sm font-semibold rounded-full">
-                  NUESTRO FUTURO
-                </div>
-                <h2 className="text-7xl font-black text-white leading-none tracking-tight">
-                  VISIÓN
-                </h2>
-              </div>
-              <p className="text-xl text-gray-300 leading-relaxed font-light max-w-xl">
-                Liderar la revolución de la seguridad inteligente, 
-                creando un mundo donde la tecnología y la confianza 
-                se unen para proteger el futuro.
-              </p>
-              <div className="pt-4">
-                <div className="w-20 h-1 bg-primary rounded-full"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <VisionSection {...visionData} />
 
       <div className="bg-accent">
         <div className="pt-20">
           <section>
             <div className="max-w-screen-xl mx-auto px-4 py-12 space-y-20">
-
-              <section id="valores" className="scroll-mt-24 mb-16">
-                <div className="text-center mb-12">
-                  <h2 className="text-3xl font-bold text-secondary">Nuestros Valores</h2>
-                  <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                    Los principios fundamentales que definen nuestra cultura y guían nuestras acciones.
-                  </p>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  <div className="bg-white rounded-xl shadow-md p-6">
-                    <div className="bg-secondary rounded-full p-3 inline-block mb-4">
-                      <Lightbulb color="white" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-secondary mb-2">Innovación</h3>
-                    <p className="text-gray-600 text-lg">Impulsamos la mejora continua a través de la integración de nuevas tecnologías y la búsqueda de soluciones creativas.</p>
-                  </div>
-                  <div className="bg-white rounded-xl shadow-md p-6">
-                    <div className="bg-secondary rounded-full p-3 inline-block mb-4">
-                      <Boxes color="white" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-secondary mb-2">Integridad</h3>
-                    <p className="text-gray-600 text-lg">Actuamos con honestidad, transparencia y ética en todas nuestras interacciones y decisiones.</p>
-                  </div>
-                  <div className="bg-white rounded-xl shadow-md p-6">
-                    <div className="bg-secondary rounded-full p-3 inline-block mb-4">
-                      <HeartHandshake color="white" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-secondary mb-2">Compromiso con el Cliente</h3>
-                    <p className="text-gray-600 text-lg">Priorizamos las necesidades de nuestros clientes, ofreciendo un servicio atento, personalizado y de alta calidad.</p>
-                  </div>
-                </div>
-              </section>
-
-              <section id="expertos" className="scroll-mt-24 mb-16">
-                <div className="text-center mb-12">
-                  <h2 className="text-3xl font-bold text-secondary">Nuestros Expertos</h2>
-                  <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                    Conoce al equipo de profesionales que hacen posible nuestro compromiso con la excelencia.
-                  </p>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                  {experts.map((expert, index) => (
-                    <div key={index} className="bg-accent rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                      <div className="aspect-square bg-gray-200 overflow-hidden">
-                        <img
-                          src={expert.image}
-                          alt={expert.name}
-                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                        />
-                      </div>
-                      <div className="p-6 text-center">
-                        <h3 className="text-xl font-semibold text-secondary mb-2">{expert.name}</h3>
-                        <p className="text-gray-600">{expert.position}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
+              <ValuesSection />
+              <ExpertsSection experts={experts} />
               <ContactSection {...contactSectionData} />
             </div>
           </section>
