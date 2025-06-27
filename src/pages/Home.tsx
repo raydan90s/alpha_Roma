@@ -45,7 +45,7 @@ function Home() {
         <section className='VideoGallery'>
           <div className="py-6 bg-secondary">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-3xl font-bold text-white my-4 text-center">Demo de las cámaras de seguridad</h2>
+              <h2 className="text-3xl font-bold text-white my-4 text-center">Demo NexoLegal</h2>
               <VideoGallery videos={videoData} />
             </div>
           </div>

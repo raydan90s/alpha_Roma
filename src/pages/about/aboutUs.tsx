@@ -15,7 +15,7 @@ const AboutUsPage = () => {
   const imageUrls = [
     "https://res.cloudinary.com/dfbpaq83u/image/upload/v1746118668/NovaFenix/yldksgsatzgtrb0tjeqy.jpg",
     "https://res.cloudinary.com/dfbpaq83u/image/upload/v1746118730/NovaFenix/el4v1njcsaqzuw0dgjne.jpg",
-    "https://res.cloudinary.com/dcxqkcmhd/video/upload/v1744208322/ufrawrhtjxkkre6znupj.mp4"
+    "https://res.cloudinary.com/dfbpaq83u/video/upload/v1751051500/levwpdwbypvji5wbsh9h.mp4"
   ];
 
   const contactSectionData: ContactSectionProps = {
