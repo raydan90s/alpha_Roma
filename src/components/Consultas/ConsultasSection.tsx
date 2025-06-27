@@ -38,7 +38,7 @@ const ConsultasSection: React.FC = () => {
             </div>
 
             <div className="text-center mb-6">
-              <div className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-2">
+              <div className="text-4xl font-bold bg-hover bg-clip-text text-transparent mb-2">
                 USD$20
               </div>
             </div>
@@ -77,7 +77,7 @@ const ConsultasSection: React.FC = () => {
             </div>
 
             <div className="text-center mb-6">
-              <div className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-2">
+              <div className="text-4xl font-bold bg-secondary bg-clip-text text-transparent mb-2">
                 USD$50
               </div>
             </div>

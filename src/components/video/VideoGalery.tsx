@@ -16,10 +16,10 @@ const VideoGallery: React.FC<VideoGalleryProps> = ({ videos }) => {
     };
 
     checkMobile();
-    window.addEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
 
     return () => {
-      window.removeEventListener('resize', checkMobile);
+      window.removeEventListener("resize", checkMobile);
     };
   }, []);
 
@@ -29,31 +29,30 @@ const VideoGallery: React.FC<VideoGalleryProps> = ({ videos }) => {
   if (!video) return null;
 
   return (
-    <div
-      className="bg-secondary py-8 md:py-12 flex flex-col justify-center items-center"
+    <section
       ref={galleryRef}
+      className="bg-secondary py-8 md:py-12 flex flex-col justify-center items-center"
+      aria-label="Galería de Videos"
     >
       <div className="relative w-full flex justify-center items-center">
-        {/* Video container - centered and larger */}
-        <div className="flex justify-center items-center w-full px-4 md:px-8">
-          <div className={`
-            transition-all duration-300 
-            ${isMobile 
-              ? "w-full max-w-md" 
-              : "w-full max-w-2xl lg:max-w-3xl"
-            }
-          `}>
+        <div className="w-full px-4 md:px-8 flex justify-center items-center">
+          <div
+            className={`
+              transition-all duration-300
+              ${isMobile ? "w-full max-w-md" : "w-full max-w-2xl lg:max-w-3xl"}
+            `}
+          >
             <VideoCard
               video={video}
-              onClick={() => {}} // No necesita función onClick ya que es solo un video
-              isPlaying={true} // Siempre está "activo"
-              isMain={true} // Siempre es el principal
+              onClick={() => {}}
+              isPlaying={true}
+              isMain={true}
             />
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default VideoGallery;
+export default VideoGallery;  
