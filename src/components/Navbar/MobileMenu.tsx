@@ -17,15 +17,18 @@ const MobileMenu = ({
   };
 
   return (
-    <div className="fixed inset-0 z-40 mt-20 md:hidden">
-      <div className="bg-gradient-to-b from-gray-900 to-gray-800 shadow-xl border-b border-gray-700 h-full overflow-y-auto">
-        <div className="px-4 py-6">
+  <div className="fixed inset-0 z-40">
+  {/* Contenedor del menú desplazado hacia abajo */}
+  <div className="mt-12 h-full overflow-y-auto bg-gradient-to-b from-gray-900 to-gray-800 shadow-xl">
+       <div className="bg-secondary shadow-xl border-b border-gray-700 h-full overflow-y-auto">
+        <div className="px-4 py-6 sm:px-6 md:px-8">
           <div className="divide-y divide-gray-700">
             {menuItems.map((item, index) => (
               <div key={index} className="py-3">
                 <button
-                  className="flex items-center justify-between w-full text-white font-medium py-2"
+                  className="flex items-center justify-between w-full text-white font-medium py-2 text-base md:text-lg"
                   onClick={() => {
+                    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
                     item.options
                       ? toggleSubmenu(index)
                       : onNavigate(item.linkTo || '#');
@@ -69,11 +72,10 @@ const MobileMenu = ({
             ))}
           </div>
 
-          <div className="mt-6">
+          <div className="flex justify-center mt-6">
             <a
               href={`tel:${telefono}`}
-              className="flex items-center justify-center w-full bg-primary hover:bg-primary text-black font-bold py-3 rounded-full shadow-md transition-all duration-300"
-            >
+              className="inline-flex items-center justify-center bg-white hover:bg-white text-black font-bold py-2 px-6 rounded-full shadow-md transition-all duration-300 mx-auto"         >
               <img
                 src="https://res.cloudinary.com/dfbpaq83u/image/upload/v1744669038/shrx1oeqzvtkzbvtfp81.png"
                 alt="WhatsApp"
@@ -83,8 +85,10 @@ const MobileMenu = ({
             </a>
           </div>
         </div>
-      </div>
+      
     </div>
+     </div>
+  </div>
   );
 };
 

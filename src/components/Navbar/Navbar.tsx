@@ -158,13 +158,13 @@ function Navbar() {
 
     // Cerrar menú al cambiar de tamaño de pantalla
     useEffect(() => {
-        if (screenSize === 'desktop' || screenSize === 'tablet') {
+        if (screenSize === 'desktop') {
             closeMobileMenu();
         }
     }, [screenSize, closeMobileMenu]);
 
     const isMenuActive = hoveredMenu !== null || navbarActive;
-    const isMobileSize = screenSize === 'mobile' || screenSize === 'sm';
+    const isMobileSize = screenSize === 'mobile' || screenSize === 'sm' || screenSize === 'tablet';
 
     return (
         <header className="relative">
@@ -228,45 +228,7 @@ function Navbar() {
                                         isMenuActive={isMenuActive}
                                     />
                                 </div>
-                                
-                                {/* WhatsApp - Mobile/Tablet (Solo icono) */}
-                                <div className="lg:hidden">
-                                    <a
-                                        href={`https://wa.me/${formatearTelefono(TELEFONO_CONTACTO)}?text=${encodeURIComponent(mensajesWhatsApp.general)}`}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className={`
-                                            inline-flex items-center justify-center w-10 h-10 rounded-full transition-all duration-200
-                                            ${isMenuActive || mobileMenuOpen
-                                                ? 'bg-green-600 text-white hover:bg-green-700' 
-                                                : 'bg-white/20 text-white hover:bg-white/30'
-                                            }
-                                            focus:outline-none focus:ring-2 focus:ring-green-400
-                                        `}
-                                        aria-label="Contactar por WhatsApp"
-                                    >
-                                        <MessageCircle className="w-5 h-5" />
-                                    </a>
-                                </div>
-
-                                {/* Botón de teléfono - Solo móvil */}
-                                <div className="sm:hidden">
-                                    <a
-                                        href={`tel:${TELEFONO_CONTACTO}`}
-                                        className={`
-                                            inline-flex items-center justify-center w-10 h-10 rounded-full transition-all duration-200
-                                            ${isMenuActive || mobileMenuOpen
-                                                ? 'bg-blue-600 text-white hover:bg-blue-700' 
-                                                : 'bg-white/20 text-white hover:bg-white/30'
-                                            }
-                                            focus:outline-none focus:ring-2 focus:ring-blue-400
-                                        `}
-                                        aria-label="Llamar por teléfono"
-                                    >
-                                        <Phone className="w-4 h-4" />
-                                    </a>
-                                </div>
-
+ 
                                 {/* Botón menú móvil */}
                                 <button
                                     className={`
