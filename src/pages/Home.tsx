@@ -31,7 +31,7 @@ function Home() {
 
         {/* Hero Section */}
         <section className='Hero'>
-          <div className="pt-12">
+          <div className="pt-20">
             <InicioSection scrollToSection={scrollToSection} telefono={TELEFONO_CONTACTO} />
           </div>
         </section>
