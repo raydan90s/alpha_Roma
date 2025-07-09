@@ -37,12 +37,12 @@ const AboutUsPage = () => {
 
   const missionData = {
     description:
-      "Transformamos la seguridad con tecnología de vanguardia, protegiendo lo que más valoras con soluciones inteligentes y confiables.",
+      "En NexoLegal, defendemos los intereses de nuestros clientes con soluciones legales personalizadas y estratégicas, basadas en más de 40 años de experiencia. Nuestra misión es lograr resultados exitosos con pasión, compromiso y profesionalismo.",
   };
 
   const visionData = {
     description:
-      "Liderar la revolución de la seguridad inteligente, creando un mundo donde la tecnología y la confianza se unen para proteger el futuro.",
+      "Ser una firma de abogados líder en soluciones legales personalizadas, reconocida por su excelencia y compromiso con el éxito de nuestros clientes.",
   };
 
   return (

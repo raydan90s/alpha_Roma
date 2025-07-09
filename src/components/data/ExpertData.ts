@@ -2,23 +2,23 @@ import { Expert } from "../../interface/NuestrosExpertos";
 
 export const experts: Expert[] = [
     {
-      name: "Nicolas R. Muñoz",
-      position: "CEO de Nexo legal",
-      image: "https://img.freepik.com/fotos-premium/concepto-exito-joven-abogado-elegante-pie-espacio-puro-vestido-traje-negro-corbata-ve-tan-elegante-nerd_274222-2649.jpg"
+      name: "Alejo de la Rosa M.",
+      position: "CEO y Socio Fundador",
+      image: "https://res.cloudinary.com/dfbpaq83u/image/upload/v1752097536/FullSizeRender_1_wrm2su.png"
     },
     {
-      name: "Sofia Becerra",
-      position: "Directora Jurídica",
-      image: "https://img.freepik.com/fotos-premium/concepto-exito-joven-abogado-elegante-pie-espacio-puro-vestido-traje-negro-corbata-ve-tan-elegante-nerd_274222-2649.jpg"
+      name: "Romina Pinto Z.",
+      position: "Socia Fundadora",
+      image: "https://res.cloudinary.com/dfbpaq83u/image/upload/v1752099551/Romina_Pinto_Z_pci5xl.png"
     },
     {
-      name: "Beatriz Padrón",
-      position: "Directora de Finanzas y Administración",
-      image: "https://img.freepik.com/fotos-premium/concepto-exito-joven-abogado-elegante-pie-espacio-puro-vestido-traje-negro-corbata-ve-tan-elegante-nerd_274222-2649.jpg"
+      name: "Sebastián de la Rosa P.",
+      position: "Socio Fundador",
+      image: "https://res.cloudinary.com/dfbpaq83u/image/upload/v1752094544/sebas_foto_hjch1t.png"
     },
     {
-      name: "David Martínez",
-      position: "Director de Comercial",
-      image: "https://img.freepik.com/fotos-premium/concepto-exito-joven-abogado-elegante-pie-espacio-puro-vestido-traje-negro-corbata-ve-tan-elegante-nerd_274222-2649.jpg"
+      name: "Danny de la Rosa",
+      position: "Socio Fundador",
+      image: "https://res.cloudinary.com/dfbpaq83u/image/upload/v1752100093/Danny_de_la_Rosa_l6sm1a.png"
     },
   ];

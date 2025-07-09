@@ -30,7 +30,7 @@ const ExpertsSection = ({
               <img
                 src={expert.image}
                 alt={expert.name}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                className="w-100 h-150 object-cover hover:scale-105 transition-transform duration-300"
               />
             </div>
             <div className="p-6 text-center">
