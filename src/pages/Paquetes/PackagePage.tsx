@@ -92,7 +92,7 @@ const CombinedPage = () => {
         "Acompañamiento especializado (1 hora por día)"
       ],
       buttonText: "¡CONTRATA AHORA!",
-      buttonColor: "bg-purple-600 hover:bg-purple-700",
+      buttonColor: "bg-green-600 hover:bg-purple-700",
       footerText: "Para empresas que requieren asesoría integral y acompañamiento.",
       id: "plan-avanzado",
     },
@@ -110,7 +110,7 @@ const CombinedPage = () => {
         "1 patrocinio en proceso de Ministerio de Trabajo"
       ],
       buttonText: "¡CONTRATA AHORA!",
-      buttonColor: "bg-yellow-500 hover:bg-yellow-600",
+      buttonColor: "bg-red-600 hover:bg-yellow-600",
       footerText: "Plan premium para empresas con necesidades legales complejas.",
       id: "plan-ejecutivo",
     }
@@ -142,7 +142,7 @@ const CombinedPage = () => {
       icon: <Handshake className="text-indigo-600 text-2xl" />,
       description: "Contratos civiles (10% de cuantía - estándar sin cuantía)",
       duration: "Entrega en 3-7 días hábiles",
-      buttonColor: "bg-indigo-600 hover:bg-indigo-700"
+      buttonColor: "bg-gray-600 hover:bg-indigo-700"
     },
     {
       title: "Patrocinio Inspectoría",
