@@ -18,26 +18,26 @@ const ValuesSection = ({
   values = [
     {
       icon: Lightbulb,
-      title: "Innovación",
-      description: "Impulsamos la mejora continua a través de la integración de nuevas tecnologías y la búsqueda de soluciones creativas."
+      title: "Compromiso con la Excelencia",
+      description: "En NexoLegal, trabajamos incansablemente para ofrecer soluciones legales de la más alta calidad. Nuestro equipo está formado por expertos dedicados que siempre buscan los mejores resultados para nuestros clientes."
     },
     {
       icon: Boxes,
-      title: "Integridad",
-      description: "Actuamos con honestidad, transparencia y ética en todas nuestras interacciones y decisiones."
+      title: "Integridad y Transparencia",
+      description: "La honestidad es la base de todas nuestras relaciones. Mantenemos una comunicación clara y abierta con nuestros clientes, asegurándonos de que siempre comprendan los procesos legales y decisiones tomadas."
     },
     {
       icon: HeartHandshake,
-      title: "Compromiso con el Cliente",
-      description: "Priorizamos las necesidades de nuestros clientes, ofreciendo un servicio atento, personalizado y de alta calidad."
+      title: "Atención Personalizada",
+      description: "Cada cliente es único. Nos aseguramos de ofrecer un enfoque a medida, adaptando nuestras estrategias legales a las necesidades específicas de cada caso, con el objetivo de lograr los mejores resultados."
     }
   ]
 }: ValuesSectionProps) => {
   return (
     <section id="valores" className="scroll-mt-24 mb-16">
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold text-secondary">{title}</h2>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <h2 className="text-5xl font-bold text-secondary">{title}</h2>
+        <p className="text-lg font-bold text-gray-600 max-w-2xl mx-auto">
           {subtitle}
         </p>
       </div>
@@ -50,7 +50,7 @@ const ValuesSection = ({
                 <IconComponent color="white" />
               </div>
               <h3 className="text-xl font-semibold text-secondary mb-2">{value.title}</h3>
-              <p className="text-gray-600 text-lg">{value.description}</p>
+              <p className="text-gray-600 text-lg text-justify">{value.description}</p>
             </div>
           );
         })}

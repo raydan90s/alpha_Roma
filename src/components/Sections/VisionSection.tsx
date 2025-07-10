@@ -1,3 +1,5 @@
+import React from "react";
+
 interface VisionSectionProps {
   title?: string;
   subtitle?: string;
@@ -37,7 +39,7 @@ const VisionSection = ({
                 {subtitle}
               </h2>
             </div>
-            <p className="text-xl text-gray-300 leading-relaxed font-light max-w-xl">
+            <p className="text-xl text-gray-300 leading-relaxed font-light max-w-xl text-justify">
               {description}
             </p>
             <div className="pt-4">

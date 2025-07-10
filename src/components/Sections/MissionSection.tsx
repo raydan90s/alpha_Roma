@@ -1,3 +1,5 @@
+import React from "react";
+
 interface MissionSectionProps {
   title?: string;
   subtitle?: string;
@@ -26,7 +28,7 @@ const MissionSection = ({
                 {subtitle}
               </h2>
             </div>
-            <p className="text-xl text-secondary leading-relaxed font-light max-w-xl">
+            <p className="text-xl text-secondary leading-relaxed font-light max-w-xl text-justify">
               {description}
             </p>
             <div className="pt-4">

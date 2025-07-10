@@ -37,12 +37,12 @@ const AboutUsPage = () => {
 
   const missionData = {
     description:
-      "En NexoLegal, defendemos los intereses de nuestros clientes con soluciones legales personalizadas y estratégicas, basadas en más de 40 años de experiencia. Nuestra misión es lograr resultados exitosos con pasión, compromiso y profesionalismo.",
+      "En NexoLegal, nos dedicamos a defender los intereses de nuestros clientes con pasión y compromiso. Entendemos que cada caso es único, por eso ofrecemos soluciones legales personalizadas y estratégicas para alcanzar el éxito en cada desafío. Con 40 años de experiencia combinada, nuestro equipo de abogados expertos en distintas áreas del derecho ha logrado resultados sobresalientes para nuestros clientes. En NexoLegal, su éxito es nuestra prioridad.",
   };
 
   const visionData = {
     description:
-      "Ser una firma de abogados líder en soluciones legales personalizadas, reconocida por su excelencia y compromiso con el éxito de nuestros clientes.",
+      "Ser una firma de abogados líder en soluciones legales personalizadas, reconocida por su excelencia y compromiso con el éxito de nuestros clientes. Aspiramos a seguir siendo un referente en el ámbito legal, ofreciendo servicios innovadores y con una atención centrada en los objetivos de quienes confían en nosotros.",
   };
 
   return (
