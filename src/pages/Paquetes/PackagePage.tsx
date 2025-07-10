@@ -157,36 +157,12 @@ const CombinedPage = () => {
 
   const companyServices = [
     {
-      title: "SAS Básica",
-      price: "$100",
+      title: "SAS",
+      price: "$150",
       priceNote: "+ IVA",
       icon: <Building className="text-gray-600 text-2xl" />,
       description: "Constitución de SAS con 1 accionista",
       buttonColor: "bg-gray-600 hover:bg-gray-700"
-    },
-    {
-      title: "SAS Esencial",
-      price: "$160",
-      priceNote: "+ IVA",
-      icon: <Users className="text-blue-600 text-2xl" />,
-      description: "Constitución de SAS con 2 accionistas",
-      buttonColor: "bg-blue-600 hover:bg-blue-700"
-    },
-    {
-      title: "SAS Avanzada",
-      price: "$200",
-      priceNote: "+ IVA",
-      icon: <Factory className="text-purple-600 text-2xl" />,
-      description: "Constitución de SAS con 3 accionistas",
-      buttonColor: "bg-purple-600 hover:bg-purple-700"
-    },
-    {
-      title: "SAS Ejecutiva",
-      price: "$300",
-      priceNote: "+ IVA",
-      icon: <Crown className="text-yellow-500 text-2xl" />,
-      description: "Constitución de SAS con 4 accionistas en adelante",
-      buttonColor: "bg-yellow-500 hover:bg-yellow-600"
     },
     {
       title: "Plan Empresario",
