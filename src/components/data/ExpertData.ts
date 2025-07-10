@@ -4,7 +4,7 @@ export const experts: Expert[] = [
     {
       name: "Alejo de la Rosa M.",
       position: "CEO y Socio Fundador",
-      image: "https://res.cloudinary.com/dfbpaq83u/image/upload/v1752097536/FullSizeRender_1_wrm2su.png"
+      image: "https://res.cloudinary.com/dfbpaq83u/image/upload/v1752185513/FullSizeRender_1_2_xn5uyv.png"
     },
     {
       name: "Romina Pinto Z.",
