@@ -14,6 +14,10 @@ import ProtectedRoute from './components/ProtectedRoute'; // Importa el Protecte
 import CreateUserPage from './pages/createUser/CreateUserPage'; // Importa el componente
 import ConsultasPage from "./pages/Consultas/consultasPages";
 import RegistroMarcaPage from './pages/Paquetes/RegistroDeMarcaPage';
+import ServiciosLegalesPage from './pages/Paquetes/ServiciosLegalesPage';
+import ConsultasLegalesPage from './pages/Paquetes/ConsultasLegalesPage';
+import DisolucionLiquidacionPage from './pages/Paquetes/DisolucionLiquidacionPage';
+import InmigracionLegalPage from './pages/Paquetes/InmigracionLegalPage';
 
 function App() {
     return (
@@ -31,6 +35,10 @@ function App() {
                         <Route path="/consultas" element ={<ConsultasPage/>}/>
                         <Route path="/blog/:id" element={<BlogPostDetail />} />
                         <Route path="/registro-de-marca" element={<RegistroMarcaPage/>}/>
+                        <Route path="/servicios-legales" element={<ServiciosLegalesPage/>}/>
+                        <Route path="/consultas-legales" element={<ConsultasLegalesPage/>}/>
+                        <Route path="/disolucion-liquidacion" element={<DisolucionLiquidacionPage/>}/>
+                        <Route path="/inmigracion-legal" element={<InmigracionLegalPage/>}/>
 
 
                         {/* Rutas protegidas */}

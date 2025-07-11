@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { href, Link } from 'react-router-dom';
 import { Scale, Shield, Users, Building, Heart, Gavel, Gem, Star, FileText, UserCheck, Crown, Handshake, HelpCircle, Factory, ShieldCheck, EyeOff } from 'lucide-react';
 const CombinedPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -21,24 +21,28 @@ const CombinedPage = () => {
       title: "Servicios Legales para Compañías",
       description: "Asesoría integral para empresas, constitución, contratos y cumplimiento normativo.",
       icon: <Building className="text-2xl" />,
+      href: "/servicios-legales",
     },
     {
       id: 3,
       title: "Consultas Legales y Juicios",
       description: "Asesoría legal especializada y representación en procesos judiciales.",
       icon: <Scale className="text-2xl" />,
+      href: "/consultas-legales",
     },
     {
       id: 4,
       title: "Disoluciones y Liquidaciones de Compañías",
       description: "Procesos de cierre y liquidación de empresas conforme a la normativa vigente.",
       icon: <Gavel className="text-2xl" />,
+      href: "/disolucion-liquidacion",
     },
     {
       id: 5,
       title: "Inmigración Legal a Estados Unidos",
       description: "Asesoría especializada en procesos migratorios y documentación para Estados Unidos.",
       icon: <Users className="text-2xl" />,
+      href: "/inmigracion-legal",
     }
   ];
 
