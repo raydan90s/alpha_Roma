@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Scale, Shield, Users, Building, Heart, Gavel, Gem, Star, FileText, UserCheck, Crown, Handshake, HelpCircle, Factory, ShieldCheck, EyeOff } from 'lucide-react';
-
 const CombinedPage = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
-
-  const services = [
+  {/* NUESTROS SERVICIOS */}
+  const services = [ 
     {
       id: 1,
       title: "Registro de Marca",
@@ -180,8 +180,8 @@ const CombinedPage = () => {
       description: "Previa verificación de procedencia",
       buttonColor: "bg-gray-800 hover:bg-gray-900"
     }
-  ];
-
+  ];  
+  
   const PlanFeatureCard = ({ title, price, priceNote, icon, features, buttonText, buttonColor, footerText, id }) => (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 h-full flex flex-col">
       <div className="p-8 flex-grow flex flex-col">
