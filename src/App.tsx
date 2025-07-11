@@ -18,6 +18,7 @@ import ServiciosLegalesPage from './pages/Paquetes/ServiciosLegalesPage';
 import ConsultasLegalesPage from './pages/Paquetes/ConsultasLegalesPage';
 import DisolucionLiquidacionPage from './pages/Paquetes/DisolucionLiquidacionPage';
 import InmigracionLegalPage from './pages/Paquetes/InmigracionLegalPage';
+import SASPage from './pages/Paquetes/ConstitucionSASPage';
 
 function App() {
     return (
@@ -39,6 +40,7 @@ function App() {
                         <Route path="/consultas-legales" element={<ConsultasLegalesPage/>}/>
                         <Route path="/disolucion-liquidacion" element={<DisolucionLiquidacionPage/>}/>
                         <Route path="/inmigracion-legal" element={<InmigracionLegalPage/>}/>
+                        <Route path='/constitucion-sas' element={<SASPage/>}/>
 
 
                         {/* Rutas protegidas */}

@@ -1,4 +1,4 @@
-import { Siren, Compass, Eye, Telescope, Hammer, Headset, Cctv, Focus, Gem, SunMoon, Radar, MonitorDot, ShieldHalf, Star, Video } from "lucide-react";
+import { Compass, Eye, Telescope, Gem, ShieldHalf, Star } from "lucide-react";
 
 
 export const menuItems = [
@@ -24,8 +24,15 @@ export const menuItems = [
     },
 
     {
+        title: "SAS",
+        linkTo: "/constitucion-SAS",
+    },
+
+    {
         title: "Blog",
         linkTo: "/blog",
     },
+
+    
 
 ];

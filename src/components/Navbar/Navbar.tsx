@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect, useCallback } from "react";
-import { Menu, X, Phone, MessageCircle } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../assets/img/logo-nexolegal.png";
 import LogoNegro from "../../assets/img/logo-nexolegal-negro.png";
