@@ -12,8 +12,8 @@ import EditBlogPost from './pages/blog/EditBlogPost';
 import { AuthProvider } from './pages/login/AuthContext'; // Importa el AuthProvider
 import ProtectedRoute from './components/ProtectedRoute'; // Importa el ProtectedRoute
 import CreateUserPage from './pages/createUser/CreateUserPage'; // Importa el componente
-import ConsultasPage from "./pages/Consultas/consultasPages"
-
+import ConsultasPage from "./pages/Consultas/consultasPages";
+import RegistroMarcaPage from './pages/Paquetes/RegistroDeMarcaPage';
 
 function App() {
     return (
@@ -30,6 +30,8 @@ function App() {
                         <Route path="/blog" element={<BlogPage />} />
                         <Route path="/consultas" element ={<ConsultasPage/>}/>
                         <Route path="/blog/:id" element={<BlogPostDetail />} />
+                        <Route path="/registro-de-marca" element={<RegistroMarcaPage/>}/>
+
 
                         {/* Rutas protegidas */}
                         <Route path="/editor" element={<ProtectedRoute children={undefined} />}>

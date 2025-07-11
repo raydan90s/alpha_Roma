@@ -7,13 +7,14 @@ const CombinedPage = () => {
   useEffect(() => {
     setIsVisible(true);
   }, []);
-  {/* NUESTROS SERVICIOS */}
-  const services = [ 
+  {/* NUESTROS SERVICIOS */ }
+  const services = [
     {
       id: 1,
       title: "Registro de Marca",
       description: "Protección y registro de marcas comerciales para resguardar tu propiedad intelectual.",
       icon: <Gem className="text-2xl" />,
+      href: "/registro-de-marca",
     },
     {
       id: 2,
@@ -180,8 +181,8 @@ const CombinedPage = () => {
       description: "Previa verificación de procedencia",
       buttonColor: "bg-gray-800 hover:bg-gray-900"
     }
-  ];  
-  
+  ];
+
   const PlanFeatureCard = ({ title, price, priceNote, icon, features, buttonText, buttonColor, footerText, id }) => (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 h-full flex flex-col">
       <div className="p-8 flex-grow flex flex-col">
@@ -237,10 +238,10 @@ const CombinedPage = () => {
             </div>
           </div>
         </div>
-        
+
         <p className="text-gray-600 text-sm mb-2">{description}</p>
         {duration && <p className="text-gray-500 text-xs mb-4">{duration}</p>}
-        
+
         <button className={`${buttonColor} text-white px-4 py-2 rounded-lg font-semibold text-sm transition-all duration-300 hover:transform hover:scale-105 w-full`}>
           Contratar Servicio
         </button>
@@ -277,31 +278,31 @@ const CombinedPage = () => {
           {/* Services Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div
+              <a
+                href={service.href}
                 key={service.id}
-                className={`group relative transform transition-all duration-700 ${
-                  isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-                }`}
+                className={`group relative transform transition-all duration-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                  }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 {/* Card */}
                 <div className="relative bg-white border border-gray-200 rounded-2xl p-8 h-full shadow-sm hover:shadow-xl transition-all duration-500 group-hover:border-blue-600/30">
-                  
+
                   {/* Subtle gradient overlay on hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-blue-800/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
-                  
+
                   {/* Content */}
                   <div className="relative z-10">
                     {/* Icon */}
                     <div className="inline-flex items-center justify-center w-14 h-14 bg-gray-100 group-hover:bg-blue-600/10 rounded-xl mb-6 text-blue-600 transition-all duration-300">
                       {service.icon}
                     </div>
-                    
+
                     {/* Title */}
                     <h3 className="text-xl font-bold mb-3 text-gray-800 group-hover:text-blue-600 transition-colors duration-300">
                       {service.title}
                     </h3>
-                    
+
                     {/* Description */}
                     <p className="text-gray-600 leading-relaxed">
                       {service.description}
@@ -311,9 +312,10 @@ const CombinedPage = () => {
                   {/* Subtle border accent */}
                   <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-blue-800 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-b-2xl"></div>
                 </div>
-              </div>
+              </a>  
             ))}
           </div>
+
         </div>
       </section>
 
