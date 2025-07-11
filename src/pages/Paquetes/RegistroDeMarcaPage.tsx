@@ -24,8 +24,8 @@ const RegistroMarcaPage = () => {
             <section>
                 <HeroServiceCard
                     icon={<Gem className="text-6xl text-white" />}
-                    title="Disolución y Liquidación de Compañías"
-                    description="Te ofrecemos soluciones legales para disolver y liquidar tu empresa de forma efectiva y conforme a la ley."
+                    title="Registro de Marca"
+                    description="Protege tu propiedad intelectual y asegura la exclusividad de tu marca con nuestros servicios especializados de registro de marcas."
                     button1Text="Ver Servicios"
                     button2Text="Consulta Gratuita"
                     button1Link="/servicios"
