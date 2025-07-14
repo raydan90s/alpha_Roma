@@ -1,5 +1,6 @@
 import React from 'react';
-import { CheckCircle, Clock} from 'lucide-react';
+import { CheckCircle, Clock } from 'lucide-react';
+import { generarEnlaceWhatsApp } from '../../messages/messages';
 
 interface ServiceCardProps {
   title: string;
@@ -11,6 +12,7 @@ interface ServiceCardProps {
   duration: string;
   buttonColor: string;
   popular?: boolean;
+  mensaje: string;
 }
 
 export const ServiceCard: React.FC<ServiceCardProps> = ({
@@ -23,6 +25,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
   duration,
   buttonColor,
   popular = false,
+  mensaje,
 }) => (
   <div className="relative bg-white rounded-2xl shadow-lg border-2 overflow-hidden hover:shadow-xl transition-all duration-300 w-full h-full flex flex-col">
     {/* Más Popular Badge */}
@@ -70,11 +73,13 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
 
       {/* Button - Altura fija al final */}
       <div className="mt-auto">
-        <button
-          className={`${buttonColor} text-white px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-300 hover:transform hover:scale-105 w-full`}
-        >
-          Contratar Servicio
-        </button>
+        <a href={generarEnlaceWhatsApp(mensaje)} >
+          <button
+            className={`${buttonColor} text-white px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-300 hover:transform hover:scale-105 w-full`}
+          >
+            Contratar Servicio
+          </button>
+        </a>
       </div>
     </div>
   </div>

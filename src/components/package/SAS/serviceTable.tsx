@@ -1,5 +1,6 @@
 import { Check, Clock } from "lucide-react";
 import { useEffect, useState } from "react";
+import { generarEnlaceWhatsApp } from "../../../messages/messages";
 
 interface Services {
     name: string;
@@ -9,9 +10,10 @@ interface Services {
 
 interface ServiceTableProps {
     services: Services[];
+    mensaje: string;
 }
 
-export const ServicesTable = ({ services }: ServiceTableProps) => {
+export const ServicesTable = ({ services, mensaje }: ServiceTableProps) => {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
@@ -91,9 +93,12 @@ export const ServicesTable = ({ services }: ServiceTableProps) => {
 
                         {/* CTA Button */}
                         <div className="p-8 pt-0">
-                            <button className="w-full bg-button hover:scale-105 hover:bg-hoverButton text-white py-4 rounded-xl font-semibold text-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg">
-                                Constituir mi SAS Ahora
-                            </button>
+                            <a href={generarEnlaceWhatsApp(mensaje)}>
+                                <button className="w-full bg-button hover:scale-105 hover:bg-hoverButton text-white py-4 rounded-xl font-semibold text-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg">
+                                    Constituir mi SAS Ahora
+                                </button>
+                            </a>
+
                         </div>
                     </div>
                 </div>

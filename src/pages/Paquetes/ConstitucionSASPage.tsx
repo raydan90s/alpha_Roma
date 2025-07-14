@@ -6,11 +6,16 @@ import { ServicesTable } from '../../components/package/SAS/serviceTable';
 import CallToActionSectionV2 from '../../components/Sections/Call_to_actionV2';
 import { TestimonialsSection } from '../../components/package/SAS/testimonios';
 import { testimonials } from '../../components/data/SAS/testimonials';
+import { mensajesWhatsApp } from '../../messages/messages';
 
 const SASPage = () => {
     return (
         <div className="bg-black min-h-screen">
-            <HeroSAS />
+            {/* HeroSAS: La función handleScrollToServices ya maneja el scroll suave */}
+            <HeroSAS
+                mensaje={mensajesWhatsApp.cotizarSAS}
+            />
+            
             <BenefitsSection
                 title="Beneficios de Nuestros Servicios"
                 description="Conoce las ventajas de contratar nuestros servicios."
@@ -20,18 +25,24 @@ const SASPage = () => {
                 titleColor="text-white"
                 descriptionColor="text-gray-400"
             />
+
+            {/* ServicesTable se encargará de recibir el mensaje y mostrar los servicios */}
             <ServicesTable
                 services={services}
+                mensaje={mensajesWhatsApp.cotizarSAS}
             />
+            
             <TestimonialsSection
                 testimonials={testimonials}
             />
-            <CallToActionSectionV2 title={'¿Listo para Constituir tu SAS? '}
+            
+            <CallToActionSectionV2 
+                title={'¿Listo para Constituir tu SAS?'}
                 description={'Nuestro equipo de expertos te acompañará en todo el proceso. Obtén tu consulta gratuita y empieza hoy mismo.'}
                 button1Text={'Llamar ahora'}
                 button2Text={'Cotizar SAS'}
-                button1Link={''}
-                button2Link={''} />
+                mensaje={mensajesWhatsApp.cotizarSAS}
+            />
         </div>
     );
 };
