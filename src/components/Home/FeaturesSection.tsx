@@ -1,6 +1,7 @@
 // src/components/FeaturesSection.tsx
 
 import React from 'react';
+import { generarEnlaceWhatsApp, mensajesWhatsApp } from "../../messages/messages"; ; // Ajusta la ruta según tu estructura
 
 interface Feature {
   title: string;
@@ -45,12 +46,12 @@ const features: Feature[] = [
   },
 ];
 
-const TELEFONO_CONTACTO = '593990939154';
-
-const generarEnlaceWhatsApp = (numero: string) =>
-  `https://wa.me/${numero}?text=Hola%2C%20quiero%20más%20información%20sobre%20NovaFenix`;
-
 const FeaturesSection: React.FC = () => {
+  const handleWhatsAppClick = () => {
+    const enlaceWhatsApp = generarEnlaceWhatsApp(mensajesWhatsApp.ComenzarAhora);
+    window.open(enlaceWhatsApp, '_blank');
+  };
+
   return (
     <section className='Features'>
       <div className="py-20 bg-secondary relative overflow-hidden">
@@ -84,7 +85,7 @@ const FeaturesSection: React.FC = () => {
                 </p>
               </div>
               <button
-                onClick={() => window.open(generarEnlaceWhatsApp(TELEFONO_CONTACTO), '_blank')}
+                onClick={handleWhatsAppClick}
                 className="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 Comenzar Ahora

@@ -9,6 +9,9 @@ export const mensajesWhatsApp = {
   serviciosInstalacion: `Hola, estoy interesado en el servicio de instalación de cámaras de seguridad y otros dispositivos.`,
   serviciosMonitoreo: `Hola, me gustaría saber más sobre el servicio de monitoreo de cámaras.`,
   serviciosAsesoria: `Hola, necesito asesoría para elegir el mejor sistema de seguridad para mi espacio.`,
+  LlamarAhora: `Hola, necesito asesoría jurídica especializada.`,
+  Contactanos: `Hola, necesito contactarme con ustedes.`,
+  ComenzarAhora: `Hola, comencemos con el preoceso.`
 };
 
 export const generarEnlaceWhatsApp = (mensaje: string): string => {

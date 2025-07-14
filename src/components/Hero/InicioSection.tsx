@@ -42,7 +42,7 @@ const InicioSection: React.FC<Props> = ({ scrollToSection, telefono }) => {
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
             <a
-              href={`tel:${telefono}`}
+              href={`tel:${telefono}`} 
               className="group bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center space-x-3 shadow-2xl transform hover:-translate-y-2 hover:scale-105"
             >
               <Phone className="h-6 w-6" />
