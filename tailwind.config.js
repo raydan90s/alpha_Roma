@@ -9,7 +9,9 @@ export default {
         accent: '#E7EAED',
         hover: '#c2d2f3',
         button: '#2563eb',
-        hoverButton: '#1d4ed8'
+        hoverButton: '#1d4ed8',
+        cardPrimary: '#1d2a4d',
+        highlight: '#0cbccc',
       }
     },
   },

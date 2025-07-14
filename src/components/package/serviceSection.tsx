@@ -1,5 +1,5 @@
 import React from 'react';
-import { ServiceCard } from './serviceCard'; 
+import { ServiceCard } from './serviceCard';
 
 interface Service {
   id: number;
@@ -29,7 +29,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ services, isVisible, 
           <div className="w-24 h-1 bg-blue-600"></div>
         </div>
         <p className="text-lg md:text-xl max-w-3xl mx-auto text-gray-700">
-            {description}
+          {description}
         </p>
       </div>
 
