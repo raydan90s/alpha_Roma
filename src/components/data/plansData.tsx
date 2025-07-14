@@ -15,7 +15,7 @@ import { Crown, Gem, Shield, Star } from "lucide-react";
         "Soporte básico"
       ],
       buttonText: "¡CONTRATA AHORA!",
-      buttonColor: "bg-amber-600 hover:bg-amber-700",
+      buttonColor: "bg-button hover:bg-hoverButton",
       footerText: "Ideal para necesidades puntuales y consultas específicas.",
       id: "plan-basico",
     },
@@ -33,7 +33,7 @@ import { Crown, Gem, Shield, Star } from "lucide-react";
         "Soporte prioritario"
       ],
       buttonText: "¡CONTRATA AHORA!",
-      buttonColor: "bg-blue-600 hover:bg-blue-700",
+      buttonColor: "bg-button hover:bg-hoverButton",
       footerText: "Perfecto para empresas en crecimiento con necesidades regulares.",
       id: "plan-esencial",
     },
@@ -51,7 +51,7 @@ import { Crown, Gem, Shield, Star } from "lucide-react";
         "Acompañamiento especializado (1 hora por día)"
       ],
       buttonText: "¡CONTRATA AHORA!",
-      buttonColor: "bg-green-600 hover:bg-purple-700",
+      buttonColor: "bg-button hover:bg-hoverButton",
       footerText: "Para empresas que requieren asesoría integral y acompañamiento.",
       id: "plan-avanzado",
     },
@@ -69,7 +69,7 @@ import { Crown, Gem, Shield, Star } from "lucide-react";
         "1 patrocinio en proceso de Ministerio de Trabajo"
       ],
       buttonText: "¡CONTRATA AHORA!",
-      buttonColor: "bg-red-600 hover:bg-yellow-600",
+      buttonColor: "bg-button hover:bg-hoverButton",
       footerText: "Plan premium para empresas con necesidades legales complejas.",
       id: "plan-ejecutivo",
     }

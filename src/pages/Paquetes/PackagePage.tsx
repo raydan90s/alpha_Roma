@@ -58,7 +58,7 @@ const CombinedPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 py-20 text-white">
+      <section className="bg-primary py-20 text-white">
         <div className="max-w-screen-xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 pt-12">Servicios NexoLegal</h1>
           <p className="text-lg md:text-xl max-w-3xl mx-auto">
