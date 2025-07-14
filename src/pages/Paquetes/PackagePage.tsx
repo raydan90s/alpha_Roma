@@ -126,7 +126,7 @@ const CombinedPage = () => {
       </section>
 
       {/* Plans Section */}
-      <section className="bg-gray-100 py-16">
+      <section id='asesoriaLegalPersonal' className="bg-gray-100 py-16">
         <div className="max-w-screen-xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800">Planes de Servicios</h2>
@@ -149,7 +149,7 @@ const CombinedPage = () => {
       </section>
 
       {/* Individual Services */}
-      <section className="bg-white py-16">
+      <section id='serviciosLegalesNegocios' className="bg-white py-16">
         <div className="max-w-screen-xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800">Servicios Individuales</h2>
@@ -170,7 +170,7 @@ const CombinedPage = () => {
       </section>
 
       {/* Company Services */}
-      <section className="bg-gray-100 py-16">
+      <section id='consultoriaJuridicaEmpresarial' className="bg-gray-100 py-16">
         <div className="max-w-screen-xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800">Servicios Empresariales</h2>
