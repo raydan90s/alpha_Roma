@@ -24,14 +24,14 @@ export const HeroSAS = () => {
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
               Constitución de 
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600"> SAS</span>
+              <span className="text-transparent bg-clip-text bg-blue-700"> SAS</span>
             </h1>
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
               Construye una base empresarial fuerte y sólida desde el principio. Proceso rápido, seguro y con garantía total.
             </p>
             
             {/* Price Card */}
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-6 rounded-2xl mb-8 shadow-2xl">
+            <div className="bg-button p-6 rounded-2xl mb-8 shadow-2xl">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-blue-100 text-sm">Precio único</p>
@@ -46,11 +46,11 @@ export const HeroSAS = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg flex items-center justify-center">
+              <button className="bg-button hover:bg-blue-600 hover:scale-105 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg flex items-center justify-center">
                 Ver Detalles
                 <ChevronRight className="ml-2 w-5 h-5" />
               </button>
-              <button className="border-2 border-blue-400 text-blue-400 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-400 hover:text-black transition-all duration-300">
+              <button className="border-2 border-blue-400 text-blue-400 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-400 hover:scale-105 hover:text-black transition-all duration-300">
                 Consulta Gratuita
               </button>
             </div>
