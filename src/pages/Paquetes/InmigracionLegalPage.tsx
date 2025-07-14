@@ -28,7 +28,7 @@ const InmigracionLegalPage = () => {
         "Preparación para entrevista consular"
       ],
       duration: "3-6 meses",
-      buttonColor: "bg-blue-600 hover:bg-blue-700",
+      buttonColor: "bg-button hover:bg-hoverButton",
       popular: false
     },
     {
@@ -45,7 +45,7 @@ const InmigracionLegalPage = () => {
         "Orientación sobre el proceso de entrevista"
       ],
       duration: "2-4 meses",
-      buttonColor: "bg-purple-600 hover:bg-purple-700",
+      buttonColor: "bg-button hover:bg-hoverButton",
       popular: true
     },
     {
@@ -62,7 +62,7 @@ const InmigracionLegalPage = () => {
         "Ayuda en la preparación de entrevistas consulares"
       ],
       duration: "6-12 meses",
-      buttonColor: "bg-green-600 hover:bg-green-700",
+      buttonColor: "bg-button hover:bg-hoverButton",
       popular: false
     }
   ];

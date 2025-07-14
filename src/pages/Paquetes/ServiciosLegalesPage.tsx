@@ -28,7 +28,7 @@ const ServiciosLegalesPage = () => {
         "Seguimiento continuo del proceso"
       ],
       duration: "1-3 meses",
-      buttonColor: "bg-blue-600 hover:bg-blue-700",
+      buttonColor: "bg-button hover:bg-hoverButton",
       popular: false
     },
     {
@@ -45,7 +45,7 @@ const ServiciosLegalesPage = () => {
         "Negociación de términos favorables"
       ],
       duration: "7-10 días hábiles",
-      buttonColor: "bg-purple-600 hover:bg-purple-700",
+      buttonColor: "bg-button hover:bg-hoverButton",
       popular: true
     },
     {
@@ -62,7 +62,7 @@ const ServiciosLegalesPage = () => {
         "Actualización periódica"
       ],
       duration: "2-4 semanas",
-      buttonColor: "bg-green-600 hover:bg-green-700",
+      buttonColor: "bg-button hover:bg-hoverButton",
       popular: false
     },
     {
@@ -79,7 +79,7 @@ const ServiciosLegalesPage = () => {
         "Registros y documentación oficial"
       ],
       duration: "2-3 semanas",
-      buttonColor: "bg-orange-600 hover:bg-orange-700",
+      buttonColor: "bg-button hover:bg-hoverButton",
       popular: false
     },
     {
@@ -96,7 +96,7 @@ const ServiciosLegalesPage = () => {
         "Registro de nombramientos ante autoridades"
       ],
       duration: "1-2 semanas",
-      buttonColor: "bg-red-600 hover:bg-red-700",
+      buttonColor: "bg-button hover:bg-hoverButton",
       popular: false
     },
     {
@@ -113,7 +113,7 @@ const ServiciosLegalesPage = () => {
         "Modificaciones conforme a la legislación vigente"
       ],
       duration: "5-7 días hábiles",
-      buttonColor: "bg-blue-600 hover:bg-blue-700",
+      buttonColor: "bg-button hover:bg-hoverButton",
       popular: false
     },
     {
@@ -130,7 +130,7 @@ const ServiciosLegalesPage = () => {
         "Registro y archivo de actas"
       ],
       duration: "3-5 días hábiles",
-      buttonColor: "bg-purple-600 hover:bg-purple-700",
+      buttonColor: "bg-button hover:bg-hoverButton",
       popular: false
     }
   ];

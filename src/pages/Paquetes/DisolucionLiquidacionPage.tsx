@@ -30,7 +30,7 @@ const DisolucionLiquidacionPage = () => {
         "Representación ante autoridades competentes"
       ],
       duration: "2-4 semanas",
-      buttonColor: "bg-blue-600 hover:bg-blue-700",
+      buttonColor: "bg-button hover:bg-hoverButton",
       popular: false
     },
     {
@@ -47,7 +47,7 @@ const DisolucionLiquidacionPage = () => {
         "Cumplimiento con la normativa tributaria"
       ],
       duration: "3-6 meses",
-      buttonColor: "bg-purple-600 hover:bg-purple-700",
+      buttonColor: "bg-button hover:bg-hoverButton",
       popular: true
     }
   ];
