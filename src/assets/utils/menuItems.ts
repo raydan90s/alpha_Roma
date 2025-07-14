@@ -17,9 +17,9 @@ export const menuItems = [
         description: "Encuentra el plan que mejor se adapte a tus necesidades y presupuesto.",
         linkTo: "/paquetes",
         options: [
-            { label: "Plan Básico Bronce", href: "/paquetes#plan-bronce", description: "Soluciones de seguridad esenciales para hogares pequeños.", icon: ShieldHalf },
-            { label: "Plan Básico Plata", href: "/paquetes#plan-plata", description: "Seguridad robusta y escalable para pequeños negocios y hogares.", icon: Star },
-            { label: "Plan Básico Oro", href: "/paquetes#plan-oro", description: "La máxima protección con funcionalidades avanzadas.", icon: Gem },
+            { label: "Asesoría Legal Personal", href: "/paquetes#asesoriaLegalPersonal", description: "Asesoría jurídica para individuos y familias en diversas áreas del derecho.", icon: ShieldHalf },
+            { label: "Servicios Legales para Negocios", href: "/paquetes#serviciosLegalesNegocios", description: "Soluciones adaptadas a las necesidades de pequeñas y medianas empresas.", icon: Star },
+            { label: "Consultoría Jurídica Empresarial", href: "/paquetes#consultoriaJuridicaEmpresarial", description: "Servicios avanzados para corporaciones y empresas multinacionales.", icon: Gem },
         ],
     },
 
@@ -33,6 +33,6 @@ export const menuItems = [
         linkTo: "/blog",
     },
 
-    
+
 
 ];

@@ -1,4 +1,3 @@
-import React from "react";
 
 interface MissionSectionProps {
   title?: string;

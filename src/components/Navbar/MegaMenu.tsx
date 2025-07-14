@@ -35,7 +35,7 @@ const MegaMenu = ({ item, hoveredMenu, onNavigate, isMenuActive }: MegaMenuProps
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-8">
               {item.options?.map((option, i) => (
                 <Link key={i} to={option.href} onClick={() => onNavigate(option.href)}>
-                  <div className={`rounded-lg p-4 mb-3 transition transform hover:scale-105 ${isMenuActive
+                  <div className={`rounded-lg p-4 mb-3 transition transform hover:scale-105 text-justify ${isMenuActive
                     ? 'bg-secondary text-white hover:bg-secondary/90'
                     : 'bg-gray-800 text-white hover:bg-gray-700'
                     }`}>

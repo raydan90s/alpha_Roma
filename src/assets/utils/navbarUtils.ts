@@ -12,7 +12,7 @@ export const handleMenuItemClick = (
     setTimeout(() => {
       handleScrollToTop();
       if (hash) scrollToHash(hash);
-    }, 950);
+    }, 100);
   };
 
   if (href.startsWith("/about#")) {
