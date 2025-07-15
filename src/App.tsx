@@ -12,7 +12,6 @@ import EditBlogPost from './pages/blog/EditBlogPost';
 import { AuthProvider } from './pages/login/AuthContext'; // Importa el AuthProvider
 import ProtectedRoute from './components/ProtectedRoute'; // Importa el ProtectedRoute
 import CreateUserPage from './pages/createUser/CreateUserPage'; // Importa el componente
-import ConsultasPage from "./pages/Consultas/consultasPages";
 import RegistroMarcaPage from './pages/Paquetes/RegistroDeMarcaPage';
 import ServiciosLegalesPage from './pages/Paquetes/ServiciosLegalesPage';
 import ConsultasLegalesPage from './pages/Paquetes/ConsultasLegalesPage';
@@ -33,7 +32,6 @@ function App() {
                         <Route path="/login" element={<LoginPage />}/>
                         <Route path="/create-user" element={<CreateUserPage />} /> {/* Añade esta ruta */}
                         <Route path="/blog" element={<BlogPage />} />
-                        <Route path="/consultas" element ={<ConsultasPage/>}/>
                         <Route path="/blog/:id" element={<BlogPostDetail />} />
                         <Route path="/registro-de-marca" element={<RegistroMarcaPage/>}/>
                         <Route path="/servicios-legales" element={<ServiciosLegalesPage/>}/>

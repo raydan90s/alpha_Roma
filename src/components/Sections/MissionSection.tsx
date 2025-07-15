@@ -11,7 +11,7 @@ const MissionSection = ({
   title = "NUESTRA FILOSOFÍA",
   subtitle = "MISIÓN",
   description,
-  imageUrl = "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+  imageUrl = "https://res.cloudinary.com/dfbpaq83u/image/upload/v1752610992/mision_krvkoq.png",
   imageAlt = "Tecnología de Seguridad Avanzada"
 }: MissionSectionProps) => {
   return (

@@ -10,7 +10,6 @@ import Testimonials from '../components/Home/Testimonials.tsx';
 import FeaturesSection from '../components/Home/FeaturesSection.tsx';
 import ContactForm from '../components/Home/ContactForm.tsx';
 
-
 function Home() {
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
@@ -20,10 +19,10 @@ function Home() {
   return (
     <>
       <SEO
-        title='Servicio de Monitoreo de cámaras | NexoLegal'
-        description='Instalación y monitoreo profesional de cámaras de seguridad en Guayaquil. Protección total para hogares y negocios.'
-        keywords='seguridad, cámaras de seguridad, vigilancia, guayaquil, monitoreo, empresas de seguridad guayaquil, cámaras de seguridad Hikvision'
-        canonical='https://www.novafenix-ec.com/'
+        title='Asesoría Legal Integral | NexoLegal'
+        description='En NexoLegal ofrecemos soluciones jurídicas personalizadas, defensa legal experta y acompañamiento profesional en cada etapa legal de tu vida o negocio.'
+        keywords='asesoría legal, abogados en Guayaquil, defensa jurídica, servicios legales Ecuador, NexoLegal, firma de abogados'
+        canonical='https://www.nexolegal-ec.com/'
       />
 
       {/* Página principal Home */}
@@ -36,7 +35,7 @@ function Home() {
           </div>
         </section>
 
-        {/* Testimonials*/}
+        {/* Testimonials */}
         <section className='Testimonials'>
           <Testimonials />
         </section>
@@ -51,13 +50,12 @@ function Home() {
           </div>
         </section>
 
-
-        {/* FeatureSection */}
+        {/* Feature Section */}
         <section>
           <FeaturesSection />
         </section>
 
-        {/* Form */}
+        {/* Formulario de Contacto */}
         <section>
           <ContactForm />
         </section>
