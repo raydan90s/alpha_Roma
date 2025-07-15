@@ -38,7 +38,7 @@ function Footer() {
               <img src={Logo} alt="Logo" className="h-20" />
             </Link>
             <p className="text-gray-400 text-sm">
-              Soluciones de seguridad inteligentes para tu hogar y negocio.
+              Te ayudamos con tus tramites legales
             </p>
           </div>
           {/* Products column */}
@@ -51,7 +51,7 @@ function Footer() {
                   className="text-gray-400 hover:text-primary transition-colors duration-300 text-lg"
                   onClick={() => handleNavLinkClick('/servicios', '#instalacion')}
                 >
-                  Instalación de Cámaras
+                  Registro de marca
                 </Link>
               </li>
               <li>
@@ -60,7 +60,7 @@ function Footer() {
                   className="text-gray-400 hover:text-primary transition-colors duration-300 text-lg"
                   onClick={() => handleNavLinkClick('/servicios', '#monitoreo')}
                 >
-                  Monitoreo de camaras
+                  Servicios legales para compañias
                 </Link>
               </li>
               <li>
@@ -69,7 +69,7 @@ function Footer() {
                   className="text-gray-400 hover:text-primary transition-colors duration-300 text-lg"
                   onClick={() => handleNavLinkClick('/servicios', '#asesoria')}
                 >
-                  Asesoría
+                  Consultas legales y juicios
                 </Link>
               </li>
               <li>
@@ -120,21 +120,7 @@ function Footer() {
               </li>
               <li>
                 <a
-                  href="https://facebook.com/novafenixec"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative inline-block hover:scale-110 transition-transform duration-300 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
-                >
-                  <img
-                    src="https://res.cloudinary.com/dfbpaq83u/image/upload/v1744656460/fxgwyseejbckecbbsqfw.png"
-                    alt="Facebook"
-                    className="h-8 w-auto"
-                  />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://instagram.com/novafenix_ec"
+                  href="https://instagram.com/nexolegal.ec_/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="relative inline-block hover:scale-110 transition-transform duration-300 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-0.5 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
@@ -168,7 +154,7 @@ function Footer() {
 
         {/* Bottom section with copyright */}
         <div className="border-t border-gray-700 mt-8 pt-6 text-center">
-          <p className="text-sm text-gray-400">&copy; 2025 NovaFenix. Todos los derechos reservados.</p>
+          <p className="text-sm text-gray-400">&copy; 2025 NexoLegal  . Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

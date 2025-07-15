@@ -32,7 +32,7 @@ const ContactForm: React.FC = () => {
     // Simular envío
     setTimeout(() => {
       setIsSubmitting(false);
-      alert('¡Mensaje enviado exitosamente! Nos pondremos en contacto contigo pronto.');
+      alert('¡Mensaje enviado exitosamente! Nuestro equipo legal se pondrá en contacto contigo pronto.');
       setFormData({
         name: '',
         email: '',
@@ -57,17 +57,17 @@ const ContactForm: React.FC = () => {
           <div className="text-white">
             <div className="inline-flex items-center space-x-2 bg-blue-900 border border-blue-800 text-blue-300 px-6 py-3 rounded-full mb-8 transform hover:scale-105 transition-all duration-300 shadow-lg">
               <MessageSquare className="h-5 w-5" />
-              <span className="text-sm font-medium">Consulta Gratuita</span>
+              <span className="text-sm font-medium">Asesoría Profesional</span>
             </div>
 
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              <span className="block mb-2">¿Necesitas</span>
-              <span className="text-blue-400 block">Asesoría Legal?</span>
+              <span className="block mb-2">Defensa Legal</span>
+              <span className="text-blue-400 block">Especializada</span>
             </h2>
 
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              Solicita una consulta gratuita y obtén la orientación legal que necesitas. 
-              <span className="text-blue-400 font-medium"> Nuestros expertos están listos para ayudarte</span>.
+              Solicita una cita con nuestros abogados expertos y obtén la representación legal que tu caso merece. 
+              <span className="text-blue-400 font-medium"> Experiencia y resultados garantizados</span>.
             </p>
 
             <div className="space-y-6">
@@ -76,8 +76,8 @@ const ContactForm: React.FC = () => {
                   <Phone className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg">Llamada Inmediata</h3>
-                  <p className="text-gray-400">Respuesta en menos de 24 horas</p>
+                  <h3 className="font-semibold text-lg">Atención Inmediata</h3>
+                  <p className="text-gray-400">Respuesta profesional en menos de 24 horas</p>
                 </div>
               </div>
 
@@ -86,8 +86,8 @@ const ContactForm: React.FC = () => {
                   <User className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg">Consulta Personalizada</h3>
-                  <p className="text-gray-400">Análisis específico de tu caso</p>
+                  <h3 className="font-semibold text-lg">Estrategia Personalizada</h3>
+                  <p className="text-gray-400">Análisis jurídico específico para tu situación</p>
                 </div>
               </div>
 
@@ -96,8 +96,8 @@ const ContactForm: React.FC = () => {
                   <Mail className="h-6 w-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg">Sin Compromiso</h3>
-                  <p className="text-gray-400">Primera consulta completamente gratuita</p>
+                  <h3 className="font-semibold text-lg">Confianza Profesional</h3>
+                  <p className="text-gray-400">40 años de experiencia combinada</p>
                 </div>
               </div>
             </div>
@@ -106,7 +106,7 @@ const ContactForm: React.FC = () => {
           {/* Lado derecho - Formulario */}
           <div className="bg-gray-900 border border-gray-800 rounded-3xl p-8 shadow-2xl backdrop-blur-sm bg-opacity-80">
             <div className="mb-8">
-              <h3 className="text-2xl font-bold text-white mb-2">Solicita tu Consulta Gratuita</h3>
+              <h3 className="text-2xl font-bold text-white mb-2">Solicita tu Asesoría Legal</h3>
               <p className="text-gray-400">Completa el formulario y nos pondremos en contacto contigo</p>
             </div>
 
@@ -164,7 +164,7 @@ const ContactForm: React.FC = () => {
 
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
-                    Tipo de Consulta
+                    Área Legal
                   </label>
                   <select
                     id="subject"
@@ -174,21 +174,23 @@ const ContactForm: React.FC = () => {
                     required
                     className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-xl text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-all duration-300"
                   >
-                    <option value="">Selecciona un tema</option>
+                    <option value="">Selecciona el área</option>
                     <option value="civil">Derecho Civil</option>
                     <option value="penal">Derecho Penal</option>
                     <option value="laboral">Derecho Laboral</option>
                     <option value="familiar">Derecho Familiar</option>
                     <option value="mercantil">Derecho Mercantil</option>
                     <option value="inmobiliario">Derecho Inmobiliario</option>
-                    <option value="otro">Otro</option>
+                    <option value="corporativo">Derecho Corporativo</option>
+                    <option value="administrativo">Derecho Administrativo</option>
+                    <option value="otro">Otra área</option>
                   </select>
                 </div>
               </div>
 
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                  Mensaje
+                  Descripción del Caso
                 </label>
                 <textarea
                   id="message"
@@ -198,7 +200,7 @@ const ContactForm: React.FC = () => {
                   required
                   rows={4}
                   className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-all duration-300 resize-none"
-                  placeholder="Describe brevemente tu situación legal..."
+                  placeholder="Describe brevemente tu situación legal y cómo podemos ayudarte..."
                 />
               </div>
 
@@ -215,13 +217,13 @@ const ContactForm: React.FC = () => {
                 ) : (
                   <>
                     <Send className="h-6 w-6" />
-                    <span>Enviar Consulta</span>
+                    <span>Solicitar Asesoría</span>
                   </>
                 )}
               </button>
 
               <p className="text-sm text-gray-400 text-center">
-                Al enviar este formulario, aceptas que nos pongamos en contacto contigo para ofrecerte nuestros servicios legales.
+                Al enviar este formulario, aceptas que nuestro equipo legal se ponga en contacto contigo para evaluar tu caso y ofrecerte nuestros servicios profesionales.
               </p>
             </form>
           </div>

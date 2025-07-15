@@ -1,4 +1,3 @@
-import React from "react";
 
 interface VisionSectionProps {
   title?: string;
@@ -12,7 +11,7 @@ const VisionSection = ({
   title = "NUESTRO FUTURO",
   subtitle = "VISIÓN",
   description,
-  imageUrl = "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+  imageUrl = "https://res.cloudinary.com/dfbpaq83u/image/upload/v1752611158/vision_sftwer.png",
   imageAlt = "Futuro de la Seguridad Digital"
 }: VisionSectionProps) => {
   return (

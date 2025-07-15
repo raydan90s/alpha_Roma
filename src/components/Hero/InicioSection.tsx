@@ -25,12 +25,12 @@ const InicioSection: React.FC<Props> = ({ scrollToSection, telefono }) => {
         <div className="max-w-4xl mx-auto">
           <div className="inline-flex items-center space-x-2 bg-blue-900 border border-blue-800 text-blue-300 px-6 py-3 rounded-full mb-8 transform hover:scale-105 transition-all duration-300 shadow-lg">
             <Shield className="h-5 w-5" />
-            <span className="text-sm font-medium">+25 años de experiencia legal</span>
+            <span className="text-sm font-medium">+30 años de experiencia legal</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             <span className="block mb-2">Protegemos tus</span>
-            <span className="text-blue-400 block">derechos legales</span>
+            <span className="text-blue-400 block">derechos</span>
           </h1>
 
           <p className="text-xl sm:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
@@ -63,7 +63,7 @@ const InicioSection: React.FC<Props> = ({ scrollToSection, telefono }) => {
               <div className="text-sm text-gray-300 font-medium">Casos exitosos</div>
             </div>
             <div className="group text-white p-6 rounded-2xl bg-gray-900 border border-gray-800 hover:bg-gray-800 transition-all duration-300 transform hover:-translate-y-1">
-              <div className="text-4xl font-bold text-blue-400 mb-2 group-hover:scale-110 transition-transform duration-300">25+</div>
+              <div className="text-4xl font-bold text-blue-400 mb-2 group-hover:scale-110 transition-transform duration-300">30+</div>
               <div className="text-sm text-gray-300 font-medium">Años de experiencia</div>
             </div>
             <div className="group text-white p-6 rounded-2xl bg-gray-900 border border-gray-800 hover:bg-gray-800 transition-all duration-300 transform hover:-translate-y-1">

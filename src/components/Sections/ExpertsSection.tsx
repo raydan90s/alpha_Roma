@@ -16,7 +16,7 @@ const ExpertsSection = ({
   experts
 }: ExpertsSectionProps) => {
   return (
-    <section id="expertos" className="scroll-mt-24 mb-16">
+    <section id="expertos" className="scroll-mt-24 mb-16 pb-16">
       <div className="text-center mb-12">
         <h2 className="text-5xl font-bold text-secondary mb-4">{title}</h2>
         <p className="text-xl font-semibold text-gray-700 max-w-3xl mx-auto leading-relaxed">
