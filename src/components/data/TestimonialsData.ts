@@ -33,7 +33,7 @@ export const testimonialsData: Testimonial[] = [
     name: "Ana Rodríguez",
     position: "Administradora",
     company: "Edificio Las Palmas",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
     content: "Contratamos los servicios legales de NexoLegal para revisar toda la documentación del condominio. Su atención y compromiso fueron excelentes.",
     rating: 5
   }
