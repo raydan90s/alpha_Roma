@@ -51,6 +51,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ services, isVisible, 
                 duration={service.duration}
                 buttonColor={service.buttonColor}
                 popular={service.popular}
+                mensaje={'Hola Nexo legal, me gustaria que me ayuden con ' + service.title}
               />
             </div>
           ))}

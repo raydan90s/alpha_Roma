@@ -185,7 +185,6 @@ const ConsultasLegalesPage = () => {
           button1Text="Llamar Ahora"
           button2Text="Solicitar Cotización"
           mensaje={mensajesWhatsApp.consultaLegal}
-
         />
       </section>
     </div>
