@@ -1,5 +1,8 @@
+// src/pages/InmigracionLegalPage.tsx
+
 import { useState, useEffect } from 'react';
 import { Gem, Search, Shield, CheckCircle, Users, Award, Eye } from 'lucide-react';
+import SEO from '../../components/SEO/SEO';  // Importa el componente SEO
 import { HeroServiceCard } from '../../components/package/heroServiceCard';
 import ServicesSection from '../../components/package/serviceSection';
 import BenefitsSection from '../../components/package/benefitsSection';
@@ -14,6 +17,7 @@ const InmigracionLegalPage = () => {
     setIsVisible(true);
   }, []);
 
+  // Datos de servicios, beneficios, proceso
   const services = [
     {
       id: 1,
@@ -121,6 +125,14 @@ const InmigracionLegalPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* SEO Meta Tags */}
+      <SEO
+        title="Inmigración Legal a Estados Unidos | Visas y Asesoría"
+        description="Te ayudamos a obtener la mejor opción de visa para tu futuro en Estados Unidos. Comienza tu proceso de inmigración hoy con asesoría legal profesional."
+        keywords="visa de trabajo, visa de estudiante, visa de inmigrante, asesoría de inmigración, inmigración legal"
+        canonical="https://www.nexolegal-ec.com/inmigracion-legal"
+      />
+
       {/* Hero Section */}
       <section>
         <HeroServiceCard

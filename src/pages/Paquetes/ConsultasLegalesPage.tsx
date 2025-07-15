@@ -1,5 +1,8 @@
+// src/pages/ConsultasLegalesPage.tsx
+
 import { useState, useEffect } from 'react';
 import { Gem, Search, Shield, CheckCircle, Award, Eye } from 'lucide-react';
+import SEO from '../../components/SEO/SEO';  // Importa el componente SEO
 import { HeroServiceCard } from '../../components/package/heroServiceCard';
 import ServicesSection from '../../components/package/serviceSection';
 import BenefitsSection from '../../components/package/benefitsSection';
@@ -139,6 +142,14 @@ const ConsultasLegalesPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+
+      {/* SEO Meta Tags */}
+      <SEO
+        title="Consultas Legales | Asesoría y Defensa Legal"
+        description="Brindamos asesoría legal y representación en todo tipo de juicios y consultas legales. Protege tus derechos con abogados expertos."
+        keywords="consultas legales, abogado, juicio civil, defensa laboral, derecho penal, asesoría jurídica"
+        canonical="https://www.nexolegal-ec.com/consultas-legales"
+      />
 
       {/* Hero Section */}
       <section>

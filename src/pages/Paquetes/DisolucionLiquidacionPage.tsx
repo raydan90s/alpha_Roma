@@ -1,10 +1,13 @@
+// src/pages/DisolucionLiquidacionPage.tsx
+
 import { useState, useEffect } from 'react';
 import { Gem, Search, Shield, CheckCircle, Award, Eye } from 'lucide-react';
-import ServicesSection from '../../components/package/serviceSection'; // Asegúrate de que esta ruta y el archivo existan
-import BenefitsSection from '../../components/package/benefitsSection'; // Asegúrate de que esta ruta y el archivo existan
-import ProcessSection from '../../components/package/ProcessSection'; // Asegúrate de que esta ruta y el archivo existan
-import FaqSection from '../../components/package/FaqSection'; // Asegúrate de que esta ruta y el archivo existan
-import CallToActionSectionV2 from '../../components/Sections/Call_to_actionV2'; // Asegúrate de que esta ruta y el archivo existan
+import SEO from '../../components/SEO/SEO';  // Asegúrate de importar el componente SEO
+import ServicesSection from '../../components/package/serviceSection';
+import BenefitsSection from '../../components/package/benefitsSection';
+import ProcessSection from '../../components/package/ProcessSection';
+import FaqSection from '../../components/package/FaqSection';
+import CallToActionSectionV2 from '../../components/Sections/Call_to_actionV2';
 import { HeroServiceCard } from '../../components/package/heroServiceCard';
 import { mensajesWhatsApp } from '../../messages/messages';
 
@@ -125,6 +128,14 @@ const DisolucionLiquidacionPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* SEO Meta Tags */}
+      <SEO
+        title="Disolución y Liquidación de Compañías | Asesoría Legal Especializada"
+        description="Servicio completo de disolución y liquidación de empresas, asegurando el cumplimiento legal y fiscal en todo el proceso."
+        keywords="disolución de compañías, liquidación de empresas, asesoría legal, cierre de empresas, liquidación de activos"
+        canonical="https://www.nexolegal-ec.com/disolucion-liquidacion"
+      />
+
       {/* Hero Section */}
       <section>
         <HeroServiceCard
@@ -135,7 +146,6 @@ const DisolucionLiquidacionPage = () => {
           button1Link="servicesSection"
           mensaje={mensajesWhatsApp.disolucionLiquidacion}
         />
-
       </section>
 
       {/* Services Section */}

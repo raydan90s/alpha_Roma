@@ -6,6 +6,7 @@ import BenefitsSection from '../../components/package/benefitsSection';
 import ProcessSection from '../../components/package/ProcessSection';
 import CallToActionSectionV2 from '../../components/Sections/Call_to_actionV2';
 import { mensajesWhatsApp } from '../../messages/messages';
+import SEO from '../../components/SEO/SEO';
 
 const ServiciosLegalesPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -190,6 +191,12 @@ const ServiciosLegalesPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
+      <SEO
+        title="Servicios Legales para Compañías | Asesoría Jurídica Completa"
+        description="Brindamos asesoría legal completa para empresas, cubriendo desde contratos hasta procesos de liquidación."
+        keywords="servicios legales para empresas, asesoría jurídica, contratos laborales, actas de juntas, recuperación de carteras vencidas"
+        canonical="https://www.nexolegal-ec.com/servicios-legales"
+      />
       <section>
         <HeroServiceCard
           icon={<Gem className="text-6xl text-white" />}

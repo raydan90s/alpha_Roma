@@ -51,8 +51,8 @@ const SEO: React.FC<SEOProps> = ({
 // Función para procesar el título
 const processTitle = (title: string): string => {
   // Si el título no contiene "NovaFenix", añadirlo
-  if (!title.includes("NovaFenix")) {
-    return `NovaFenix | ${title}`;
+  if (!title.includes("NexoLegal")) {
+    return `NexoLegal | ${title}`;
   }
   
   return title;

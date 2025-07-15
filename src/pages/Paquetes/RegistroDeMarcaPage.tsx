@@ -11,6 +11,7 @@ import FaqSection from '../../components/package/FaqSection';
 import { faqData } from '../../components/data/RegistroDeMarca/fqaData';
 import ProcessSection from '../../components/package/ProcessSection';
 import { mensajesWhatsApp } from '../../messages/messages';
+import SEO from '../../components/SEO/SEO';
 
 const RegistroMarcaPage = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -21,6 +22,12 @@ const RegistroMarcaPage = () => {
 
     return (
         <div className="min-h-screen bg-gray-50">
+            <SEO
+                title="Registro de Marca | Protege tu Marca con NexoLegal"
+                description="Protege tu propiedad intelectual y asegura la exclusividad de tu marca con los servicios especializados de NexoLegal."
+                keywords="registro de marca, protección de marca, propiedad intelectual, registro de marcas en Ecuador"
+                canonical="https://www.nexolegal-ec.com/registro-de-marca"
+            />
             {/* Hero Section */}
             <section>
                 <HeroServiceCard
