@@ -1,76 +1,81 @@
 import { Crown, Gem, Shield, Star } from "lucide-react";
+import { mensajesWhatsApp } from "../../messages/messages"; // Importamos los mensajes
 
- export const plansData = [
-    {
-      title: "BÁSICO",
-      price: "$80",
-      priceNote: "+ IVA",
-      icon: <Shield className="text-amber-600 text-3xl" />,
-      features: [
-        "2 consultas por correo electrónico",
-        "Temas laborales y civiles",
-        "2 contratos (elaboración o revisión)",
-        "Temas laborales y civiles",
-        "Respuesta en 48 horas",
-        "Soporte básico"
-      ],
-      buttonText: "¡CONTRATA AHORA!",
-      buttonColor: "bg-button hover:bg-hoverButton",
-      footerText: "Ideal para necesidades puntuales y consultas específicas.",
-      id: "plan-basico",
-    },
-    {
-      title: "ESENCIAL",
-      price: "$120",
-      priceNote: "+ IVA",
-      icon: <Star className="text-blue-600 text-3xl" />,
-      features: [
-        "4 contratos (elaboración o revisión)",
-        "Temas laborales y civiles",
-        "4 consultas por correo electrónico",
-        "Temas laborales y civiles",
-        "Respuesta en 24 horas",
-        "Soporte prioritario"
-      ],
-      buttonText: "¡CONTRATA AHORA!",
-      buttonColor: "bg-button hover:bg-hoverButton",
-      footerText: "Perfecto para empresas en crecimiento con necesidades regulares.",
-      id: "plan-esencial",
-    },
-    {
-      title: "AVANZADO",
-      price: "$220",
-      priceNote: "+ IVA",
-      icon: <Gem className="text-purple-600 text-3xl" />,
-      features: [
-        "6 consultas por correo electrónico",
-        "Temas laborales y civiles",
-        "6 contratos (elaboración o revisión)",
-        "Temas laborales y civiles",
-        "4 horas de asesoría legal empresarial",
-        "Acompañamiento especializado (1 hora por día)"
-      ],
-      buttonText: "¡CONTRATA AHORA!",
-      buttonColor: "bg-button hover:bg-hoverButton",
-      footerText: "Para empresas que requieren asesoría integral y acompañamiento.",
-      id: "plan-avanzado",
-    },
-    {
-      title: "EJECUTIVO",
-      price: "$600",
-      priceNote: "+ IVA",
-      icon: <Crown className="text-yellow-500 text-3xl" />,
-      features: [
-        "10 consultas por correo electrónico",
-        "Temas laborales y civiles",
-        "10 contratos (elaboración o revisión)",
-        "8 horas de asesoría legal empresarial",
-        "Acompañamiento especializado (1 hora por día)",
-        "1 patrocinio en proceso de Ministerio de Trabajo"
-      ],
-      buttonText: "¡CONTRATA AHORA!",
-      buttonColor: "bg-button hover:bg-hoverButton",
-      footerText: "Plan premium para empresas con necesidades legales complejas.",
-      id: "plan-ejecutivo",
-    }
-  ];
+export const plansData = [
+  {
+    title: "BÁSICO",
+    price: "$80",
+    priceNote: "+ IVA",
+    icon: <Shield className="text-amber-600 text-3xl" />,
+    features: [
+      "2 consultas por correo electrónico",
+      "Temas laborales y civiles",
+      "2 contratos (elaboración o revisión)",
+      "Temas laborales y civiles",
+      "Respuesta en 48 horas",
+      "Soporte básico"
+    ],
+    buttonText: "¡CONTRATA AHORA!",
+    buttonColor: "bg-button hover:bg-hoverButton",
+    footerText: "Ideal para necesidades puntuales y consultas específicas.",
+    id: "plan-basico",
+    mensaje: mensajesWhatsApp.planBasico, // Añadido el mensaje correspondiente
+  },
+  {
+    title: "ESENCIAL",
+    price: "$120",
+    priceNote: "+ IVA",
+    icon: <Star className="text-blue-600 text-3xl" />,
+    features: [
+      "4 contratos (elaboración o revisión)",
+      "Temas laborales y civiles",
+      "4 consultas por correo electrónico",
+      "Temas laborales y civiles",
+      "Respuesta en 24 horas",
+      "Soporte prioritario"
+    ],
+    buttonText: "¡CONTRATA AHORA!",
+    buttonColor: "bg-button hover:bg-hoverButton",
+    footerText: "Perfecto para empresas en crecimiento con necesidades regulares.",
+    id: "plan-esencial",
+    mensaje: mensajesWhatsApp.planEsencial, // Añadido el mensaje correspondiente
+  },
+  {
+    title: "AVANZADO",
+    price: "$220",
+    priceNote: "+ IVA",
+    icon: <Gem className="text-purple-600 text-3xl" />,
+    features: [
+      "6 consultas por correo electrónico",
+      "Temas laborales y civiles",
+      "6 contratos (elaboración o revisión)",
+      "Temas laborales y civiles",
+      "4 horas de asesoría legal empresarial",
+      "Acompañamiento especializado (1 hora por día)"
+    ],
+    buttonText: "¡CONTRATA AHORA!",
+    buttonColor: "bg-button hover:bg-hoverButton",
+    footerText: "Para empresas que requieren asesoría integral y acompañamiento.",
+    id: "plan-avanzado",
+    mensaje: mensajesWhatsApp.planAvanzado, // Añadido el mensaje correspondiente
+  },
+  {
+    title: "EJECUTIVO",
+    price: "$600",
+    priceNote: "+ IVA",
+    icon: <Crown className="text-yellow-500 text-3xl" />,
+    features: [
+      "10 consultas por correo electrónico",
+      "Temas laborales y civiles",
+      "10 contratos (elaboración o revisión)",
+      "8 horas de asesoría legal empresarial",
+      "Acompañamiento especializado (1 hora por día)",
+      "1 patrocinio en proceso de Ministerio de Trabajo"
+    ],
+    buttonText: "¡CONTRATA AHORA!",
+    buttonColor: "bg-button hover:bg-hoverButton",
+    footerText: "Plan premium para empresas con necesidades legales complejas.",
+    id: "plan-ejecutivo",
+    mensaje: mensajesWhatsApp.planEjecutivo, // Añadido el mensaje correspondiente
+  }
+];

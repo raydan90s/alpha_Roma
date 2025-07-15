@@ -15,7 +15,7 @@ const CombinedPage = () => {
   }, []);
   { }
 
-  const PlanFeatureCard = ({ title, price, priceNote, icon, features, buttonText, buttonColor, footerText, id }) => (
+  const PlanFeatureCard = ({ title, price, priceNote, icon, features, buttonText, buttonColor, footerText, mensaje}) => (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 h-full flex flex-col">
       <div className="p-8 flex-grow flex flex-col">
         {/* Header */}
@@ -42,9 +42,12 @@ const CombinedPage = () => {
 
         {/* Button */}
         <div className="text-center mb-6">
-          <button className={`${buttonColor} text-white px-8 py-3 rounded-lg font-semibold text-sm transition-all duration-300 hover:transform hover:scale-105 w-full`}>
-            {buttonText}
-          </button>
+          <a href={generarEnlaceWhatsApp(mensaje)} >
+
+            <button className={`${buttonColor} text-white px-8 py-3 rounded-lg font-semibold text-sm transition-all duration-300 hover:transform hover:scale-105 w-full`}>
+              {buttonText}
+            </button>
+          </a>
         </div>
 
         {/* Footer */}
@@ -198,7 +201,7 @@ const CombinedPage = () => {
           title="¿Necesitas asesoría legal confiable?"
           subtitle="En NexoLegal defendemos tus derechos con compromiso y experiencia."
           spanBtn="Contáctanos"
-          link={generarEnlaceWhatsApp(TELEFONO_CONTACTO)}
+          link={TELEFONO_CONTACTO}
         />
       </section>
     </div>

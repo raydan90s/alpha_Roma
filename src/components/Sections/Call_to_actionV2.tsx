@@ -1,13 +1,14 @@
 import React from 'react';
 import { Phone, FileText } from 'lucide-react';
+import { generarEnlaceWhatsApp } from '../../messages/messages';
+import { TELEFONO_CONTACTO } from '../../config/config';
 
 interface SectionProps {
   title: string;
   description: string;
   button1Text: string;
   button2Text: string;
-  button1Link: string;
-  button2Link: string;
+  mensaje:string;
 }
 
 const CallToActionSectionV2: React.FC<SectionProps> = ({
@@ -15,8 +16,7 @@ const CallToActionSectionV2: React.FC<SectionProps> = ({
   description,
   button1Text,
   button2Text,
-  button1Link,
-  button2Link,
+  mensaje,
 }) => {
   return (
     <section className={`py-16 text-white bg-primary`}>
@@ -25,14 +25,14 @@ const CallToActionSectionV2: React.FC<SectionProps> = ({
         <p className="text-xl mb-8">{description}</p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <a
-            href={button1Link}
+            href={`tel:${TELEFONO_CONTACTO}`} 
             className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-300"
           >
             <Phone className="inline mr-2" size={20} />
             {button1Text}
           </a>
           <a
-            href={button2Link}
+            href={generarEnlaceWhatsApp(mensaje)}
             className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-all duration-300"
           >
             <FileText className="inline mr-2" size={20} />
