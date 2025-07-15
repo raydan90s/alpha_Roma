@@ -8,12 +8,9 @@ import ValuesSection from "../../components/Sections/ValuesSection";
 import ExpertsSection from "../../components/Sections/ExpertsSection";
 import SEO from "../../components/SEO/SEO";
 import { experts } from "../../components/data/ExpertData";
+import CallToActionSectionV2 from "../../components/Sections/Call_to_actionV2";
 
 const AboutUsPage = () => {
-  // Scroll deshabilitado al cargar
-  // useEffect(() => {
-  //   scrollToHashOnLoad();
-  // }, []);
 
   const imageUrls = [
     "https://res.cloudinary.com/dfbpaq83u/image/upload/v1746118668/NovaFenix/yldksgsatzgtrb0tjeqy.jpg",
@@ -68,7 +65,13 @@ const AboutUsPage = () => {
           <div className="max-w-screen-xl mx-auto px-4 py-12 space-y-20">
             <ValuesSection />
             <ExpertsSection experts={experts} />
-            <ContactSection {...contactSectionData} />
+            <CallToActionSectionV2 
+            title={""}
+            description={""} 
+            button1Text={""} 
+            button2Text={""} 
+            button1Link={""} 
+            button2Link={""}/>
           </div>
         </section>
       </div>
