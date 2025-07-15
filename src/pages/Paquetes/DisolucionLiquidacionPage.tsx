@@ -6,6 +6,7 @@ import ProcessSection from '../../components/package/ProcessSection'; // Asegúr
 import FaqSection from '../../components/package/FaqSection'; // Asegúrate de que esta ruta y el archivo existan
 import CallToActionSectionV2 from '../../components/Sections/Call_to_actionV2'; // Asegúrate de que esta ruta y el archivo existan
 import { HeroServiceCard } from '../../components/package/heroServiceCard';
+import { mensajesWhatsApp } from '../../messages/messages';
 
 const DisolucionLiquidacionPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -130,10 +131,9 @@ const DisolucionLiquidacionPage = () => {
           icon={<Gem className="text-6xl text-white" />}
           title="Disolución y Liquidación de Compañías"
           description="Te ofrecemos soluciones legales para disolver y liquidar tu empresa de forma efectiva y conforme a la ley."
-          button1Text="Ver Servicios"
           button2Text="Consulta Gratuita"
-          button1Link="/servicios"
-          button2Link="/consulta-gratuita"
+          button1Link="servicesSection"
+          mensaje={mensajesWhatsApp.disolucionLiquidacion}
         />
 
       </section>
@@ -183,8 +183,7 @@ const DisolucionLiquidacionPage = () => {
           description="Contáctanos hoy mismo y da el primer paso hacia la disolución de tu empresa"
           button1Text="Llamar Ahora"
           button2Text="Solicitar Cotización"
-          button1Link="tel:+123456789"
-          button2Link="/cotizacion"
+          mensaje={mensajesWhatsApp.disolucionLiquidacion}
         />
       </section>
     </div>

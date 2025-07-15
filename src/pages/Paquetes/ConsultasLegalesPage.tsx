@@ -5,6 +5,7 @@ import ServicesSection from '../../components/package/serviceSection';
 import BenefitsSection from '../../components/package/benefitsSection';
 import ProcessSection from '../../components/package/ProcessSection';
 import CallToActionSectionV2 from '../../components/Sections/Call_to_actionV2';
+import { mensajesWhatsApp } from '../../messages/messages';
 
 const ConsultasLegalesPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -141,40 +142,39 @@ const ConsultasLegalesPage = () => {
 
       {/* Hero Section */}
       <section>
-          <HeroServiceCard
-            icon={<Gem className="text-6xl text-white" />}
-            title="Consultas Legales y Juicios"
-            description="Brindamos asesoría y representación legal en todo tipo de consultas y juicios. Protege tus derechos con expertos."
-            button1Text="Ver Servicios"
-            button2Text="Consulta Gratuita"
-            button1Link="/servicios"
-            button2Link="/consulta-gratuita"
-          />
+        <HeroServiceCard
+          icon={<Gem className="text-6xl text-white" />}
+          title="Consultas Legales y Juicios"
+          description="Brindamos asesoría y representación legal en todo tipo de consultas y juicios. Protege tus derechos con expertos."
+          button2Text="Consulta Gratuita"
+          button1Link="servicesSection"
+          mensaje={mensajesWhatsApp.consultaLegal}
+        />
       </section>
 
       {/* Services Section */}
       <section className="py-16 bg-white">
-          <ServicesSection services={services} isVisible={isVisible} description={"Elige el servicio legal que mejor se adapte a tus necesidades"} />
+        <ServicesSection services={services} isVisible={isVisible} description={"Elige el servicio legal que mejor se adapte a tus necesidades"} />
       </section>
 
       {/* Benefits Section */}
       <section className="py-16 bg-gray-100">
-          <BenefitsSection
-            title={"¿Por qué elegir nuestros servicios?"}
-            description={"Conoce los beneficios de contratar nuestros servicios legales especializados"}
-            benefits={benefits}
-            isVisible={isVisible}
-          />
+        <BenefitsSection
+          title={"¿Por qué elegir nuestros servicios?"}
+          description={"Conoce los beneficios de contratar nuestros servicios legales especializados"}
+          benefits={benefits}
+          isVisible={isVisible}
+        />
       </section>
 
       {/* Process Section */}
       <section className="py-16 bg-white">
-          <ProcessSection
-            title="Proceso de Consultoría y Juicios"
-            description="Te guiamos a través de cada paso de tu proceso legal"
-            steps={process}
-            isVisible={isVisible}
-          />
+        <ProcessSection
+          title="Proceso de Consultoría y Juicios"
+          description="Te guiamos a través de cada paso de tu proceso legal"
+          steps={process}
+          isVisible={isVisible}
+        />
       </section>
 
       {/* CTA Section */}
@@ -184,8 +184,8 @@ const ConsultasLegalesPage = () => {
           description="Contáctanos hoy mismo y da el primer paso hacia la resolución de tu caso legal"
           button1Text="Llamar Ahora"
           button2Text="Solicitar Cotización"
-          button1Link="tel:+123456789"
-          button2Link="/cotizacion"
+          mensaje={mensajesWhatsApp.consultaLegal}
+
         />
       </section>
     </div>

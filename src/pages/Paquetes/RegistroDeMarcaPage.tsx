@@ -10,6 +10,7 @@ import BenefitsSection from '../../components/package/benefitsSection';
 import FaqSection from '../../components/package/FaqSection';
 import { faqData } from '../../components/data/RegistroDeMarca/fqaData';
 import ProcessSection from '../../components/package/ProcessSection';
+import { mensajesWhatsApp } from '../../messages/messages';
 
 const RegistroMarcaPage = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -26,12 +27,10 @@ const RegistroMarcaPage = () => {
                     icon={<Gem className="text-6xl text-white" />}
                     title="Registro de Marca"
                     description="Protege tu propiedad intelectual y asegura la exclusividad de tu marca con nuestros servicios especializados de registro de marcas."
-                    button1Text="Ver Servicios"
-                    button2Text="Consulta Gratuita"
-                    button1Link="/servicios"
-                    button2Link="/consulta-gratuita"
+                    button2Text="Agenda tu Consulta"
+                    button1Link="servicesSection"
+                    mensaje={mensajesWhatsApp.marca}
                 />
-
             </section>
 
             {/* Services Section */}
@@ -75,8 +74,7 @@ const RegistroMarcaPage = () => {
                     description="Contáctanos hoy mismo y da el primer paso hacia la protección de tu propiedad intelectual"
                     button1Text="Llamar Ahora"
                     button2Text="Solicitar Cotización"
-                    button1Link="tel:+123456789"
-                    button2Link="/cotizacion"
+                    mensaje={mensajesWhatsApp.marca}
                 />
             </section>
         </div>

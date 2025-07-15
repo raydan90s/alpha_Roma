@@ -5,6 +5,7 @@ import ServicesSection from '../../components/package/serviceSection';
 import BenefitsSection from '../../components/package/benefitsSection';
 import ProcessSection from '../../components/package/ProcessSection';
 import CallToActionSectionV2 from '../../components/Sections/Call_to_actionV2';
+import { mensajesWhatsApp } from '../../messages/messages';
 
 const InmigracionLegalPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -126,10 +127,9 @@ const InmigracionLegalPage = () => {
           icon={<Gem className="text-6xl text-white" />}
           title="Inmigración Legal a Estados Unidos"
           description="Te ayudamos a encontrar la mejor opción de visa para tu futuro en Estados Unidos. ¡Comienza tu proceso de inmigración hoy!"
-          button1Text="Ver Servicios"
           button2Text="Consulta Gratuita"
-          button1Link="/servicios"
-          button2Link="/consulta-gratuita"
+          button1Link="servicesSection"
+          mensaje={mensajesWhatsApp.inmigrantes}
         />
       </section>
 
@@ -169,8 +169,7 @@ const InmigracionLegalPage = () => {
           description="Contáctanos hoy mismo y da el primer paso hacia tu nueva vida en Estados Unidos"
           button1Text="Llamar Ahora"
           button2Text="Solicitar Cotización"
-          button1Link="tel:+123456789"
-          button2Link="/cotizacion"
+          mensaje={mensajesWhatsApp.inmigrantes}
         />
       </section>
     </div>

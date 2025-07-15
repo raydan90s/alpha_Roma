@@ -15,7 +15,29 @@ const CombinedPage = () => {
   }, []);
   { }
 
-  const PlanFeatureCard = ({ title, price, priceNote, icon, features, buttonText, buttonColor, footerText, mensaje}) => (
+  interface PlanFeatureCardProps {
+    title: string;
+    price: string | number; // Definimos price como string o number
+    priceNote: string;
+    icon: React.ReactNode; // Definimos el icono como un React element
+    features: string[]; // Un arreglo de strings para las características
+    buttonText: string;
+    buttonColor: string;
+    footerText: string;
+    mensaje: string;
+  }
+
+  const PlanFeatureCard: React.FC<PlanFeatureCardProps> = ({
+    title,
+    price,
+    priceNote,
+    icon,
+    features,
+    buttonText,
+    buttonColor,
+    footerText,
+    mensaje
+  }) => (
     <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 h-full flex flex-col">
       <div className="p-8 flex-grow flex flex-col">
         {/* Header */}

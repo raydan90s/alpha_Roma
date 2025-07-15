@@ -5,6 +5,7 @@ import ServicesSection from '../../components/package/serviceSection';
 import BenefitsSection from '../../components/package/benefitsSection';
 import ProcessSection from '../../components/package/ProcessSection';
 import CallToActionSectionV2 from '../../components/Sections/Call_to_actionV2';
+import { mensajesWhatsApp } from '../../messages/messages';
 
 const ServiciosLegalesPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -194,10 +195,9 @@ const ServiciosLegalesPage = () => {
           icon={<Gem className="text-6xl text-white" />}
           title="Servicios Legales para Compañías"
           description="Brindamos asesoría y servicios legales especializados para empresas. Protege tu negocio y asegúrate de cumplir con todas las regulaciones legales."
-          button1Text="Ver Servicios"
           button2Text="Consulta Gratuita"
-          button1Link="/servicios"
-          button2Link="/consulta-gratuita"
+          button1Link="servicesSection"
+          mensaje={mensajesWhatsApp.serviciosLegales}
         />
       </section>
 
@@ -237,8 +237,7 @@ const ServiciosLegalesPage = () => {
           description="Contáctanos hoy mismo y da el primer paso hacia la protección legal de tu compañía"
           button1Text="Llamar Ahora"
           button2Text="Solicitar Cotización"
-          button1Link="tel:+123456789"
-          button2Link="/cotizacion"
+          mensaje={mensajesWhatsApp.marca}
         />
       </section>
     </div>

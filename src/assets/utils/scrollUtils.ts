@@ -19,3 +19,13 @@ export const scrollToHash = (hash: string) => {
 export const handleScrollToTop = () => {
   window.scrollTo({ top: 0, left: 0, behavior: 'smooth' }); // Added smooth behavior for scrolling to top
 };
+
+export const handleScrollToServices = (id:string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start', // Esto asegura que el scroll comience desde el inicio del elemento
+      });
+    }
+  };

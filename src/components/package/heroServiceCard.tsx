@@ -1,24 +1,24 @@
 import { ArrowLeft } from "lucide-react";
 import { JSX } from 'react';
+import { handleScrollToServices } from "../../assets/utils/scrollUtils";
+import { generarEnlaceWhatsApp } from "../../messages/messages";
 
 interface HeroServiceCardProps {
   icon: JSX.Element;
   title: string;
   description: string;
-  button1Text: string;
   button2Text: string;
   button1Link: string;
-  button2Link: string;
+  mensaje: string;
 }
 
 export const HeroServiceCard: React.FC<HeroServiceCardProps> = ({
   icon,
   title,
   description,
-  button1Text,
   button2Text,
   button1Link,
-  button2Link
+  mensaje
 }) => {
   return (
     <div className="bg-primary py-20 text-white">
@@ -43,10 +43,15 @@ export const HeroServiceCard: React.FC<HeroServiceCardProps> = ({
             {description}
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href={button1Link} className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-300">
-              {button1Text}
-            </a>
-            <a href={button2Link} className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-all duration-300">
+
+            <button
+              onClick={() => handleScrollToServices(button1Link)}
+              className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all duration-300"
+            >
+              Ver Servicios
+            </button>
+
+            <a href={generarEnlaceWhatsApp(mensaje)} className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-all duration-300">
               {button2Text}
             </a>
           </div>

@@ -1,6 +1,7 @@
 import { Award, Building2, ChevronRight, Zap } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { generarEnlaceWhatsApp } from '../../../messages/messages';
+import { handleScrollToServices } from '../../../assets/utils/scrollUtils';
 
 interface HeroSASProps {
   mensaje: string;
@@ -12,16 +13,6 @@ export const HeroSAS = ({ mensaje }: HeroSASProps) => {
     setIsVisible(true);
   }, []);
 
-  // Función para hacer scroll hacia la sección de servicios
-  const handleScrollToServices = () => {
-    const element = document.getElementById('services-table');
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start', // Esto asegura que el scroll comience desde el inicio del elemento
-      });
-    }
-  };
   return (
     <div className="bg-black text-white min-h-screen flex items-center relative overflow-auto">
       {/* Background Effects */}
@@ -61,7 +52,7 @@ export const HeroSAS = ({ mensaje }: HeroSASProps) => {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <button
-                onClick={handleScrollToServices}
+                onClick={() => handleScrollToServices('services-table')}
                 className="bg-button hover:bg-blue-600 hover:scale-105 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg flex items-center justify-center"
               >
                 Ver Detalles

@@ -22,7 +22,13 @@ export const mensajesWhatsApp = {
   serviciosAsesoria: `Hola, necesito asesoría para elegir el mejor sistema de seguridad para mi espacio.`,
   LlamarAhora: `Hola, necesito asesoría jurídica especializada.`,
   Contactanos: `Hola, necesito contactarme con ustedes.`,
-  ComenzarAhora: `Hola, comencemos con el preoceso.`
+  ComenzarAhora: `Hola, comencemos con el preoceso.`,
+  marca: `Hola NexoLegal, quiero registrar una marca.`,
+  consultasLegales: `Hola NexoLegal, estoy interesado en una consulta legal.`,
+  disolucionLiquidacion: `Hola NexoLegal, estoy interesado en una Disolución y Liquidación de Compañías.`,
+  inmigrantes: `Hola NexoLegal, estoy interesado en migración.`,
+  serviciosLegales:`Hola NexoLegal, estoy interesado en Servicios Legales de compañias.`,
+
 };
 
 export const generarEnlaceWhatsApp = (mensaje: string): string => {
