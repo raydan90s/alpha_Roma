@@ -40,12 +40,12 @@ export const HeroSAS = ({ mensaje }: HeroSASProps) => {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-[#E7EAED] text-sm">Precio único</p>
-                  <p className="text-4xl font-bold text-white">$150</p>
+                  <p className="text-4xl font-bold text-white">$200 + IVA</p>
                   <p className="text-[#E7EAED] text-sm">Sin importar número de socios</p>
                 </div>
                 <div className="text-right">
                   <p className="text-[#E7EAED] text-sm">Tiempo estimado</p>
-                  <p className="text-2xl font-bold text-white">3-5 días</p>
+                  <p className="text-2xl font-bold text-white">3-7 días</p>
                 </div>
               </div>
             </div>

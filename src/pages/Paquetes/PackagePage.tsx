@@ -14,7 +14,6 @@ const CombinedPage = () => {
   useEffect(() => {
     setIsVisible(true);
   }, []);
-  { }
 
   interface PlanFeatureCardProps {
     title: string;

@@ -53,7 +53,7 @@ export const ServicesTable = ({ services, mensaje }: ServiceTableProps) => {
                         <div className="bg-primary p-8 text-center">
                             <h3 className="text-3xl font-bold text-white mb-2">Constitución de SAS</h3>
                             <p className="text-blue-100 mb-4">Sin importar el número de socios</p>
-                            <div className="text-6xl font-bold text-white mb-2">$150</div>
+                            <div className="text-6xl font-bold text-white mb-2">$200 + IVA</div>
                             <p className="text-blue-100">Precio único - Todo incluido</p>
                         </div>
 
@@ -85,7 +85,7 @@ export const ServicesTable = ({ services, mensaje }: ServiceTableProps) => {
                                     <Clock className="w-8 h-8 text-blue-400 mr-4" />
                                     <div>
                                         <p className="text-white font-semibold text-lg">Duración del trámite</p>
-                                        <p className="text-blue-300">3 - 5 días laborables</p>
+                                        <p className="text-blue-300">3 - 7 días laborables</p>
                                     </div>
                                 </div>
                             </div>
