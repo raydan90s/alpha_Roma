@@ -22,8 +22,8 @@ const InmigracionLegalPage = () => {
     {
       id: 1,
       title: "Visa de Trabajo",
-      price: "$1,200",
-      priceNote: "+ IVA",
+      price: "",
+      priceNote: "Precio según el caso",
       icon: <Search className="text-blue-600 text-3xl" />,
       description: "Asesoría para obtener una visa de trabajo en EE.UU., incluyendo todos los trámites y documentos necesarios.",
       features: [
@@ -39,8 +39,8 @@ const InmigracionLegalPage = () => {
     {
       id: 2,
       title: "Visa de Estudiante",
-      price: "$1,000",
-      priceNote: "+ IVA",
+      price: "",
+      priceNote: "Precio según el caso",
       icon: <Gem className="text-purple-600 text-3xl" />,
       description: "Ayuda completa para obtener una visa de estudiante F1, para estudiar en Estados Unidos.",
       features: [
@@ -56,8 +56,8 @@ const InmigracionLegalPage = () => {
     {
       id: 3,
       title: "Visa de Inmigrante por Familia",
-      price: "$2,500",
-      priceNote: "+ IVA",
+      price: "",
+      priceNote: "Precio según el caso",
       icon: <Users className="text-green-600 text-3xl" />,
       description: "Asesoría para obtener una visa de inmigrante por medio de un familiar directo en EE.UU.",
       features: [
@@ -75,8 +75,8 @@ const InmigracionLegalPage = () => {
   const benefits = [
     {
       icon: <Shield className="text-blue-600 text-2xl" />,
-      title: "Seguridad Legal",
-      description: "Te aseguramos que tu proceso de inmigración cumpla con todas las regulaciones legales y sea aprobado sin complicaciones."
+      title: "Confianza Jurídica",
+      description: "Te asesoramos en cada etapa para que tu trámite migratorio sea sólido, cumpla con la normativa y minimice riesgos."
     },
     {
       icon: <CheckCircle className="text-green-600 text-2xl" />,
@@ -98,28 +98,28 @@ const InmigracionLegalPage = () => {
   const process = [
     {
       step: "01",
-      title: "Evaluación Inicial",
-      description: "Revisamos tu situación actual y determinamos el tipo de visa que más te conviene."
+      title: "Análisis Legal Inicial",
+      description: "Evaluamos tu situación y perfil profesional para definir la categoría de visa más adecuada según la normativa de EE.UU."
     },
     {
       step: "02",
-      title: "Recolección de Documentos",
-      description: "Recopilamos toda la documentación necesaria y preparamos tus formularios."
+      title: "Asesoría en Documentación y Formularios",
+      description: "Te indicamos qué documentos necesitas, verificamos su validez y te guiamos para completar correctamente los formularios."
     },
     {
       step: "03",
-      title: "Presentación de Solicitud",
-      description: "Presentamos tu solicitud ante las autoridades migratorias correspondientes."
+      title: "Preparación del Expediente",
+      description: "Organizamos tu solicitud conforme a los requisitos oficiales para reducir riesgos de rechazo o demoras."
     },
     {
       step: "04",
-      title: "Entrevista Consular",
-      description: "Te preparamos para la entrevista consular para asegurar la aprobación de tu visa."
+      title: "Preparación para la Entrevista Consular",
+      description: "Te brindamos consejos prácticos para que afrontes la entrevista con seguridad."
     },
     {
       step: "05",
-      title: "Aprobación y Viaje",
-      description: "Una vez aprobada tu visa, te ayudamos con los últimos pasos para viajar y establecerte en EE.UU."
+      title: "Acompañamiento Final",
+      description: "Te orientamos en los pasos finales tras la aprobación y en tu ingreso a EE.UU."
     }
   ];
 

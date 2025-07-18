@@ -7,7 +7,7 @@ export const faqData = [
   },
   {
     question: "¿Qué incluye la búsqueda fonética?",
-    answer: "La búsqueda fonética incluye un análisis exhaustivo de similitud en la base de datos, verificación de marcas existentes que puedan sonar similar, y un reporte detallado con recomendaciones."
+    answer: "La búsqueda fonética incluye un análisis exhaustivo de similitud en la base de datos, verificación de marcas existentes que puedan sonar similar y un reporte detallado con recomendaciones. En base al reporte emitido por el SENAE, se realiza un análisis."
   },
   {
     question: "¿Puedo registrar cualquier tipo de marca?",

@@ -28,7 +28,7 @@ export const mensajesWhatsApp = {
   disolucionLiquidacion: `Hola NexoLegal, estoy interesado en una Disolución y Liquidación de Compañías.`,
   inmigrantes: `Hola NexoLegal, estoy interesado en migración.`,
   serviciosLegales:`Hola NexoLegal, estoy interesado en Servicios Legales de compañias.`,
-
+  patrocinioJudiciales: `Hola NexoLegal, estoy interesado en el Patrocinio de Procesos Judiciales.`
 };
 
 export const generarEnlaceWhatsApp = (mensaje: string): string => {

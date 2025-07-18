@@ -1,13 +1,13 @@
 export const process = [
         {
             step: "01",
-            title: "Consulta Inicial",
-            description: "Analizamos tu marca y determinamos la estrategia de registro"
+            title: "Búsqueda Previa",
+            description: "Realizamos búsquedas de similitud y análisis fonético"
         },
         {
             step: "02",
-            title: "Búsqueda Previa",
-            description: "Realizamos búsquedas de similitud y análisis fonético"
+            title: "Definición de Estrategia",
+            description: "Diseñamos la mejor estrategia para proteger tu marca y evitar conflictos futuros."
         },
         {
             step: "03",

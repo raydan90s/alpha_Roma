@@ -9,6 +9,7 @@ import { Gem, Search } from "lucide-react";
             icon: <Search className="text-blue-600 text-3xl" />,
             description: "Verificación de similitud fonética para asegurar la disponibilidad de tu marca",
             features: [
+                "Búsqueda de similitud completa",
                 "Búsqueda exhaustiva en base de datos",
                 "Análisis de similitud fonética",
                 "Reporte detallado de resultados",
@@ -26,7 +27,6 @@ import { Gem, Search } from "lucide-react";
             icon: <Gem className="text-purple-600 text-3xl" />,
             description: "Servicio integral de registro de marca con todos los trámites incluidos",
             features: [
-                "Búsqueda de similitud completa",
                 "Tasa de búsqueda fonética incluida",
                 "Resultados de búsqueda fonética",
                 "Tasa de registro de marca",

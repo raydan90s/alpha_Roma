@@ -75,18 +75,18 @@ export const HeroSAS = ({ mensaje }: HeroSASProps) => {
               <div className="bg-cardPrimary backdrop-blur-sm border border-blue-500/20 rounded-3xl p-8">
                 <div className="text-center">
                   <Building2 className="w-24 h-24 text-blue-400 mx-auto mb-6" />
-                  <h3 className="text-2xl font-bold text-white mb-4">Constituye tu S.A.S en tiempo récord</h3>
+                  <h3 className="text-2xl font-bold text-white mb-4">Constituye tu S.A.S con respaldo legal</h3>
                   <p className="text-gray-300 mb-6">
-                    SAS Express en máximo 5 días y SAS Premium adaptada a tus necesidades en máximo 15 días
+                    Transforma tu idea en una empresa legalmente constituida
                   </p>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="bg-blue-500/20 p-4 rounded-xl">
                       <Award className="w-8 h-8 text-blue-400 mb-2" />
-                      <p className="text-sm text-gray-300">Más de 210 S.A.S constituidas exitosamente</p>
+                      <p className="text-sm text-gray-300">Servicio ágil, rapido y seguro</p>
                     </div>
                     <div className="bg-blue-500/20 p-4 rounded-xl">
                       <Zap className="w-8 h-8 text-blue-400 mb-2" />
-                      <p className="text-sm text-gray-300">En 10 minutos enviamos toda la información</p>
+                      <p className="text-sm text-gray-300">Atención inmediata y personalizada</p>
                     </div>
                   </div>
                 </div>

@@ -19,8 +19,8 @@ const ServiciosLegalesPage = () => {
     {
       id: 1,
       title: "Recuperación de Carteras Vencidas",
-      price: "$300",
-      priceNote: "+ IVA",
+      price: "",
+      priceNote: "Precio Personalizado",
       icon: <Search className="text-blue-600 text-3xl" />,
       description: "Recupera de manera eficiente las deudas vencidas de tus clientes.",
       features: [
@@ -35,26 +35,9 @@ const ServiciosLegalesPage = () => {
     },
     {
       id: 2,
-      title: "Contratos Laborales",
-      price: "$450",
-      priceNote: "+ IVA",
-      icon: <Gem className="text-purple-600 text-3xl" />,
-      description: "Elaboración y revisión de contratos laborales conforme a la ley.",
-      features: [
-        "Redacción de contratos a medida",
-        "Asesoría legal sobre derechos laborales",
-        "Cumplimiento con la legislación vigente",
-        "Negociación de términos favorables"
-      ],
-      duration: "7-10 días hábiles",
-      buttonColor: "bg-button hover:bg-hoverButton",
-      popular: true
-    },
-    {
-      id: 3,
       title: "Reglamento Interno de Trabajo",
-      price: "$350",
-      priceNote: "+ IVA",
+      price: "",
+      priceNote: "Precio Personalizado",
       icon: <Shield className="text-green-600 text-3xl" />,
       description: "Elaboración de reglamento interno de trabajo para tu empresa.",
       features: [
@@ -68,10 +51,10 @@ const ServiciosLegalesPage = () => {
       popular: false
     },
     {
-      id: 4,
+      id: 3,
       title: "Transferencia y Cesión de Acciones",
-      price: "$600",
-      priceNote: "+ IVA",
+      price: "",
+      priceNote: "Precio Personalizado",
       icon: <CheckCircle className="text-orange-600 text-3xl" />,
       description: "Asesoría y trámite de transferencia y cesión de acciones en tu empresa.",
       features: [
@@ -85,10 +68,10 @@ const ServiciosLegalesPage = () => {
       popular: false
     },
     {
-      id: 5,
+      id: 4,
       title: "Nombramientos",
-      price: "$250",
-      priceNote: "+ IVA",
+      price: "",
+      priceNote: "Precio Personalizado",
       icon: <Clock className="text-red-600 text-3xl" />,
       description: "Asesoría y gestión de nombramientos para directores y ejecutivos.",
       features: [
@@ -102,27 +85,10 @@ const ServiciosLegalesPage = () => {
       popular: false
     },
     {
-      id: 6,
-      title: "Revisión de Contratos",
-      price: "$350",
-      priceNote: "+ IVA",
-      icon: <Users className="text-blue-600 text-3xl" />,
-      description: "Revisión y análisis de contratos para evitar riesgos legales.",
-      features: [
-        "Revisión detallada de contratos laborales y comerciales",
-        "Identificación de cláusulas problemáticas",
-        "Asesoría legal para mejorar términos",
-        "Modificaciones conforme a la legislación vigente"
-      ],
-      duration: "5-7 días hábiles",
-      buttonColor: "bg-button hover:bg-hoverButton",
-      popular: false
-    },
-    {
-      id: 7,
+      id: 5,
       title: "Actas de Juntas",
-      price: "$200",
-      priceNote: "+ IVA",
+      price: "",
+      priceNote: "Precio Personalizado",
       icon: <FileText className="text-purple-600 text-3xl" />,
       description: "Redacción de actas legales para las juntas de accionistas o directivos.",
       features: [

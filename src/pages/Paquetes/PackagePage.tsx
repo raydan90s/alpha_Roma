@@ -161,12 +161,12 @@ const CombinedPage = () => {
         <section id='asesoriaLegalPersonal' className="bg-gray-100 py-16">
           <div className="max-w-screen-xl mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800">Planes de Servicios</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800">Planes  Empresariales y Juridico</h2>
               <div className="flex justify-center mb-8">
                 <div className="w-24 h-1 bg-blue-600"></div>
               </div>
               <p className="text-lg md:text-xl mb-8 text-gray-700">
-                Elige el plan que mejor se adapte a las necesidades de tu empresa
+                Elige el plan que mejor se adapte a las necesidades de tu empresa con nuestros planes mensuales
               </p>
             </div>
 
@@ -205,12 +205,10 @@ const CombinedPage = () => {
         <section id='consultoriaJuridicaEmpresarial' className="bg-gray-100 py-16">
           <div className="max-w-screen-xl mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800">Servicios Empresariales</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800"></h2>
               <div className="flex justify-center mb-8">
-                <div className="w-24 h-1 bg-blue-600"></div>
               </div>
               <p className="text-lg md:text-xl mb-8 text-gray-700">
-                Constitución de empresas y servicios especializados
               </p>
             </div>
 

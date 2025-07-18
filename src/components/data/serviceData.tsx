@@ -15,7 +15,7 @@ export const services = [
     icon: <Building className="text-2xl" />,
     href: "/servicios-legales",
   },
-  {
+  { 
     id: 3,
     title: "Inmigración Legal a Estados Unidos",
     description: "Asesoría especializada en procesos migratorios y documentación para Estados Unidos.",
