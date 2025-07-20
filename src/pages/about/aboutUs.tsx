@@ -25,7 +25,7 @@ const AboutUsPage = () => {
 
   const missionData = {
     description:
-      "En NexoLegal, nos dedicamos a defender los intereses de nuestros clientes con pasión y compromiso. Entendemos que cada caso es único, por eso ofrecemos soluciones legales personalizadas y estratégicas para alcanzar el éxito en cada desafío. Con 40 años de experiencia combinada, nuestro equipo de abogados expertos en distintas áreas del derecho ha logrado resultados sobresalientes para nuestros clientes. En NexoLegal, su éxito es nuestra prioridad.",
+      "En NexoLegal, nos dedicamos a defender los intereses de nuestros clientes con pasión y compromiso. Entendemos que cada caso es único, por eso ofrecemos soluciones legales personalizadas y estratégicas para alcanzar el éxito en cada desafío. Con 30 años de experiencia combinada, nuestro equipo de abogados expertos en distintas áreas del derecho ha logrado resultados sobresalientes para nuestros clientes. En NexoLegal, su éxito es nuestra prioridad.",
   };
 
   const visionData = {

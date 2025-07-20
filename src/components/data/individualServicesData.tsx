@@ -3,12 +3,12 @@ import { mensajesWhatsApp } from "../../messages/messages";
 
 export const individualServices = [
   {
-    title: "Consultas Legales",
+    title: "Consultas Legales (Online)",
     price: "$40",
     priceNote: "+ IVA",
     icon: <HelpCircle className="text-green-600 text-2xl" />,
     description: "Consultas legales en temas laborales, civiles y empresariales",
-    duration: "Reunión Online",
+    duration: "45 minutos por Zoom",
     buttonColor: "bg-button hover:bg-hoverButton",
     mensaje: mensajesWhatsApp.consultaLegal, // Añadido el mensaje correspondiente
   },
@@ -36,9 +36,10 @@ export const individualServices = [
     title: "Disoluciones y Liquidaciones de Compañías",
     price: "",
     priceNote: "Costo Personalizado",
+    priceNoteColor: "text-blue-600",
     icon: <FileText className="text-gray-600 text-2xl" />,
-    description: "Procesos de cierre y liquidación de empresas conforme a la normativa vigente.",
-    duration: "Cita Previa",
+    description: "Procesos de cierre y liquidación de empresas conforme a la normativa vigente. (Bajo cita previa)",
+    duration: "Duración según proceso",
     buttonColor: "bg-button hover:bg-hoverButton",
     mensaje: mensajesWhatsApp.disolucionLiquidacion, // Añadido el mensaje correspondiente
   },
@@ -47,8 +48,8 @@ export const individualServices = [
     price: "$686",
     priceNote: "+ IVA",
     icon: <Users className="text-red-600 text-2xl" />,
-    description: "SAS + Registro de Marca + Tasas incluidas",
-    duration: "Cita previa",
+    description: "SAS + Registro de Marca + Tasas incluidas (Bajo cita previa) ",
+    duration: "Duración según proceso",
     buttonColor: "bg-button hover:bg-hoverButton",
     mensaje: mensajesWhatsApp.planEmpresario, // Añadido el mensaje correspondiente
   },
@@ -57,18 +58,20 @@ export const individualServices = [
     price: "$350",
     priceNote: "+ IVA",
     icon: <ShieldOff className="text-green-600 text-2xl" />,
-    description: "Previo a consulta para la procedencia $20",
-    duration: "Cita previa",
+    description: "Previo a consulta para la procedencia $20 (Bajo cita previa)",
+    duration: "Duración según proceso",
     buttonColor: "bg-button hover:bg-hoverButton",
     mensaje: mensajesWhatsApp.ocultamientoDatos, // Añadido el mensaje correspondiente
   },
-   {
+  {
     title: "Patrocinio de Procesos Judiciales",
     price: "",
     priceNote: "Costo Personalizado",
+    priceNoteColor: "text-blue-600",
+
     icon: <BookUser className="text-yellow-600 text-2xl" />,
-    description: "Asesoría jurídica durante todo el proceso",
-    duration: "Cita previa",
+    description: "Asesoría jurídica durante todo el proceso ",
+    duration: "Duración según proceso",
     buttonColor: "bg-button hover:bg-hoverButton",
     mensaje: mensajesWhatsApp.patrocinioJudiciales, // Añadido el mensaje correspondiente
   },

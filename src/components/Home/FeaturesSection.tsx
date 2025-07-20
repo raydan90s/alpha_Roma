@@ -13,7 +13,7 @@ interface Feature {
 const features: Feature[] = [
   {
     title: 'Experiencia Comprobada',
-    description: 'Con 40 años de experiencia combinada, nuestro equipo de abogados expertos garantiza resultados excepcionales en cada caso.',
+    description: 'Con 30 años de experiencia combinada, nuestro equipo de abogados expertos garantiza resultados excepcionales en cada caso.',
     icon: (
       <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
@@ -80,7 +80,7 @@ const FeaturesSection: React.FC = () => {
                   </span>
                 </h2>
                 <p className="text-xl text-gray-300 leading-relaxed max-w-lg">
-                  Con 40 años de experiencia combinada, nuestro equipo de abogados expertos en distintas áreas del derecho, 
+                  Con 30 años de experiencia combinada, nuestro equipo de abogados expertos en distintas áreas del derecho, 
                   ha logrado resultados sobresalientes para nuestros clientes. En NexoLegal, tu justicia es nuestra prioridad.
                 </p>
               </div>

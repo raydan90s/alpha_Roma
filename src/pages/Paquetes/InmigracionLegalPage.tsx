@@ -23,7 +23,8 @@ const InmigracionLegalPage = () => {
       id: 1,
       title: "Visa de Trabajo",
       price: "",
-      priceNote: "Precio según el caso",
+      priceNote: "Costo personalizado",
+      priceNoteColor: "text-blue-600",
       icon: <Search className="text-blue-600 text-3xl" />,
       description: "Asesoría para obtener una visa de trabajo en EE.UU., incluyendo todos los trámites y documentos necesarios.",
       features: [
@@ -40,7 +41,8 @@ const InmigracionLegalPage = () => {
       id: 2,
       title: "Visa de Estudiante",
       price: "",
-      priceNote: "Precio según el caso",
+      priceNote: "Costo personalizado",
+      priceNoteColor: "text-blue-600",
       icon: <Gem className="text-purple-600 text-3xl" />,
       description: "Ayuda completa para obtener una visa de estudiante F1, para estudiar en Estados Unidos.",
       features: [
@@ -57,7 +59,8 @@ const InmigracionLegalPage = () => {
       id: 3,
       title: "Visa de Inmigrante por Familia",
       price: "",
-      priceNote: "Precio según el caso",
+      priceNote: "Costo personalizado",
+      priceNoteColor: "text-blue-600",
       icon: <Users className="text-green-600 text-3xl" />,
       description: "Asesoría para obtener una visa de inmigrante por medio de un familiar directo en EE.UU.",
       features: [

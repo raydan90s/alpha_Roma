@@ -2,6 +2,7 @@ import React from 'react';
 import { ServiceCard } from './serviceCard';
 
 interface Service {
+  priceNoteColor?: string;
   id: number;
   title: string;
   price: string;
@@ -45,6 +46,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ services, isVisible, 
                 title={service.title}
                 price={service.price}
                 priceNote={service.priceNote}
+                priceNoteColor={service.priceNoteColor}
                 icon={service.icon}
                 description={service.description}
                 features={service.features}

@@ -69,7 +69,7 @@ export const plansData = [
       "Temas laborales y civiles",
       "10 contratos (elaboración o revisión)",
       "8 horas de asesoría legal empresarial (Online)",
-      "Acompañamiento especializado (8 horas)",
+      "8 Acompañamiento especializado (por mes)",
       "1 patrocinio en proceso de Ministerio de Trabajo"
     ],
     buttonText: "¡CONTRATA AHORA!",

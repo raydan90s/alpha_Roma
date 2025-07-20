@@ -13,6 +13,8 @@ interface ServiceCardProps {
   buttonColor: string;
   popular?: boolean;
   mensaje: string;
+  priceNoteColor?: string; // <- Nueva propiedad
+
 }
 
 export const ServiceCard: React.FC<ServiceCardProps> = ({
@@ -26,6 +28,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
   buttonColor,
   popular = false,
   mensaje,
+  priceNoteColor
 }) => (
   <div className="relative bg-white rounded-2xl shadow-lg border-2 overflow-hidden hover:shadow-xl transition-all duration-300 w-full h-full flex flex-col">
     {/* Más Popular Badge */}
@@ -42,7 +45,8 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
         <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-2 min-h-[3rem] flex items-center justify-center">{title}</h3>
         <div className="text-center mb-4">
           <span className="text-3xl md:text-4xl font-bold text-blue-600">{price}</span>
-          <span className="text-lg font-semibold text-black-600 ml-1">{priceNote}</span>
+          <span className={`text-lg font-bold ml-1 ${priceNoteColor || 'text-black-600'}`}>
+            {priceNote}</span>
         </div>
         <div className="min-h-[3rem] flex items-center justify-center">
           <p className="text-gray-600 text-sm md:text-base">{description}</p>

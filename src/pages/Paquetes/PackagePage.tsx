@@ -114,7 +114,7 @@ const CombinedPage = () => {
             </div>
 
             {/* Services Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8">
               {services.map((service, index) => (
                 <a
                   href={service.href}
@@ -201,26 +201,7 @@ const CombinedPage = () => {
           </div>
         </section>
 
-        {/* Company Services */}
-        <section id='consultoriaJuridicaEmpresarial' className="bg-gray-100 py-16">
-          <div className="max-w-screen-xl mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800"></h2>
-              <div className="flex justify-center mb-8">
-              </div>
-              <p className="text-lg md:text-xl mb-8 text-gray-700">
-              </p>
-            </div>
 
-            <div className="container mx-auto px-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 justify-center">
-                {companyServices.map((service, index) => (
-                  <ServiceCard features={[]} duration={''} key={index} {...service} />
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* Contact Section */}
         <section>

@@ -20,7 +20,8 @@ const ServiciosLegalesPage = () => {
       id: 1,
       title: "Recuperación de Carteras Vencidas",
       price: "",
-      priceNote: "Precio Personalizado",
+      priceNote: "Costo Personalizado",
+      priceNoteColor: "text-blue-600",
       icon: <Search className="text-blue-600 text-3xl" />,
       description: "Recupera de manera eficiente las deudas vencidas de tus clientes.",
       features: [
@@ -37,7 +38,8 @@ const ServiciosLegalesPage = () => {
       id: 2,
       title: "Reglamento Interno de Trabajo",
       price: "",
-      priceNote: "Precio Personalizado",
+      priceNote: "Costo Personalizado",
+      priceNoteColor: "text-blue-600",
       icon: <Shield className="text-green-600 text-3xl" />,
       description: "Elaboración de reglamento interno de trabajo para tu empresa.",
       features: [
@@ -54,7 +56,8 @@ const ServiciosLegalesPage = () => {
       id: 3,
       title: "Transferencia y Cesión de Acciones",
       price: "",
-      priceNote: "Precio Personalizado",
+      priceNote: "Costo Personalizado",
+      priceNoteColor: "text-blue-600",
       icon: <CheckCircle className="text-orange-600 text-3xl" />,
       description: "Asesoría y trámite de transferencia y cesión de acciones en tu empresa.",
       features: [
@@ -71,7 +74,8 @@ const ServiciosLegalesPage = () => {
       id: 4,
       title: "Nombramientos",
       price: "",
-      priceNote: "Precio Personalizado",
+      priceNote: "Costo Personalizado",
+      priceNoteColor: "text-blue-600",
       icon: <Clock className="text-red-600 text-3xl" />,
       description: "Asesoría y gestión de nombramientos para directores y ejecutivos.",
       features: [
@@ -88,7 +92,8 @@ const ServiciosLegalesPage = () => {
       id: 5,
       title: "Actas de Juntas",
       price: "",
-      priceNote: "Precio Personalizado",
+      priceNote: "Costo Personalizado",
+      priceNoteColor: "text-blue-600",
       icon: <FileText className="text-purple-600 text-3xl" />,
       description: "Redacción de actas legales para las juntas de accionistas o directivos.",
       features: [
