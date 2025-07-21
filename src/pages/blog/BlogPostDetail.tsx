@@ -125,7 +125,7 @@ const BlogPostDetail = () => {
               <div className="w-0 md:w-auto"></div>
             </div>
             {blogPost.urlImagen && (
-              <div className="w-full h-48 md:h-96 lg:h-128 rounded-lg shadow-lg overflow-hidden mb-6 md:mb-8">
+              <div className="w-full h-48 md:h-96 lg:h-128 rounded-lg shadow-lg  mb-6 md:mb-8">
                 <img className="w-full h-full object-cover" src={blogPost.urlImagen} alt={blogPost.titulo} />
               </div>
             )}

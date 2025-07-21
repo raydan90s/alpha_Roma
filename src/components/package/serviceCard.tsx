@@ -30,7 +30,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
   mensaje,
   priceNoteColor
 }) => (
-  <div className="relative bg-white rounded-2xl shadow-lg border-2 overflow-hidden hover:shadow-xl transition-all duration-300 w-full h-full flex flex-col">
+  <div className="relative bg-white rounded-2xl shadow-lg border-2 hover:shadow-xl transition-all duration-300 w-full h-full flex flex-col">
     {/* Más Popular Badge */}
     {popular && (
       <div className="absolute top-0 right-0 bg-gray-800 text-white px-4 py-2 text-sm font-semibold rounded-bl-lg z-10">
@@ -49,7 +49,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
             {priceNote}</span>
         </div>
         <div className="min-h-[3rem] flex items-center justify-center">
-          <p className="text-gray-600 text-sm md:text-base">{description}</p>
+          <p className="text-gray-600 text-sm md:text-base text-justify">{description}</p>
         </div>
       </div>
 

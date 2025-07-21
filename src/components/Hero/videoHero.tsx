@@ -42,7 +42,7 @@ const VideoHero: React.FC<VideoHeroProps> = ({
   }, []);
 
   return (
-    <div className="relative bg-black overflow-hidden h-screen">
+    <div className="relative bg-black h-screen">
       <div className="absolute inset-0">
         <video 
           ref={videoRef}

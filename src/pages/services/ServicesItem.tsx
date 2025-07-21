@@ -52,7 +52,7 @@ const ServiceItem: React.FC<ServiceItemProps> = ({
           </a>
         </div>
         <div className={`md:w-1/2 ${imageOrder}`}>
-          <div className="bg-gray-200 rounded-xl overflow-hidden shadow-lg h-56 md:h-80">
+          <div className="bg-gray-200 rounded-xl shadow-lg h-56 md:h-80">
             <img src={image} alt={title} className="w-full h-full object-cover" />
           </div>
         </div>

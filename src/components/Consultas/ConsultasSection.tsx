@@ -16,7 +16,7 @@ const ConsultasSection: React.FC = () => {
         {/* Tarjetas */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 mt-28">
           {/* Asesoría Básica */}
-          <div className="bg-gray-900 rounded-3xl p-8 border border-gray-800 relative overflow-hidden">
+          <div className="bg-gray-900 rounded-3xl p-8 border border-gray-800 relative">
             <div className="absolute top-0 left-0 w-full h-2 "></div>
 
             <div className="flex items-center space-x-2 mb-6">
@@ -49,7 +49,7 @@ const ConsultasSection: React.FC = () => {
           </div>
 
           {/* Asesoría Experta */}
-          <div className="bg-gray-100 rounded-3xl p-8 border border-gray-300 relative overflow-hidden">
+          <div className="bg-gray-100 rounded-3xl p-8 border border-gray-300 relative">
             <div className="absolute top-0 left-0 w-full h-2"></div>
 
             <div className="flex items-center space-x-2 mb-6">

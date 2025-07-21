@@ -20,7 +20,7 @@ const VisionSection = ({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div className="relative group lg:order-1">
             <div className="absolute -inset-4 bg-primary rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative rounded-3xl shadow-2xl">
               <img
                 src={imageUrl}
                 alt={imageAlt}

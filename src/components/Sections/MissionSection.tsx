@@ -36,7 +36,7 @@ const MissionSection = ({
           </div>
           <div className="relative group">
             <div className="absolute -inset-4 bg-primary rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-1000"></div>
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative rounded-3xl shadow-2xl">
               <img
                 src={imageUrl}
                 alt={imageAlt}

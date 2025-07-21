@@ -17,10 +17,25 @@ export const menuItems = [
         description: "Encuentra el plan que mejor se adapte a tus necesidades y presupuesto.",
         linkTo: "/paquetes",
         options: [
-            { label: "Asesoría Legal Personal", href: "/paquetes#asesoriaLegalPersonal", description: "Asesoría jurídica para individuos y familias en diversas áreas del derecho.", icon: ShieldHalf },
-            { label: "Servicios Legales para Negocios", href: "/paquetes#serviciosLegalesNegocios", description: "Soluciones adaptadas a las necesidades de pequeñas y medianas empresas.", icon: Star },
-            { label: "Consultoría Jurídica Empresarial", href: "/paquetes#consultoriaJuridicaEmpresarial", description: "Servicios avanzados para corporaciones y empresas multinacionales.", icon: Gem },
-        ],
+            {
+                label: "Asesoría Legal Personal",
+                href: "/paquetes#Servicios",
+                description: "Apoyo legal integral para personas y familias en temas civiles, laborales, patrimoniales y más.",
+                icon: ShieldHalf
+            },
+            {
+                label: "Servicios Legales para Empresas",
+                href: "/paquetes#asesoriaLegalEmpresarial",
+                description: "Asesoría jurídica especializada para cubrir las obligaciones y necesidades legales de tu empresa.",
+                icon: Star
+            },
+            {
+                label: "Consultoría Jurídica Individual",
+                href: "/paquetes#serviciosLegalIndividual",
+                description: "Soluciones legales estratégicas para empresas grandes y corporaciones con operaciones complejas.",
+                icon: Gem
+            }
+        ]
     },
 
     {

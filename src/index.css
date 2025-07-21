@@ -70,5 +70,3 @@
 .ql-size-huge {
   font-size: 2.5em; /* Aproximadamente 40px */
 }
-
-/* El tamaño normal (sin clase ql-size) se mantendrá con el tamaño de fuente por defecto del navegador */

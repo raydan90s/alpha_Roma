@@ -17,7 +17,7 @@ interface ServiceCardProps {
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => (
-  <div className={`relative bg-white rounded-2xl shadow-lg border-2 overflow-hidden hover:shadow-xl transition-all duration-300 ${service.popular ? 'border-accent transform scale-105' : 'border-gray-200'}`}>
+  <div className={`relative bg-white rounded-2xl shadow-lg border-2 hover:shadow-xl transition-all duration-300 ${service.popular ? 'border-accent transform scale-105' : 'border-gray-200'}`}>
     {/* Más Popular Badge */}
     {service.popular && (
       <div className="absolute top-0 right-0 bg-secondary text-white px-4 py-2 text-sm font-semibold rounded-bl-lg">

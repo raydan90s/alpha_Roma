@@ -65,7 +65,7 @@ const AboutUsPage = () => {
           description="En NexoLegal estamos listos para ayudarte con soluciones jurídicas estratégicas, personalizadas y efectivas."
           button1Text="Agendar consulta"
           button2Text="Contáctanos"
-          mensaje={mensajesWhatsApp.aboutUs}
+          mensaje={mensajesWhatsApp.Contactanos}
         />
       </div>
     </>

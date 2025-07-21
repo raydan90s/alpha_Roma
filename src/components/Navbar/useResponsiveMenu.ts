@@ -15,6 +15,8 @@ export const useResponsiveMenu = ({
   navRef,
 }: UseResponsiveMenuProps) => {
   useEffect(() => {
+    const body = document.body;
+
     const handleClickOutside = (event: MouseEvent) => {
       if (mobileMenuOpen && navRef.current && !navRef.current.contains(event.target as Node)) {
         setMobileMenuOpen(false);
@@ -29,10 +31,16 @@ export const useResponsiveMenu = ({
       }
     };
 
-    document.body.classList.toggle('overflow-hidden', mobileMenuOpen);
-
+    // En lugar de toggle, usa add/remove explícito para evitar conflictos con scroll
     if (mobileMenuOpen) {
+      body.classList.add('overflow-hidden');
       document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      // Quita overflow-hidden con un pequeño delay para que el scroll suave funcione bien
+      setTimeout(() => {
+        body.classList.remove('overflow-hidden');
+      }, 100);
+      document.removeEventListener('mousedown', handleClickOutside);
     }
 
     window.addEventListener('resize', handleResize);
@@ -40,8 +48,9 @@ export const useResponsiveMenu = ({
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
       window.removeEventListener('resize', handleResize);
-      document.body.classList.remove('overflow-hidden');
+      body.classList.remove('overflow-hidden');
     };
   }, [mobileMenuOpen, navRef, setMobileMenuOpen, setActiveMobileSubmenu]);
+
 };
 

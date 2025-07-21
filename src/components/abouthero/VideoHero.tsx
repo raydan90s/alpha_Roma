@@ -22,7 +22,7 @@ const VideoHero: React.FC<Props> = ({ videoId, title, subtitle }) => {
   myVideo.delivery(quality("auto"));
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-black text-white overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center bg-black text-white">
       <AdvancedVideo
         cldVid={myVideo}
         autoPlay

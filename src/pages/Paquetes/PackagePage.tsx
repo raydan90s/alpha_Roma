@@ -38,7 +38,7 @@ const CombinedPage = () => {
     footerText,
     mensaje
   }) => (
-    <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+    <div className="bg-white rounded-2xl shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300 h-full flex flex-col">
       <div className="p-8 flex-grow flex flex-col">
         {/* Header */}
         <div className="text-center mb-6">
@@ -100,7 +100,7 @@ const CombinedPage = () => {
         </section>
 
         {/* Services Section */}
-        <section className="bg-white py-16 text-gray-800">
+        <section id='Servicios' className="bg-white py-16 text-gray-800">
           <div className="max-w-screen-xl mx-auto px-4">
             {/* Header */}
             <div className={`text-center mb-16 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
@@ -158,7 +158,7 @@ const CombinedPage = () => {
         </section>
 
         {/* Plans Section */}
-        <section id='asesoriaLegalPersonal' className="bg-gray-100 py-16">
+        <section id='asesoriaLegalEmpresarial' className="bg-gray-100 py-16">
           <div className="max-w-screen-xl mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800">Planes  Empresariales y Juridico</h2>
@@ -181,7 +181,7 @@ const CombinedPage = () => {
         </section>
 
         {/* Individual Services */}
-        <section id='serviciosLegalesNegocios' className="bg-white py-16">
+        <section id='serviciosLegalIndividual' className="bg-white py-16">
           <div className="max-w-screen-xl mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800">Servicios Individuales</h2>
@@ -200,7 +200,6 @@ const CombinedPage = () => {
             </div>
           </div>
         </section>
-
 
 
         {/* Contact Section */}

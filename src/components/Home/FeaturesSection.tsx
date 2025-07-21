@@ -54,7 +54,7 @@ const FeaturesSection: React.FC = () => {
 
   return (
     <section className='Features'>
-      <div className="py-20 bg-secondary relative overflow-hidden">
+      <div className="py-20 bg-secondary relative">
         {/* Fondo decorativo */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-20 left-10 w-32 h-32 bg-blue-500 rounded-full blur-2xl"></div>

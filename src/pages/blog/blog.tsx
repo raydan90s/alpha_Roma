@@ -53,7 +53,7 @@ const BlogPage = () => {
             {blogPosts.map((post: BlogPost) => (
               <div
                 key={post.id}
-                className="bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300 hover:scale-105 mb-10"
+                className="bg-white rounded-xl shadow-md transition-transform duration-300 hover:scale-105 mb-10"
               >
                 {post.urlImagen && (
                   <img className="h-48 w-full object-cover" src={post.urlImagen} alt={post.titulo} />
