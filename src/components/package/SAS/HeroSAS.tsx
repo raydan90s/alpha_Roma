@@ -86,7 +86,7 @@ export const HeroSAS = ({ mensaje }: HeroSASProps) => {
                     </div>
                     <div className="bg-blue-500/20 p-4 rounded-xl">
                       <Zap className="w-8 h-8 text-blue-400 mb-2" />
-                      <p className="text-sm text-gray-300">Atención inmediata y personalizada</p>
+                      <p className="text-sm text-gray-300">Atención personalizada</p>
                     </div>
                   </div>
                 </div>

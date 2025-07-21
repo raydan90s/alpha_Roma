@@ -200,7 +200,7 @@ function Navbar() {
                                             ${screenSize === 'mobile' ? 'h-8' : ''}
                                             ${screenSize === 'sm' ? 'h-10' : ''}
                                             ${screenSize === 'tablet' ? 'h-12' : ''}
-                                            ${screenSize === 'desktop' ? 'h-14' : ''}
+                                            ${screenSize === 'desktop' ? 'h-16' : ''}
                                         `}
                                     />
                                 </Link>
